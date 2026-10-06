@@ -1,0 +1,108 @@
+// Sola's Abduction by Bodhi!
+@1 = ~ Hora de morrer, <CHARNAME>. Ou talvez não. Seus ... colegas ... são bem interessantes também. ~
+@2 = ~ Solaufein, em especial, muito me fascina. Que gloriosa pele de ébano. E um elfo, também, se bem que apenas um primo distante. Posso farejar daqui a relativa bondade que emana dele. Quão maravilhoso será voltá-lo contra você. ~
+
+@3 = ~Você nunca conseguirá isso, vampira. Minha alma pertence à Eilistraee e eu já me livrei de uma escuridão mais profunda que esta que reside em seus olhos vazios.~
+
+@4 = ~Oh, creio que descobrirá que posso ser bastante persuasiva. Venha, Solaufein. Vamos debater filosofia. Estou particularmente interessada na questão da ... vida após a morte.~
+
+@5 = ~A Batalha Final contra Bodhi.
+
+Bodhi armou uma emboscada pouco antes que eu alcançasse seu refúgio, avisando que estava ciente da perseguição à sua pessoa, e roubando Solaufein do grupo. Antes que ela desaparecesse e liberasse mais das suas criaturas sobre mim, Bodhi alertou-me de que eu ainda poderia perder muito mais do que posso imaginar. Não posso desistir da Rhynn Lanthorn ... mas agora a vida e a alma imortal do meu companheiro estão em jogo!~
+
+@6 = ~Agora, onde eu estava?~
+
+@7 = ~Tire as mãos de Solaufein antes que eu enfie essa água benta por sua goela abaixo, Bodhi!~
+
+@8 = ~Acho que não, <CHARNAME>. Solaufein progrediu como vampiro numa rapidez nunca antes vista. Ele já domina mais poderes das trevas que qualquer um dos nossos mais antigos. Verdade seja dita, ele está evoluindo em algo mais parecido com um Lich do que com um vampiro puro...~
+  // valygar:
+  @9 = ~Não! Não vou mais suportar isso! Primeiro Lavok e agora Solaufein. Será que todos dotados do poder mágico terminarão transformados nesses blasfemos escravos mortos-vivos, voltados só pra destruição? Nada é sagrado?~
+  @10 = ~Bodhi, eu odiava você e sua raça antes. Mas agora o desprezo queima em meu coração como uma conflagração. Não sairá viva, e nem esse boneco que criou com a aparência de Solaufein. ~
+
+@11 = ~Seja como for, Solaufein ainda é bastante excitante. É um azar que a lua o queime tanto quanto o sol, mas sua recém-descoberta admiração por Lolth mais que compensa isso.~
+
+@12 = ~A Batalha Final contra Bodhi.
+
+Bodhi transformou Solaufein em vampiro! Ou... algo semelhante. Pode ser que o processo não tenha ainda sido completado, durante o curto período que Bodhi o teve. Aparentemente, Solaufein está desenvolvendo poderes tanto de Vampiro quanto de Lich. Tomara que algo possa ser feito, ou irei perdê-lo. Quem sabe os sábios dos elfos guerreiros conheçam uma forma de restauração... ou Elhan. Talvez eu deva conferir a biblioteca de Bodhi.~ 
+
+// evil Solaufein 
+@20 = ~Olá de novo, <CHARNAME>. É impressionante o que a Não-Vida fez pela minha perspectiva. Clareza e foco. Toda a minha vida, tive dúvidas sobre quem eu era, aonde pertencia. Agora, sou como a flecha que salta do arco. Sem hesitação, sem incertezas. O caminho está claro.~
+@21 = ~Conceda-me um último bocado de poesia, se quiser. Minhas opiniões sobre você ... mudaram ... ligeiramente. 
+
+Favorece minha canção solene, pois amei
+Sempre ti, e a ti somente; tenho observado
+Tua sombra, e a escuridão de teus passos,
+E meu coração já contempla as profundezas~
+@22 = ~
+De teus íntimos mistérios. Fiz minha cama
+Em charnecas e tumbas, onde a morte negra
+Registra e conta os troféus ganhos de ti,
+Esperando deter essas obstinadas perguntas
+
+De ti e tuas, forçando solitários fantasmas,
+Mensageiros de ti, trazer de volta a história
+Daquilo que somos. Em silentes e solitárias horas,
+Quando perturba a noite a quietude com estranhos ruídos,~
+@23 = ~
+Como um desesperado e inspirado alquimista
+Olhando a própria vida com sombria esperança,
+Eu misturei conversas e indagações com meu
+Mais inocente amor, até que estranhas lágrimas
+
+Unidas com beijos ofegantes, fizeram
+Qual mágica que compele a noite encantada,
+Trazerem de volta tua culpa ...~
+
+@24 = ~Sim, meu amor. Descobri que te amo ... até a morte. Bem vindo de volta ao abismo, <CHARNAME>. Como sempre, sua precisão é excepcional. Na hora certa de morrer.~
+  @25 = ~O que está fazendo, Solaufein?~
+  @26 = ~Você não é Solaufein! Não passa de uma sombra.~
+
+@27 = ~O que eu devia ter feito há muito tempo atrás. Tirando você da *minha* miséria. Uma punição justa pelos seus crimes contra minha amada Lolth.~
+
+@28 = ~Bem, talvez você devesse tomar cuidado. As sombras costumam se mover quando não se está olhando.~
+
+@29 = ~Tive um sonho sobre nós, <CHARNAME>. Naquele momento entre a vida e a morte, quando Bodhi cravou suas presas em mim e sugou minha essência. Logo antes que ela começasse a me alimentar de suas veias, vi Eilistraee.~
+@30 = ~Nunca antes havia percebido quão diminuta ela era. Pena.~
+@31 = ~Ela passou por mim, caminhando para o amanhecer. Eu, é claro, me virei pra longe da claridade. Mas quando ela esbarrou no meu ombro, sussurrou no meu ouvido.~
+@32 = ~Ela disse que ambos estávamos amaldiçoados. Assustado, olhei pra ela, mas em vez disso, vi seu rosto, <CHARNAME>. Banindo vocês de meus pensamentos, achei aceitação em Lolth. Ela se regozija da minha nova ... posição ... no mundo.~
+@33 = ~Sangue clama por sangue, mas é um pequeno preço a pagar pela imortalidade.~
+@34 = ~Tudo é tão efêmero, não é? A duração comum da vida de um Drow normal é de quase mil anos, mas é apenas um segundo, comparado ao que está lá fora. Não seria tão ruim se a vida não demorasse tanto pra ser compreendida. Quando parece que você começa entender o sentido, então ... termina.~
+@35 = ~Eu costumava sonhar em escapar da escuridão. Agora eu anseio por tê-la à minha volta, como um manto. Vamos dançar nas sombras, <CHARNAME>. Os mortos beberão seu sangue!~
+
+// bodhi
+@40 = ~Silencie agora, meu Solaufein. Estou certa que <CHARNAME> deseja voltar a vociferar e ameaçar-nos.~
+
+// restored good solaufein
+@50 = ~<CHARNAME>, você me restaurou! Quando Bodhi sugou meu sangue e substituiu pelo dela, senti-me arremessado à distância. Todo o mal dentro de mim pareceu borbulhar à superfície, cobrindo minha alma como um óleo maligno.~
+@51 = ~Sonhei que estava no topo de um alto pilar de pedra. Uma escuridão espessa cercava tudo à minha volta, e caía uma chuva morna, sussurrante.~
+@52 = ~Então percebi que era uma chuva de sangue, e comecei a gritar.~
+@53 = ~Minha Senhora Silverhair apareceu à minha frente, flutuando no ar. Sua resplandecência afastou meu medo, e próximo a ela nenhuma chuva caía. Ainda assim, ela não me libertou da prisão de pedra. Apenas sorriu tristemente.~
+@54 = ~Quando acordei, permaneci como um prisioneiro do meu próprio corpo, impotente enquanto aquele ... aquele ... aspecto meu ... tomou o controle de minhas ações.~
+@55 = ~Observei enquanto ele usou todos meus feitiços contra você. Eu observei quando chamou por Lolth e foi respondido. Como é horrível compreender que algo assim reside dentro da sua alma.~
+@56 = ~E agora sei o que é tentação. Pois eu fui muito poderoso na morte, <CHARNAME>. Muito poderoso mesmo. Com mais alguns dias, eu seria o mestre de Bodhi, em vez de seu escravo.~
+  @57 = ~Você deseja realmente se tornar um morto-vivo só pelo poder, Solaufein?~
+@58 = ~Não, <CHARNAME>. Alguns favores têm um alto preço.~
+@59 = ~Agora, ofereço-lhe minhas mais humildes desculpas. Sinto que te deixei na mão, ao permitir que fosse capturado e transformado em uma arma contra você.~
+@60 = ~Se eu tivesse lutado mais empenho, poderia ter derrotado a emboscada dela. Se tivesse sido mais forte moralmente, eu não teria sido tão perverso como vampiro.~
+  @61 = ~Cuide para que isso não aconteça de novo, Solaufein.~
+  @62 = ~Não foi um problema, Solaufein. Nós superamos muitos desafios juntos. Este não será o último.~
+  @63 = ~Não pense mais nisso, meu amor. Eu desafiaria o próprio inferno para  salvá-lo. E sei que você faria o mesmo por mim.~
+@64 = ~Claro, <CHARNAME>. Não falharei consigo novamente.~
+@65 = ~Obrigado por sua compaixão, <CHARNAME>.~
+@66 = ~Eu o faria num átimo. Devo confessar, <CHARNAME>, que a parte mais aterradora de ser um vampiro foi o pensamento de matar você e então passar o resto da eternidade sem sua presença.~
+@67 = ~Espero nunca mais ter de enfrentar novamente um futuro tão lúgubre assim.~
+@68 = ~Algo de bom resultou dessa derrota, contudo. Minha experiência ... muito ... pessoal com os mortos-vivos forneceu-me um grande entendimento sobre eles.~ 
+@69 = ~Descobri como golpeá-los de forma que machuque. Sei o que eles temem. E nunca mais serei capturado por eles, nem perderei minha alma para aquela corja. Juro pela Lua: nunca mais!~ 
+@70 = ~Então, <CHARNAME>. Vamos retomar nossa jornada?~
+@71 = ~Claro.~
+@72 = ~Ainda não. Espere aqui um pouco para recuperar suas forças. Voltarei em breve para buscá-lo.~
+@73 = ~Como quiser.~
+
+@80 = ~Nunca lhe perdoarei por isto, Bodhi!~
+
+// whoops, forgot to have these in the TRA file earlier
+@100 = ~Eu perdi um ... companheiro ... na batalha com sua irmã, Bodhi. Busco um meio de curá-lo.~ 
+@101 = ~Elhan!  Eu tenho o corpo meio-vampiro de um companheiro por sua causa! Por favor, fale comigo agora.~ 
+@102 = ~Um companheiro foi levado por um vampiro. O que devo esperar quando encontrá-lo?~ 
+@103 = ~Um amigo foi vítima de um vampiro. Há alguma maneira de salvá-lo?~ 
+

@@ -1,0 +1,176 @@
+// Solaufein Romance, Português (Brasil)
+// Traduzido por Allyonora
+
+@1 = ~ Solaufein ~
+@2 = ~ Quando questionado acerca de seu passado, Solaufein pouco acrescenta além daquilo que você já sabe. Como um dos poucos Drows bons, ele sempre será um pária. Solaufein prefere não falar sobre sua antiga vida em Ust Natha. A lembrança dos tempos partilhados com Phaere, antes dela voltar-se contra ele, é amarga, e a lembrança posterior do ódio e vingança dela é deveras cruel. Ainda assim, Solaufein admite ser o líder da Guilda de Homens Lutadores em Ust Natha. Ele também é um mago com talentos nada desprezíveis. Quando Phaere foi-lhe tomada, ele se tornou um fervoroso (porém secreto) seguidor de Eilistraee Silverhair. Ele costuma ter meditações melancólicas.~ 
+@3 = ~ Estou satisfeito com nosso progresso. ~
+@4 = ~ As coisas não estão progredindo como deveriam. ~
+@5 = ~ Não gosto do modo como esse grupo se comporta. ~
+@6 = ~ Não vou mais ficar num grupo desse tipo.~
+@7 = ~ ~
+@8 = ~ Pela luz de Eilistraee! ~
+@9 = ~ Aranha Vingativa ~
+@10 = ~ Archryssa ~
+@11 = ~ Raio de Luar ~
+@12 = ~ Memorização de Feitiço Lunar ~ 
+@13 = ~ Porta Dimensional ~ 
+@14 = ~ Tsuki no Ken +4 ~
+@15 = ~ Tsuki no Ken: Lâmina da Lua +4
+Segundo a lenda, essa lâmina ancestral foi originalmente forjada em Kara-Tur, por um ferreiro Tengu dotado de um estranho senso de humor. Há rumores de que ela foi dada como perdida durante muitas eras, até que acabou sob a guarda de uma alta sacerdotisa de Eilistraee. Desde então, ela foi usada pelos seguidores da Senhora Silverhair para proteger os fracos e derrotar os perversos. Foi concedida a Solaufein pela Deusa em pessoa. A lâmina brilha com uma opalescência prateada e quando usada, emite um som parecido com o farfalhar das folhas em uma floresta sombria.
+
+ESTATÍSTICAS:
+
+Habilidades Equipadas:  Ação Livre, Sorte, +2 CA Bônus, +1 ataque por rodada
+Habilidades de Combate: Cada golpe tem 25% de chance de cegar o alvo com brilho lunar e infligir 12 pontos de dano de fogo durante 3 segundos.
+PACA0:  +4 bônus
+Dano:  1D8 +4
+Tipo de dano:  corte
+Peso:  3
+Fator de velocidade:  0
+Proficiência:  Espada Longa
+Tipo:  uma mão
+Usável por:  Solaufein ~ 
+@16 = ~ Solaufein Romance for Baldur's Gate II (SoA & ToB) ~
+@22 = ~ Boo Dois ~
+@23 = ~ Return to Party ~
+@24 = ~ Liberando Boo Dois ~
+@30 = ~ Redael, Kensai do Eclipse ~
+@31 = ~ Nrodlek, Anti-Paladino do Eclipse ~
+@32 = ~ Radnuht, Bárbaro do Eclipse ~
+@33 = ~ Reffus, Clérigo do Eclipse ~
+@34 = ~ Ylekilnu, Druida do Eclipse ~
+@35 = ~ Citpeks, Feiticeiro do Eclipse ~
+@36 = ~ Eclipse Total ~
+@37 = ~ A Benção de Eilistraee ~
+@38 = ~ Lâmina do Eclipse +4 ~
+@39 = ~ Lâmina do Eclipse +4
+Essa espada maldita parece sugar a luz ao seu redor. É fria ao toque, como um metal que passou muito tempo sem ser tocado pelo sol. Essa arma foi usada pelos servos do Eclipse Profano na batalha contra <CHARNAME> e Solaufein. Sua história antes disso permanece envolta em completo mistério. 
+
+ESTATÍSTICAS:
+
+Habilidades Equipadas:  Imunidade a Cegueira, Imunidade a Projéteis, Regeneração
+Habilidades de Combate:  A vítima precisa de salvamento contra feitiços -4 ou será cegada por 80 segundos. (Todos os personagens cegos sofrem -10 em seus PACA0s.)
+PACA0:  +4 bônus
+Dano:  1D8 +4
+Tipo de dano:  corte
+Peso:  3
+Fator de Velocidade:  0
+Proficiência:  Espada Longa
+Tipo:  uma mão
+Usável por:  Somente alinhamento evil ~ 
+@40 = ~ Redentora do Eclipse +4 ~
+@41 = ~ Redentora do Eclipse +4
+Essa espada maldita parece sugar a luz ao seu redor. É fria ao toque, como um metal que passou muito tempo sem ser tocado pelo sol. Esse espécime em particular parece ser uma fraca Redentora Profana. Essa arma foi usada pelos servos do Eclipse Profano na batalha contra <CHARNAME> e Solaufein. Sua história antes disso permanece envolta em completo mistério. 
+
+ESTATÍSTICAS:
+
+Habilidades Equipadas:  Imunidade à Cegueira, Imunidade a Projéteis, Regeneração
+Habilidades de Combate:  Dissipar Magia em cada golpe. A vítima precisa de salvamento versus feitiços -4 ou será cegada por 80 segundos. (Todos os personagens cegos sofrem -10 em seus PACA0s.)
+PACA0:  +4 bônus
+Dano:  1D10 +4
+Tipo de dano:  corte
+Peso:  11
+Fator de Velocidade:  6
+Proficiência:  Montante
+Tipo:  duas mãos
+Usável por:  Somente alinhamento evil~ 
+@42 = ~ Clava do Eclipse +4 ~
+@43 = ~ Clava do Eclipse +4
+Essa clava maldita parece sugar a luz ao seu redor. É fria ao toque, como uma madeira que passou muito tempo sem ser tocada pelo sol. Essa arma foi usada pelos servos do Eclipse Profano na batalha contra <CHARNAME> e Solaufein. Sua história antes disso permanece envolta em completo mistério. 
+
+ESTATÍSTICAS:
+
+Habilidades Equipadas:  Imunidade à Cegueira, Imunidade a Projéteis, Regeneração
+Habilidade de Combate:  A vítima precisa efetuar salvamento versus feitiços -4 ou será cegada por 80 segundos. (Todos os personagens cegos sofrem -10 em seus PACA0s.)
+PACA0:  +4 bônus
+Dano:  1D6 +4
+Tipo de dano:  sem corte
+Peso:  1
+Fator de Velocidade:  0
+Proficiência:  Clava
+Tipo:  uma mão
+Usável por:  Somente alinhamento Evil~ 
+@44 = ~Eclipse Shadow Defense~
+
+@50 = ~Surfacer Poetry and Philosophy~
+@51 = ~This is Solaufein's hard-won collection of surfacer poetry and prose. It is a more or less hand-bound collection of frayed scrolls and tattered pages. The book appears to contain an extensive collection from authors like Auden, David, Moore, Rimbaud, Tickell and Wordsworth. Unfortunately, many of the more popular excerpts appear to have come to Solaufein by way of translation through Svirfneblin and Duergar tongues, lending them a somewhat morbid and twisted interpretation. Still, the tome is a monument to his dedication: possessing such an item was certainly a fatal crime in Ust Natha.~
+
+
+
+@80 = ~ Vingança da Rainha das Aranhas ~
+
+@81 = ~ Tsuki no Ken +5 ~
+@9982 = ~Tsuki no Ken: Lâmina da Lua +5
+Segundo a lenda, essa lâmina ancestral foi originalmente forjada em Kara-Tur, por um ferreiro Tengu dotado de um estranho senso de humor. Há rumores de que ela foi dada como perdida durante muitas eras, até que acabou sob a guarda de uma alta sacerdotisa de Eilistraee. Desde então, ela foi usada pelos seguidores da Senhora Silverhair para proteger os fracos e derrotar os perversos. Foi concedida a Solaufein pela Deusa em pessoa. A lâmina brilha com uma opalescência prateada e quando usada, emite um som parecido com o farfalhar das folhas em uma floresta sombria.
+
+Para ajudar Solaufein a triunfar sobre os novos e árduos desafios que o aguardam ao lado de <CHARNAME>, a lâmina foi novamente abençoada por Eilistraee com o poder da Lua Cheia. Ela emite uma forte brilho lunar e fornece proteções clericais a Solaufein.
+
+ESTATÍSTICAS:
+
+Habilidades Equipadas:  Ação Livre, Sorte, +2 CA Bônus, +1 ataque por rodada
+Habilidades Equipadas Adicionais:  Armadura da Fé, Utilizar Poder Sagrado, Proteção contra Morte, Ordens Caóticas 
+Habilidade de Combate:  Cada golpe tem 25% de chance de cegar o alvo com brilho lunar e infligir 12 pontos de dano de fogo durante 3 segundos. 
+PACA0:  +5 bônus
+Dano:  1D8 +5
+Tipo de Dano:  corte
+Peso:  3
+Fator de Velocidade:  0
+Proficiência:  Espada Longa
+Tipo:  uma mão 
+Usável por:  Solaufein ~ 
+
+
+@90 = ~ Corpo de Solaufein ~
+@91 = ~ Este é o corpo de Solaufein. Solaufein foi capturado por Bodhi e transformado em vampiro. Sua não-vida foi deveras desagradável e te obrigou a matá-lo. O que você está fazendo aí parado olhando pro corpo? Vá e ache uma forma de revivê-lo logo!~
+@92 = ~ Solaufein Morto-vivo ~
+
+
+@130 = ~ Eilistraee tomou de volta a Lâmina da Lua. Ela era só para uso de Solaufein. ~
+
+// Scripts
+@300 = ~SOLO AUTO-BUFF: ~
+@301 = ~This script will allow any spellcaster to buff rapidly when no enemies are present. Press "S" for Slow, Long-Lasting buffs (typically feitiços that last for a long time and should be cast whenever you wake up), "F" for Fast, Combat buffs (typically feitiços that last just a few rounds, use before the big fights), "D" for Ação Livre (which lasts a short time and messes up haste) and "N" for Melf's Meteors. This script also automatically drinks healing potions, detects traps, and attacks enemies (spellcasters, then mundanes).~
+
+@302 = ~PARTY AUTO-BUFF: ~
+@303 = ~This script will allow any spellcaster to buff the entire party rapidly when no enemies are present. Press "S" for Slow, Long-Lasting buffs (typically feitiços that last for a long time and should be cast whenever you wake up), "F" for Fast, Combat buffs (typically feitiços that last just a few rounds, use before the big fights), "D" for Ação Livre (which lasts a short time and messes up haste) and "N" for Melf's Meteors. Buffs will be cast on the PC first and then all other party members. Memorize six copies of any spell you want to affect everyone. This script also automatically drinks healing potions, detects traps, and attacks enemies (spellcasters, then mundanes).~
+
+@304 = ~Auto-Buff~
+
+@500 = ~ Livro de Couro usado ~
+@501 = ~ A capa desse fino volume de poesia desgastou-se durante os anos devido a intenso manuseio. Conforme você o apanha, ele cai aberto nessa página:
+
+When in disgrace with fortune and men's eyes
+I all alone beweep my outcast state,
+And trouble deaf heaven with my bootless cries,
+And look upon myself, and curse my fate,
+Wishing me like to one more rich in hope,
+Featured like him, like him with friends possessed,
+Desiring this man's art, and that man's scope,
+With what I most enjoy contented least;
+Yet in these thoughts my self almost despising,
+Haply I think on thee, and then my state,
+Like to the lark at break of day arising
+From sullen earth, sings hymns at heaven's gate;
+For thy sweet love remembered such wealth brings
+That then I scorn to change my state with kings.~
+
+// -----------------------------------------------------------------
+// Nomes de exibição dos componentes
+//
+// Estas referências são usadas pelas instruções BEGIN @n em
+// solaufeinEE.tp2 para que os nomes dos componentes apareçam no idioma
+// escolhido pelo usuário durante a instalação. Os blocos LANGUAGE
+// não ingleses carregam american/wsetup.tra como base primeiro, de
+// modo que qualquer idioma que não defina estas referências usará
+// automaticamente as strings em inglês. Traduza estas entradas no
+// wsetup.tra de cada idioma de destino para localizar o menu de
+// instalação.
+// -----------------------------------------------------------------
+
+@1000 = ~Solaufein: Personagem Principal (Obrigatório)~
+@1010 = ~Solaufein: Romance em SoA~
+@1020 = ~Solaufein: Sequência do Eclipse~
+@1030 = ~Solaufein: Solaufein Vampiro + Purificação~
+@1040 = ~Solaufein: Continuação em ToB~
+@1050 = ~Solaufein: Extras (KVFix, Multig, UHMER, Diversos)~
+@1060 = ~Solaufein: Reforço das Cenas (Opcional)~

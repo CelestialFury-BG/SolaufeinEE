@@ -1,0 +1,119 @@
+// Traducido y repasado por equip de trad del Almas Torturadas, Clan REO, y Riojano
+
+// Solaufein Eclipse Enemies
+
+// Radael, the Eclipse Kensai
+// Nrodlek, the Eclilpse Ant-Paladin
+// Radnuht, the Eclipse Barbarian
+// Reffus, the Eclipse Cleric
+// Ylekilnu, the Eclipse Druid
+// Citpeks, the Eclipse Sorcerer
+
+@1 = ~*Ejem* ¿Qué toca hoy, entonces? Ah, Solaufein y el Engendro de Bhaal. Soy Redael, sirviente del Eclipse Sacrílego y un impresionante y omnisciente individuo.~
+  @2 = ~Un poco de seriedad. ¿Me estás amenazando?~
+  @3 = ~(Bostezo) ¿Dónde he escuchado esto antes?~
+  @4 = ~Hola, Redael. Mi grupo y yo te saludamos en son de paz.~
+  @5 = ~(Atacas mientras Redael habla)~
+
+@6 = ~Lo sé, lo sé. Probablemente la gente te diga cosas por el estilo todo el tiempo. Un misterioso concilio de no más de seis humanoides se teleportan al área y tratan de matarte por alguna extraña razón. Y por un increíble golpe del destino, los matas tú. A nosotros nos pasa lo mismo.~
+
+@99 = ~¿Te has fijado en cómo te has quedado paralizado con nuestra rapidísima entrada mientras nosotros tomábamos posiciones? ¿No te da rabia?~ ~¿Te has fijado en cómo te has quedado paralizada con nuestra rapidísima entrada mientras nosotros tomábamos posiciones? ¿No te da rabia?~
+
+@7 = ~Sí. Desafortunadamente para tí, nos hemos interesado por el increíble progreso de Solaufein. Por su culpa, la luna de Eilistraee se alza esperanzadora ante todos los drows de buen corazón.~
+
+@8 = ~¿Paz? Si eso es lo que deseas. ¿Esto terminará en violencia?~
+
+@9 = ~Como sirvientes del Eclipse Sacrílego, no podemos permitir que esto ocurra. Acabaremos contigo y mataremos a Solaufein. Apagaremos la luz de la luna de su alma para siempre.~
+  @10 = ~Ya sabes, esto ya lo han intentado antes.~
+  @11 = ~¡Defenderemos a Solaufein hasta el fin! ¡Preparaos!~
+
+@12 = ~¡Sí, pero no nosotros! ¿Te has fijado en nuestros elegantes uniformes? ¿No te gustaría que tu grupo se viese así de imponente? (Reffus, ¿podrías empezar a tararear nuestra música dramática?)~
+
+  @13 = ~Oye, jefe, puede que no parezcan muchos, pero tienen la Carsomyr. ¿Estás seguro de que podemos acabar con ellos?~
+  @14 = ~Nrodlek, quizás no deberías tener ese aspecto, pero *así es*. Un Vengador Sacrilego, eso es. Estoy seguro de que estaremos bien.~
+
+@15 = ~Vaya, esta es la parte mas tonta del encuentro. Si mi guión no está equivocado ahora debería poner posturitas y sacar pecho.~
+
+  @16 = ~Esto... jefe, tienen la Furia Celestial. ¿Estás seguro de que podemos encargarnos de ellos?~
+  @17 = ~Hey, ¿quien es el lider? En serio, podemos hacerlo.~
+
+@18 = ~Y mientras estáis perdiendo el tiempo aquí, todas las protecciones contra la magia que habíamos colocado cuidadosamente se están dispersando. No puedo creer que te hayan elegido como líder en vez de a mí.~
+
+@19 = ~¡Puedo, magito! Cuendo tengas una Mano, un Ojo y una Túnica que se llamen como tú, a lo mejor puedes discutir mi punto de vista. En serio ¿te has dado cuenta de que los conjuros nunca funcionan mientras hablas?~
+
+  @20 = ~En lo que respecta a la Túnica de Vecna, ellos la tienen y yo no. Estarán lanzando hechizos antes de que puedas parpadear. ¿Estamos a la altura de la situación?~
+
+  @21 = ~Sí, mi cínico amigo. Estamos preparados. Estoy seguro de que tus conjuros serán lo suficientemente rápidos.~
+
+@22 = ~Como decía, servimos al Eclipse Sacrílego. Nuestro oscuro patron nos ha otorgado el poder de caminar por las corrientes del tiempo mientras tú te quedas quieto.~
+
+@23 = ~Hey, les estás revelando todos nuestros secretos. ¿No anula esto la ventaja de nuestra emboscada sorpresa?~
+
+@24 = ~(suspiro) No, no... no pasará nada. Además, he sido misteriosamente críptico. Estoy seguro de que ellos no tienen ni idea de lo que se les viene encima.~
+
+  @25 = ~Esto... ¿ése es Crom Faeyr, el martillo de Bargênta? Estos chicos deben ser muy fuertes. Estoy empezando a preocuparme.~
+  @26 = ~¿No he tenido siempre razón en el pasado? No te preocupes, podemos ocuparnos de estos payasos.~
+
+@27 = ~Sé que deberíamos haber seguido mi plan en vez de éste. ¡Ya les habríamos capturado!~
+
+@28 = ~Ylekilnu, tu plan era cavar una trampa de foso y esperar a que cayeran. Hazme caso, estos chicos no caerían en semejante trampa.~
+
+@29 = ~Me preguntaba, <CHARNAME>. ¿Tienes tú estos problemas entre tus filas?~
+
+  @30 = ~No, yo lidero con puño de hierro.~
+  @31 = ~No, nuestro respeto mutuo y experiencia nos mantiene unidos.~
+  @32 = ~Sí, a veces. Pero al final siempre sale bien.~
+
+@33 = ~Debería haberlo sabido. (Ja, ¿no te encantan estas respuestas ambiguas? Me evita el tener que pensar en una original.)~
+
+@34 = ~Sea como sea, pasamos algo de tiempo atacando a otros aventureros y saqueandolos, igual que tú (pero somos más atractivos). Hemos aprendido de los errores de los demás y nuestro plan es perfecto.~
+
+  @35 = ~Jefe, han combinado la Saqueadora con el Mango de Serpiente. No quiero que me decapiten. ¿No podemos volver a casa?~
+  @36 = ~¡No, no, no! Estarás bien, jamás tendrán la oportunidad de tocarte. Y si lo hacen te resucitaré. ¡Tú! Como decía...~
+
+@37 = ~Por ejemplo, hemos preparado nuestros conjuros antes de la batalla. ¿No te gusta pegarle palizas a los magos enemigos antes de que se lancen Piel pétrea o Proteccion contra las armas mágicas?~
+
+@38 = ~¡Oye! Te dije que nunca he estado orgulloso de esa estrategia. Cortesía profesional, y todo eso.~
+
+  @39 = ~Hey jefe, eso parece el Daño de Enemigos junto a la Vaina de Fflar. He oído cosas horribles sobre esa combinación.~
+  @40 = ~Confía en mi, todavía podemos ganarles. ¿No me digas que tienes miedo del Drenaje Menor de Larloch?~
+
+@41 = ~Ademas, protegemos a nuestro Kensai (y ese soy yo) con Armadura Espiritual para suplir esa armadura que no puede llevar. Sabemos lanzar Brecha contra Piel pétrea y Proteccion contra las armas mágicas. Y sabemos lanzar Palabra Secreta contra defensas mágicas.~
+
+  @42 = ~En serio, tu inteligencia es increíble.~
+  @43 = ~Nada de eso puede ayudarte.~
+  @44 = ~Y veo que llevas puesto el Fajín del Ego Gigante.~
+
+@45 = ~Espera hasta que me vaya. ¿Dónde estaba?~
+@46 = ~Quizá no, pero no puede hacernos daño.~
+@47 = ~¡No está mal! Deja que apunte eso. Al menos no es el Fajín de la Superioridad Moral. Nada de tonterías.~
+
+@48 = ~Nos esforzamos en ignorar a los monstruos invocados, atacar a los miembros del grupo que parecen débiles, y usar monólogos flotantes para revelar todos nuestros planes antes de llevarlos a cabo. Sabemos que Acelerar Mejorado gana a Torbellino, que la Espada de Mordenkainen golpea duramente y que Aliento de Dragón parece afectar a todo lo que toca.~
+
+@49 = ~No parecemos muy buena gente.~
+
+@50 = ~No somos personas agradables, sino bandidos disfrazados de clérigos... ¿o era al revés? Los buenos aventureros atacan dividiendo sus fuerzas en pequeños grupos fáciles de combatir. Además lo hacen en pasillos estrechos, para que sólo los guerreros de primera línea corran peligro mientras el resto de su grupo usa ataques a distancia desde un lugar seguro.~
+
+@51 = ~Ascendimos desde nuestros humildes orígenes. Todavía puedo recordar la época en la que pasábamos todo el tiempo transportando inútiles paquetes de aquí para allá entre gente que vivía a pocos metros de distancia. Ah, mi primera espada débilmente encantada. Qué días aquellos.~
+
+@52 = ~De todos modos, el guión dice que es la hora de dejar de presumir y contarte accidentalmente nuestras debilidades secretas antes de que empiece la lucha.~
+
+@53 = ~¿No podemos saltarnos esta parte, sólo por esta vez?~
+
+@54 = ~Sí, así es. ¿Alguna vez os habéis dado cuenta de cómo los vampiros siempre parecen dejar estacas y armas disruptoras tiradas por sus mazmorras? Si yo fuera el líder de los vampiros de una ciudad prohibiría cualquier uso de la madera. Vamos, ¿hay que ser tan listo?~
+
+@55 = ~¿Y te das cuenta de que las guaridas de los dragones rojos están repletas de objetos y pociones que aumentan la resistencia al fuego? ¿O de que los golem mágicos siempre están precedidos de un curioso almacén de armas no mágicas? ¿Y de que siempre puedes dormir al otro lado de la puerta tras la que está tu más temible enemigo sin que se dé cuenta?~
+
+@56 = ~¡Bien, no hay regalos para tí! Estamos aquí por...~
+
+@57 = ~Muchachos, ¿por qué estamos aquí?~
+
+@58 = ~¡Solaufein! ¡Y el botín!~
+
+@59 = ~Eso es, somos sirvientes del Eclipse Sacrílego. Estamos aquí por Solaufein. Ni siquiera vamos a perder el tiempo pidiéndote que nos lo entregues.~
+
+@60 = ~¡Bailemos!~
+
+@61 = ~¡Eilistraee, defiéndeme!~
+
+@62 = ~¡Hey, Redael, despierta!~

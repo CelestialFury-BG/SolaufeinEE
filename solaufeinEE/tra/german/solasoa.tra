@@ -1,0 +1,86 @@
+// jon in tree of life
+@1 = ~Ich wollte Euch zu diesem langerwarteten Sieg gratulieren, <CHARNAME>, aber etwas in Euren Augen sagt mir, dass noch nicht alles vorbei ist.~
+// welcome to hell
+@2 = ~Als Ihr am Baum des Lebens zusammengebrochen und niedergestürzt seid, fühlte ich mich, als hätte mein Geist meinen Körper verlassen. Ich sah die Erscheinung eines silbernene Leuchtens, die mich aufforderte, Euch zu folgen, und ich wusste, es war das Richtige.~
+@3 = ~Und dennoch... Ich bin fast sicher, dass ich das Kichern einer Spinne gehört habe, als ich hier ankam. Ich werde Euch nicht verlassen, <CHARNAME>, aber wir müssen uns an diesem Ort dennoch vorsichtig bewegen.~
+
+// pre tree of life, remorse romance
+@4 = ~Solaufein, melancholisch und anmutig, war bei Euch seit dem Unterreich. Während Eurer Gespräche und auf Euren Reisen hat er begonnen, Mitleid und Reue zu spüren. Aber ist das wirklich sein Kampf?~
+@5 = ~Solaufein ... Ich ---~
+
+@6 = ~Sagt nichts, <CHARNAME>. Ihr wisst, ich würde mit Euch zur Hölle und zurück gehen, wenn es notwendig wäre. Ich werde Euch vor dem letzten Kampf nicht verlassen.~
+@7 = ~Aber ich denke, dass es hier eher darum geht, dass Ihr um mein Leben fürchtet, als dass Ihr meine Loyalität bezweifelt. Es erscheint immer falsch, Freunde in Gefahr zu bringen, oder?~
+@8 = ~Lasst mich ein Gedicht über den Tod mit Euch teilen, <CHARNAME>, denn ich fürchte die Große Schwelle nicht. Besonders dann, wenn ich mich bei vollem Bewusstsein darauf zu bewege und genau das Gewicht und die Folgen meiner Taten kenne.~
+@9 = ~
+Abendrot und Abendstern,
+   Und ein heller Ruf nach mir!
+Und möcht' die Strände nicht klagen hör'n,
+   Wenn ich zieh hinaus auf's Meer,
+
+Aber der Gezeiten Fluss zu schlummern scheint,
+   Zu erfüllt für Klang und Gischt,
+Wenn, was aus endloser Tiefe steigt,
+   Zurück in seine Heimat fließt.~
+@10 = ~
+Dämmerung und Abendgeläut,
+   Und drauf die Dunkelheit!
+Ohne Trauer und zum Abschied dann bereit,
+   Wenn ich das Schiff besteig;
+
+Auch wenn aus unserm Bach von Zeit und Raum
+   Die Flut mich trage weit,
+Hoff' ich, meines Lotsen Angesicht zu schaun,
+   Wenn ich die Schwelle überschreit.~
+@11 = ~Kommt, mein Geliebter. Lasst uns unseren Ängsten gemeinsam entgegentreten.~
+~Kommt, meine Geliebte. Lasst uns unseren Ängsten gemeinsam entgegentreten.~
+
+// pre tree of life, pragmatic romance
+@12 = ~Solaufein, melancholisch und anmutig, war bei Euch seit dem Unterreich. Während Eurer Gespräche und auf Euren Reisen hat er begonnen, Pragmatismus und Effizienz zu verkörpern. Aber ist das wirklich sein Kampf?~
+@13 = ~Sagt nichts, <CHARNAME>. Ihr wisst, ich würde mit Euch zur Hölle und zurück gehen, wenn es notwendig wäre. Ich werde Euch vor dem letzten Kampf nicht verlassen.~
+@14 = ~Ihr habt mich gelehrt, wie wichtig es ist, Ziele zu erreichen. Manchmal müssen in der Hitze des Kampfes Bauernopfer gebracht werden... und obwohl ich kein Bauer bin, würde ich mit Freude mein Leben geben, damit Eure Seele wiederhergestellt wird.~
+@15 = ~Ich möchte ein Gedicht von der Oberfläche mit Euch teilen, <CHARNAME>, über Gefährten, Dienst und Tod.~
+@9916 = ~
+Mein Leben stand - eine
+Geladene Waffe -
+In Ecken - bis eines Tages
+Der Besitzer kam - erkannte -
+Und mich hinwegnahm -
+
+Und nun streifen wir durch
+Unberührte Wälder -
+Und nun jagen wir die Ricke -
+Und immer, wenn ich für ihn spreche
+Summt Antwort mir die Luft -~
+@9917 = ~
+Und lächle ich, solch
+Herzlich Licht
+Über dem Tale glüht -
+Es ist als ob Vesuvs Gesicht
+Breitete sein Vergnügen aus
+
+Und wenn zur Nacht - unser
+Tagwerk wohl vollbracht -
+Ich meines Meisters Haupt bewache -
+Ist es besser als der Eiderenten
+tiefes Kissen - sich zu teilen -~
+@18 = ~
+Seines Feindes - tödlich Feind bin ich -
+Keiner rührt sich ein zweites Mal
+Auf den mein wachsames Auge fällt -
+Oder ein energischer Finger -
+
+Auch wenn ich länger als er - könnte leben
+Muss er länger - als ich -
+Denn ich habe nur die Macht zu töten
+Ohne - die Macht zu sterben -~
+@19 = ~Ich bin keine unsterbliche Waffe, <CHARNAME>, aber ich werde dennoch gleichrangig an Eurer Seite dienen. Lasst es beginnen, mein Geliebter, und ich werde sehen, wie es ausgeht.~
+~Ich bin keine unsterbliche Waffe, <CHARNAME>, aber ich werde dennoch gleichrangig an Eurer Seite dienen. Lasst es beginnen, meine Geliebte, und ich werde sehen, wie es ausgeht.~
+
+// pre tree of life, no romance
+@20 = ~Solaufein, melancholisch und anmutig, war bei Euch seit dem Unterreich. Während Eurer Gespräche und auf Euren Reisen hat er bewiesen, dass er ein effektiver Kämpfer und ein begabter Magier ist.~
+@21 = ~Solaufein, das ist nicht Euer Kampf. Mit der Rückgabe der Lanthorne und dem Sieg über Irenicus' Streitkräfte haben wir Ardulaces Pläne vereitelt. Ihr müsst nicht weitergehen.~
+@22 = ~Wir sind weit gekommen seit Ust Natha, Solaufein. Vielleicht weiter, als Ihr reisen wolltet. Unser nächster Kampf wird nicht einfach werden. Seid Ihr sicher, dass Ihr das wollt?~
+@23 = ~Los, lasst uns einen verrückten ehemaligen Elfen töten und meine Seele wiederholen, Solaufein!~
+  @24 = ~Genau meine Gedanken, <CHARNAME>!~
+@25 = ~Ich werde Euch jetzt nicht verlassen, <CHARNAME>. Das ist mein Kampf, genauso wie es der Eure ist. Ich bin Euer Werkzeug dabei, verwendet mich gut.~
+@26 = ~Ich hatte mir auf unserer gemeinsamen Reise mehr erhofft, aber ich bin dennoch glücklich über mein Leben auf der Oberfläche. Ich werde Euch folgen.~
