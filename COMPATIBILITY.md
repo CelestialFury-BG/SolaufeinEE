@@ -1,7 +1,3 @@
-Here's a polished, publication-ready section. All references to specific modders are gone; the issues are framed as technical patterns common to legacy-ported mods. You can paste this directly into your `README.md`.
-
----
-
 ## A Note on Legacy Ports and This Edition
 
 There are several community builds of the Solaufein mod in circulation. This section explains how this edition differs technically from legacy ports — not to critique any particular author's work, but because the differences determine whether the mod installs cleanly on a modern Enhanced Edition setup.
