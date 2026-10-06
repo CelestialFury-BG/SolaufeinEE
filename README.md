@@ -23,6 +23,10 @@ Key features:
 
 ## What's New in This Edition
 
+For a detailed technical comparison of how this edition differs from legacy
+builds of the same mod — including install safety, cross-platform behavior,
+and load-order compatibility — see [COMPATIBILITY.md](COMPATIBILITY.md).
+
 The **2.x modernization** fixes a long list of legacy issues that plagued the original mod on EE installs:
 
 - **Per-dialogue TRA scoping** — eliminates string-reference collisions that silently corrupted dialogue text
