@@ -1,0 +1,177 @@
+/////////////////////////////////////////////////////////////////////
+// Radael, 24th level Eclipse Kensai
+//
+// Comments: 
+// Part of a challenge for Solaufein. Notably, this group casts
+// a time-stop like effect every few rounds. 
+/////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+// Battle Prep!
+/////////////////////////////////////////////////////////////////////
+IF
+	Global("Prep","LOCALS",0)
+THEN
+	RESPONSE #100
+          SetGlobal("Prep","LOCALS",1)
+          SetGlobal("Smite","LOCALS",1)
+          SetGlobal("CriticalStrike","LOCALS",2)
+          SetGlobalTimer("Cast","LOCALS",0)
+          GiveItemCreate("potn34",Myself,1,0,0)
+          UseItem("potn34",Myself)
+          Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Heal!
+/////////////////////////////////////////////////////////////////////
+IF
+	GlobalTimerExpired("Cast","LOCALS")
+        HPPercentLT(Myself,80)
+        HasItem("potn55",Myself)
+THEN    
+        RESPONSE #100
+          UseItem("potn55",Myself)
+          SetGlobalTimer("Cast","LOCALS",6)
+          Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Get help from the cleric!
+/////////////////////////////////////////////////////////////////////
+IF
+        HPPercentLT(Myself,40)
+        !Dead("solae4")
+	GlobalGT("SolaE4Heal","GLOBAL",0)
+        Allegiance(Myself,ENEMY)
+THEN    
+        RESPONSE #100
+          MoveToObject("solae4")
+END
+
+/////////////////////////////////////////////////////////////////////
+// just run away and hope to regenerate if the cleric is dead
+/////////////////////////////////////////////////////////////////////
+IF
+        HPPercentLT(Myself,40)
+        !See("solae4")
+THEN    
+        RESPONSE #100
+          RunAwayFrom(NearestEnemyOf(Myself),6)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Smite!
+/////////////////////////////////////////////////////////////////////
+IF
+	GlobalTimerExpired("Cast","LOCALS")
+	GlobalGT("Smite","LOCALS",0)
+        Range(NearestEnemyOfType([PC]),9)
+THEN    
+        RESPONSE #100
+          SetGlobalTimer("Cast","LOCALS",6)
+          IncrementGlobal("Smite","LOCALS",-1)
+          ReallyForceSpell(Myself,4909)
+          Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Critical Strike!
+/////////////////////////////////////////////////////////////////////
+IF
+	GlobalTimerExpired("Cast","LOCALS")
+	GlobalGT("CriticalStrike","LOCALS",0)
+        Range(NearestEnemyOfType([PC]),9)
+THEN    
+        RESPONSE #100
+          SetGlobalTimer("Cast","LOCALS",6)
+          IncrementGlobal("CriticalStrike","LOCALS",-1)
+          ReallyForceSpell(Myself,4905)
+          Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Kai!
+/////////////////////////////////////////////////////////////////////
+IF
+	GlobalTimerExpired("Cast","LOCALS")
+        HaveSpell(KENSAI_KIA)
+        Range(NearestEnemyOfType([PC]),9)
+THEN    
+        RESPONSE #100
+          SetGlobalTimer("Cast","LOCALS",6)
+          Spell(Myself,KENSAI_KIA)
+END
+
+/////////////////////////////////////////////////////////////////////
+// BARBARIAN_RAGE
+/////////////////////////////////////////////////////////////////////
+IF
+	GlobalTimerExpired("Cast","LOCALS")
+        HaveSpell(BARBARIAN_RAGE)
+THEN    
+        RESPONSE #100
+          SetGlobalTimer("Cast","LOCALS",6)
+          Spell(Myself,BARBARIAN_RAGE)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Attack mages.
+/////////////////////////////////////////////////////////////////////
+IF
+	OR(4)
+          See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+          See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+          See(NearestEnemyOfType([0.0.0.DRUID_ALL]))
+          See(NearestEnemyOfType([0.0.0.BARD_ALL]))
+        !Allegiance(LastSeenBy(Myself),ENEMY)
+THEN
+	RESPONSE #100
+		Attack(LastSeenBy(Myself))
+	RESPONSE #100
+                Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Attack easy targets.
+/////////////////////////////////////////////////////////////////////
+IF
+	See(WorstAC)
+        Allegiance(Myself,ENEMY)
+        !Allegiance(LastSeenBy(Myself),ENEMY)
+THEN
+	RESPONSE #100
+		Attack(LastSeenBy(Myself))
+END
+
+/////////////////////////////////////////////////////////////////////
+// Attack party members.
+/////////////////////////////////////////////////////////////////////
+IF
+	See(NearestEnemyOfType([PC]))
+        !Allegiance(LastSeenBy(Myself),ENEMY)
+THEN
+	RESPONSE #100
+		Attack(LastSeenBy(Myself))
+END
+
+/////////////////////////////////////////////////////////////////////
+// Attack whatever ...
+/////////////////////////////////////////////////////////////////////
+IF
+	See(NearestEnemyOf(Myself))
+        !Allegiance(LastSeenBy(Myself),ENEMY)
+THEN
+	RESPONSE #100
+		Attack(LastSeenBy(Myself))
+END
+
+/////////////////////////////////////////////////////////////////////
+// Attack Player1. 
+/////////////////////////////////////////////////////////////////////
+IF
+        Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Attack(Player1)
+END
