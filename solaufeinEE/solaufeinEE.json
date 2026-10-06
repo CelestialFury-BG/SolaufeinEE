@@ -7,8 +7,8 @@
   "category": "NPCs",
   "tags": ["REC", "ADV", "COS", "QoL"],
   "supported_games": ["bg2ee", "eet"],
-  "homepage": "https://github.com/YOUR-USERNAME/Solarom-Mod",
-  "download": "https://github.com/YOUR-USERNAME/Solarom-Mod/releases",
+  "homepage": "https://github.com/CelestialFury-BG/SolaufeinEE",
+  "download": "https://github.com/CelestialFury-BG/SolaufeinEE/releases/tag/v2.1.2",
   "readme": "solaufeinEE/readme-ee_updates.md",
   "languages": [
     { "index": 0, "name": "English", "dir": "american" },
