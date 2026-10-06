@@ -5,17 +5,12 @@ on:
     types: [published]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Create WeiDU Mod Packages
-        uses: InfinityTools/WeiduModPackager@master
-        with:
-          mod-folder: 'solaufeinEE'
-          tp2-file: 'setup-solaufeinEE.tp2'
-          package-type: 'all'
-          version-type: 'tp2'
-          mod-path: '.'
+  call_workflow:
+    permissions:
+      contents: write
+    uses: InfinityTools/WeiduModPackagerLibrary/.github/workflows/WeiduModPackagerLibrary.yml@master
+    with:
+      type: multi
+      naming: ini
+      tp2_name: 'setup-solaufeinEE.tp2'
+      suffix: version
