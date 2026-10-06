@@ -1,0 +1,33 @@
+IF
+  Delay(6)
+  OR(6)
+    HasItemEquiped("solablad",Player1) 
+    HasItemEquiped("solablad",Player2) 
+    HasItemEquiped("solablad",Player3) 
+    HasItemEquiped("solablad",Player4) 
+    HasItemEquiped("solablad",Player5) 
+    HasItemEquiped("solablad",Player6) 
+  !HasItemEquiped("solablad","sola") 
+  !HasItemEquiped("solablad","solaufein") 
+THEN
+  RESPONSE #100
+    DisplayStringHeadOwner("solablad",@130)
+    TakePartyItem("solablad")
+END
+
+IF
+  Delay(6)
+  OR(6)
+    HasItemEquiped("solabla2",Player1) 
+    HasItemEquiped("solabla2",Player2) 
+    HasItemEquiped("solabla2",Player3) 
+    HasItemEquiped("solabla2",Player4) 
+    HasItemEquiped("solabla2",Player5) 
+    HasItemEquiped("solabla2",Player6) 
+  !HasItemEquiped("solabla2","sola") 
+  !HasItemEquiped("solabla2","solaufein") 
+THEN
+  RESPONSE #100
+    DisplayStringHeadOwner("solabla2",@130)
+    TakePartyItem("solabla2")
+END

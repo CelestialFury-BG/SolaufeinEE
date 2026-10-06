@@ -1,0 +1,124 @@
+//////////////////////////////////////////////////////////////
+// EE_CRE_CLEANUP — Modern Creature Auto‑Patcher for EE/EET //
+//////////////////////////////////////////////////////////////
+
+DEFINE_PATCH_FUNCTION EE_CRE_CLEANUP BEGIN
+
+  //////////////////////////////////////////////////////////
+  // 1. Fix Animation IDs (BG2 → EE)
+  //////////////////////////////////////////////////////////
+  READ_SHORT 0x20 old_anim
+  SET new_anim = old_anim // Fallback default
+
+  PATCH_MATCH old_anim WITH
+    0x6400 BEGIN SET new_anim = 0x6B00 END // elf → EE elf
+    0x6700 BEGIN SET new_anim = 0x6E00 END // drow → EE drow
+    0x7A00 BEGIN SET new_anim = 0x7F00 END // fiend → EE fiend
+    0x6C00 BEGIN SET new_anim = 0x7300 END // vampire → EE vampire
+    0x6D00 BEGIN SET new_anim = 0x7400 END // lich → EE lich
+    DEFAULT 
+  END
+  WRITE_SHORT 0x20 new_anim
+
+  //////////////////////////////////////////////////////////
+  // 2. FIXED: Universal Audio Purge & Noober Soundset Eraser
+  // Force-wipes shared BioWare commoner barks from ALL patched .cre structures
+  //////////////////////////////////////////////////////////
+  SET sound_slots_count = 100
+  FOR (slot = 0; slot < sound_slots_count; ++slot) BEGIN
+    SET current_offset = 0xA4 + (slot * 4) // Sound parameters initiate at 0xA4
+    PATCH_IF (current_offset >= 0xA4 AND current_offset < 0x244) BEGIN 
+      READ_LONG current_offset str_ref
+      // Targets any legacy soundset slots safely without touching the Name/Bio fields
+      PATCH_IF (str_ref >= 0 AND str_ref < 200000) BEGIN 
+        WRITE_LONG current_offset (0 - 1) // Securely overwrites with -1 (Clean/No Sound String)
+      END
+    END
+  END
+
+  //////////////////////////////////////////////////////////
+  // 3. Remove Deprecated Effects Safely
+  //////////////////////////////////////////////////////////
+  LPF DELETE_EFFECT INT_VAR match_opcode = 142 END // old portrait icon
+  LPF DELETE_EFFECT INT_VAR match_opcode = 215 END // old proficiency effect
+  LPF DELETE_EFFECT INT_VAR match_opcode = 248 END // removed engine effect
+  LPF DELETE_EFFECT INT_VAR match_opcode = 267 END // removed engine effect
+
+  //////////////////////////////////////////////////////////
+  // 4. Normalize Script Names (Enforce Lowercase for Linux)
+  //////////////////////////////////////////////////////////
+  SET script_offsets_count = 6
+  PATCH_DEFINE_ARRAY script_slots BEGIN 0x248 0x250 0x258 0x260 0x268 0x270 END
+
+  FOR (i = 0; i < script_offsets_count; ++i) BEGIN
+    SET offset = $script_slots(~%i%~)
+    PATCH_IF (offset > 0) BEGIN
+      READ_ASCII offset scr (8)
+      PATCH_IF (NOT ~%scr%~ STRING_EQUAL ~~) BEGIN
+        TO_LOWER scr
+        WRITE_ASCIIE offset ~%scr%~ #8
+      END
+    END
+  END
+
+  //////////////////////////////////////////////////////////
+  // 5. Normalize Death Variables (lowercase, cross-platform safe)
+  //////////////////////////////////////////////////////////
+  READ_ASCII 0x280 deathvar (32)
+  PATCH_IF (NOT ~%deathvar%~ STRING_EQUAL ~~) BEGIN
+    TO_LOWER deathvar
+    WRITE_ASCIIE 0x280 ~%deathvar%~ #32
+  END
+
+  //////////////////////////////////////////////////////////
+  // 6. Ensure CRE has valid XP and saving throws
+  //////////////////////////////////////////////////////////
+  READ_LONG 0x2CC xp
+  PATCH_IF (xp < 0) BEGIN
+    WRITE_LONG 0x2CC 0
+  END
+
+  // Fix invalid saving throws (EE clamps to 0–20)
+  SET save_offsets_count = 5
+  PATCH_DEFINE_ARRAY save_offsets BEGIN 0x2D0 0x2D2 0x2D4 0x2D6 0x2D8 END
+
+  FOR (j = 0; j < save_offsets_count; ++j) BEGIN
+    SET offset = $save_offsets(~%j%~)
+    PATCH_IF (offset > 0) BEGIN
+      READ_SHORT offset sv
+      PATCH_IF (sv < 0) BEGIN
+        WRITE_SHORT offset 10
+      END
+      PATCH_IF (sv > 20) BEGIN
+        WRITE_SHORT offset 20
+      END
+    END
+  END
+
+END
+
+//////////////////////////////////////////////////////////////
+//  7. EE_PURGE_BROKEN_SPELLS
+//
+// Removes known-spell entries whose resref is null/empty. These
+// crept in during the BG→EE port when the original mod's spell
+// references were not preserved. Safe to run on any CRE; only
+// touches entries with empty resrefs.
+//////////////////////////////////////////////////////////////
+
+DEFINE_PATCH_FUNCTION ee_purge_broken_spells BEGIN
+  READ_LONG 0x2A0 known_count
+  READ_LONG 0x2A4 known_offset
+
+  PATCH_IF (known_count > 0 AND known_offset > 0) BEGIN
+    SET i = known_count - 1
+    WHILE (i >= 0) BEGIN
+      SET entry = known_offset + (i * 0x10)
+      READ_ASCII entry resref (8)
+      PATCH_IF (~%resref%~ STRING_EQUAL ~~) BEGIN
+        DELETE_BYTES entry 0x10
+      END
+      SET i = i - 1
+    END
+  END
+END
