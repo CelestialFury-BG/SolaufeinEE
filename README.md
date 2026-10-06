@@ -6,7 +6,7 @@
 
 ## What Is This?
 
-The **Solaufein Romance** mod adds Solaufein — the Drow fighter/mage from Ust Natha — as a fully joinable party companion in Baldur's Gate II. Beyond recruiting him, the mod weaves an extensive romantic storyline with a strong philosophical bent: Solaufein is a redeemed Drow, a worshipper of Eilistraee, and a man reconciling himself with the surface world.
+The **Solaufein** mod adds Solaufein — the Drow fighter/mage from Ust Natha — as a fully joinable party companion in Baldur's Gate II. Beyond recruiting him, the mod weaves an extensive romantic storyline with a strong philosophical bent: Solaufein is a redeemed Drow, a worshipper of Eilistraee, and a man reconciling himself with the surface world.
 
 Originally released by Weimer in the early 2000s, this edition is a ground-up technical modernization. The **content is preserved exactly** — every dialogue, every quest, every banter, every poem — but the underlying WeiDU code has been rebuilt to work reliably on modern Enhanced Edition installs.
 
