@@ -1,0 +1,80 @@
+Here's a polished, publication-ready section. All references to specific modders are gone; the issues are framed as technical patterns common to legacy-ported mods. You can paste this directly into your `README.md`.
+
+---
+
+## A Note on Legacy Ports and This Edition
+
+There are several community builds of the Solaufein mod in circulation. This section explains how this edition differs technically from legacy ports — not to critique any particular author's work, but because the differences determine whether the mod installs cleanly on a modern Enhanced Edition setup.
+
+**All builds preserve the original Weimer content.** Every dialogue, banter, quest, item, and epilogue text is intact. If you only care about the writing, any build will show it to you.
+
+**The technical foundation is where builds diverge.** Legacy ports were written for the original BG2 engine (2000–2013) and then moved to EE with minimal changes. This edition was rebuilt from the ground up for BG2EE and EET specifically.
+
+### What Legacy Ports Typically Do
+
+Most pre-EE mods, and the ports derived from them, share a common set of patterns that worked fine on the original engine but create problems on EE:
+
+| Legacy Pattern | Why It Was Fine Then | Why It Matters on EE |
+|---|---|---|
+| Mixed-case filenames (`SOLABLAD.ITM` referenced as `solablad.itm`) | Windows is case-insensitive | Aborts install on Linux and macOS |
+| `Setup-` TP2 prefix (capital S) | Manual `weidu.exe` invocation | Breaks auto-discovery in Project Infinity and modern packagers |
+| No `HANDLE_CHARSETS` directive | One system codepage per user | Russian and Chinese TRAs render as mojibake on modern systems |
+| Unconditional `COPY` to `override/` | Mods were installed one at a time | Clobbers shared tables that other mods depend on |
+| No `PRETTY_PRINT_2DA` on appends | The engine tolerated ragged columns | Column misalignment breaks subsequent mod parsing |
+| Raw `WRITE_ASCII`/`WRITE_LONG` on binary offsets | The offset was stable for the BG2 file format | Corrupts files if the shipped EE format differs |
+| `AUTO_TRA` for translations | Single TRA namespace worked | Silent string collisions when multiple TRA files define the same `@n` |
+| Single monolithic component | Players wanted one install click | No dependency verification, no partial installs, no modularity |
+| Static string pointers for ToB epilogues | String resources were stable | Epilogues misalign or display wrong text after EE patches |
+
+### What This Edition Does Differently
+
+Every item above has a corresponding fix in this edition:
+
+- **All-lowercase filenames** — installs cleanly on Windows, Linux, and macOS
+- **`setup-solaufeinEE.tp2`** — auto-detected by Project Infinity and WeiduModPackager
+- **`HANDLE_CHARSETS`** — every translation reads as UTF-8 natively, regardless of the installing system's codepage
+- **`BUT_ONLY_IF_IT_CHANGES`** on every file-modifying `COPY` — shared tables are only written when actually modified, so this mod can be installed alongside SCS, Tweaks, and anything else that patches the same files
+- **`PRETTY_PRINT_2DA`** on every 2DA patch — output matches BioWare's column-aligned format
+- **`EE_CRE_CLEANUP` / `EE_SPELL_CLEANUP` / `EE_CUTSCENE_CLEANUP`** patch functions — remap legacy animation IDs, sweep deprecated effect opcodes, and harden cutscene timing for the EE engine
+- **Per-dialogue TRA scoping** — each `.d` file compiles with only its own TRA files, eliminating cross-file `@n` collisions
+- **Seven modular components** with `DESIGNATED` IDs and verified `REQUIRE_COMPONENT` chains — you can install just the Core NPC, or the full experience, and the installer refuses invalid combinations
+- **Dynamic `RESOLVE_STR_REF` allocation** for ToB epilogues — the ending screen always displays the correct text, in any language
+
+### Full Comparison Table
+
+| Capability | Legacy Port | This Edition |
+|---|---|---|
+| Target platform | Original BG2 engine, ported forward | BG2EE / EET, designed for EE |
+| Filename casing | Mixed | All lowercase |
+| TP2 prefix | `Setup-` (capital) | `setup-` |
+| Translation encoding | System codepage | Native UTF-8 via `HANDLE_CHARSETS` |
+| Load-order safety | None | Full `BUT_ONLY_IF_IT_CHANGES` |
+| 2DA formatting | Ragged columns | `PRETTY_PRINT_2DA` |
+| Binary file writes | Raw offsets | Format-aware patching via `lib/*.tpa` |
+| Component structure | Single monolithic | Seven modular components |
+| CRE tiers | Reduced (single level) | All six original tiers + `udsola01/02` |
+| Sound slots restored | Partial | Full — includes `INITIAL_MEETING`, `LEADER`, `BORED`, `BATTLE_CRY1`, `CRITICAL_HIT` |
+| ToB Fate Spirit summon | Absent | Present via `fatesp.d` |
+| Eclipse dialogue double-fire | Present | Fixed |
+| Cross-mod compatibility checks | None | `FILE_EXISTS_IN_GAME` guards for optional dependencies |
+| Languages | 4 | 8, with layered English fallback |
+| EE cutscene hardening | None | `EE_CUTSCENE_CLEANUP` |
+| Project Infinity metadata | None or partial | Full `solaufeinEE.ini` + `solaufeinEE.json` |
+
+### Why This Matters for EE Users
+
+On a lightly modded BG2EE install running on Windows, a legacy port will often work. The problems surface when any of these are true:
+
+- **You're on Linux or macOS** — mixed-case filenames and non-UTF-8 TRAs will abort or garble the install
+- **You're running a large mod stack** — unconditional `COPY` to `override/` overwrites tables that SCS, Tweaks, or other mods have already customized
+- **You've installed another mod that ships Solaufein content** — duplicate `pdialog.2da` rows can corrupt the party menu
+- **You want to install only part of the mod** — legacy ports don't offer granular components
+- **You play in a non-English language** — legacy ports only translate the strings their original translator chose to include
+
+For all of these scenarios, this edition is the correct choice. For a Windows-only, English-only, minimal-mod install on original BG2, a legacy port will serve you fine — the content is the same either way.
+
+### A Word on the Original Engine
+
+This edition explicitly **refuses to install** on the original BG2 or on a non-EE game. This is deliberate: the binary file formats, script opcodes, and engine behavior for `StartCutSceneMode`, `StartDialogueNoSet`, and the CRE sound slot layout are all different between classic BG2 and BG2EE. Writing code that satisfies both engines means writing code that is optimal for neither. This edition commits to the EE family so that every patch, every cleanup routine, and every 2DA format assumption can be made without compromise.
+
+If you're on the original engine, a pre-EE build of Solaufein is the right choice. If you're on BG2EE or EET — which is the overwhelming majority of active installs today — this edition is built specifically for you.
