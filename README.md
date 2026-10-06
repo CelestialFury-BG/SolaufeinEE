@@ -1,4 +1,4 @@
-# Solaufein Romance — Modern EE/EET Edition
+# Solaufein — Modern EE/EET Edition
 
 > A fully modernized, modular rebuild of Weimer's classic Solaufein mod, restored for Baldur's Gate II: Enhanced Edition and EET.
 
