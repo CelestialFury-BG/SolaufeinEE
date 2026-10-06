@@ -1,0 +1,21 @@
+name: 'Solaufein Mod Packager'
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create WeiDU Mod Packages
+        uses: InfinityTools/WeiduModPackager@master
+        with:
+          mod-folder: 'solaufeinEE'
+          tp2-file: 'setup-solaufeinEE.tp2'
+          package-type: 'all'
+          version-type: 'tp2'
+          mod-path: '.'
