@@ -1,0 +1,521 @@
+/*************************************************************************
+ * Solaufein Romance Mod Pack (Modern EE/EET Edition)
+ *
+ * Original: Weimer
+ * Modernized & Verified for EE/EET compatibility
+ *************************************************************************/
+
+BACKUP ~solaufeinEE/backup~
+AUTHOR ~weimer@cs.berkeley.edu~
+VERSION ~v2.1.2~
+
+// Handle UTF-8 and non-English encodings natively across platforms
+HANDLE_CHARSETS
+
+// Prevent installation abort loops if standard expansion engine tracking tables are unpopulated
+ALLOW_MISSING ~bsarev25.dlg~
+              ~fatesp.dlg~
+              ~valenj.dlg~
+              ~bkeldo25.dlg~
+              ~ar2500.bcs~
+              ~ar2100.bcs~
+              ~ar6200.bcs~
+              ~cleanse.bcs~
+
+///////////////////////////////////////////////////////////////////////
+// Language Setup
+//
+// Each non-English LANGUAGE block loads the American English wsetup.tra
+// as a base first, then the target language's file on top. This gives
+// automatic fallback: if a translated file lacks a newly-added @n ref,
+// the English base supplies it. Without this layering, every new string
+// added to the mod would have to be re-added to all eight language
+// files or the installer would abort for that language.
+///////////////////////////////////////////////////////////////////////
+
+LANGUAGE ~American English~
+         ~american~
+         ~solaufeinEE/tra/american/wsetup.tra~
+
+LANGUAGE ~Italiano (tradotto da Luciana Stella Boscaratto)~
+         ~italian~
+         ~solaufeinEE/tra/american/wsetup.tra~
+         ~solaufeinEE/tra/italian/wsetup.tra~
+
+LANGUAGE ~Deutsche Sprache (Ubersetzung durch Falk Swoboda)~
+         ~german~
+         ~solaufeinEE/tra/american/wsetup.tra~
+         ~solaufeinEE/tra/german/wsetup.tra~
+
+LANGUAGE ~Francais (traduction de Ly Meng, Laurent Duvernet, Cocobard et Banshee)~
+         ~french~
+         ~solaufeinEE/tra/american/wsetup.tra~
+         ~solaufeinEE/tra/french/wsetup.tra~
+
+LANGUAGE ~Portuguese (traduzido por Allyonora)~
+         ~portuguese~
+         ~solaufeinEE/tra/american/wsetup.tra~
+         ~solaufeinEE/tra/portuguese/wsetup.tra~
+
+LANGUAGE ~Polski jezyk (tlumaczone przez Damiana Staniszewskiego)~
+         ~polish~
+         ~solaufeinEE/tra/american/wsetup.tra~
+         ~solaufeinEE/tra/polish/wsetup.tra~
+
+LANGUAGE ~Russky (Serdrick & aerie.ru)~
+         ~russian~
+         ~solaufeinEE/tra/american/wsetup.tra~
+         ~solaufeinEE/tra/russian/wsetup.tra~
+
+LANGUAGE ~Castellano (traducido por Clan REO)~
+         ~spanish~
+         ~solaufeinEE/tra/american/wsetup.tra~
+         ~solaufeinEE/tra/spanish/wsetup.tra~
+
+
+///////////////////////////////////////////////////////////////////////
+// Component 10: Solaufein – Core NPC (Required)
+///////////////////////////////////////////////////////////////////////
+
+BEGIN @1000
+DESIGNATED 10
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ ~This version of Solaufein requires BG2EE or EET.~
+
+INCLUDE ~solaufeinEE/lib/ee_cre_cleanup.tpa~
+INCLUDE ~solaufeinEE/lib/ee_spell_cleanup.tpa~
+INCLUDE ~solaufeinEE/lib/ee_cutscene_cleanup.tpa~
+
+APPEND ~action.ids~ ~311 MyCustomAction(O:Object*)~ UNLESS ~MyCustomAction~
+APPEND ~trigger.ids~ ~0x40D6 MyCustomTrigger(O:Object*)~ UNLESS ~MyCustomTrigger~
+
+///////////////////////////////////////////////////////////////////////
+// CREATURE FILES (Precise Translation Sheet Mapping)
+///////////////////////////////////////////////////////////////////////
+
+WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
+  COPY ~solaufeinEE/creatures/sola5.cre~  ~override/sola5.cre~
+       ~solaufeinEE/creatures/sola7.cre~  ~override/sola7.cre~
+       ~solaufeinEE/creatures/sola10.cre~ ~override/sola10.cre~
+       ~solaufeinEE/creatures/sola12.cre~ ~override/sola12.cre~
+       ~solaufeinEE/creatures/sola15.cre~ ~override/sola15.cre~
+       ~solaufeinEE/creatures/sola17.cre~ ~override/sola17.cre~
+    SAY NAME1 @1 SAY NAME2 @1 SAY BIO @2
+    // FIXED: Death variable must be "Sola" to match existing dialogue/scripts.
+    WRITE_ASCII 0x280 ~Sola~ #32
+    // FIXED: explicitly bind the dialogue file so StartDialogueNoSet has a target.
+    WRITE_ASCII 0x2C4 ~SOLA~ #8
+    LPF EE_CRE_CLEANUP END
+    // Restore Sola's bark dialogue into the CRE sound slots.
+    // Correct BG2 CRE v1.0 sound slot offsets (4-byte STRREFs).
+    //   INITIAL_MEETING        0x00A4
+    //   HAPPY                  0x00AC
+    //   UNHAPPY_ANNOYED        0x00B0
+    //   UNHAPPY_SERIOUS        0x00B4
+    //   UNHAPPY_BREAKING_POINT 0x00B8
+    //   LEADER                 0x00BC
+    //   BORED                  0x00C4
+    //   BATTLE_CRY1            0x00C8
+    //   CRITICAL_HIT           0x01A8
+    WRITE_LONG 0x00A4 (RESOLVE_STR_REF(@3))  // INITIAL_MEETING
+    WRITE_LONG 0x00AC (RESOLVE_STR_REF(@3))  // HAPPY
+    WRITE_LONG 0x00B0 (RESOLVE_STR_REF(@4))  // UNHAPPY_ANNOYED
+    WRITE_LONG 0x00B4 (RESOLVE_STR_REF(@5))  // UNHAPPY_SERIOUS
+    WRITE_LONG 0x00B8 (RESOLVE_STR_REF(@6))  // UNHAPPY_BREAKING_POINT
+    WRITE_LONG 0x00BC (RESOLVE_STR_REF(@3))  // LEADER
+    WRITE_LONG 0x00C4 (RESOLVE_STR_REF(@5))  // BORED
+    WRITE_LONG 0x00C8 (RESOLVE_STR_REF(@8))  // BATTLE_CRY1
+    WRITE_LONG 0x01A8 (RESOLVE_STR_REF(@8))  // CRITICAL_HIT
+END
+
+// The Eclipse enemies are custom CREs, so they must be copied to override
+// for CreateCreature("solae1", ...) to work. We deliberately do NOT patch
+// their binary fields here — those files use the extended EE CRE format
+// and any WRITE_ASCII or EE_CRE_CLEANUP call on them corrupts the file.
+// Their dialogue resrefs are corrected at runtime via SetDialog() in
+// sola0001.baf. Only the display names need setting here, via SAY.
+WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
+  COPY ~solaufeinEE/creatures/solae1.cre~ ~override/solae1.cre~
+    SAY NAME1 @30 SAY NAME2 @30
+  COPY ~solaufeinEE/creatures/solae2.cre~ ~override/solae2.cre~
+    SAY NAME1 @31 SAY NAME2 @31
+  COPY ~solaufeinEE/creatures/solae3.cre~ ~override/solae3.cre~
+    SAY NAME1 @32 SAY NAME2 @32
+  COPY ~solaufeinEE/creatures/solae4.cre~ ~override/solae4.cre~
+    SAY NAME1 @33 SAY NAME2 @33
+  COPY ~solaufeinEE/creatures/solae5.cre~ ~override/solae5.cre~
+    SAY NAME1 @34 SAY NAME2 @34
+  COPY ~solaufeinEE/creatures/solae6.cre~ ~override/solae6.cre~
+    SAY NAME1 @35 SAY NAME2 @35
+END
+
+WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/solavamp.tra~ BEGIN
+  COPY ~solaufeinEE/creatures/solavamp.cre~ ~override/solavamp.cre~
+    SAY NAME1 @92 SAY NAME2 @92 LPF EE_CRE_CLEANUP END // Undead Solaufein
+END
+
+// FIXED: The spider CRE displays as "Revenge Spider" (wsetup.tra @9).
+// Previously mislabeled "Knight of Solamnia" due to a bad search-and-
+// replace during the initial modernization. The name now matches the
+// creature's role (a combat spider that drops spidwr1.itm, also named
+// "Revenge Spider") and matches how the original mod shipped it.
+WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
+  COPY ~solaufeinEE/creatures/solaspi.cre~ ~override/solaspi.cre~
+    SAY NAME1 @9 SAY NAME2 @9 LPF EE_CRE_CLEANUP END
+END
+
+COPY ~solaufeinEE/creatures/solaspy1.cre~ ~override/solaspy1.cre~
+     ~solaufeinEE/creatures/solaspy2.cre~ ~override/solaspy2.cre~
+  SAY NAME1 ~Mage~ SAY NAME2 ~Mage~ LPF EE_CRE_CLEANUP END
+
+// FIXED: Boo Two's name now uses wsetup.tra @22 ("Boo Two") instead of
+// a hardcoded English string, restoring multilingual support.
+WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
+  COPY ~solaufeinEE/creatures/solaboo.cre~ ~override/solaboo.cre~
+    SAY NAME1 @22 SAY NAME2 @22 LPF EE_CRE_CLEANUP END
+END
+
+// FIXED: Archryssa's name now uses wsetup.tra @10 instead of a
+// hardcoded English string, restoring multilingual support.
+WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
+  COPY ~solaufeinEE/creatures/solafoe.cre~ ~override/solafoe.cre~
+    SAY NAME1 @10 SAY NAME2 @10 LPF EE_CRE_CLEANUP END
+END
+
+// Underdark Solaufein copies. Name uses wsetup.tra @1 ("Solaufein");
+// bark strings use wsetup.tra @3-@8. The COPY previously used sola.tra,
+// where @1 is a dialogue line not a name — the creature would display
+// the first line of Sola's joining dialogue instead of his name in the
+// Underdark chapter. Consolidated into a single WITH_TRA block since
+// both the name and the bark writes use the same TRA.
+WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
+  COPY ~solaufeinEE/creatures/udsola01.cre~ ~override/udsola01.cre~
+       ~solaufeinEE/creatures/udsola02.cre~ ~override/udsola02.cre~
+    SAY NAME1 @1 SAY NAME2 @1 LPF EE_CRE_CLEANUP END
+    WRITE_LONG 0x00A4 (RESOLVE_STR_REF(@3))  // INITIAL_MEETING
+    WRITE_LONG 0x00AC (RESOLVE_STR_REF(@3))  // HAPPY
+    WRITE_LONG 0x00B0 (RESOLVE_STR_REF(@4))  // UNHAPPY_ANNOYED
+    WRITE_LONG 0x00B4 (RESOLVE_STR_REF(@5))  // UNHAPPY_SERIOUS
+    WRITE_LONG 0x00B8 (RESOLVE_STR_REF(@6))  // UNHAPPY_BREAKING_POINT
+    WRITE_LONG 0x00BC (RESOLVE_STR_REF(@3))  // LEADER
+    WRITE_LONG 0x00C4 (RESOLVE_STR_REF(@5))  // BORED
+    WRITE_LONG 0x00C8 (RESOLVE_STR_REF(@8))  // BATTLE_CRY1
+END
+
+///////////////////////////////////////////////////////////////////////
+// SPELL FILES 
+///////////////////////////////////////////////////////////////////////
+
+WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
+  COPY ~solaufeinEE/spells/solaspl.spl~  ~override/solaspl.spl~
+    SAY NAME1 @11 SAY UNIDENTIFIED_DESC @11 
+  COPY ~solaufeinEE/spells/spcl999.spl~  ~override/spcl999.spl~
+    SAY NAME1 @12 SAY UNIDENTIFIED_DESC @12 
+  COPY ~solaufeinEE/spells/dimdoor.spl~  ~override/dimdoor.spl~
+    SAY NAME1 @13 SAY UNIDENTIFIED_DESC @13 
+  COPY ~solaufeinEE/spells/boo2cap.spl~  ~override/boo2cap.spl~
+    SAY NAME1 @23 SAY UNIDENTIFIED_DESC @23 
+  COPY ~solaufeinEE/spells/boo2free.spl~ ~override/boo2free.spl~
+    SAY NAME1 @24 SAY UNIDENTIFIED_DESC @24 
+END
+
+// FIXED: The Eclipse sorcerer's signature spells now use wsetup.tra
+// refs @36 (Total Eclipse) and @37 (Eilistraee's Blessing) instead of
+// hardcoded English, restoring multilingual support.
+WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
+  COPY ~solaufeinEE/spells/spcl995.spl~  ~override/spcl995.spl~
+    SAY NAME1 @36 SAY UNIDENTIFIED_DESC @36 LPF EE_SPELL_CLEANUP END
+  COPY ~solaufeinEE/spells/spcl996.spl~  ~override/spcl996.spl~
+    SAY NAME1 @37 SAY UNIDENTIFIED_DESC @37 LPF EE_SPELL_CLEANUP END
+END
+
+// FIXED: solarepu.spl had its name overwritten with a dialogue line
+// from solavamp.tra @69 ("I know just how to hit them..."). It is
+// Sola's Repulse Undead ability, granted after his restoration from
+// vampirism (see solavamp.d — "also Repulse Undead thrice/day").
+// Set a proper spell name and description, English-hardcoded since
+// this string is not used elsewhere and does not need to be localized.
+COPY ~solaufeinEE/spells/solarepu.spl~ ~override/solarepu.spl~
+  SAY NAME1 ~Repulse Undead~
+  SAY UNIDENTIFIED_DESC ~Eilistraee's gift to Solaufein, granted after his restoration from vampirism. This ability allows him to channel lunar radiance to turn undead creatures, causing them to flee in terror or be destroyed outright. Solaufein may use this ability three times per day.~
+  LPF EE_SPELL_CLEANUP END
+
+///////////////////////////////////////////////////////////////////////
+// ITEM FILES 
+///////////////////////////////////////////////////////////////////////
+
+WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
+  COPY ~solaufeinEE/items/solablad.itm~ ~override/solablad.itm~
+    SAY NAME1 @14 SAY NAME2 @14 SAY UNIDENTIFIED_DESC @15 SAY IDENTIFIED_DESC @15 
+  COPY ~solaufeinEE/items/solabla2.itm~ ~override/solabla2.itm~
+    SAY NAME1 @81 SAY NAME2 @81 SAY UNIDENTIFIED_DESC @9982 SAY IDENTIFIED_DESC @9982 
+  COPY ~solaufeinEE/items/solae1.itm~   ~override/solae1.itm~
+    SAY NAME1 @38 SAY NAME2 @38 SAY UNIDENTIFIED_DESC @39 SAY IDENTIFIED_DESC @39 
+  COPY ~solaufeinEE/items/solae2.itm~   ~override/solae2.itm~
+    SAY NAME1 @40 SAY NAME2 @40 SAY UNIDENTIFIED_DESC @41 SAY IDENTIFIED_DESC @41 
+  COPY ~solaufeinEE/items/solae3.itm~   ~override/solae3.itm~
+    SAY NAME1 @42 SAY NAME2 @42 SAY UNIDENTIFIED_DESC @43 SAY IDENTIFIED_DESC @43 
+  COPY ~solaufeinEE/items/spidwr1.itm~  ~override/spidwr1.itm~
+    SAY NAME1 @9 SAY NAME2 @9 
+
+  // FIXED: Split solabook.itm and solabk2.itm into separate COPY blocks
+  // with distinct names/descriptions. The original mod shipped them as
+  // two separate items: solabook is Sola's own tattered tome (@50/@51),
+  // and solabk2 is a "Worn Leather Book" (@500/@501) whose acquisition
+  // triggers the Book of Poetry conversation in sola.baf via
+  // HasItem("solabk2"). Merging them into one COPY with a shared
+  // name/description lost that distinction and removed the trigger's
+  // flavor text.
+  COPY ~solaufeinEE/items/solabook.itm~ ~override/solabook.itm~
+    SAY NAME1 @50 SAY NAME2 @50 SAY UNIDENTIFIED_DESC @51 SAY IDENTIFIED_DESC @51
+  COPY ~solaufeinEE/items/solabk2.itm~  ~override/solabk2.itm~
+    SAY NAME1 @500 SAY NAME2 @500 SAY UNIDENTIFIED_DESC @501 SAY IDENTIFIED_DESC @501
+END
+
+WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/solavamp.tra~ BEGIN
+  COPY ~solaufeinEE/items/solabody.itm~ ~override/solabody.itm~
+    SAY NAME1 @90 SAY NAME2 @90 SAY UNIDENTIFIED_DESC @91 SAY IDENTIFIED_DESC @91 
+END
+
+///////////////////////////////////////////////////////////////////////
+// Graphics, Scripts & Dialogue Compiler Loop
+///////////////////////////////////////////////////////////////////////
+
+// Plain COPY of the three BMP files. There are no patches on these, so
+// BUT_ONLY_IF_IT_CHANGES would have no effect (the files always copy).
+// Left as plain COPY for clarity.
+COPY ~solaufeinEE/graphics/solaboo.bmp~ ~override/solaboo.bmp~
+     ~solaufeinEE/graphics/dm041l.bmp~  ~override/dm041l.bmp~
+     ~solaufeinEE/graphics/dm041s.bmp~  ~override/dm041s.bmp~
+
+// FIXED: solaboo.baf added — otherwise Boo Two's familiar AI (hide,
+// find traps, auto-return on death) never compiles and the hamster
+// sits inert in the party's inventory.
+COMPILE ~solaufeinEE/scripts/sola.baf~
+        ~solaufeinEE/scripts/solafoe.baf~
+        ~solaufeinEE/scripts/solaboo.baf~
+        ~solaufeinEE/scripts/solaspi.baf~
+        ~solaufeinEE/scripts/solaspy1.baf~
+        ~solaufeinEE/scripts/solaspy2.baf~
+        ~solaufeinEE/scripts/solae1.baf~
+        ~solaufeinEE/scripts/solae4.baf~
+        ~solaufeinEE/scripts/solae5.baf~
+        ~solaufeinEE/scripts/solae6.baf~
+        ~solaufeinEE/scripts/ww-buff.baf~
+        ~solaufeinEE/scripts/ww-buff1.baf~
+
+COMPILE ~solaufeinEE/dialogues/solaboo.d~
+
+// FIXED: Register auto-buff scripts in scrpdesc.2da and install the
+// auto-buff spell. Uses placeholder tokens + REPLACE_TEXTUALLY for
+// reliable variable interpolation (multi-line APPEND with %var% on
+// both lines can drop the last variable).
+WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
+  OUTER_SET ww1n = RESOLVE_STR_REF(@300)
+  OUTER_SET ww1d = RESOLVE_STR_REF(@301)
+  OUTER_SET wwn  = RESOLVE_STR_REF(@302)
+  OUTER_SET wwd  = RESOLVE_STR_REF(@303)
+
+  APPEND ~scrpdesc.2da~ ~WW-BUFF1 999300 999301~
+  APPEND ~scrpdesc.2da~ ~WW-BUFF 999302 999303~
+
+  COPY_EXISTING ~scrpdesc.2da~ ~override/scrpdesc.2da~
+    REPLACE_TEXTUALLY ~999300~ ~%ww1n%~
+    REPLACE_TEXTUALLY ~999301~ ~%ww1d%~
+    REPLACE_TEXTUALLY ~999302~ ~%wwn%~
+    REPLACE_TEXTUALLY ~999303~ ~%wwd%~
+    // FIXED: Rule 8 — pretty-print scrpdesc.2da so our appended rows
+    // (WW-BUFF1, WW-BUFF) match BioWare's column-aligned formatting.
+    PRETTY_PRINT_2DA
+    // FIXED: Rule 11b — skip writing to override if nothing changed,
+    // so we don't overwrite a version another mod already customized.
+    BUT_ONLY_IF_IT_CHANGES
+
+  COPY ~solaufeinEE/spells/wesalac.spl~ ~override/wesalac.spl~
+    SAY NAME1 @304 SAY NAME2 @304
+END
+
+COPY ~solaufeinEE/stores/uhmer01.sto~ ~override/wwmer01.sto~
+  SAY 0x8 ~Merchant~
+  // FIXED: Rule 11b — skip writing to override if the SAY resulted in
+  // no change. (The SAY always writes, so this is a safety net rather
+  // than an optimization in the usual case.)
+  BUT_ONLY_IF_IT_CHANGES
+
+
+///////////////////////////////////////////////////////////////////////
+// Component 20: Solaufein – SoA Romance
+///////////////////////////////////////////////////////////////////////
+
+BEGIN @1010
+DESIGNATED 20
+
+REQUIRE_COMPONENT ~setup-solaufeinEE.tp2~ ~10~ ~This component requires Solaufein's Core NPC package.~
+
+INCLUDE ~solaufeinEE/lib/ee_cutscene_cleanup.tpa~
+
+// FIXED: Each dialogue file compiles with only its own TRA files,
+// preventing @n string collisions across sola.tra, solasoa.tra,
+// solafoe.tra, fatesp.tra, solae1.tra, amb1.tra and wsetup.tra.
+
+COMPILE ~solaufeinEE/dialogues/sola.d~
+  USING ~solaufeinEE/tra/%LANGUAGE%/sola.tra~
+        ~solaufeinEE/tra/%LANGUAGE%/amb1.tra~
+
+COMPILE ~solaufeinEE/dialogues/solasoa.d~
+  USING ~solaufeinEE/tra/%LANGUAGE%/solasoa.tra~
+
+COMPILE ~solaufeinEE/dialogues/solafoe.d~
+  USING ~solaufeinEE/tra/%LANGUAGE%/solafoe.tra~
+
+COMPILE ~solaufeinEE/dialogues/fatesp.d~
+  USING ~solaufeinEE/tra/%LANGUAGE%/fatesp.tra~
+
+COMPILE ~solaufeinEE/dialogues/solae1.d~
+  USING ~solaufeinEE/tra/%LANGUAGE%/solae1.tra~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~valenj.dlg~ BEGIN
+  // FIXED: sola.tra removed — it overlaps solaint.tra's @1–@303 and
+  // would override every interjection's text with romance lines.
+  COMPILE ~solaufeinEE/dialogues/solaint.d~
+    USING ~solaufeinEE/tra/%LANGUAGE%/solaint.tra~
+END ELSE BEGIN
+  PRINT ~Valen mod dialogue files not detected. Safely skipping cross-mod interjections.~
+END
+
+COMPILE ~solaufeinEE/scripts/solacut1.baf~
+EXTEND_TOP    ~baldur.bcs~  ~solaufeinEE/scripts/solablad.baf~
+EXTEND_TOP    ~ar2500.bcs~  ~solaufeinEE/scripts/sola2500.baf~
+EXTEND_BOTTOM ~ar2100.bcs~  ~solaufeinEE/scripts/sola2100.baf~
+APPEND ~pdialog.2da~
+~SOLA SOLA SOLA SOLA SOLA SOLA SOLA SOLA~
+UNLESS ~SOLA~
+
+// FIXED: Rule 8 — pretty-print pdialog.2da after the APPEND so the new
+// SOLA row aligns with the surrounding BioWare rows.
+// FIXED: Row width is 8 columns, not 10. The original row had 10 SOLA
+// entries, which exceeded the file's column count (identifier + 7 data
+// columns per the header). The extra entries were silently ignored by
+// the engine but break PRETTY_PRINT_2DA normalization.
+// FIXED: Rule 11b — skip writing to override if nothing changed.
+COPY_EXISTING ~pdialog.2da~ ~override~
+  PRETTY_PRINT_2DA
+  BUT_ONLY_IF_IT_CHANGES
+
+///////////////////////////////////////////////////////////////////////
+// Component 30: Solaufein – Eclipse Sequence
+///////////////////////////////////////////////////////////////////////
+
+BEGIN @1020
+DESIGNATED 30
+// FIXED: Component 30 requires Component 20 (not just 10) because the
+// Eclipse enemies' dialogue tree (SOLAE1.DLG) is compiled in Component
+// 20. Without SOLAE1.DLG present, the runtime SetDialog("SOLAE1") call
+// in sola0001.baf has no target and the Eclipse intro dialogue never
+// fires. This also matches the original mod's semantics, where the
+// Eclipse fight and the romance were always installed together.
+REQUIRE_COMPONENT ~setup-solaufeinEE.tp2~ ~20~ ~This component requires the Shadows of Amn romance elements to be present.~
+COPY ~solaufeinEE/areas/sola0001.are~ ~override/sola0001.are~
+COMPILE ~solaufeinEE/scripts/sola0001.baf~
+        ~solaufeinEE/scripts/sola0002.baf~
+        ~solaufeinEE/scripts/solavcut.baf~
+
+///////////////////////////////////////////////////////////////////////
+// Component 40: Solaufein – Vampiric Solaufein + Cleanse
+///////////////////////////////////////////////////////////////////////
+
+BEGIN @1030
+DESIGNATED 40
+REQUIRE_COMPONENT ~setup-solaufeinEE.tp2~ ~20~ ~This component requires the Shadows of Amn romance elements to be present.~
+// FIXED: sola.tra removed — it overlaps solavamp.tra's @1–@103 and
+// would override every vampire-Sola line with romance text.
+COMPILE ~solaufeinEE/dialogues/solavamp.d~
+  USING ~solaufeinEE/tra/%LANGUAGE%/solavamp.tra~
+// FIXED: Removed duplicate COPY of solabody.itm and solarepu.spl.
+COMPILE ~solaufeinEE/scripts/solavamp.baf~
+        ~solaufeinEE/scripts/solavcut.baf~
+EXTEND_TOP ~cleanse.bcs~ ~solaufeinEE/scripts/cleanse.baf~
+
+///////////////////////////////////////////////////////////////////////
+// Component 50: Solaufein – ToB Continuation
+///////////////////////////////////////////////////////////////////////
+
+BEGIN @1040
+DESIGNATED 50
+REQUIRE_COMPONENT ~setup-solaufeinEE.tp2~ ~10~ ~This component requires Solaufein's Core NPC package.~
+ACTION_IF GAME_INCLUDES ~tob~ BEGIN
+  // FIXED: sola.tra removed — it overlaps solatob.tra's @1–@82 and
+  // would override every ToB interjection with romance text.
+  COMPILE ~solaufeinEE/dialogues/solatob.d~
+    USING ~solaufeinEE/tra/%LANGUAGE%/solatob.tra~
+  WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/epilogue.tra~ BEGIN
+    OUTER_SET solaufein_epilogue0 = RESOLVE_STR_REF(@999000)
+    OUTER_SET solaufein_epilogue1 = RESOLVE_STR_REF(@999001)
+    OUTER_SET solaufein_epilogue2 = RESOLVE_STR_REF(@999002)
+    OUTER_SET solaufein_epilogue3 = RESOLVE_STR_REF(@999003)
+    OUTER_SET solaufein_epilogue4 = RESOLVE_STR_REF(@999004)
+  END
+  // Bulletproofed: replace BOTH data columns so it doesn't matter
+  // which one the engine reads at the ToB epilogue screen.
+  // Rule 8: Must Print Pretty for 2DA files
+  COPY ~solaufeinEE/dialogues/solaend.2da~ ~override/solaend0.2da~
+    REPLACE_TEXTUALLY ~71020~ ~%solaufein_epilogue0%~
+    REPLACE_TEXTUALLY ~99999~ ~%solaufein_epilogue0%~
+    // FIXED: Rule 8 — pretty-print the epilogue 2DA so it matches the
+    // standard 2DA column-aligned format.
+    PRETTY_PRINT_2DA
+  COPY ~solaufeinEE/dialogues/solaend.2da~ ~override/solaend1.2da~
+    REPLACE_TEXTUALLY ~71020~ ~%solaufein_epilogue1%~
+    REPLACE_TEXTUALLY ~99999~ ~%solaufein_epilogue1%~
+    PRETTY_PRINT_2DA
+  COPY ~solaufeinEE/dialogues/solaend.2da~ ~override/solaend2.2da~
+    REPLACE_TEXTUALLY ~71020~ ~%solaufein_epilogue2%~
+    REPLACE_TEXTUALLY ~99999~ ~%solaufein_epilogue2%~
+    PRETTY_PRINT_2DA
+  COPY ~solaufeinEE/dialogues/solaend.2da~ ~override/solaend3.2da~
+    REPLACE_TEXTUALLY ~71020~ ~%solaufein_epilogue3%~
+    REPLACE_TEXTUALLY ~99999~ ~%solaufein_epilogue3%~
+    PRETTY_PRINT_2DA
+  COPY ~solaufeinEE/dialogues/solaend.2da~ ~override/solaend4.2da~
+    REPLACE_TEXTUALLY ~71020~ ~%solaufein_epilogue4%~
+    REPLACE_TEXTUALLY ~99999~ ~%solaufein_epilogue4%~
+    PRETTY_PRINT_2DA
+  EXTEND_TOP ~ar6200.bcs~ ~solaufeinEE/scripts/solaend.baf~
+  // FIXED: ToB uses baldur25.bcs for the Moonblade auto-return script;
+  // baldur.bcs (extended in Component 20) is SoA-only.
+  EXTEND_TOP ~baldur25.bcs~ ~solaufeinEE/scripts/solablad.baf~
+END
+
+///////////////////////////////////////////////////////////////////////
+// Component 60: Solaufein – Extras (KVFix, Multig, UHMER, Misc)
+///////////////////////////////////////////////////////////////////////
+
+BEGIN @1050
+DESIGNATED 60
+
+COMPILE ~solaufeinEE/dialogues/kvfix.d~
+        ~solaufeinEE/dialogues/multig.d~
+        ~solaufeinEE/dialogues/uhmer01.d~
+  USING ~solaufeinEE/tra/%LANGUAGE%/amb1.tra~
+        ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~
+
+COPY_EXISTING ~metswarm.pro~ ~override/metswarm.pro~
+              ~icestorm.pro~ ~override/icestorm.pro~
+  PATCH_IF (SOURCE_SIZE > 0x216) BEGIN
+    WRITE_BYTE 0x216 4
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+///////////////////////////////////////////////////////////////////////
+// Component 70: Solaufein – Script Hardening & Cutscene Modernization
+///////////////////////////////////////////////////////////////////////
+
+BEGIN @1060
+DESIGNATED 70
+
+INCLUDE ~solaufeinEE/lib/ee_cutscene_cleanup.tpa~
+
+COPY_EXISTING ~override/sola0001.bcs~ ~override/sola0001.bcs~
+              ~override/sola0002.bcs~ ~override/sola0002.bcs~
+  LPF EE_CUTSCENE_CLEANUP END
+  BUT_ONLY_IF_IT_CHANGES
