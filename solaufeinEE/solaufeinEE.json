@@ -1,0 +1,77 @@
+{
+  "id": "solaufeinEE",
+  "name": "Solaufein Romance (Modern EE/EET Edition)",
+  "author": "Weimer (Original), Modernization by /u/celestialfury",
+  "version": "2.1.2",
+  "description": "A fully modernized, modular, EE/EET-compatible version of the classic Solaufein Romance mod. This edition rebuilds the technical foundation for modern WeiDU, featuring per-dialogue TRA scoping, layered language TRAs with automatic English fallback, fully localized component names, CRE sound slot restoration, auto-buff script registration, load-order-safe 2DA patches, and bulletproofed ToB epilogues.",
+  "category": "NPCs",
+  "tags": ["REC", "ADV", "COS", "QoL"],
+  "supported_games": ["bg2ee", "eet"],
+  "homepage": "https://github.com/YOUR-USERNAME/Solarom-Mod",
+  "download": "https://github.com/YOUR-USERNAME/Solarom-Mod/releases",
+  "readme": "solaufeinEE/readme-ee_updates.md",
+  "languages": [
+    { "index": 0, "name": "English", "dir": "american" },
+    { "index": 1, "name": "Italian", "dir": "italian" },
+    { "index": 2, "name": "German", "dir": "german" },
+    { "index": 3, "name": "French", "dir": "french" },
+    { "index": 4, "name": "Portuguese", "dir": "portuguese" },
+    { "index": 5, "name": "Polish", "dir": "polish" },
+    { "index": 6, "name": "Russian", "dir": "russian" },
+    { "index": 7, "name": "Spanish", "dir": "spanish" }
+  ],
+  "components": [
+    {
+      "index": 10,
+      "name": "Solaufein: Core NPC (Required)",
+      "tags": ["REC"],
+      "description": "Installs Solaufein as a joinable party companion. This component includes critical modernizations: death variable and dialog resref binding, CRE sound slot restoration (including the CRITICAL_HIT bark), Boo Two familiar AI compilation, auto-buff script registration in scrpdesc.2da, installation of the wesalac.spl helper spell, restored multilingual @n refs for all creature and spell names, and load-order-safe 2DA patches guarded by BUT_ONLY_IF_IT_CHANGES."
+    },
+    {
+      "index": 20,
+      "name": "Solaufein: SoA Romance",
+      "tags": ["REC"],
+      "description": "Enables the comprehensive Shadows of Amn romantic narrative. This component fixes the original mod's string-reference collisions by scoping each dialogue file to its own TRA files, corrects the pdialog.2da row to the eight-column width the shipped BG2EE file actually uses, and applies PRETTY_PRINT_2DA plus BUT_ONLY_IF_IT_CHANGES for load-order safety."
+    },
+    {
+      "index": 30,
+      "name": "Solaufein: Eclipse Sequence",
+      "tags": ["ADV"],
+      "description": "Adds the legendary high-difficulty custom Eclipse tactical encounter, its custom environmental area, and aggressive unique enemies. Now requires both Component 10 and Component 20, because the Eclipse intro dialogue tree is compiled by the romance component. The double-fired dialogue bug caused by a stray StartDialogueNoSet call in solae4.baf is fixed."
+    },
+    {
+      "index": 40,
+      "name": "Solaufein: Vampiric Solaufein + Cleanse",
+      "tags": ["REC"],
+      "description": "Integrates the Bodhi vampiric abduction transformation storyline. This component correctly scopes its dialogue to solavamp.tra, preventing romance text from overwriting vampire-Sola lines."
+    },
+    {
+      "index": 50,
+      "name": "Solaufein: ToB Continuation",
+      "tags": ["REC"],
+      "description": "Extends the companion narrative into Throne of Bhaal. This component fixes ToB interjection text, adds the Moonblade auto-return script to baldur25.bcs, and bulletproofs the epilogue 2DA tables by replacing both data columns with the correct epilogue STRREF. All five solaend*.2da files are pretty-printed for column-aligned consistency."
+    },
+    {
+      "index": 60,
+      "name": "Solaufein: Extras (KVFix, Multig, UHMER, Misc)",
+      "tags": ["COS"],
+      "description": "Bundles miscellaneous script adjustments, including the Korgan PC-interaction loop fix and Viconia LOVETALK 46 fix, using safe file-bounding offsets and BUT_ONLY_IF_IT_CHANGES guards on the store patch."
+    },
+    {
+      "index": 70,
+      "name": "Solaufein: Cutscene Hardening (Optional)",
+      "tags": ["QoL"],
+      "description": "Applies a script-level structural engine block layer to prevent timing freezes or thread stutter traps during major scene transitions in the Eclipse sequence."
+    }
+  ],
+  "relations": {
+    "before": ["eet_end", "tweaks", "cdtweaks", "scs"],
+    "after": [],
+    "conflicts": [
+      {
+        "mod": "solarom_classic",
+        "description": "Cannot coexist with older legacy non-EE versions of the Solaufein Romance package."
+      }
+    ]
+  }
+}
