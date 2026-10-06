@@ -8,9 +8,13 @@ jobs:
   call_workflow:
     permissions:
       contents: write
+    strategy:
+      matrix:
+        platform: [windows, linux, macos, iemod]
     uses: InfinityTools/WeiduModPackagerLibrary/.github/workflows/WeiduModPackagerLibrary.yml@master
     with:
-      type: all
+      type: ${{ matrix.platform }}
       naming: tp2
       tp2_name: 'setup-solaufeinEE.tp2'
       suffix: version
+
