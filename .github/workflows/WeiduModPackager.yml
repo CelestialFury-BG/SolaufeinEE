@@ -10,7 +10,7 @@ jobs:
       contents: write
     uses: InfinityTools/WeiduModPackagerLibrary/.github/workflows/WeiduModPackagerLibrary.yml@master
     with:
-      type: multi
+      type: iemod, windows, linux, macos
       naming: ini
       tp2_name: 'setup-solaufeinEE.tp2'
       suffix: version
