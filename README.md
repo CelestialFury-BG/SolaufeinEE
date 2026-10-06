@@ -51,14 +51,14 @@ Baldur's Gate: Enhanced Edition is **not** supported — Solaufein is a Shadows 
 ### Windows
 
 1. Download the latest release from the [Releases page](../../releases/latest).
-2. Extract the archive into your **BG2EE game folder** (the one containing `Baldur.exe`).
+2. Extract the archive into your **BG2EE/EET game folder** (the one containing `Baldur.exe`).
 3. Run **`setup-solaufeinEE.exe`** and follow the installer prompts.
 
 If `setup-solaufeinEE.exe` is not included in the archive, copy `weidu.exe` from your game folder and rename the copy to `setup-solaufeinEE.exe`, then run it.
 
 ### macOS / Linux
 
-1. Extract the mod folder into your BG2EE game directory.
+1. Extract the mod folder into your BG2EE/EET game directory.
 2. Open a terminal in that directory and run:
 
        weidu --install setup-solaufeinEE.tp2
