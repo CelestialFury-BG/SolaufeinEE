@@ -263,6 +263,13 @@ After installation, the following can be verified in Near Infinity:
 * Near Infinity
 * Project Infinity
 
+### Solaufein Portrait
+
+* Portrait: Original artwork by Jeff Easley, published by TSR/Wizards of the Coast.
+Used without license in a non-commercial fan modification. All rights reserved
+by the copyright holder. This portrait will be removed upon request by the
+rights holder.
+
 ------------------------------
 
 ## Changelog
