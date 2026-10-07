@@ -10,9 +10,7 @@ The **Solaufein** mod adds Solaufein — the Drow fighter/mage from Ust Natha �
 
 Originally released by Weimer in the early 2000s, this edition is a ground-up technical modernization. The **content is preserved exactly** — every dialogue, every quest, every banter, every poem — but the underlying WeiDU code has been rebuilt to work reliably on modern Enhanced Edition installs.
 
-### Solaufein Portrait
-
-* Portrait: Original artwork by Jeff Easley, published by TSR/Wizards of the Coast.
+Solaufein Portrait: Original artwork by Jeff Easley, published by TSR/Wizards of the Coast.
 Used without license in a non-commercial fan modification. All rights reserved
 by the copyright holder. This portrait will be removed upon request by the
 rights holder.
