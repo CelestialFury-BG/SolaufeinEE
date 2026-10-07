@@ -15,6 +15,8 @@ Used without license in a non-commercial fan modification. All rights reserved
 by the copyright holder. This portrait will be removed upon request by the
 rights holder.
 
+Solboo Portrait: Has been faithfully recreated to fit in a modern EE portrait.
+
 Key features:
 
 - **Solaufein joins your party** in Shadows of Amn and continues into Throne of Bhaal
