@@ -24,4 +24,3 @@ jobs:
       suffix: version
       naming: tp2
       tp2_name: 'setup-solaufeinEE.tp2'
-      weidu_version: '249.00'
