@@ -18,6 +18,7 @@ Most pre-EE mods, and the ports derived from them, share a common set of pattern
 | Unconditional `COPY` to `override/` | Mods were installed one at a time | Clobbers shared tables that other mods depend on |
 | No `PRETTY_PRINT_2DA` on appends | The engine tolerated ragged columns | Column misalignment breaks subsequent mod parsing |
 | Raw `WRITE_ASCII`/`WRITE_LONG` on binary offsets | The offset was stable for the BG2 file format | Corrupts files if the shipped EE format differs |
+| Barks written via `WRITE_LONG` with text-only strrefs | Original BG2 fired text-only barks fine | BG2EE suppresses any bark whose TLK entry has no associated sound file — the strref writes correctly and NI shows it, but no bark fires in-game |
 | `AUTO_TRA` for translations | Single TRA namespace worked | Silent string collisions when multiple TRA files define the same `@n` |
 | Single monolithic component | Players wanted one install click | No dependency verification, no partial installs, no modularity |
 | Static string pointers for ToB epilogues | String resources were stable | Epilogues misalign or display wrong text after EE patches |
@@ -34,6 +35,7 @@ Every item above has a corresponding fix in this edition:
 - **`EE_CRE_CLEANUP` / `EE_SPELL_CLEANUP` / `EE_CUTSCENE_CLEANUP`** patch functions — remap legacy animation IDs, sweep deprecated effect opcodes, and harden cutscene timing for the EE engine
 - **`EE_SET_CRE_FIELDS`** (in `ee_cre_fields.tpa`) — a reusable joinable-NPC field writer that binds script name, dialogue resref, and the known-spells table at NI-confirmed CRE v1.0 offsets. One `STR_VAR` parameter per field, never a delimited list, so it parses cleanly on WeiDU 25100 and any future version
 - **CRE v1.0 format guard** on every binary write — `READ_ASCII 0x04` + `STRING_EQUAL ~V1.0~`. A future Beamdog format change skips rather than corrupts, instead of the legacy pattern of writing to a hardcoded offset regardless of format
+- **Working bark playback** — barks are written via `SAY` rather than raw `WRITE_LONG`, and each bark string in `wsetup.tra` carries a `[blank]` tag that associates a silent placeholder WAV with the TLK entry. This is required because BG2EE suppresses any bark whose TLK entry has no associated sound file. A legacy port that writes barks via raw `WRITE_LONG` produces slots that look correct in Near Infinity but never fire in-game
 - **Per-dialogue TRA scoping** — each `.d` file compiles with only its own TRA files, eliminating cross-file `@n` collisions
 - **Seven modular components** with `DESIGNATED` IDs and verified `REQUIRE_COMPONENT` chains — you can install just the Core NPC, or the full experience, and the installer refuses invalid combinations
 - **Dynamic `RESOLVE_STR_REF` allocation** for ToB epilogues — the ending screen always displays the correct text, in any language
@@ -54,6 +56,8 @@ Every item above has a corresponding fix in this edition:
 | CRE tiers | Reduced (single level) | All six original tiers + `udsola01/02` |
 | Sound slots restored | Partial | Full 12-slot set: `MORALE`, `INITIAL_MEETING`, `HAPPY`, `UNHAPPY_ANNOYED`, `UNHAPPY_SERIOUS`, `UNHAPPY_BREAKING_POINT`, `LEADER`, `BORED`, `BATTLE_CRY1`, `SELECT_COMMON1`, `CRITICAL_HIT`, `CRITICAL_MISS` |
 | Bark content | Original template audio (generic BioWare creature barks) | Correct Solaufein lines sourced from `wsetup.tra` |
+| Bark playback in-game | Silent — text-only strrefs suppressed by BG2EE | Fires correctly via `SAY` + TRA `[blank]` + silent placeholder WAV |
+| Bark audio | Original generic creature audio, if any | Silent (no Solaufein voice set exists); the floating bark text displays |
 | ToB Fate Spirit summon | Absent | Present via `fatesp.d` |
 | Eclipse dialogue double-fire | Present | Fixed |
 | Component 30 dependency | Requires Component 10 only | Requires Component 20 (which requires 10) |
@@ -72,6 +76,7 @@ On a lightly modded BG2EE install running on Windows, a legacy port will often w
 - **You've installed another mod that ships Solaufein content** — duplicate `pdialog.2da` rows can corrupt the party menu
 - **You want to install only part of the mod** — legacy ports don't offer granular components
 - **You play in a non-English language** — legacy ports only translate the strings their original translator chose to include
+- **You want Solaufein to actually speak when you click him** — legacy ports that write barks via raw `WRITE_LONG` produce silent CRE slots on BG2EE because the TLK entries have no associated sound file. This edition associates a silent placeholder WAV with each bark string, which is what allows the engine to fire the bark and display the floating text. Bark audio is silent because no Solaufein voice set exists, but the text displays correctly on portrait click, combat start, critical hit, and the other normal trigger conditions
 - **You use ValenEE alongside this mod** — the cross-mod interjections only compile when Valen is installed first. Legacy ports don't ship these at all; this edition does, but only in the correct install order
 
 For all of these scenarios, this edition is the correct choice. For a Windows-only, English-only, minimal-mod install on original BG2, a legacy port will serve you fine — the content is the same either way.
