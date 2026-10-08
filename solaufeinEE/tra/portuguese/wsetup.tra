@@ -167,10 +167,10 @@ That then I scorn to change my state with kings.~
 // instalação.
 // -----------------------------------------------------------------
 
-@1000 = ~Solaufein: Personagem Principal (Obrigatório)~
-@1010 = ~Solaufein: Romance em SoA~
-@1020 = ~Solaufein: Sequência do Eclipse~
-@1030 = ~Solaufein: Solaufein Vampiro + Purificação~
-@1040 = ~Solaufein: Continuação em ToB~
-@1050 = ~Solaufein: Extras (KVFix, Multig, UHMER, Diversos)~
-@1060 = ~Solaufein: Reforço das Cenas (Opcional)~
+@1000 = ~Solaufein: NPC Principal + Conteúdo SoA (obrigatório)~
+@1010 = ~Solaufein: Solaufein Vampiro + Purificação (ramo de história SoA opcional)~
+@1020 = ~Solaufein: Continuação ToB (recomendado se você joga ToB)~
+@1030 = ~Solaufein: Sequência Eclipse (combate-desafio ToB opcional)~
+@1040 = ~Solaufein: Extras (correções de Korgan/Viconia, multijogador, correções de projéteis — opcional)~
+@1070 = ~Este mod requer Baldur's Gate II: Enhanced Edition (BG2EE) ou Enhanced Edition Trilogy (EET).~
+@1071 = ~Este componente requer a expansão Throne of Bhaal.~
