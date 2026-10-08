@@ -25,7 +25,7 @@ This edition introduces:
 * A fully sanitized, cross-platform lowercase file naming system
 * Explicit script-name and dialogue-resref writes on joinable CREs via `EE_SET_CRE_FIELDS`, guarded by a CRE v1.0 format check
 * Correct per-dialogue TRA scoping to eliminate string-reference collisions
-* Full 12-slot CRE sound-slot restoration for Solaufein's barks (morale, mood, battle cry, selection, critical hit, critical miss)
+* Full 12-slot CRE sound-slot restoration for Solaufein's barks (morale, mood, battle cry, selection, critical hit, critical miss) with **working in-game bark playback**, using a silent placeholder WAV associated with each bark string so the BG2EE engine does not suppress the text
 * Load-order-safe `BUT_ONLY_IF_IT_CHANGES` guards on every 2DA and store patch
 
 The result is the most stable, maintainable, and future-proof version of Solaufein ever released.
@@ -52,6 +52,7 @@ solaufeinEE/
 ├── spells/
 ├── areas/
 ├── stores/
+├── sounds/
 └── graphics/
 
 This structure is:
@@ -74,21 +75,25 @@ Installs Solaufein as a joinable NPC with core items, spells, dialogues, and inl
 Specific work performed at install time:
 
 * **Explicit script and dialogue field writes.** All Solaufein tier CREs (`sola5`–`sola17`, `udsola01/02`) use `EE_SET_CRE_FIELDS` from `ee_cre_fields.tpa` to write the script name and dialogue resref at the NI-confirmed CRE v1.0 offsets. This replaces the older `WRITE_ASCII 0x2C4 ~SOLA~ #8` pattern. On CRE v1.0, `0x2C4` is the effects offset pointer; the Dialogue resref is at `0x2CC`. The old write silently zeroed Sola's effects count.
-* **CRE v1.0 format guard.** Every binary write in the Sola tier and udsola blocks is wrapped in `READ_ASCII 0x04 cre_ver (4)` + `PATCH_IF (~%cre_ver%~ STRING_EQUAL ~V1.0~)`. If a future release changes the CRE format, the writes are skipped rather than corrupting the file.
-* **Full 12-slot bark restoration.** Sola's barks are restored into the correct BG2 CRE v1.0 sound slots after cleanup. Both the Sola tier block and the `udsola01/02` block write the same 12 slots:
-  * MORALE (`0x00A8`) → `@200`
-  * INITIAL_MEETING (`0x00A4`) → `@3`
-  * HAPPY (`0x00AC`) → `@3`
-  * UNHAPPY_ANNOYED (`0x00B0`) → `@4`
-  * UNHAPPY_SERIOUS (`0x00B4`) → `@5`
-  * UNHAPPY_BREAKING_POINT (`0x00B8`) → `@6`
-  * LEADER (`0x00BC`) → `@3`
-  * BORED (`0x00C4`) → `@5`
-  * BATTLE_CRY1 (`0x00C8`) → `@8`
-  * SELECT_COMMON1 (`0x010C`) → `@201`
-  * CRITICAL_HIT (`0x01A8`) → `@8`
-  * CRITICAL_MISS (`0x01AC`) → `@200`
-* **Required TRA refs.** The bark restoration requires `@200` and `@201` in `wsetup.tra`. They are currently present in `american/wsetup.tra`; non-English installs fall back to English through the layered `LANGUAGE` blocks.
+* **CRE v1.0 format guard.** Every binary patch function call in the Sola tier and udsola blocks is wrapped in `READ_ASCII 0x04 cre_ver (4)` + `PATCH_IF (~%cre_ver%~ STRING_EQUAL ~V1.0~)`. If a future release changes the CRE format, the LPFs are skipped rather than corrupting the file. The bark `SAY` statements sit outside the guard because `SAY` is format-aware (WeiDU reads the version byte and computes the correct slot offset).
+* **Full 12-slot bark restoration with working playback.** Sola's barks are restored into the correct BG2 CRE v1.0 sound slots. Both the Sola tier block and the `udsola01/02` block write the same 12 slots:
+  * MORALE → `@200`
+  * INITIAL_MEETING → `@3`
+  * HAPPY → `@3`
+  * UNHAPPY_ANNOYED → `@4`
+  * UNHAPPY_SERIOUS → `@5`
+  * UNHAPPY_BREAKING_POINT → `@6`
+  * LEADER → `@3`
+  * BORED → `@5`
+  * BATTLE_CRY1 → `@8`
+  * SELECT_COMMON1 → `@201`
+  * CRITICAL_HIT → `@8`
+  * CRITICAL_MISS → `@200`
+
+  Each slot is written via `SAY <slot> @<n>`. The bark strings in `wsetup.tra` carry a `[blank]` tag after the text, which associates a silent placeholder WAV (`solaufeinEE/sounds/blank.wav`, copied to `override/` at the top of Component 10) with the TLK entry. Without an associated sound file, BG2EE suppresses the bark entirely — the strref writes correctly and NI shows it, but the engine refuses to fire the bark and no text or audio appears in-game. With the `[blank]` association, the bark fires on its normal trigger and the floating text displays. Audio is silent (no Solaufein voice set has ever existed), which is the intended behavior.
+
+  **Maintainer note:** the `[blank]` tags in every language's `wsetup.tra` are load-bearing. Removing them silently mutes every bark in the mod. The only reason the tags are not obvious is that WeiDU does not accept a bracketed sound directly after a TRA reference in a `SAY` command (`SAY MORALE @200 [blank]` is a GLR parse error), so the association has to live in the string definition itself.
+* **Required TRA refs.** The bark restoration requires `@3`–`@8`, `@200`, and `@201` in `wsetup.tra`, each with the `[blank]` suffix. They are currently present in `american/wsetup.tra`; non-English installs fall back to English through the layered `LANGUAGE` blocks.
 * **Familiar AI compilation.** `solaboo.baf` is compiled, activating Boo Two's hide-in-shadows, trap-detection, and auto-return-on-death behavior.
 * **Auto-buff script registration.** `WW-BUFF` and `WW-BUFF1` are appended to `scrpdesc.2da` and their help text resolved via `RESOLVE_STR_REF`, so they appear in the character-sheet script picker.
 * **Auto-buff helper spell.** `wesalac.spl` ("Auto-Buff") is copied and named, providing the engine spell invoked by the script hotkeys.
@@ -174,7 +179,7 @@ Every user-facing string in the mod is delivered through the TRA system. This in
 * **Creature names** for Sola, Boo Two, Archryssa, and the Eclipse enemies
 * **Spell names** for Total Eclipse, Eilistraee's Blessing, Auto-Buff, and Repulse Undead
 * **Item names and descriptions** for every custom weapon, book, and body item
-* **Bark strings** for Sola's restored sound slots (`@200`, `@201`, and `@3`–`@8`)
+* **Bark strings** for Sola's restored sound slots (`@3`–`@8`, `@200`, `@201`), each carrying a `[blank]` tag that associates the silent placeholder WAV so the barks actually fire in-game
 
 ### Language Fallback
 
@@ -185,6 +190,8 @@ The `LANGUAGE` blocks in `solaufeinEE.tp2` are structured as **layered TRAs**: e
 * Translators can add translations at their own pace, knowing the installer will never fail on a missing ref.
 
 `@1060`, `@200`, and `@201` are currently defined in `american/wsetup.tra`. Non-English installs will fall back to the English strings until translators add localized versions. This is expected and does not break the install.
+
+**Translator note:** if you localize a bark string, keep the `[blank]` suffix on the line. It associates the silent placeholder WAV with the TLK entry for that string. Removing it silences the bark in-game, because BG2EE suppresses any bark whose TLK entry has no associated sound file.
 
 This design also makes adding a new language a matter of dropping a single `wsetup.tra` into a new folder and adding one `LANGUAGE` line to the TP2.
 
@@ -219,6 +226,13 @@ The modernization engines operate via proper `DEFINE_PATCH_FUNCTION` routines:
 * Targets compilation blocks to secure `StartCutSceneMode()` transitions safely
 * Enforces normalized `CutSceneId(Player1)` parameters to mitigate cross-platform crashing anomalies
 
+### Bark Playback (TRA `[blank]` tag + `sounds/blank.wav`)
+
+* BG2EE suppresses any bark whose TLK entry has no associated sound file. Writing the strref into the CRE slot is not enough — the engine treats "text-only strref" as "no bark" and refuses to fire it. This is why the legacy `WRITE_LONG` approach produced barks that looked correct in Near Infinity but were silent in-game.
+* The fix is to associate a sound file with each bark's TLK entry. WeiDU does this via the `[sound]` tag on the string definition — not on the `SAY` command (which does not accept a bracketed sound after a TRA reference).
+* The mod ships a 1-second silent WAV at `solaufeinEE/sounds/blank.wav`, copied to `override/` at the top of Component 10. Each bark string in `wsetup.tra` carries `[blank]` after the text, associating that silent WAV with the TLK entry.
+* No Solaufein voice set has ever existed, so silent playback is the correct behavior. The point is to satisfy the engine's "must have audio" check so the floating bark text displays.
+
 ------------------------------
 
 ## Installation
@@ -251,6 +265,7 @@ After installation, the following can be verified in Near Infinity:
 
 * **`override/sola5.cre`** — Dialog field reads `SOLA.DLG`, Script name reads `sola`. Sound slots `MORALE`/`INITIAL_MEETING`/`HAPPY`/`UNHAPPY_*`/`LEADER`/`BORED`/`BATTLE_CRY1`/`SELECT_COMMON1`/`CRITICAL_HIT`/`CRITICAL_MISS` all contain the correct STRREFs; every other slot should read *"No such index"*.
 * **`override/udsola01.cre`** and **`udsola02.cre`** — Name reads *"Solaufein"* (not a dialogue line). Script name reads `sola`; dialogue reads `SOLA.DLG`; the same 12-slot bark set is present.
+* **`override/blank.wav`** — Present. The silent placeholder WAV that gives the bark TLK entries an associated audio file so BG2EE will fire the barks.
 * **`override/solaspi.cre`** — Name reads *"Revenge Spider"* (not "Knight of Solamnia").
 * **`override/solaboo.cre`** — Name reads *"Boo Two"*.
 * **`override/solafoe.cre`** — Name reads *"Archryssa"*.
@@ -266,6 +281,16 @@ After installation, the following can be verified in Near Infinity:
 * **`override/baldur25.bcs`** — Contains `HasItemEquiped("solablad", …)` and `HasItemEquiped("solabla2", …)` blocks.
 * **`override/solaend0.2da`–`solaend4.2da`** — DEFAULT row has a resolved epilogue STRREF in both columns, formatted with proper column alignment.
 * **WeiDU installer menu** — Component names display in the selected language (falls back to English for any ref not yet translated in that language's `wsetup.tra`, including `@1060`).
+
+**In-game bark test.** Load a save made after this install (not one from a previous install), recruit Solaufein, then:
+
+1. Click his portrait. `SELECT_COMMON1` should fire as floating text (silently). Click again after ~10 seconds to work around the engine's selection-bark cooldown.
+2. Spawn a hostile via the console (`C:CreateCreature("goblin")`) and attack it. `BATTLE_CRY1` should fire on combat start.
+3. Keep fighting. `CRITICAL_HIT` and `CRITICAL_MISS` should fire on natural 20s and natural 1s respectively.
+4. Let him take damage. `HURT` should fire.
+5. If AI is on, idle for 30–60 seconds and wait for `BORED`.
+
+All barks display text only; audio is silent. That is expected — no Solaufein voice set exists.
 
 ------------------------------
 
@@ -295,6 +320,28 @@ rights holder.
 ------------------------------
 
 ## Changelog
+
+### 2.1.5 — Bark playback fix
+
+**The bug**
+
+* v2.1.4 wrote bark strrefs into the CRE sound slots via raw `WRITE_LONG`. That placed the correct strref number into each slot, and Near Infinity showed the slots as populated — but no bark ever fired in-game, on a fresh install or otherwise.
+* Root cause: BG2EE suppresses any bark whose TLK entry has no associated sound file. The engine treats a text-only strref as "no bark" and refuses to fire it, regardless of the strref value stored in the CRE. Writing the strref via `WRITE_LONG` cannot associate a sound file with the TLK entry, so every bark the mod wrote was silently suppressed.
+
+**The fix**
+
+* Replaced all 24 bark `WRITE_LONG` calls (12 slots in the Sola tier block, 12 in the `udsola01/02` block) with `SAY <slot> @<n>` statements.
+* Added a 1-second silent WAV at `solaufeinEE/sounds/blank.wav`, copied to `override/` at the top of Component 10.
+* Appended `[blank]` to the definitions of `@3`, `@4`, `@5`, `@6`, `@8`, `@200`, and `@201` in every language's `wsetup.tra`. The `[blank]` tag on the string definition associates the silent WAV with the TLK entry, which allows the engine to fire the bark.
+* Moved the bark `SAY` statements outside the v1.0 `PATCH_IF` guard. `SAY` is a COPY-level verb and cannot live inside `PATCH_IF`; it is also format-aware, so the version guard is not needed for it. The guard remains for the `EE_CRE_CLEANUP` and `EE_SET_CRE_FIELDS` calls, which use raw offsets internally.
+
+**Maintainer note**
+
+* WeiDU does not accept a bracketed sound directly after a TRA reference (`SAY MORALE @200 [blank]` is a GLR parse error). The `[blank]` tag must live on the string definition in the TRA file. This is why the bark strings in every `wsetup.tra` carry `[blank]` and why removing those tags silences the barks again.
+
+**Verified**
+
+* In-game testing confirmed `SELECT_COMMON1` (`@201`) fires on portrait click and `CRITICAL_HIT` (`@8`) fires on every critical hit, both displaying the correct text. The remaining slots fire on their normal triggers.
 
 ### 2.1.4 — Bark completion and CRE field refactor finish
 
