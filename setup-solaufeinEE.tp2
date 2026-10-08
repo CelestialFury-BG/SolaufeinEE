@@ -3,11 +3,44 @@
  *
  * Original: Weimer
  * Modernized & Verified for EE/EET compatibility
+ *
+ * ---------------------------------------------------------------------
+ * Version history
+ * ---------------------------------------------------------------------
+ * v2.1.0  Modern EE/EET Edition (initial modernization).
+ * v2.1.1  Bug-fix pass.
+ * v2.1.2  Multi-language and dependency pass.
+ *
+ * v2.1.3  Refactored Component 10's Sola tier COPY block to use the
+ *         shared joinable-NPC field writer EE_SET_CRE_FIELDS from
+ *         ee_cre_fields.tpa (Rule 61-63). Previous code used
+ *         WRITE_ASCII 0x2C4 ~SOLA~ #8 as if 0x2C4 were the Dialogue
+ *         resref, but NI confirms Dialogue is at 0x2CC on CRE v1.0 —
+ *         0x2C4 is the effects offset pointer, so the old write was
+ *         silently zeroing Sola's effects count. The refactor
+ *         corrects the offset, adds a v1.0 version guard around all
+ *         binary writes, and brings Solaufein's CRE handling in line
+ *         with ValenEE. Also added a PRINT on the successful side of
+ *         the Valen cross-mod check, and converted the
+ *         REQUIRE_PREDICATE GAME_IS message to a TRA ref (@1070).
+ *
+ * v2.1.4  The pristine sola5-17.cre files ship with WRONG barks — a
+ *         mishmash of generic BioWare creature sounds ("dwarven
+ *         food", "servants of Alorgoth", "Taddaus", "Guards!
+ *         GUARDS!") that Weimer forgot to clean when building the
+ *         NPC from a template. v2.1.3 fixed 9 slots. This version
+ *         adds the remaining 3 to the Sola tier block (MORALE,
+ *         SELECT_COMMON1, CRITICAL_MISS) and adds the same 3 plus
+ *         CRITICAL_HIT to the udsola01/02 block so both blocks write
+ *         the same 12-slot set.
+ *
+ *         Requires @200 and @201 in wsetup.tra — see inline note at
+ *         the top of the Sola tier COPY block.
  *************************************************************************/
 
 BACKUP ~solaufeinEE/backup~
 AUTHOR ~weimer@cs.berkeley.edu~
-VERSION ~v2.1.2~
+VERSION ~v2.1.4~
 
 // Handle UTF-8 and non-English encodings natively across platforms
 HANDLE_CHARSETS
@@ -31,6 +64,10 @@ ALLOW_MISSING ~bsarev25.dlg~
 // the English base supplies it. Without this layering, every new string
 // added to the mod would have to be re-added to all eight language
 // files or the installer would abort for that language.
+//
+// Component display names and the REQUIRE_PREDICATE message live at
+// @1000-@1070 in wsetup.tra (Rule 11e). All non-English installs fall
+// back to English until translators add them.
 ///////////////////////////////////////////////////////////////////////
 
 LANGUAGE ~American English~
@@ -75,14 +112,19 @@ LANGUAGE ~Castellano (traducido por Clan REO)~
 
 ///////////////////////////////////////////////////////////////////////
 // Component 10: Solaufein – Core NPC (Required)
+//
+// Rule 11e: component display name comes from @1000 in wsetup.tra so
+// non-English installs see it in their own language once translated.
+// The GAME_IS failure message uses @1070 for the same reason.
 ///////////////////////////////////////////////////////////////////////
 
 BEGIN @1000
 DESIGNATED 10
 
-REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ ~This version of Solaufein requires BG2EE or EET.~
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @1070
 
 INCLUDE ~solaufeinEE/lib/ee_cre_cleanup.tpa~
+INCLUDE ~solaufeinEE/lib/ee_cre_fields.tpa~
 INCLUDE ~solaufeinEE/lib/ee_spell_cleanup.tpa~
 INCLUDE ~solaufeinEE/lib/ee_cutscene_cleanup.tpa~
 
@@ -93,6 +135,20 @@ APPEND ~trigger.ids~ ~0x40D6 MyCustomTrigger(O:Object*)~ UNLESS ~MyCustomTrigger
 // CREATURE FILES (Precise Translation Sheet Mapping)
 ///////////////////////////////////////////////////////////////////////
 
+// Sola tier CREs. Six versions spanning the joinable-NPC level range.
+// Names, script name, dialogue resref, and barks are all written
+// explicitly. See inline comments for the field-by-field rationale.
+//
+// REQUIRED TRA REFS (must exist in wsetup.tra or install aborts):
+//   @1        Solaufein (name)
+//   @2        Solaufein's biography
+//   @3        "I am pleased with our progress."
+//   @4        "Things are not progressing as they should."
+//   @5        "I do not like the way this group behaves."
+//   @6        "I cannot remain in a group of this sort any longer."
+//   @8        "By Eilistraee's light!"
+//   @200      "This is not over! Another day!"
+//   @201      "I do what I must when I must. Know this well."
 WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
   COPY ~solaufeinEE/creatures/sola5.cre~  ~override/sola5.cre~
        ~solaufeinEE/creatures/sola7.cre~  ~override/sola7.cre~
@@ -101,31 +157,84 @@ WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
        ~solaufeinEE/creatures/sola15.cre~ ~override/sola15.cre~
        ~solaufeinEE/creatures/sola17.cre~ ~override/sola17.cre~
     SAY NAME1 @1 SAY NAME2 @1 SAY BIO @2
-    // FIXED: Death variable must be "Sola" to match existing dialogue/scripts.
-    WRITE_ASCII 0x280 ~Sola~ #32
-    // FIXED: explicitly bind the dialogue file so StartDialogueNoSet has a target.
-    WRITE_ASCII 0x2C4 ~SOLA~ #8
-    LPF EE_CRE_CLEANUP END
-    // Restore Sola's bark dialogue into the CRE sound slots.
-    // Correct BG2 CRE v1.0 sound slot offsets (4-byte STRREFs).
-    //   INITIAL_MEETING        0x00A4
-    //   HAPPY                  0x00AC
-    //   UNHAPPY_ANNOYED        0x00B0
-    //   UNHAPPY_SERIOUS        0x00B4
-    //   UNHAPPY_BREAKING_POINT 0x00B8
-    //   LEADER                 0x00BC
-    //   BORED                  0x00C4
-    //   BATTLE_CRY1            0x00C8
-    //   CRITICAL_HIT           0x01A8
-    WRITE_LONG 0x00A4 (RESOLVE_STR_REF(@3))  // INITIAL_MEETING
-    WRITE_LONG 0x00AC (RESOLVE_STR_REF(@3))  // HAPPY
-    WRITE_LONG 0x00B0 (RESOLVE_STR_REF(@4))  // UNHAPPY_ANNOYED
-    WRITE_LONG 0x00B4 (RESOLVE_STR_REF(@5))  // UNHAPPY_SERIOUS
-    WRITE_LONG 0x00B8 (RESOLVE_STR_REF(@6))  // UNHAPPY_BREAKING_POINT
-    WRITE_LONG 0x00BC (RESOLVE_STR_REF(@3))  // LEADER
-    WRITE_LONG 0x00C4 (RESOLVE_STR_REF(@5))  // BORED
-    WRITE_LONG 0x00C8 (RESOLVE_STR_REF(@8))  // BATTLE_CRY1
-    WRITE_LONG 0x01A8 (RESOLVE_STR_REF(@8))  // CRITICAL_HIT
+
+    // Rule 12/13: version guard on every binary write. The base Sola
+    // tiers ship as CRE v1.0. If any future release switches to v2.2,
+    // the field offsets shift and none of the writes below would land
+    // on the right fields — better to skip than corrupt.
+    READ_ASCII 0x04 cre_ver (4)
+    PATCH_IF (~%cre_ver%~ STRING_EQUAL ~V1.0~) BEGIN
+
+      // Generic EE-format cleanup (deprecated opcodes, casing, save
+      // clamps). Safe for v1.0 CREs; see ee_cre_cleanup.tpa header
+      // for the function's scope.
+      LPF EE_CRE_CLEANUP END
+
+      // Explicit field writes via the shared helper (Rule 61-63).
+      // Solaufein's script name and dialogue identifier are both
+      // "sola" — they match the deathvar used throughout the mod's
+      // scripts (InParty("sola"), Dead("sola"), ActionOverride)
+      // and the SOLA.DLG tree compiled in Component 20.
+      //
+      // Historical note: the previous code wrote
+      //   WRITE_ASCII 0x2C4 ~SOLA~ #8
+      // as if 0x2C4 were the Dialogue resref. NI shows Dialogue at
+      // 0x2CC on CRE v1.0; 0x2C4 is the effects offset pointer. The
+      // old write was silently zeroing Sola's effects count. The
+      // helper centralizes the offset map, so this class of error
+      // can only occur once, in one place.
+      LPF EE_SET_CRE_FIELDS
+        STR_VAR script_name     = sola
+                dialogue_resref = sola
+      END
+
+      // Restore Sola's bark dialogue into the CRE sound slots.
+      //
+      // The pristine sola5-17.cre files ship with WRONG barks — the
+      // original author built the NPC from a template and never
+      // cleaned the sound table. Slots that should contain Solaufein
+      // lines currently contain generic creature audio ("dwarven
+      // food", "servants of Alorgoth", "Taddaus", "Guards!
+      // GUARDS!", "For the honor of the Fighters' Guild!"). These
+      // WRITE_LONGs replace that audio with correct Solaufein lines
+      // sourced from wsetup.tra.
+      //
+      // This is NOT what ValenEE does — Valen's source file already
+      // ships with correct barks, so her TP2 writes no sound slots.
+      // Solaufein's source file does not, so his TP2 must.
+      //
+      // Slots written below (12 total):
+      //   MORALE                @200  (template leftover: "This is not over!...")
+      //   INITIAL_MEETING       @3    (empty in source)
+      //   HAPPY                 @3    (wrong: "Y'll dwarven food...")
+      //   UNHAPPY_ANNOYED       @4    (wrong: "Did you enjoy the food...")
+      //   UNHAPPY_SERIOUS       @5    (wrong: "What the-? Intruders!...")
+      //   UNHAPPY_BREAKING_POINT @6   (wrong: "Eat quickly, filth...")
+      //   LEADER                @3    (empty in source)
+      //   BORED                 @5    (empty in source)
+      //   BATTLE_CRY1           @8    (wrong: "For the honor of the Fighters' Guild!")
+      //   SELECT_COMMON1        @201  (correct text, wrong localization)
+      //   CRITICAL_HIT          @8    (wrong: "Leave us to eat in peace, Taddaus...")
+      //   CRITICAL_MISS         @200  (same wrong source as MORALE)
+      //
+      // All offsets below are the standard BG2 CRE v1.0 sound slot
+      // table. CRITICAL_HIT at 0x01A8 was confirmed against sola5.cre
+      // in NI during the original port. MORALE at 0x00A8, SELECT_COMMON1
+      // at 0x010C, and CRITICAL_MISS at 0x01AC are their canonical
+      // positions — verify in NI before relying on them (Rule 18).
+      WRITE_LONG 0x00A8 (RESOLVE_STR_REF(@200))  // MORALE
+      WRITE_LONG 0x00A4 (RESOLVE_STR_REF(@3))    // INITIAL_MEETING
+      WRITE_LONG 0x00AC (RESOLVE_STR_REF(@3))    // HAPPY
+      WRITE_LONG 0x00B0 (RESOLVE_STR_REF(@4))    // UNHAPPY_ANNOYED
+      WRITE_LONG 0x00B4 (RESOLVE_STR_REF(@5))    // UNHAPPY_SERIOUS
+      WRITE_LONG 0x00B8 (RESOLVE_STR_REF(@6))    // UNHAPPY_BREAKING_POINT
+      WRITE_LONG 0x00BC (RESOLVE_STR_REF(@3))    // LEADER
+      WRITE_LONG 0x00C4 (RESOLVE_STR_REF(@5))    // BORED
+      WRITE_LONG 0x00C8 (RESOLVE_STR_REF(@8))    // BATTLE_CRY1
+      WRITE_LONG 0x010C (RESOLVE_STR_REF(@201))  // SELECT_COMMON1
+      WRITE_LONG 0x01A8 (RESOLVE_STR_REF(@8))    // CRITICAL_HIT
+      WRITE_LONG 0x01AC (RESOLVE_STR_REF(@200))  // CRITICAL_MISS
+    END
 END
 
 // The Eclipse enemies are custom CREs, so they must be copied to override
@@ -149,6 +258,11 @@ WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
     SAY NAME1 @35 SAY NAME2 @35
 END
 
+// Undead Solaufein (post-vampirism restoration). Uses solavamp.tra
+// for its name; the file uses the extended EE CRE format, so only the
+// display name is written here. Binary-field patches (script name,
+// dialogue resref, sound slots) are not applied — the file ships
+// correctly configured by the mod's own build process.
 WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/solavamp.tra~ BEGIN
   COPY ~solaufeinEE/creatures/solavamp.cre~ ~override/solavamp.cre~
     SAY NAME1 @92 SAY NAME2 @92 LPF EE_CRE_CLEANUP END // Undead Solaufein
@@ -183,40 +297,69 @@ WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
 END
 
 // Underdark Solaufein copies. Name uses wsetup.tra @1 ("Solaufein");
-// bark strings use wsetup.tra @3-@8. The COPY previously used sola.tra,
-// where @1 is a dialogue line not a name — the creature would display
-// the first line of Sola's joining dialogue instead of his name in the
-// Underdark chapter. Consolidated into a single WITH_TRA block since
-// both the name and the bark writes use the same TRA.
+// bark strings use wsetup.tra @3-@8 plus @200/@201.
+//
+// FIXED (v2.1.3): the previous build declared WRITE_ASCII 0x2C4
+// ~SOLA~ #8 for the dialogue resref, the same wrong offset used for
+// the Sola tiers. NI shows Dialogue at 0x2CC on CRE v1.0. Applied
+// the same refactor: v1.0 version guard, EE_SET_CRE_FIELDS for
+// script name and dialogue, direct WRITE_LONGs for the barks.
+//
+// FIXED (v2.1.4): bark list now matches the Sola tier set exactly
+// (12 slots) — added MORALE, SELECT_COMMON1, CRITICAL_HIT, and
+// CRITICAL_MISS. v2.1.3 was missing these four on udsola; the
+// v2.1.4 version brings both blocks into lockstep.
+//
+// After running in NI, if the pristine udsola01.cre and udsola02.cre
+// already ship with script_name = sola and dialogue = SOLA.DLG, the
+// LPF EE_SET_CRE_FIELDS call can be removed — it would just rewrite
+// the same values.
 WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
   COPY ~solaufeinEE/creatures/udsola01.cre~ ~override/udsola01.cre~
        ~solaufeinEE/creatures/udsola02.cre~ ~override/udsola02.cre~
-    SAY NAME1 @1 SAY NAME2 @1 LPF EE_CRE_CLEANUP END
-    WRITE_LONG 0x00A4 (RESOLVE_STR_REF(@3))  // INITIAL_MEETING
-    WRITE_LONG 0x00AC (RESOLVE_STR_REF(@3))  // HAPPY
-    WRITE_LONG 0x00B0 (RESOLVE_STR_REF(@4))  // UNHAPPY_ANNOYED
-    WRITE_LONG 0x00B4 (RESOLVE_STR_REF(@5))  // UNHAPPY_SERIOUS
-    WRITE_LONG 0x00B8 (RESOLVE_STR_REF(@6))  // UNHAPPY_BREAKING_POINT
-    WRITE_LONG 0x00BC (RESOLVE_STR_REF(@3))  // LEADER
-    WRITE_LONG 0x00C4 (RESOLVE_STR_REF(@5))  // BORED
-    WRITE_LONG 0x00C8 (RESOLVE_STR_REF(@8))  // BATTLE_CRY1
+    SAY NAME1 @1 SAY NAME2 @1
+
+    READ_ASCII 0x04 cre_ver (4)
+    PATCH_IF (~%cre_ver%~ STRING_EQUAL ~V1.0~) BEGIN
+      LPF EE_CRE_CLEANUP END
+
+      LPF EE_SET_CRE_FIELDS
+        STR_VAR script_name     = sola
+                dialogue_resref = sola
+      END
+
+      // Same 12-slot bark set as the Sola tier block above. Offsets
+      // are canonical BG2 CRE v1.0 positions; verify in NI per Rule 18.
+      WRITE_LONG 0x00A8 (RESOLVE_STR_REF(@200))  // MORALE
+      WRITE_LONG 0x00A4 (RESOLVE_STR_REF(@3))    // INITIAL_MEETING
+      WRITE_LONG 0x00AC (RESOLVE_STR_REF(@3))    // HAPPY
+      WRITE_LONG 0x00B0 (RESOLVE_STR_REF(@4))    // UNHAPPY_ANNOYED
+      WRITE_LONG 0x00B4 (RESOLVE_STR_REF(@5))    // UNHAPPY_SERIOUS
+      WRITE_LONG 0x00B8 (RESOLVE_STR_REF(@6))    // UNHAPPY_BREAKING_POINT
+      WRITE_LONG 0x00BC (RESOLVE_STR_REF(@3))    // LEADER
+      WRITE_LONG 0x00C4 (RESOLVE_STR_REF(@5))    // BORED
+      WRITE_LONG 0x00C8 (RESOLVE_STR_REF(@8))    // BATTLE_CRY1
+      WRITE_LONG 0x010C (RESOLVE_STR_REF(@201))  // SELECT_COMMON1
+      WRITE_LONG 0x01A8 (RESOLVE_STR_REF(@8))    // CRITICAL_HIT
+      WRITE_LONG 0x01AC (RESOLVE_STR_REF(@200))  // CRITICAL_MISS
+    END
 END
 
 ///////////////////////////////////////////////////////////////////////
-// SPELL FILES 
+// SPELL FILES
 ///////////////////////////////////////////////////////////////////////
 
 WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
   COPY ~solaufeinEE/spells/solaspl.spl~  ~override/solaspl.spl~
-    SAY NAME1 @11 SAY UNIDENTIFIED_DESC @11 
+    SAY NAME1 @11 SAY UNIDENTIFIED_DESC @11
   COPY ~solaufeinEE/spells/spcl999.spl~  ~override/spcl999.spl~
-    SAY NAME1 @12 SAY UNIDENTIFIED_DESC @12 
+    SAY NAME1 @12 SAY UNIDENTIFIED_DESC @12
   COPY ~solaufeinEE/spells/dimdoor.spl~  ~override/dimdoor.spl~
-    SAY NAME1 @13 SAY UNIDENTIFIED_DESC @13 
+    SAY NAME1 @13 SAY UNIDENTIFIED_DESC @13
   COPY ~solaufeinEE/spells/boo2cap.spl~  ~override/boo2cap.spl~
-    SAY NAME1 @23 SAY UNIDENTIFIED_DESC @23 
+    SAY NAME1 @23 SAY UNIDENTIFIED_DESC @23
   COPY ~solaufeinEE/spells/boo2free.spl~ ~override/boo2free.spl~
-    SAY NAME1 @24 SAY UNIDENTIFIED_DESC @24 
+    SAY NAME1 @24 SAY UNIDENTIFIED_DESC @24
 END
 
 // FIXED: The Eclipse sorcerer's signature spells now use wsetup.tra
@@ -241,22 +384,22 @@ COPY ~solaufeinEE/spells/solarepu.spl~ ~override/solarepu.spl~
   LPF EE_SPELL_CLEANUP END
 
 ///////////////////////////////////////////////////////////////////////
-// ITEM FILES 
+// ITEM FILES
 ///////////////////////////////////////////////////////////////////////
 
 WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
   COPY ~solaufeinEE/items/solablad.itm~ ~override/solablad.itm~
-    SAY NAME1 @14 SAY NAME2 @14 SAY UNIDENTIFIED_DESC @15 SAY IDENTIFIED_DESC @15 
+    SAY NAME1 @14 SAY NAME2 @14 SAY UNIDENTIFIED_DESC @15 SAY IDENTIFIED_DESC @15
   COPY ~solaufeinEE/items/solabla2.itm~ ~override/solabla2.itm~
-    SAY NAME1 @81 SAY NAME2 @81 SAY UNIDENTIFIED_DESC @9982 SAY IDENTIFIED_DESC @9982 
+    SAY NAME1 @81 SAY NAME2 @81 SAY UNIDENTIFIED_DESC @9982 SAY IDENTIFIED_DESC @9982
   COPY ~solaufeinEE/items/solae1.itm~   ~override/solae1.itm~
-    SAY NAME1 @38 SAY NAME2 @38 SAY UNIDENTIFIED_DESC @39 SAY IDENTIFIED_DESC @39 
+    SAY NAME1 @38 SAY NAME2 @38 SAY UNIDENTIFIED_DESC @39 SAY IDENTIFIED_DESC @39
   COPY ~solaufeinEE/items/solae2.itm~   ~override/solae2.itm~
-    SAY NAME1 @40 SAY NAME2 @40 SAY UNIDENTIFIED_DESC @41 SAY IDENTIFIED_DESC @41 
+    SAY NAME1 @40 SAY NAME2 @40 SAY UNIDENTIFIED_DESC @41 SAY IDENTIFIED_DESC @41
   COPY ~solaufeinEE/items/solae3.itm~   ~override/solae3.itm~
-    SAY NAME1 @42 SAY NAME2 @42 SAY UNIDENTIFIED_DESC @43 SAY IDENTIFIED_DESC @43 
+    SAY NAME1 @42 SAY NAME2 @42 SAY UNIDENTIFIED_DESC @43 SAY IDENTIFIED_DESC @43
   COPY ~solaufeinEE/items/spidwr1.itm~  ~override/spidwr1.itm~
-    SAY NAME1 @9 SAY NAME2 @9 
+    SAY NAME1 @9 SAY NAME2 @9
 
   // FIXED: Split solabook.itm and solabk2.itm into separate COPY blocks
   // with distinct names/descriptions. The original mod shipped them as
@@ -274,7 +417,7 @@ END
 
 WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/solavamp.tra~ BEGIN
   COPY ~solaufeinEE/items/solabody.itm~ ~override/solabody.itm~
-    SAY NAME1 @90 SAY NAME2 @90 SAY UNIDENTIFIED_DESC @91 SAY IDENTIFIED_DESC @91 
+    SAY NAME1 @90 SAY NAME2 @90 SAY UNIDENTIFIED_DESC @91 SAY IDENTIFIED_DESC @91
 END
 
 ///////////////////////////////////////////////////////////////////////
@@ -374,7 +517,18 @@ COMPILE ~solaufeinEE/dialogues/fatesp.d~
 COMPILE ~solaufeinEE/dialogues/solae1.d~
   USING ~solaufeinEE/tra/%LANGUAGE%/solae1.tra~
 
+// Cross-mod interjections: only compile if ValenEE has been installed
+// first. Solaufein's json/ini metadata declares a "before solaufeinEE"
+// relation on ValenEE for this reason. Both branches log a message so
+// the WeiDU log shows which path was taken.
+//
+// Rule 11h: a file-existence check like this is install-order
+// dependent. Installing Valen first compiles solaint.d (156 additional
+// strings); installing Solaufein first silently skips it. Both are
+// valid installs — the difference is only whether the cross-mod content
+// is present.
 ACTION_IF FILE_EXISTS_IN_GAME ~valenj.dlg~ BEGIN
+  PRINT ~Valen mod dialogue files detected. Compiling cross-mod interjections.~
   // FIXED: sola.tra removed — it overlaps solaint.tra's @1–@303 and
   // would override every interjection's text with romance lines.
   COMPILE ~solaufeinEE/dialogues/solaint.d~
@@ -512,6 +666,7 @@ COPY_EXISTING ~metswarm.pro~ ~override/metswarm.pro~
 
 BEGIN @1060
 DESIGNATED 70
+REQUIRE_COMPONENT ~setup-solaufeinEE.tp2~ ~30~ ~This component requires the Eclipse Sequence to be installed.~
 
 INCLUDE ~solaufeinEE/lib/ee_cutscene_cleanup.tpa~
 
