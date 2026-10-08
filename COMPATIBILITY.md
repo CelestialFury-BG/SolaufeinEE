@@ -32,6 +32,8 @@ Every item above has a corresponding fix in this edition:
 - **`BUT_ONLY_IF_IT_CHANGES`** on every file-modifying `COPY` — shared tables are only written when actually modified, so this mod can be installed alongside SCS, Tweaks, and anything else that patches the same files
 - **`PRETTY_PRINT_2DA`** on every 2DA patch — output matches BioWare's column-aligned format
 - **`EE_CRE_CLEANUP` / `EE_SPELL_CLEANUP` / `EE_CUTSCENE_CLEANUP`** patch functions — remap legacy animation IDs, sweep deprecated effect opcodes, and harden cutscene timing for the EE engine
+- **`EE_SET_CRE_FIELDS`** (in `ee_cre_fields.tpa`) — a reusable joinable-NPC field writer that binds script name, dialogue resref, and the known-spells table at NI-confirmed CRE v1.0 offsets. One `STR_VAR` parameter per field, never a delimited list, so it parses cleanly on WeiDU 25100 and any future version
+- **CRE v1.0 format guard** on every binary write — `READ_ASCII 0x04` + `STRING_EQUAL ~V1.0~`. A future Beamdog format change skips rather than corrupts, instead of the legacy pattern of writing to a hardcoded offset regardless of format
 - **Per-dialogue TRA scoping** — each `.d` file compiles with only its own TRA files, eliminating cross-file `@n` collisions
 - **Seven modular components** with `DESIGNATED` IDs and verified `REQUIRE_COMPONENT` chains — you can install just the Core NPC, or the full experience, and the installer refuses invalid combinations
 - **Dynamic `RESOLVE_STR_REF` allocation** for ToB epilogues — the ending screen always displays the correct text, in any language
@@ -46,16 +48,20 @@ Every item above has a corresponding fix in this edition:
 | Translation encoding | System codepage | Native UTF-8 via `HANDLE_CHARSETS` |
 | Load-order safety | None | Full `BUT_ONLY_IF_IT_CHANGES` |
 | 2DA formatting | Ragged columns | `PRETTY_PRINT_2DA` |
-| Binary file writes | Raw offsets | Format-aware patching via `lib/*.tpa` |
+| Binary file writes | Raw offsets, format-unaware | Format-aware patching via `lib/*.tpa`, with CRE v1.0 guard |
+| Joinable-NPC field binding | Raw `WRITE_ASCII` at hand-picked offsets | `EE_SET_CRE_FIELDS` at NI-confirmed v1.0 offsets |
 | Component structure | Single monolithic | Seven modular components |
 | CRE tiers | Reduced (single level) | All six original tiers + `udsola01/02` |
-| Sound slots restored | Partial | Full — includes `INITIAL_MEETING`, `LEADER`, `BORED`, `BATTLE_CRY1`, `CRITICAL_HIT` |
+| Sound slots restored | Partial | Full 12-slot set: `MORALE`, `INITIAL_MEETING`, `HAPPY`, `UNHAPPY_ANNOYED`, `UNHAPPY_SERIOUS`, `UNHAPPY_BREAKING_POINT`, `LEADER`, `BORED`, `BATTLE_CRY1`, `SELECT_COMMON1`, `CRITICAL_HIT`, `CRITICAL_MISS` |
+| Bark content | Original template audio (generic BioWare creature barks) | Correct Solaufein lines sourced from `wsetup.tra` |
 | ToB Fate Spirit summon | Absent | Present via `fatesp.d` |
 | Eclipse dialogue double-fire | Present | Fixed |
+| Component 30 dependency | Requires Component 10 only | Requires Component 20 (which requires 10) |
 | Cross-mod compatibility checks | None | `FILE_EXISTS_IN_GAME` guards for optional dependencies |
 | Languages | 4 | 8, with layered English fallback |
 | EE cutscene hardening | None | `EE_CUTSCENE_CLEANUP` |
 | Project Infinity metadata | None or partial | Full `solaufeinEE.ini` + `solaufeinEE.json` |
+| Cross-mod install-order docs | None | Documented Valen-before-Solaufein requirement for cross-mod interjections |
 
 ### Why This Matters for EE Users
 
@@ -66,6 +72,7 @@ On a lightly modded BG2EE install running on Windows, a legacy port will often w
 - **You've installed another mod that ships Solaufein content** — duplicate `pdialog.2da` rows can corrupt the party menu
 - **You want to install only part of the mod** — legacy ports don't offer granular components
 - **You play in a non-English language** — legacy ports only translate the strings their original translator chose to include
+- **You use ValenEE alongside this mod** — the cross-mod interjections only compile when Valen is installed first. Legacy ports don't ship these at all; this edition does, but only in the correct install order
 
 For all of these scenarios, this edition is the correct choice. For a Windows-only, English-only, minimal-mod install on original BG2, a legacy port will serve you fine — the content is the same either way.
 
