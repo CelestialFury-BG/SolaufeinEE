@@ -1,0 +1,73 @@
+// Sola in ToB
+// Illasera
+@1 = ~ Espere, isso não precisa acabar em violência. Podemos conversar? ~
+@2 = ~ Um drow? O que está fazendo aqui? Sendai prometeu que essa luta seria minha. Por que ela o enviou pra cá? Você nunca deveria ter saído do Enclave próximo a Amkethran. ~
+@3 = ~ Asseguro-lhe, madame, não conheço sua 'Sendai'. ~
+@4 = ~ Nesse caso, você é ainda menos importante pra mim. Hora de morrer, <CHARNAME>! ~
+
+// Sarevok 
+@10 = ~ Essa idéia de Juramento tem mérito, <CHARNAME>. Do ponto de vista prático, Saverok tem muito pra nos oferecer. Com ele preso a tal juramento, você poderá usar livremente o poder dele sem temer traição. Recomendo escolher essa opção. ~
+@11 = ~ Essa idéia de Juramento tem mérito, mas cheira a dominação e escravidão. Realmente queremos um companheiro no qual só podemos confiar se submetido magicamente? Por que não dar a Sarevok uma chance de decidir ficar ao seu lado por vontade própria? ~
+@12 = ~ Interessante. O drow argumenta a meu favor. O que diz você, <CHARNAME>?~
+
+// Mel
+@20 = ~ Isso sempre soa como um alerta, mas algo me diz que essa mulher parece mais estar lendo um script do que falando sinceramente. ~
+@21 = ~ <CHARNAME>, devíamos fazer algo para ajudar as pessoas dessa cidade. Esse desolado campo de refugiados beneficiar-se-ia de nossa intervenção. ~
+
+// Captain Samand
+@30 = ~<CHARNAME>, sinto que deveríamos investigar por conta própria. Sinto afinidade por aqueles que são injustamente acusados. Pode imaginar como seria ser privado da liberdade por engano? ~
+@31 = ~ Não importa quão estreito o portão,
+  Quão carregado de punições o pergaminho,
+Sou o senhor do meu destino:
+  Sou o capitão da minha alma.~
+@32 = ~ Vejamos o que podemos aprender com Kiser e Mateo.~
+
+// Kiser
+@40 = ~ Apesar do que Kiser sugeriu, acho que devíamos falar com esse Errard e pedir uma segunda opinião sobre o assunto. Existem mais coisas acontecendo aqui do que podemos perceber. ~
+
+// Errard
+@50 = ~ Perdoe-me colega, mas você poderia me explicar exatamente como essa adivinhação mágica funciona? ~
+@51 = ~ Não, não vou explicar. Sou um mágico altamente treinado, encarregado de defender uma cidade, não um mestre conferencista ou uma livraria ambulante. Aprenda suas próprias magias, darkling. ~
+
+// Saradush Tavern Il-Khan Soldier
+@60 = ~ Não creio que aquela mulher deseje sua atenção.~
+@61 = ~ E o que você tem a ver com isso, drow? Que direito tem de vir aqui e falar pra soldados decentes como nós como passar nosso tempo? Estamos só paquerando um pouquinho. É muito melhor do que qualquer coisa que sua raça faz -- matar crianças, idolatrar aranhas, atacar outros, lutar entre si. ~
+@62 = ~ Eu ... ~
+@63 = ~ Sim, o quê? ~
+@64 = ~ Está certo. O que vocês fazem não é tão ruim quanto o que a maioria das pessoas faz. Mas isso, contudo, não justifica seus atos. O que deve ser feito para convencê-los a pararem de se impor a essa mulher? ~
+
+// Volo 
+@70 = ~ Fale-me sobre Solaufein. ~
+@71 = ~ Uma mente investigativa e uma lâmina afiada, Solaufein tem servido bem a <CHARNAME>, desde que se encontraram no Underdark. Apesar de não ser tão famoso ou bem aceito quanto Drizzt, o poeta laureado do Underdark, ainda assim chama a atenção de muitos. ~
+@72 = ~ Pouco é sabido da personalidade de Solaufein, além de sua adoração por Eilistraee e aquilo que ele confidenciou a <CHARNAME>. Entretanto, ele parece ser um andarilho pragmático das trilhas do mundo. ~
+@73 = ~ Pouco é sabido da personalidade de Solaufein, além de sua adoração por Eilistraee e aquilo que ele confidenciou a <CHARNAME>. Entretanto, ele parece ser um andarilho angustiado das trilhas do mundo. ~
+@74 = ~ Admito que sou uma pessoa fechada, Bardo. Meus pensamentos são profundos, como águas escuras. Entretanto, apreciaria qualquer coisa que você possa fazer para convencer o mundo da superfície de que nem todos os drows são odiosos. ~
+
+// Asmay
+@80 = ~ <CHARNAME>, nossa tarefa é óbvia: devemos deter o reino de terror de Gromnir. Esse tipo de execuções 'aleatórias' lembram-me bastante as disputas políticas que infestaram as Casas guerreiras em Ust Natha. ~
+@81 = ~ As Mães Matronas jogavam as casas menores umas contra as outras, sugerindo que os ataques fariam-nas obter favores. As menores lutaram e morreram; eram vistas apenas como peões naquele jogo. ~
+@82 = ~ Esta sua 'Ust Natha' está começando a soar parecida com Saradush, drow. Nós lutamos contra Gigantes de Fogo enquanto Gromnir regala-se e acusa pessoas de serem traidoras. ~
+
+// End!
+// Somewhat written by Pamm!
+@1000 = ~ Chegamos juntos ao final. De todos os poemas que conheço, não consigo pensar em nenhum que possa persuadir-lhe ficar comigo, e nenhum que possa me confortar, caso você escolha ascender à divindade. ~
+@1001 = ~ Você me trouxe para a luz, <CHARNAME>, e sempre te amarei por isso. Partindo ou ficando, meus sentimentos não mudarão. Mas caso se vá, sinto que a luz diminuirá para mim, sem sua presença ao meu lado. ~
+@1002 = ~ Não vou verdadeiramente tentar influenciá-lo, meu amigo. Mas o aconselho a seguir sua mente e seu coração. Numa decisão dessas, ambos precisam estar em perfeito alinhamento. Deixá-lo-ei com essas palavras, no caso de nunca mais vê-lo com olhos mortais. ~// for male PCs
+  ~ Não vou verdadeiramente tentar influenciá-la, minha amiga. Mas a aconselho a seguir sua mente e seu coração. Numa decisão dessas, ambos precisam estar em perfeito alinhamento. Deixá-la-ei com estas palavras, no caso de nunca mais vê-la com olhos mortais. ~// for female PCs
+
+	
+// poem by Robert Service
+@1003 = ~Conheço um jardim onde os lírios brilham, 
+E uma que, lá, ao sol hesita;
+Ela é de longe o lírio imaculado mais belo,
+E oh, seus olhos estão iluminados com sonhos!~
+@1004 = ~ Conheço um sótão, frio e escuro e lúgubre, 
+  E um que labuta e labuta com incansável pena, 
+  Até que seus bravos, tristes olhos enfraqueçam -- então 
+  Ele busca as estrelas, pálidas, silentes e vigilantes.~
+@1005 = ~E ah, é estranho; pois, desolado e turvo,
+Entre estes dois um extenso oceano se encapela; 
+Ainda assim ele está no jardim ao lado dela
+E ela está no sótão com ele.~
+@1006 = ~ Ussta xukoth, irei sempre amar você, não importa sua escolha. ~
+

@@ -1,0 +1,85 @@
+// Italiano
+// jon in tree of life
+@1 = ~Stavo per congratularmi con te per questa vittoria tanto attesa, <CHARNAME>, ma qualcosa nei tuoi occhi mi dice che le cose non sono ancora complete.~
+// welcome to hell
+@2 = ~Quando sei crollato e sei caduto sull'Albero della Vita, ho sentito come se la mia mente avesse lasciato il mio corpo. Ho visto una visione di fulgore argentato che mi faceva cenno di seguirti, e sapevo che era la cosa giusta da fare.~
+@3 = ~E tuttavia... sono quasi sicuro di aver sentito anche il sogghigno di un ragno quando sono arrivato qui. Non ti abbandonerei, <CHARNAME>, ma dobbiamo comunque procedere con cautela in questo luogo.~
+
+// pre tree of life, remorse romance
+@4 = ~Solaufein, pensieroso e avvenente, è con te fin dal Sottosuolo. Durante i vostri discorsi e viaggi è giunto a incarnare compassione e rimorso. Ma è davvero questa la sua battaglia?~
+@5 = ~Solaufein... io ---~
+
+@6 = ~Zitto ora, <CHARNAME>. Sai che viaggerò con te all'inferno e ritorno, se necessario. Non ti abbandonerei prima della battaglia finale.~
+@7 = ~Ma penso che questo sia un caso in cui temi per la mia vita piuttosto che dubitare della mia lealtà. Non ci si sente mai a posto nel mettere in pericolo gli amici, vero?~
+@8 = ~Lascia che ti condivida una poesia sulla morte, <CHARNAME>, poiché non temo il grande divario. Soprattutto mentre mi muovo verso di esso con la coscienza pulita, conoscendo bene il peso e la misura delle mie azioni.~
+@9 = ~
+Tramonto e stella della sera,
+   E un chiaro richiamo per me!
+E che non vi sia lamento della secca,
+   Quando prendo il largo,
+
+Ma una marea che nel muoversi sembra dormire,
+   Troppo piena per suono e spuma
+Quando ciò che trasse dall'abisso sconfinato
+   Torna di nuovo a casa.~
+@10 = ~
+Crepuscolo e campana della sera,
+   E dopo di ciò il buio!
+E che non vi sia tristezza d'addio
+   Quando m'imbarcherò;
+
+Poiché sebbene dal nostro confine di Tempo e Luogo
+   Il flusso mi possa portar lontano,
+Spero di vedere il mio Timoniere faccia a faccia
+   Quando avrò attraversato la secca.~
+@11 = ~Vieni, amore mio. Affrontiamo insieme le nostre paure.~
+
+// pre tree of life, pragmatic romance
+@12 = ~Solaufein, pensieroso e avvenente, è con te fin dal Sottosuolo. Durante i vostri discorsi e viaggi è giunto a incarnare pragmatismo ed efficacia. Ma è davvero questa la sua battaglia?~
+@13 = ~Zitto ora, <CHARNAME>. Sai che viaggerò con te all'inferno e ritorno, se necessario. Non ti abbandonerei prima della battaglia finale.~
+@14 = ~Mi hai insegnato l'importanza di raggiungere gli obiettivi. A volte dei pedoni devono essere sacrificati nel mezzo di una lotta... e sebbene io non sia un pedone, darei volentieri la mia vita per vedere la tua anima ripristinata.~
+@15 = ~Lascia che ti condivida una poesia di superficie su compagnia, servizio e morte, <CHARNAME>.~
+@9916 = ~
+La mia vita era in piedi - una
+Balestra Caricata -
+Negli Angoli - finché un Giorno
+Il Padrone passò - identificò -
+E mi portò via -
+
+E ora vaghiamo in
+Boschi Sovrani -
+E ora cacciamo la Cerva -
+E ogni volta che parlo per Lui
+L'Aria mormora la sua risposta -~
+@9917 = ~
+E sorrido io, tale
+Guizzo sfuggente
+Sul bagliore della Valle -
+È come un volto Vesuviano
+Avesse lasciato passare il suo piacere
+
+E quando di Notte - il Nostro
+Buon Giorno concluso -
+Custodisco la Testa del mio Padrone -
+È meglio del profondo Cuscino
+Dell'Edredone - aver condiviso -~
+@18 = ~
+Al nemico Suo - sono nemica mortale -
+Nessuno si muove una seconda volta
+Su chi poso un Occhio Giallo -
+O un Pollice enfatico -
+
+Sebbene io di Lui - possa vivere più a lungo
+Lui deve più a lungo - di me -
+Poiché ho solo il potere di uccidere
+Senza - il potere di morire -~
+@19 = ~Non sono un'arma immortale, <CHARNAME>, ma servirò comunque al tuo fianco, camminando da pari. Che cominci, amore mio, lo vedrò rappresentato con te.~
+
+// pre tree of life, no romance
+@20 = ~Solaufein ha vissuto avventure con te fin dal Sottosuolo. Durante i vostri discorsi e viaggi si è dimostrato un guerriero efficace e un mago astuto.~
+@21 = ~Solaufein, questa non è la tua battaglia. Con il ripristino del Lanthorn e la sconfitta delle forze di Irenicus qui in città abbiamo schiacciato i piani di Ardulace. Non devi continuare.~
+@22 = ~Siamo arrivati lontano da Ust Natha, Solaufein. Forse più lontano di quanto volessi viaggiare. Il nostro prossimo incontro non sarà facile. Sei sicuro di volerlo fare?~
+@23 = ~Andiamo a uccidere un ex-elfo squilibrato e a riprenderci la mia anima, Solaufein!~
+  @24 = ~Esattamente i miei pensieri, <CHARNAME>!~
+@25 = ~Non ti abbandonerei ora, <CHARNAME>. Questa è la mia battaglia tanto quanto la tua. Sono il tuo strumento in questa lotta, usami bene.~
+@26 = ~Speravo in qualcosa di più nella nostra compagnia, ma sono comunque felice della mia vita sopra la superficie. Seguirò la tua scia.~

@@ -1,0 +1,289 @@
+// Date: 13 Feb 02 17:52:50 +0100
+// sola     translation file
+
+@1 = ~Veldrin, sembra che i nostri destini si incrocino ancora una volta.  Come sai, avevo progettato di rimanere in Ust Natha e di cercare altri Drow che la pensassero come me. Con la morte della Matrona Ardulace e di Phaere, in ogni caso, non mi sento più a mio agio laggiù.~
+@2 = ~E ora, sono qui di fronte a te nell'Abisso Planare. Meraviglie e terrori tutt'intorno: devo ammettere che non sono più molto sicuro di cosa fare della mia vita.~
+@3 = ~Veldrin, sono felice di averti reincontrato. Come già sai, avevo progettato di rimanere in Ust Natha e di cercare altri Drow che la pensassero come me. Con la morte della Matrona Ardulace e di Phaere, in ogni caso, non mi sento più a mio agio laggiù.~
+@4 = ~La tensione in città era alta anche prima che tu arrivassi. Irenicus ha promesso una guerra facile contro gli Elfi di Superficie, e ha scatenato sete di sangue in molti. Con la morte di Ardulace quella tensione è ora diventata sottile come la tela di un ragno. Posso fare ben poco rimanendo qui.~
+@5 = ~Adesso la mia mente è colma delle immagini di malvagità della mia stolta gente. Forse mi sta sfuggendo qualche virtù della mia patria che possa redimerla...qualchè virtù che mi verrà in mente solo dopo averla abbandonata. O forse no. ~
+@6 = ~Comunque ho deciso. Mi permetterai di accompagnarti nel tuo viaggio? ~
+@7 = ~Certamente, Solaufein. Sarai il benevenuto nella mia squadra. ~
+// CHANGED!
+// @8 = ~Sebbene comprenda la tua causa e possa offrirti il mio sostegno, non ho bisogno di nessun altro aiuto al momento. Mi dispiace, Solaufein. ~
+@9 = ~Ti inganni da solo se pensi che permetterei ad un drow come te di accompagnarmi. Vai al diavolo, Solaufein.~
+@10 = ~Addio, allora.~
+@11 = ~Ebbene, mio caro 'non-più-Veldrin', come mi dovrò rivolgere a te d'ora in poi?~ ~Ebbene, mia cara 'non-più-Veldrin', come mi dovrò rivolgere a te d'ora in poi?~
+@12 = ~Ti prego, chiamami <CHARNAME>, Solaufein. ~
+@13 = ~Preferei <CHARNAME> ad 'abitante della superficie' o a <RACE>.~
+@14 = ~Puoi rivolgerti a me come Mio <LADYLORD>. Finchè sarai nel mio party, cerca di parlare solo quando interrogato. ~
+~Puoi rivolgerti a me come Mia <LADYLORD>. Finchè sarai nel mio party, cerca di parlare solo quando interrogato. ~ 
+@15 = ~Molto bene, <CHARNAME>. Scegliere Veldrin come nome drow è stato davvero un'ispirazione. E' comune a sufficienza da passare inosservato, ed è sia maschile che femminile. Come hai fatto a arrivarci? Hai studiato le usanze degli Elfi Scuri? ~
+@16 = ~Veramente me l'ha suggerito Adalon. Ha usato la sua magia per darci un aspetto drow, di modo da poter recuperare le sua uova. ~
+@17 = ~Più conosco la cultura drow, più ne sono disturbato. Tienti i tuoi discorsi per te. ~
+@18 = ~A parte la gentilezza che mi hai dimostrato, hai recitato la tua parte piuttosto bene. So perfettamente quanto possa essere duro mascherare i propri sentimenti in quella città crudele. Vieni, proseguiamo per la nostra strada. ~
+@19 = ~Certo. Avrei dovuto immaginarlo da solo.~
+@20 = ~Certo. Speravo in qualcosa di meglio, ma sono piuttosto abituato a questo tipo di compromessi. Finchè sarò nel tuo party, seguirò i tuoi ordini.~
+@21 = ~Non posso fare a meno di chiedermi se ho fatto la cosa giusta. Le mie azioni hanno causato la morte di Phaere. Forse tu fai fatica ad immaginarlo, ma nella mia mente la vedo ancora com'era tanto tempo fa: innamorata ed entusiasta. La tortura ha cambiato tutto. O per lo meno è questo che credo. E se Phaere avesse recitato un ruolo proprio come ho fatto io? ~
+@22 = ~Phaere ci ha esplicitamente ordinato di ucciderti. La sua unica preoccupazione era di far crescere la sua Casata nella struttura sociale drow. Se ti avesse veramente amato, non sarebbe stata così convincente nel suo odio.~
+@23 = ~Non ho tempo per i tuoi dubbi esistenziali, Soulafein. Tienti i tuoi pensieri per te. ~
+@24 = ~E' vero. Ma io non ero forse altrettanto convincente nel mio odio verso di lei?~
+@25 = ~In realtà in te traspariva una certa preoccupazione. L'hai seguita fino a casa dopo che era stata rapita, e non hai mai realmente preso in considerazione di vendicarti contro di lei.~
+@26 = ~Beh, immagino che sia possibile che ella non fosse del tutto corrotta. Ma d'altronde tu come avresti potuto saperlo?~
+@27 = ~Questo è vero. Una parte di me non poteva sopportare di vederla soffrire. L'altra parte di me invece avrebbe voluto ucciderla. Ma come ci si può arrendere di fronte a qualcuno che ami ma che è diventato malvagio?~
+@28 = ~Ah, <CHARNAME>, sono felice di vederti. Stavo proprio ammirando gli alberi ed evitando alcune truppe di Ehlan. Mi sembra strano pensare alla superficie come alla mia nuova casa. Mi sto sforzando di chiarirmi del tutto le idee a riguardo.~
+@29 = ~Comunque sono convinto che avrò un sacco di tempo per afferrare meglio il concetto durante i nostri viaggi. Vogliamo incamminarci?~
+// CHANGED
+// @30 = ~In realtà, Solaufein, è venuto il momento di separare le nostre strade.~
+@31 = ~Si, riuniamoci di nuovo e viaggiamo insieme.~
+@32 = ~L'uscita verso la superficie è molto vicina. Dovrò probabilmente trovare la strada per conto mio adesso. Continuare insieme renderebbe gli elfi di superficie che controllano l'entrata più sospettosi nei tuoi confronti.~
+@33 = ~Sono stato qui durante diversi attacchi a quest'area, e quindi la conosco bene. Mi teletrasporterò oltre le guardie e ci incotreremo a nord-est del loro accampamento.~
+@34 = ~E' da lungo tempo che mi ritrovo a meditare sulla moralità. Mentre ero in Ust Natha avrei avuto la possibilità di fare molte cose. Avrei potuto utilizzare la mia influenza per liberare gli abitanti della superficie resi schiavi, per esempio. Ma non l'ho fatto.~
+@35 = ~Guardando indietro, non sono affatto sicuro del perché. Forse avevo paura di essere scoperto e di perdere ogni futura chance di fare del bene. O forse non mi è mai semplicemente capitata l'occasione. Non saprei quale delle due opzioni mi causa più rimorso.~
+@36 = ~Sono sicuro che sei solo stato prudente, Solaufein. Non sarebbe servito a nulla se ti avessero scoperto e giustiziato.~ 
+~Sono sicura che sei solo stato prudente, Solaufein. Non sarebbe servito a nulla se ti avessero scoperto e giustiziato.~ 
+@37 = ~Liberandoli avresti causato la tua stessa morte, ma al posto tuo anch'io rimpiangerei di non aver trovato un modo per aiutarli.~
+@38 = ~Perché insisti ad annoiarmi con le tue piccole questioni morali? Tienti per te le tue opinioni, se non ti spiace.~
+@39 = ~E' un'analisi molto pragmatica, <CHARNAME>. Forse sono stato troppo idealista?~
+@40 = ~In ogni caso, grazie per averne parlato con me. Mi fa sentire meglio poter affrontare queste questioni con qualcuno, in particolare se sa vedere entrambe le facce della medaglia.~
+@41 = ~Questo è ciò che sento nel mio cuore. Avrei davvero voluto trovare un modo per liberarli.~
+@42 = ~Nella mia condizione di emarginato, mi trovo spesso a meditare sul destino. Io non sono come gli altri drow: sono convinto che la mia gente abbia perso la retta via.~
+@43 = ~Ma quando penso agli altri nella Gilda dei Maschi Guerrieri spesso mi chiedo: hanno scelto loro la via del male, o sono stati educati secondo essa e mai corretti successivamente?~
+@44 = ~Nonostante le regole della società possano avere un ruolo importante, penso che noi veniamo al mondo con avarizia e malvagità  innate e che passeremo la vita a cercare di combatterle.~
+@45 = ~L'intero concetto di una razza 'naturalmente malvagia 'è assurdo. I drow sono quello che sono perché le loro stesse regole li hanno ridotti così.~
+@46 = ~C'è equilibrio in tutte le cose. Noi nasciamo in uno stato di natura che non è né buono né malvagio.~
+@47 = ~Qual è quindi il ruolo della società?~
+@48 = ~La società dovrebbe fornire uno schema che ci permetta di contrastare i nostri impulsi più improduttivi.~
+@49 = ~Dobbiamo  comunque stare in guardia contro il male anche all'interno di una struttura sociale. Ciascuno di noi è sempre responsabile delle proprie azioni.~
+@50 = ~Ciò che stai dicendo mi sembra molto realistico ... anche se forse  un po' deprimente. Ci penserò su.~
+@51 = ~Bene, sono felice che le responsabilità personali abbiano un qualche ruolo quindi. Ci penserò su.~
+@52 = ~Non sono forse essi stessi responsabili del loro comportamento? Vuoi dire forse che una "società astratta" è la causa delle loro azioni malvagie?~
+@53 = ~No, la volontà personale ha sempre un ruolo molto importante. Essi avrebbero potuto resistere al male in ogni momento.~
+@54 = ~Forse in parte, ma essi non sono certo automi senza volontà. E' sempre la volontà individuale che ha l'ultima parola. ~
+@55 = ~Il vostro 'stato naturale' è piuttosto brutale. Perché venerare lo 'stato di natura'?~
+@56 = ~Sto semplicemente dicendo che "bene" e "male" sono spesso concetti soggettivi che utilizziamo  per  giustificare le nostre azioni in qualche modo.~
+@57 = ~Può essere brutale. Ma esso rappresenta la realtà e fornisce una prospettiva che spesso elimina qualunque tipo di rimorso.~
+@58 = ~Ne abbiamo già parlato tempo fa, ma l'argomento mi tormenta ancora: qual è il fine ultimo di una società? Io sono un rinnegato fuggito da Ust Natha, e sarò sempre un pariah sulla superficie. Avrò mai l'occasione di essere qualcosa di più di un mercenario?~
+@59 = ~Se il tuo scopo è cercare l'integrazione con gli abitanti delle superficie, c'è già un precedente. Drizzt è stato capace di andare oltre i pregiudizi e di farsi in parte accettare. ~
+@60 = ~Se vuoi, ma la società non è necessariamente sempre positiva. Potresti trovare il tuo punto di vista personale molto più giusto.~
+@61 = ~Grazie per i consigli. Ma al di là della mia situazione personale, tu che opinione hai sul fine ultimo di una società? Perché legarci tutti e circoscriviere i nostri comportamenti con le leggi? Seguire le leggi non significa certo fare ciò che è sempre e perfettamente giusto, o no?~
+@62 = ~Beh, uno potrebbe sperare che "la legge" e "ciò che è giusto" siano perlomeno in qualche modo correlati. Se così fosse, i problemi verrebbero ridotti al minimo.~
+@63 = ~Noi ci uniamo insieme per difenderci e commerciare. I contadini per esempio decidono di sottostare alle leggi di Amn perché sanno che le guardie di Amn li proteggeranno in caso di bisogno.~
+@64 = ~Ma nel caso io non fossi d'accordo con la legge? La legge drow mi ordinerebbe di ucciderti proprio lì dove ti trovi adesso. E poi, probabilmente, mi farebbe giustiziare per non averti ucciso prima. Come puoi sapere quali leggi sono davvero secondo giustizia?~
+@65 = ~Devi ascoltare il tu cuore, Solaufein. Il tuo stesso istinto ti ha detto che la legge drow non era secondo giustizia.~
+@66 = ~Devi analizzare le cose attentamente. Riflettendoci seriamente scoprirai sempre quando una legge è falsa.~
+@67 = ~Ancora una volta mi hai dato molto a cui pensare. Ti ringrazio per avermi aiutato a riflettere su questi argomenti.~
+@68 = ~Come mago mi è capitato spesso di evocare potenti creature e di spingerle a servire le mie cause. Ma ora mi chiedo: è questo qualcosa di diverso dalla schiavitù? Forse gli animali di un Druido lo servono per amicizia; non credo però che sia lo stesso per le creature che ho chiamato a me finora.~
+@69 = ~I maghi hanno evocato quel genere di creature fin da quando Mystra li ha benedetti con la magia. Se non sei in grado di evocarle puoi spesso trovarti sopraffatto da nemici con intenzioni molto meno moralistiche delle tue.~
+@70 = ~Hmm. Questa sì che è una domanda interessante. Mi pare di ricordare che le creature evocate da altri piani sono solo "leggeremente infastidite" dal fatto di dover servire un mortale.~
+@71 = ~In effetti è un argomento discutibile. Forse dovremmo limitarci ad evocare solo creature prive di intelligenza.~
+@72 = ~Indipendentemente da come stanno le cose, non ho potuto fare a meno di paragonarmi ad un sorvegliante di schiavi, in alcune delle recenti battaglie. Per il mio volere quelle creature hanno combattutto e sono morte.~
+@73 = ~L'hai sentito da una creatura di un altro piano? O forse invece dalla propaganda di qualche arcimago?~
+@74 = ~Il tuo è un nobile ragionamento, e sento del rimorso per quegli "schiavi" che ho forzato a combattere.~
+@75 = ~Eppure, non usare la migliore delle armi disponibili ci può costare i nostri scopi e le nostre stesse vite. Se la situazione si facesse critica, sarei pronto ad evocare qualunque cosa per salvare me e la causa per cui combatto. E' una questione piuttosto spinosa: dovrò meditarci un po' su. ~
+@76 = ~Grazie per avere condiviso con me i tuoi pensieri, <CHARNAME>. Più discorriamo, e più sento di capirti. E ti rispetto.~
+@77 = ~Sembrerebbe che siamo costantemente attaccati da nemici potenti.  Ci abbiamo appena parlato, oppure siamo semplicemete passati da una certa porta ... ed ecco che improvvisamente veniamo colti in un agguato e ci ritroviamo a combattere.  E ancora mi chiedo: non è che magari  noi facciamo la stessa impressione agli occhi dei nostri rivali?~
+@78 = ~Non credo ci sia nulla che non va nella nostra tattica. Noi abbiamo bisogno di tutto l'aiuto disponibile per fronteggiare nemici così potenti.~
+@79 = ~Non ho mai teso un agguato ad un innocente o ad un nemico non dichiarato.~
+@80 = ~Cerco di evitare ogni tattica disonorevole quando posso farlo. Anche se a volte sembra necessario usarle per ottenere il fine ultimo della nostra missione. ~
+@81 = ~Cerco di evitare ogni tattica disonorevole quando posso farlo. Mi sento estremamente colpevole quando sono costretto a usarle. ~ 
+~Cerco di evitare ogni tattica disonorevole quando posso farlo. Mi sento estremamente colpevole quando sono costretta a usarle.~ 
+@82 = ~Mai? Non hai mai colto di sorpresa un drago nella sua tana? Non hai mai attaccato un mago potente e suoi accoliti nella loro casa? Non hai mai ingannato Phaere e Ardulace causando la loro stessa rovina?~
+@83 = ~Spesso ripenso alla "trappola" che abbiamo organizzato per Phaere e Ardulace e il senso di colpa mi rimorde fin nelle ossa. Abbiamo evitato una guerra ... ma con quale sporco raggiro..!~
+@84 = ~Dovevano aspettarselo, in fondo. Una tale malvagità non può restare impunita.~
+@85 = ~Sono solo felice che le abbiamo prese prima che loro distruggessero noi ... e gli elfi di superficie.~
+@86 = ~Sono disposto anche ad accettare una piccola macchia sulla mia coscienza,  se so che può salvare vite umane e contribuire a mantenere la pace. ~ 
+~Sono disposta anche ad accettare una piccola macchia sulla mi coscienza, se so che può salvare vite umane e contribuire a mantenere la pace.~ 
+@87 = ~C'è verità in quello che dici. Ancora una volta devo ritirarmi nei miei pensieri a meditare su ciò che mi hai detto.~
+@88 = ~Mi sono ritrovato a pensare ai bambini, e ai golem ... ai maghi piace pensare ai golem come ad automi non intelligenti: bestie addestrate che seguono i loro ordini alla lettera. Sebbene essi effettivamente non agiscano di propria volontà, comunque rispondono ai comandi e alle richieste nella nostra lingua.~
+@89 = ~La lingua parlata è piuttosto dinamica: può un golem del tutto privo di intelligenza comprendere il nostro linguaggio? Prova a pensare ai golem più chiacchieroni che hai incontrato.~
+@90 = ~Non capisco dove stai cercando di portarmi, ma se la metti in questo modo, è probabile che anche i golem non siano completamente privi di pensiero.~
+@91 = ~Forse non è possibile che i maghi che li creano facciano semplicemente una copia delle loro conoscenze e la assegnino ai golem?~
+@92 = ~Sono stufo delle tue domande senza fine e della tua insulsa moralità. Lasciami in pace. ~
+@93 = ~E se fosse così, non sarebbero tanto diversi dai bambini? Non dovremmo assumerci nei loro confronti le stesse responsabilità che ci assumiamo verso altri essere viventi?~
+@94 = ~No, i golem non sono altro che oggetti animati magicamente dotati di una semi-intelligenza.~
+@95 = ~Forse hai ragione. La magia sembra presentare ancora delle zone non chiare. E quindi allora, se i golem fossero intelligenti?~
+@96 = ~Allora, prova a pensare: non siamo noi come dei semplici golem di fronte agli Dei? Servitori prediletti, forse, ma pur sempre non reali creatori di pensieri? In confronto agli Dei noi siano appena esseri senzienti.~
+@97 = ~Dove vuoi portarmi, con il tuo discorso?~
+@98 = ~Sto pensando alla predestinazone e alla volotà individuale. Alaundo ha previsto un grande destino che ti riguarda: quanto spazio hanno realmente la tua volontà e le tue azioni in esso?~
+@99 = ~Vieni qui, e prendi la mia mano. Era forse scritto anche questo nelle stelle? Immagina che gli Dei ti abbiamo rivelato questa profezia: lascerò la tua mano entro due minuti. Ora, però prova a immaginare che noi ... rifiutiamo. Cosa accadrebbe?~
+@100 = ~Noi non ci rifiuteremo: la profezia non lo permette.~
+@101 = ~Forse gli Dei non hanno mai fatto una tale profezia.~
+@102 = ~Non credo che le profezie possano essere tanto specifiche.~
+@103 = ~Forse il tempo non è un concetto interessante per gli Dei. E loro possono basare le loro decisioni sul futuro in un modo non così strettamente vincolante.~
+@104 = ~Quindi noi non avremmo alcun potere decisivo sul  nostro futuro: una conclusione raggelante. Perché prendersi la responsabilità delle proprie azioni se tutto è già deciso?~
+@105 = ~Ebbene, ti ho chiesto tutto ciò perché sto pensando allo scopo di tutte le nostre quotidiane battaglie. Il tuo è un grande destino. A volte sento che è come se agli Dei il mio fosse sfuggito. Come potrebbero interagire i nostri destini, ora che percorriamo lo stesso cammino?~
+@106 = ~Come da sempre fanno, immagino: condividendo azioni e pensieri. Sono felice di averti al mio fianco.~
+@107 = ~Siamo  stati insieme abbastanza da spingermi a non prevedere alcun cambiamento della nostra situazione.~
+@108 = ~Grazie, amico mio. Sei per me un grande conforto. ~ 
+~Grazie, amica mia. Sei per me un grande conforto.~ 
+@109 = ~Bene, diciamo che alla fine io lascio la tua mano. Gli Dei potrebbero avere qualcosa da ridire. Supponi che avessere predetto cinque minuti, o due. Ma noi abbiamo scelto sei minuti. E' questo possibile?~
+@110 = ~E perché no? C'è forse qualche forza nel multi-universo più potente degli stessi Dei che impedisca loro di fare profezie specifiche?~
+@111 = ~Un'idea grandiosa ... anche se difficile da visualizzare. Non ho dubbi che gli Dei siano ben al di là della nostra comprensione.~
+@112 = ~Il tuo punto di vista  sulla paternità e sul concetto di educazione mi interessa molto, <CHARNAME>. Permetteresti al tuo bambino di mettere la sua mano nel fuoco?~
+@113 = ~Certo. Meglio che lo faccia mentre lo guardo e sono in grado di fermarlo prima che non si faccia veramente male. Preferisco che conosca il fuoco attraverso uno spiacevole ma indistinto ricordo infantile, piuttosto che attraverso una cocente esperienza da adulto.~
+@114 = ~No, perché dovrei lasciare che si bruci senza motivo? Anche se probabilmente finirebbe col provarci di nuovo più tardi.~
+@115 = ~Non finchè non è sufficientemente grande per decidere per conto suo. Il mio affetto nei suoi confronti mi spingerebbe a proteggerlo. Soffrirei nel veder soffrire lui.~
+@116 = ~Certo. Io non sarò sempre al suo fianco per proteggerlo: prima o poi dovrà imparare per conto suo. Non gli farei del bene se lo proteggessi troppo.~
+@117 = ~Nonostante la nostra vita di battaglie quotidiane ... tu riesci sempre a trovare la compassione in ogni luogo. Ciò scalda il mio cuore.~
+@118 = ~Grazie, <CHARNAME>. Le tue parole in tutti i nostri discorsi sono state come una finestra sulla tua anima. Devo ammettere che tu sei stato per me come una luce morale nell'oscurità di questi tempi travagliati.~ 
+~Grazie, <CHARNAME>. Le tue parole in tutti i nostri discorsi sono state come una finestra sulla tua anima. Devo ammettere che tu sei stata per me come una luce morale nell'oscurità di questi tempi travagliati.~ 
+@119 = ~Ora penso di capire meglio me stesso. Adesso è tempo che la mia mente si rivolga a pensieri più lieti.~
+@120 = ~Ah, la tua presa sulla realtà è salda come sempre. A volte temo che mi scioglierei nel mio idealismo se tu non mi tenessi con i piedi per terra.~
+@121 = ~Sento i tuoi occhi su di me, <CHARNAME>. Devi avermi sentito borbottare fra me e me. Stavo cantando una canzone alla Signora dai Capelli Argentei. Ti ho forse disturbato?~
+@122 = ~Non direi proprio, Solaufein. Hai una splendida voce. Cosa stavi cantando?~
+@123 = ~Si, ti prego di stare zitto finchè starai nel mio party.~
+@124 = ~Stavo cantando una canzone in onore di Eilistraee, la Signora dai Capelli Argentei.~
+@125 = ~Dimmi di più su Eilistraee, Solaufein.~
+@126 = ~Eilistraee (Solaufein pronuncia il nome "Eil-Iss-tre-i") è l'Oscura Signora, La Signora della Danza a La Signora dai Capelli Argentei. Ella è la figlia di Lolth e Corellon Larethian, e la sorella di Vhaeraun.~
+@127 = ~Eilistraee scelse di essere cacciata dalle fila delgli Dei Elfici nel tentativo riequilibrare la malvagità degli Dei degli Elfi Scuri. Ella si impegna affichè i Drow ritornano alla luce. Spinge i suoi seguaci ad aiutare coloro che non possono difendersi, indipendentemente che essi siano buoni o malvagi. Ella crede nella punizione per coloro che fanno del male e nel promuovere la bontà e la giustizia in tutta Faerun. Anche la Danza e il Canto sono per lei di fondamentale importanza.~
+@128 = ~Ella governa sulle canzoni, sull'arte della danza e della spada, e sulla luce della Luna. La Signora dai Capelli Argentei governa i miei pensieri da lungo tempo. Attraverso la sua grazia io spero di trovare la mia pace e la mia redenzione.~
+@129 = ~Ti ringrazio, Solaufein.~
+@130 = ~Voglio chiederti perdono se ti sono sembrato tanto pensieroso, Mio <LADYLORD>. La mia mente era impegnata nel ricordare un frammento della poesia di un abitante della superficie:
+
+Immergi le tue mani nelle acque, immergile fino al gomito;
+Osserva, osserva nell'acqua e guarda ciò che non hai visto.
+Guarda, guarda nello specchio, guarda la tua disgrazia.
+La vita resta una benedizione, nonostante tu non sia benedetto~
+~Voglio chiederti perdono se ti sono sembrato tanto pensieroso, Mia <LADYLORD>. La mia mente era impegnata nel ricordare un frammento della poesia di un abitante della superficie:
+
+Immergi le tue mani nelle acque, immergile fino al gomito;
+Osserva, osserva nell'acqua e guarda ciò che non hai visto.
+Guarda, guarda nello specchio, guarda la tua disgrazia.
+La vita resta una benedizione, nonostante tu non sia benedetto~
+@131 = ~Che filastrocca idiota, Solaufein. Non mi interessa discutere un verso simile con te.~
+@132 = ~Soalufein ... tu reciti meravigliosamente. Ma il soggetto dei versi è così macabro.~
+@133 = ~Lo sono anche i miei pensieri ultimamente. Sento ancora il sangue di Phaere sulle mie mani. Ho fatto quel che ho fatto; ho fatto quel che ho dovuto fare. Come posso sperare di redimere gli altri se la mia stessa colpa è così evidente?~
+@134 = ~Ella era malvagia, Solaufein. E la sua morte ha scongiurato una guerra. Non perdere speranza nella tua redenzione.~
+@135 = ~La sua morte è stata sfortunata. Avrei davvero voluto che ci fosse stata una soluzione non violenta. Fintanto che ti sentirai pentito di ciò che è accaduto, la tua possibilità di redenzione non sarà perduta.~
+@136 = ~Non mi preoccuperei di questo, Solaufein. Nessuno vive senza peccati o colpe. Le tue azioni sono di gran lunga migliori di quelle della maggior parte della gente.~
+@137 = ~Ma se ho ancora speranza di redenzione, allora chiunque ce l'ha. Non avrebbe potuto anche Phaere essere buona, un giorno? Non è stata forse uccisa prima che potesse anche solo provare a redimersi?~
+@138 = ~Il mio cuore è con te. Ma la mia mente sa che molti ancora giacerebbero sul campo di battaglia se in quel momento non avessimo usato la forza.~
+@139 = ~Forse dovrei impegnarmi maggiormente per buttare tutto alle mie spalle. Grazie per avermi ascoltato ancora una volta.~
+@140 = ~Vieni, Mio <LADYLORD>. Prendi la mia mano. Sei capace di ballare?~ 
+~Vieni, Mia <LADYLORD>. Prendi la mia mano. Sei capace di ballare?~ 
+@141 = ~Questo si che è un bel passo rispetto alla tuo solito contegno contrito e malinconico, Solaufein.~
+@142 = ~(sorride) Chi sei TU, e che ne hai fatto del vecchio Solaufein?~
+@143 = ~Un passo? Io speravo di far fare a te un PASSO di danza ... vieni, amico mio!~ 
+~Un passo? Io speravo di far fare a te un PASSO di danza ... vieni, amica mia!~
+@144 = ~Solaufein, tu danzi magnificamente. I tuoi occhi sono luminosi di gioia.~
+@145 = ~Grazie per tutti i nostri discorsi, <CHARNAME>, ora ho un'idea più chiara di me stesso e del mio cammino su questo mondo.  E' passato davvero troppo tempo dall'ultima volta che ho danzato i riti di Eilistraee. Grazie per essere stato il mio partner.~ 
+~Grazie per tutti i nostri discorsi, <CHARNAME>, ora ho un'idea più chiara di me stesso e del mio cammino su questo mondo.  E' passato davvero troppo tempo dall'ultima volta che ho danzato i riti di Eilistraee. Grazie per essere stata la mia partner.~ 
+@146 = ~Ogni volta che lo vorrai, Solaufein.~
+@147 = ~Forse la nostra prossima danza portà essere più ... privata?~
+@148 = ~Forse. Sono felice di scorgere una scintilla anche nei tuoi occhi, Mio <LADYLORD>.~ 
+~Forse. Sono felice di scorgere una scintilla anche nei tuoi occhi, Mia <LADYLORD>.~ 
+@149 = ~La domanda giusta è: cosa ho intenzione di fare insieme a te? Ballare, ovviamente!~
+@150 = ~Solaufein, tu danzi magnificamente. I tuoi occhi sono luminosi di gioia.~
+@151 = ~Sento che la Signora dai Capelli Argentei sta chiamando il mio cuore. Desidero vedere la sua Luna. Non potremmo fare due passi all'aperto, per una notte, lontano dal trambusto della città?~
+@152 = ~Ma certo, Solaufein.~
+@153 = ~Guarda la Luna, e il cielo! Posso sentire i raggi luminosi della Signora dai Capelli Argentei che scaldano il mio cuore.~
+@154 = ~Ella parla alla mia anima:
+Io sento una voce che tu non puoi sentire
+che mi dice che non posso restare;
+Io vedo una mano che tu non puoi vedere,
+Che mi spinge ad andare.~
+@155 = ~Ti prego, fai due passi con me, lontano dagli altri. Desidero ascoltare la musica della Luna nella quiete della natura.~
+@156 = ~Mio caro Solaufein, sarò felice di accompagnarti.~
+@157 = ~Bene. Ti dirò una cosa, non appena saremo abbastanza lontani.~
+@158 = ~Oh, dolce  rapimento! Ho sentito la mano della Signora dai Capelli d'Argento accarezzare il mio cuore, e la sua canzone nella mia anima.~
+@159 = ~Ella ha voluto degnarmi del dono di questa spada, la Lama Lunare, di modo che potessi essere in grado di affrontare le sfide che mi si parassero dinnanzi. Dovrò usarla nel suo nome.~
+@160 = ~Alla luce della Luna, vedo con chiarezza come i nostri destini siano ormai strettamente intrecciati fra loro. Finchè vorrai avermi, io sarò tuo. Resterò al tuo fianco, qualunqua cosa accada. Tu hai la mia lealtà e il mio amore.~
+@161 = ~Grazie per aver condiviso questo momento con me, Solaufein. Voglio che tu sappia che hai anche tu la mia fiducia e il mio amore.~
+@162 = ~La tua tenerezza mi ha toccato il cuore. Voglio averti al mio fianco, amore mio, fino alla fine del nostro cammino.~
+@163 = ~Ti ringrazio, <CHARNAME>, per il tuo amore e la tua vita. Compiamo al più presto la nostra missione. Mi ritrovo ora a desiderare ardentemente la sua conclusione, come passaggio verso una nuova vita insieme.~
+@164 = ~Ella mi ha benedetto con la sua argentea compassione e la memoria del mio eterno rimorso. Nel suo nome io potrò evocare la luce della Luna per ricacciare indietro l'oscurità e guarire il dolore dei più deboli.~
+@165 = ~... no ... No! Lolth! ~
+@166 = ~Solaufein, devi avere avuto un incubo. Sei al sicuro qui, sei fra amici.~
+@167 = ~Mi hai spaventato, Solaufein. Sembrava che tu stessi sognando, ma io non riuscivo a svegliarti.~ 
+~Mi hai spaventata, Solaufein. Sembrava che tu stessi sognando, ma io non riuscivo a svegliarti.~ 
+@168 = ~(gasp) Sì, è stato un incubo. Ma sento che non siamo comunque al  sicuro!~
+@169 = ~Nei mio sogno sentivo il peso degli occhi di Lolth su di me. Essa non mi ha perdonato di avere tradito i Drow. Ha inviato i suoi accoliti per esigere vendetta.~
+@170 = ~ Ragni spettrali mi circondavano, mordendomi e risucchiandomi le forze. Ogni nemico ucciso sembrava rendere gli altri più forti. Ho cercato di chiamarti, ma ero imprigionato in una ragnatela soffocante.~
+@171 = ~ Ho paura che la mia visione possa trasformarsi in realtà. I servi di Lolth ci distruggeranno se non ci prepariamo in fretta.~
+@172 = ~ Sono certo che fosse solo un brutto sogno, Solaufein. Sei al sicuro qui con noi.~ 
+~Sono certa che fosse solo un brutto sogno, Solaufein. Sei al sicuro qui con noi.~
+@173 = ~Molto  bene. Ci prepareremo a difenderci.~
+@174 = ~Ti prego di prendermi sul serio, <CHARNAME>. Ho sentito  l'occhio malefico della Regina Ragno su di me!~
+@176 = ~Oh, sono così felice che tu sia ritornato da me. Non mi aspettavo di perderti così -- non in quel modo assurdo. Ma cosa è successo?~ 
+~Oh, sono così felice che tu sia ritornata da me. Non mi aspettavo di perderti così -- non in quel modo assurdo. Ma cosa è successo?~ 
+@177 = ~Potevamo guardare la battaglia, ma non eravamo in grado di muoverci o interferire. E' stata una tortura per me. Quando hai sconfitto Archryssa le forze che ci trattenevano sono svanite e noi siano stati di nuovo liberi.~
+@178 = ~La tua scomparsa mi ha sconvolto più di ogni altra cosa abbiamo affrontato fin'ora, <CHARNAME>. Dal momento che sei al centro dei miei pensieri, preferirei di gran lunga averti anche alla portata del mio sguardo.~
+@179 = ~Il tuo coraggio ci ha salvato tutti da un destino orribile. Ti prego, accetta questo mio bacio, mio impetuoso cavaliere.~
+@180 = ~So bene quello che provi, Solaufein. Vieni qui al mio fianco: sento anch'io di volerti mai più perdere in quel modo.~
+@181 = ~Con estremo piacere. Lo accetterò come una promessa di ciò che verrà in futuro.~
+@182 = ~Certamente. Affiancherò i miei passi ai tuoi e saluterò le meraviglie del mondo insieme a te.~
+@183 = ~Oh, il mattino è così magnifico:
+Viene al mattino
+o viene alla sera;
+viene quando lo cerco,
+o viene all'improvviso.~
+@184 = ~Ah, il sole del mattino mi fa pensare a te, <CHARNAME>. Tu mi hai condotto fuori dal Sottosuolo e verso una nuova vita. Io ti ringrazio.~
+@185 = ~No, non dire nulla. Accetta semplicemente la mia gratitudine.~
+@186 = ~Che modo splendido di concludere una giornata!
+Ho visto il tramonto, tinto di mistiche meraviglie,  illuminare le onde incessanti con lunghe purpuree forme,   Come attori in antichi drammi. ~
+@187 = ~I tramonti sulla superficie sono davvero cose di una bellezza straordinaria. E presto la Signora dai Capelli d'Argento risplenderà su di noi. Il mondo mi sembra perfetto.~
+@188 = ~Sono felice che tu sia venuto sulla superficie, Solaufein.~
+@189 = ~Sono io che devo ringraziarti per questo, <CHARNAME>. Viaggiare con te mi ha dato la possibilità di riscattarmi dall'oscurità.~
+@190 = ~ La bellezza di questo luogo mi riporta in mente una canzone:
+La cascata risuonante
+mi appassiona; l'alta roccia,
+la montagna, e il bosco profondo e oscuro
+i loro colori e le forme sono per me
+un desiderio -- un sentimento e un affetto,
+che non hanno bisogno di remoti incantesimi
+di menti lontane, ne di alcun interesse che non sia il piacere del mio sguardo.~
+@191 = ~La bellezza del mondo di superficie supera di gran lunga quella del Sottosuolo. Gli alberi e le foreste mi affascinano. Spero che i nostri viaggi siano sempre pieni di queste meraviglie.~
+@192 = ~Vieni, <CHARNAME>, e cammina al mio fianco sotto le foglie.~
+@193 = ~Posso avere un po' del tuo tempo, <CHARNAME>?~
+@194 = ~Ma certo, Solaufein. Che cosa hai mente?~
+@195 = ~Adesso non è il momento giusto. Forse potremmo parlarne più tardi?~
+@196 = ~Sono curioso riguardo la tua infanzia. Come è stato crescere per te?~
+@197 = ~Non poi così esaltante, in realtà. Ho passato la maggior parte del mio tempo a studiare con i monaci di Candlekeep.~
+@198 = ~Anche da bambino ho sempre sognato di grandi gesta e avventure. Gorion mi ha preparato bene al mondo.~ 
+~Anche da bambina ho sempre sognato di grandi gesta e avventure. Gorion mi ha preparato bene al mondo.~ 
+@199 = ~Effettivamente, ho passato la maggior parte del mio tempo a mettere Imoen nei guai.~
+@200 = ~Beh, ne hai fatta di strada da allora. Ora mi sembri decisamente una creatura d'azione.~
+@201 = ~Io preferisco non parlare della mia infanzia. Agli occhi del mio cuore la mia vita è ricominciata di nuovo quando mi hai offerto di portarmi con te sulla superficie.~
+@202 = ~Eppure, adoro sentirti parlare della tua. Grazie per aver assecondato la mia richiesta, <CHARNAME>.~
+@203 = ~Ah, quale bambino non ha sogni di gloria? I tuoi sogni infantili si sono avverati, mi pare.~
+@204 = ~Suona come un passatempo piuttosto divertente. A me è mancato il battibecco innocente che si può avere con un fratello o una sorella. Anche adottivi.~
+@205 = ~Ma certo. Te lo richiederò più tardi.~
+@206 = ~<CHARNAME>, posso avere un po' del tuo tempo, lontani dagli altri? Mi ritrovo stranamente nervoso, anche se i miei pensieri mi sembrano naturali come il vento.~
+@207 = ~Attraverso tutte le nostra avventure sento che ci siamo avvicinati sempre di più. Tu sei per me amico, confidente e difensore. Non riesco a pensare a nessun altro più vicino di te al mio cuore.~ 
+~Attraverso tutte le nostra avventure sento che ci siamo avvicinati sempre di più. Tu sei per me amica, confidente e difensore. Non riesco a pensare a nessun altro più vicino di te al mio cuore.~ 
+@208 = ~Vuoi passare questa notte con me? Io desidero sentirmi vicino a te fisicamente tanto quanto lo sono mentalmente e con il cuore.~
+@209 = ~Solaufein, nulla potrebbe rendermi  più felice. Passa questa notte fra le mie braccia e nei miei pensieri.~
+@210 = ~Non c'è nessuna fretta, mio caro. Avremo tutto il tempo del mondo quando la nostra missione sarà finita. Rimandiamo questo tipo di unione a quel momento.~
+@211 = ~Temo che tu abbia frainteso la mia amicizia, Solaufein. Non voglio quel genere di intimità con te.~
+@212 = ~Come tu desideri, amore mio.~
+@213 = ~Dimostri un spiccata saggezza e un grande controllo, <CHARNAME>. Certamente possiamo attendere fino alla fine della nostra missione. Non vedo l'ora di costruire una nuova vita con te.~
+@214 = ~Ti porgo le mie scuse. Non avevo intenzione di creare una scomoda situazione far di noi, o rovinare la nostra amicizia. Ti prego di non fare caso alle mie parole.~
+@215 = ~Sei sveglio, amore mio?
+
+A lungo il mio cuore di tali ricordi ha voluto colmarsi!
+Come un vaso in cui le rose sono state dissetate:
+puoi romperlo, puoi distruggere il vaso se lo vuoi,
+ma il porfumo delle rose sarà sempre tutt'intorno.~
+~Sei sveglia, amore mio? 
+
+A lungo il mio cuore di tali ricordi ha voluto colmarsi!
+Come un vaso in cui le rose sono state dissetate:
+puoi romperlo, puoi distruggere il vaso se lo vuoi,
+ma il porfumo delle rose sarà sempre tutt'intorno.~
+@216 = ~Una notte fra le tue braccia è stato un assaggio di paradiso, <CHARNAME>. Grazie per esserti concesso a me.~ 
+~Una notte fra le tue braccia è stato un assaggio di paradiso, <CHARNAME>. Grazie per esserti concessa a me.~
+@217 = ~Non so cosa mi spaventi maggiormente. Il pensiero di lei divenuta malvagia ... o il pensiero di come le riuscisse bene. Ci devo meditare su. Grazie per aver ascoltato i miei tormenti.~
+@218 = ~Io la conoscevo meglio di te. Avrei dovuto parlarle, prima o poi. Ma tutto ciò che potevo scorgere dietro il suo sguardo era un muro gelido. O forse avevo solo paura di guardare più in profondità.~
+@219 = ~Mio <LADYLORD>, vuoi viaggiare senza di me per un po'?~ 
+~Mia <LADYLORD>, vuoi viaggiare senza di me per un po'?~ 
+@220 = ~E' un errore mio, Solaufein. Ti prego, resta con noi.~
+@221 = ~Solo per un pò, Solaufein. Ti prego di aspettarmi qui.~
+@222 = ~Ti prego di aspettarci all'uscita del Sottosuolo.~
+@223 = ~Molto bene.~
+@224 = ~Buongiorno, amico mio. È forse tempo di riunirci nel nostro viaggio?~
+@225 = ~Si, ti prego, unisciti a noi.~
+@226 = ~Non ancora, Solaufein.~
+@227 = ~Bene, sono felice di godere di nuovo della tua compagnia.~
+@228 = ~Come vuoi. Continuerò ad attenderti.~
+@229 = ~Non ho nulla da dirti ora, amico mio.~ 
+~Non ho nulla da dirti ora, amica mia.~

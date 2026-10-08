@@ -1,0 +1,117 @@
+// Solaufein Romance, Italiano
+// Solaufein Eclipse Enemies
+
+// Radael, il Kensai dell'Eclisse Sconsacrata
+// Nrodlek, l'Antipaladino dell'Eclisse Sconsacrata
+// Radnuht, il Barbaro dell'Eclisse Sconsacrata
+// Reffus, il Chierico dell'Eclisse Sconsacrata
+// Ylekilnu, il Druido dell'Eclisse Sconsacrata
+// Citpeks, lo Stregone dell'Eclisse Sconsacrata
+
+@1 = ~*Ehm*. (Qual era la mia battuta, già?) Ah, ecco il Solaufein e la Progenie di Bhaal. Sono Redael, servitore dell'Eclisse Sconsacrata e un tipo davvero impressionante sotto ogni aspetto.~
+  @2 = ~Per favore, sii più serio. Mi stai minacciando?~
+  @3 = ~(sbadiglio) Dove avrò già sentito questo genere di cose?~
+  @4 = ~Salve, Redael. Ti salutiamo in pace.~
+  @5 = ~(attacca mentre Redael sta parlando)~
+
+@6 = ~Lo so, lo so. Probabilmente vi capita in continuazione. Un misterioso gruppo di non più di sei potenti umanoidi si teletrasporta nella zona e tenta di uccidervi per qualche motivo poco chiaro. Con una mossa incredibilmente a sorpresa, siete voi a uccidere loro. Anche a noi capita sempre.~
+
+@99 = ~Avete notato come siete rimasti paralizzati dalla soggezione per il nostro ingresso sfavillante mentre noi ci prendevamo il tempo di metterci in posizione? Non lo odiate?~
+
+@7 = ~Sì. Sfortunatamente per voi, abbiamo preso un certo interesse nei notevoli progressi di Solaufein. Grazie a lui, la luna di Eilistraee sta sorgendo e la speranza abbonda per i drow di buon cuore ovunque.~
+
+@8 = ~Pace? Sognate. Finirà nel sangue?~
+
+@9 = ~Come servitori dell'Eclisse Sconsacrata, non possiamo permettere che ciò accada. Vi abbatteremo e colpiremo Solaufein fino a terra. Bloccheremo per sempre la luce della luna dalla sua anima.~
+  @10 = ~Sapete, è già stato provato.~
+  @11 = ~Difenderemo Solaufein fino all'ultimo! Preparatevi!~
+
+@12 = ~Sì, ma non da noi! Avete visto le nostre stupende uniformi coordinate nei colori? Non vorreste che anche il vostro gruppo sembrasse così imponente? (Reffus, potresti iniziare a canticchiare la nostra drammatica sigla?)~
+
+  @13 = ~Ehi capo, non sembrano granché, ma hanno una Spada Sacra. Sei sicuro che possiamo affrontarli?~
+  @14 = ~Nrodlek, neanche tu sembri granché, ma *lo sei davvero*. Una Spada Sconsacrata, intendo. Sono sicuro che andrà tutto bene.~
+
+@15 = ~Ecco, questa è la parte del dialogo più o meno spiritosa dell'incontro. Se leggo bene i miei appunti, dovrei passare parecchio tempo in vuoto atteggiamento e gonfiaggio di petto.~
+
+  @16 = ~Ehi capo, hanno la Furia Celestiale. Sei sicuro di poterli gestire?~
+  @17 = ~Ehi, chi è il capo qui? Possiamo affrontarli.~
+
+@18 = ~E nel frattempo che voi perdete tempo qui, tutte le nostre protezioni magiche accuratamente piazzate si stanno dissolvendo. Non riesco a credere che abbiano eletto te capo invece di me.~
+
+@19 = ~Sta' zitto, ragazzino-mago! Quando avrai una Mano, un Occhio e una Veste intitolati a te, forse riuscirai a farmi cambiare idea. Di certo avrai notato che gli incantesimi non si esauriscono mentre tu stai parlando?~
+
+  @20 = ~A proposito della Veste di Vecna, loro ce l'hanno e io no. Lanceranno incantesimi più veloci di quanto tu possa battere ciglio. Ce la facciamo?~
+  @21 = ~Sì, mio cinico amico. Ce la facciamo. Sono sicuro che i tuoi incantesimi saranno abbastanza veloci.~
+
+@22 = ~Come stavo dicendo, serviamo l'Eclisse Sconsacrata. Il nostro oscuro patrono ci ha concesso il potere di camminare nell'immobilità e colpirvi mentre restate impotenti.~
+
+@23 = ~Ehi, gli stai rivelando tutti i nostri segreti. Non annulla questo il vantaggio del nostro agguato a sorpresa?~
+
+@24 = ~(sospiro) No, non lo annulla. Andrà tutto bene. Inoltre stavo parlando in modo sinistramente criptico. Sono sicuro che non hanno davvero capito cosa li aspetta.~
+
+  @25 = ~Ehi, vedo Crom Faeyr laggiù: il martello di Lama d'Argento. Questi tizi devono essere piuttosto forti. Comincio a preoccuparmi.~
+  @26 = ~Non ho forse avuto sempre ragione in passato? Non ti preoccupare, possiamo gestire questi pagliacci.~
+  
+@27 = ~Sapevo che avremmo dovuto seguire il mio piano. A quest'ora li avremmo già catturati!~
+
+@28 = ~Ylekilnu, il tuo piano consisteva nello scavare una fossa nel terreno e sperare che ci cadessero dentro. Fidati, questi non cascheranno in un trucco del genere.~
+
+@29 = ~Sono curioso, <CHARNAME>. Anche nei tuoi ranghi c'è questo genere di dissenso?~
+
+  @30 = ~No, governo con pugno di ferro.~
+  @31 = ~No, il nostro rispetto reciproco e le nostre esperienze condivise ci tengono uniti.~
+  @32 = ~Sì, a volte. Ma alla fine funziona sempre.~
+
+@33 = ~Avrei dovuto immaginarlo. (Ah, non amate questo genere di risposte ambigue? Mi risparmiano la fatica di dover pensare a qualcosa di originale.)~
+
+@34 = ~Comunque, proprio come voi (ma noi siamo un po' più attraenti) passiamo parecchio tempo ad attaccare altri gruppi di avventurieri e a raccogliere il loro bottino. Abbiamo imparato dagli errori altrui e il nostro grande piano è quasi perfetto.~
+
+  @35 = ~Capo, hanno combinato il Devastatore e l'Asta del Serpente. Non voglio essere decapitato. Non possiamo tirarci indietro adesso?~
+  @36 = ~No, no, no! Starai bene, non avranno mai la possibilità di colpirti. E se lo faranno, ti farò semplicemente resuscitare dopo. Basta! Come stavo dicendo...~
+
+@37 = ~Per esempio, abbiamo fatto tutti i nostri preparativi magici prima della battaglia. Non è meraviglioso quando puoi colpire da lontano qualche mago nemico prima che riesca a lanciare Pelle di Pietra o Protezione dalle Armi Magiche?~
+
+@38 = ~Ehi! Ti ho già detto che non mi è mai piaciuta questa strategia. Questione di cortesia professionale e simili.~
+
+  @39 = ~Ehi capo, quello sembra molto simile al Flagello del Fato accanto al Fodero di Fflar. Ho sentito cose brutte su quella combinazione.~
+  @40 = ~Fidati, possiamo comunque affrontarli. Non dirmi che hai paura del Risucchio Minore di Larloch?~
+
+@41 = ~Inoltre proteggiamo il nostro Kensai (cioè io) con l'Armatura Spirituale, per compensare la sua avversione alle armature pesanti. Sappiamo lanciare Breccia contro Pelle di Pietra e Protezione dalle Armi Magiche. Sappiamo lanciare Colpo Magico contro le difese magiche.~
+
+  @42 = ~Davvero hai un intelletto vertiginoso.~
+  @43 = ~Niente di tutto ciò vi aiuterà.~
+  @44 = ~E vedo che indossi anche il Cinturone dell'Ego Gigantesco.~
+
+@45 = ~Aspetta che mi riscaldi. Dov'ero rimasto?~
+@46 = ~Forse no, ma non può far male.~
+@47 = ~Non male! Fammi scrivere questo. Almeno non è il Cinturone della Superiorità Morale. Nessuna falsa pretesa qui.~
+
+@48 = ~Cerchiamo con impegno di ignorare i mostri evocati, andiamo dietro ai membri del gruppo dall'aria più debole, e usiamo monologhi spocchiosi per rivelare tutti i nostri piani in anticipo. Sappiamo che la Celerità Potenziata batte il Turbine, che la Spada di Mordenkainen spacca e che il Soffio del Drago sembra colpire qualsiasi cosa.~
+
+@49 = ~Non sembriamo delle persone molto simpatiche.~
+
+@50 = ~Non siamo persone simpatiche. Siamo banditi abilmente travestiti da sacerdoti. O era il contrario? Le persone simpatiche mandano tutte le loro forze contro di voi in piccoli gruppi gestibili. Vi forniscono anche corridoi stretti, così solo i vostri tank più resistenti sono davvero in pericolo mentre il resto del gruppo usa attacchi a distanza al sicuro.~
+
+@51 = ~Ci siamo fatti strada da umili origini. Ricordo ancora quando passavamo tutto il nostro tempo a trasportare pacchi inutili avanti e indietro tra persone che vivevano a pochi metri di distanza. Ah, la mia prima spada lunga debolmente incantata. Quelli sì che erano bei tempi.~
+
+@52 = ~Comunque, secondo i miei appunti ho finito la parte dell'atteggiamento, e ora devo solo rivelare accidentalmente la nostra debolezza segreta prima che inizi la battaglia.~
+
+@53 = ~Non potremmo saltare quel passaggio, solo per questa volta?~
+
+@54 = ~In realtà, sì. Avete mai notato come i vampiri tengono sempre paletti e armi di distruzione sparsi nelle loro tane? Se fossi il vampiro signore di una città, bandirei ogni uso del legno. Insomma, quanto devi essere intelligente?~
+
+@55 = ~O avete mai notato come quelle tane dei draghi rossi siano piene di oggetti e pozioni che donano resistenza al fuoco? I Golem Magici sono sempre preceduti da una strana scorta di armi non magiche? Puoi sempre dormire proprio davanti alla porta della tana del tuo nemico più temibile senza essere notato?~
+
+@56 = ~Beh, niente regali per voi! Siamo qui per...~
+
+@57 = ~Ragazzi, perché siamo qui, già?~
+
+@58 = ~Solaufein! E il bottino!~
+
+@59 = ~Giusto, siamo servitori dell'Eclisse Sconsacrata. Siamo qui per Solaufein. Non perderemo nemmeno tempo a chiedervi di consegnarcelo.~
+
+@60 = ~Balliamo!~
+
+@61 = ~Eilistraee, proteggimi!~
+
+@62 = ~Ehi, Redael, svegliati!~

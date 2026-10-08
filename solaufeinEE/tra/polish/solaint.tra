@@ -1,0 +1,267 @@
+// Galoomp the bookseller
+@1 = ~Książki, powiadasz? Wybacz, dobry panie, ale czy masz może jakieś tomiki poezji? A może jakieś traktaty filozoficzne?~
+@2 = ~Obawiam się, że nie, drowie. A nawet gdybym miał, nie sprzedałbym żadnego dzieła wiedzy twojemu nienawistnemu rodzajowi!~
+@3 = ~Bardzo dobrze, panie. Trudno było oczekiwać czegoś więcej.~
+@4 = ~A więc, jak mówiłem...~
+
+// Lady Yuth, scrolls 
+@10 = ~Sprawiasz wrażenie uczonej, moja pani. Czy miałabyś może książki o poezji lub filozofii? Przyznaję, że staram się wzbogacić swoją kolekcję.~
+@11 = ~Tak, wyobrażam sobie, że te dwa tematy musiały być bardzo trudne do zdobycia w twoim... rodzinnym mieście?~
+@12 = ~Obawiam się, że nie mam żadnych kompletnych tomów, ale podzielę się z tobą jednym z moich ulubionych utworów. Napisał go Desnos:
+  Tak żarliwie cię śniłem
+  I tak daleko szedłem, i tak wiele o tobie mówiłem,
+  Tak mocno kochałem cień twój
+  Że nie zostało mi już nic z ciebie.
+  Pozostało mi być cieniem pośród cieni
+  Stokroć bardziej cieniem niż cień
+  Być cieniem rzucanym raz po raz w twe słońcem przemienione życie.~
+@13 = ~Masz przenikliwy wgląd, moja pani. Niebezpieczeństwo zakochania się w naszym wyobrażeniu rzeczy, a nie w samej rzeczy, jest całkiem realne. Czasem obawiam się, że uczyniłem tak z moim wyobrażeniem Świata Powierzchni.~
+@14 = ~Leżąc samotnie w Podziemiu, łatwo było zakochać się w wizji życia w wolności pod gwiazdami. Teraz widzę rzeczy jaśniej w świetle słońca.~
+@15 = ~Mimo to dziękuję ci za życzliwość. Dodam twój wiersz do mojej kolekcji.~
+@16 = ~Oczywiście, rzadka istoto. Dziękuję, że wstąpiłeś.~
+
+// Pai'Ni in the graveyard
+@20 = ~To, że macie w drużynie słabego drowa-samca, jest tym bardziej irytujące! Czy jaluk popiera zabijanie pająków? Nic dziwnego, że chodzi po powierzchni! Wszyscy zginiecie!~ 
+@21 = ~Ten rodzaj bezsensownego zła jest powodem, dla którego opuściłem Podziemie. Mam szczególną nienawiść do pająków. Nie ujdziesz mojemu gniewowi!~
+
+@30 = ~Wiedza i natchnienie, powiadasz? Jestem poszukiwaczem tych rzeczy, przyjacielu. Czy możesz obdarzyć mnie łaską swojej mądrości?~
+@31 = ~Oczywiście, poszukiwaczu. Czuję, że masz dość wiedzy, więc pobłogosławię cię natchnieniem. Słuchaj uważnie, drowie, i posłuchaj o pięknie natury:~
+@32 = ~O Samotności! jeśli mam z tobą mieszkać,
+  Niech to nie będzie pośród splątanego stosu
+  Ponurych budynków; wspinaj się ze mną po stromiźnie,--
+Obserwatorium Natury--skąd dolina,
+Jej kwieciste zbocza, krystaliczny wylew rzeki,
+  Mogą wydać się piędzią; pozwól mi czuwać twe wigilie
+  Pośród gałęzi w pawilonach, gdzie szybki skok jelenia~
+@33 = ~Płoszy dziką pszczołę z dzwonu naparstnicy.
+Lecz choć z radością będę kreślił te sceny z tobą,
+  Jednak słodka rozmowa niewinnego umysłu,
+Którego słowa są obrazami myśli wyrafinowanych,
+  Jest przyjemnością mojej duszy; i z pewnością musi być
+Niemal najwyższą błogością rodzaju ludzkiego,
+  Gdy do twych ostoi uciekają dwa pokrewne duchy.~
+@34 = ~Idź z moim błogosławieństwem i błogosławieństwem Oghmy, poszukiwaczu.~
+// jaheria
+@36 = ~To właśnie mówię od dawna. Majestat miast blednie wobec prawdziwej chwały natury. Powinniśmy opuścić Athkatlę i znów przejść się po trawie.~
+// valen
+@37 = ~Przypomina mi to, że naparstnica, czyli "digitalis", jest skuteczną trucizną. Może czas wykuć więcej zatrutych noży do rzucania. Moje żądło jest znacznie gorsze niż pszczoły. Hmm...~
+@38 = ~Nie psuj chwili, złodzieju.~
+@35 = ~Dziękuję, dobry panie. Moje serce podskakuje na ten wiersz.~
+
+// Flydian
+@40 = ~<CHARNAME>, myślę, że to brzmi jak coś w sam raz dla nas. Nie tylko będziemy mogli pomóc kilku wieśniakom, ale będziemy mieć idealną wymówkę, by zobaczyć więcej tej wspaniałej wiejskiej okolicy na powierzchni.~
+@41 = ~Ponadto muszę przyznać, że jestem ciekaw tych zwierząt powierzchni i systemu handlowego tego regionu.~
+@42 = ~Flydianie, gdzie powiedziałeś, że jest ta wioska?~
+
+// Khellon, evil trademeet guy
+@50 = ~Jakoś nie mogę uwierzyć temu małemu jegomościowi. Ciekawe dlaczego?~
+
+// Faldorn
+@60 = ~Choć muszę przyznać, że nie znam żadnych druidów pośród drowów, z tego, co słyszałem, nie powinni być aż tak... egoistyczni. Coś tu nie gra, <CHARNAME>.~
+@61 = ~A kim ty jesteś, żeby mnie osądzać, mroczny elfie? Twój ród jest obrzydliwością w oczach natury: nadmiernie cywilizowany w najgorszych tego przejawach. Wasze jaskinie są całkowicie nienaturalne: nie pozostał w nich ani cal nietknięty. Nie mogę znieść takiego lekceważenia naturalnego porządku. Zasieję swoje pola twoją krwią i zmielę twe kości w pył.~ 
+@62 = ~Możesz spróbować, kobieto, ale muszę się z tobą nie zgodzić: drowy nie są obrzydliwością. Drowy i całe nasze okrucieństwo są tak samo naturalne, jak okrucieństwo, które można znaleźć tu, w świetle słońca.~
+@63 = ~Błagam cię, powstrzymaj się: nie każdy problem, jaki napotykasz, można rozwiązać czystą przemocą.~
+
+// Ogre at Windspear
+@70 = ~Stój! To, co robisz, jest złe. Dlaczego to czynisz?~
+@71 = ~Ogromie, wypowiedziałeś Słowa i wypowiedziałeś je słusznie.~
+@72 = ~Powiemy ci nasze powody, dla których ujarzmiamy wszystkie złe istoty.~
+@73 = ~Zostałem wyszkolony w wrogim świecie, jako potomek słynnego paladyna.~
+@74 = ~Zapewniam cię, nie jestem złą istotą. Nie chcemy cię skrzywdzić. Proszę, porozmawiajmy spokojnie i racjonalnie.~
+
+// Samia
+@80 = ~<CHARNAME>, słowa tej kobiety brzmią szczerze. Cieszę się, że będziemy mieli okazję do negocjacji i unikniemy w ogóle ciosów, zwłaszcza po tym, co się stało z tamtymi rycerzami.~
+@81 = ~Nalegam, byś spokojnie wysłuchał tej kobiety, a ją nalegam, by traktowała nas tak samo. Co tu robisz, moja pani?~
+
+// Grancor
+@90 = ~<CHARNAME>, coś w tym dzwoni mi alarmująco w głowie. Przypomina mi to taktykę zasadzki stosowaną przez niektórych Duergarów, którzy kiedyś mieszkali niedaleko Ust Natha.~ 
+
+@100=  ~Bądź ostrożny, <CHARNAME>. Smoki Straszliwego Płomienia są równie przebiegłe, co złe. Nie mam wątpliwości, że ta potężna istota stała za iluzją, która zwiodła cię do walki z tamtymi rycerzami.~
+@101 = ~Masz całkowitą rację, drowie. A teraz zejdź mi z drogi i pozwól mi porozmawiać z <CHARNAME>. Moje sprawy są z Podopiecznym Goriona. Być może zastanawiasz się, dlaczego zrobiłem ci to wszystko?~ 
+@102 = ~<CHARNAME>, jeśli zdecydujesz się stawić czoła temu smokowi, pamiętaj, że jego siły są poczwórne. Czerwone smoki mają potężny ognisty oddech i nie zawahają się próbować nas spopielić dwa lub trzy razy na minutę.~ 
+@103 = ~Ponadto ogromny rozmiar skrzydeł smoka pozwala mu uderzać powietrzem i odpychać mniejszych wrogów, takich jak my. Smoki mają także ostre jak brzytwa pazury, potężny atak w zwarciu. Wreszcie, wszystkie smoki posiadają pewne wrodzone moce magiczne.~
+@104 = ~Sugerowałbym użycie przedmiotów, które zachowaliśmy na specjalną okazję, takich jak zwoje lub mikstury, jeśli mamy się zmierzyć z tą złą bestią.~
+@105 = ~To wszystko bardzo dobre rady, drowie, ale na razie sugeruję, żebyście się stąd wszyscy wynieśli.~
+
+@110 = ~Czy nie moglibyśmy o tym porozmawiać, mag z magiem? Jestem pewien, że mamy się wiele od siebie nauczyć. To nie musi się kończyć przemocą.~
+
+// Captain Arat
+@120 = ~To nie jest do końca poprawne, mój dobry kapitanie. Trolle padają także od trucizny, pewnych broni powodujących głębokie krwawienia oraz ataków kradnących życie niektórych nieumarłych. Spośród tych innych metod trucizna jest najbardziej prawdopodobna, by nam się przydała:~
+@121 = ~Troll, który padnie wewnątrz magicznej Chmury Śmierci, nie wstanie ponownie. Mój dobry kapitanie, muszę podziękować ci za hojność... ale zastanawiam się, czy dwadzieścia płonących strzał wystarczy.~
+@122 = ~Może znalazłbyś w swym sercu odrobinę miejsca, by wyposażyć nas w kilka dodatkowych trollobójczych urządzeń?~
+@123 = ~Oczywiście, mój dobry... drowie!? Cóż, jeśli Nalia cię najęła, musi w tobie tkwić iskra dobroci. Proszę, weź te dodatkowe uzbrojenia. Powodzenia!~
+
+// Viconia
+@130 = ~Ty, drowie! Oni przyjdą po ciebie następnego! Uprzedzenia i strach szaleją w Athkatli. Uwolnij mnie, a będziemy mogli współpracować.~
+@131 = ~Wybacz mi, pani, ale muszę zapytać: czy nie stoisz tam z jakiegoś powodu? Czy mają wobec ciebie jakieś uzasadnione pretensje?~
+@132 = ~Bah! Nic nie zrobiłam! Te rivvil zabiłyby mnie tylko dlatego, kim jestem. Przysięgam ci na Shar, nic im nie zrobiłam.~
+@133 = ~Więc cię uwolnię. (Solaufein podchodzi do słupa i uwalnia drowkę.)~
+
+@140 = ~Masz już jednego drowa u swego boku i muszę przyznać, że jestem ciekaw, jak ta historia została opowiedziana. Proszę, przyjmij mnie do swej drużyny.~
+@141 = ~Choć nie mógłbym znieść widoku twej niesprawiedliwej egzekucji, Viconio, na podstawie tego, co <CHARNAME> mi o tobie opowiedział z Baldur's Gate, nie jestem wcale pewien, czy się dogadamy.~
+
+@150 = ~<CHARNAME>, to brzmi jak znakomite wykorzystanie naszego czasu. To nie tylko szczytna sprawa, ale mam też samolubny powód, by chcieć iść.~
+@151 = ~Athkatla nie wydaje się zbyt "akceptująca" wobec mojego drowiego dziedzictwa. Słyszałem pogłoski, że słynny Drizzt Do'Urden miał dobre szczęście w zdobywaniu serc i zaufania małych miasteczek daleko na północy.~
+@152 = ~Byłbym zainteresowany przeprowadzeniem małego eksperymentu, by sprawdzić, czy mieszkańcy potrzebującej osady są otwarci na pomoc, niezależnie od jej formy.~
+@153 = ~A teraz, dziecko, kim była ta Umar, o której wspominałaś?~
+
+@160 = ~<CHARNAME>, przestrzegałbym przed składaniem nieznanej przysięgi. To właśnie tego rodzaju błąd kończy się zmuszaniem istot z innych planów do służby śmiertelnym magom.~
+@161 = ~Oh? A cóż ty możesz wiedzieć o czarach... drowie!? Na Mystrę, czy strażnicy przy bramach wpuszczają już każdego do naszego pięknego miasta?~
+@162 = ~Właściwie jednak moglibyśmy uznać za opłacalne wymienić się wiedzą tajemną, ty i ja. Wszyscy wiedzą, że drowie magowie posiadają rozległą wiedzę, a ty masz w sobie błysk magii.~
+@163 = ~Powiem tyle: przypominasz mi magów z mojego rodzinnego miasta Ust Natha. Ale zdradzę ci mały drowi sekret, skoro tak ładnie poprosiłeś. (Solaufein szepcze coś Tolgeriasowi)~
+@164 = ~(przełyka ślinę!) Nie możesz mówić poważnie? Z pająkiem? (blednie)~
+@165 = ~Śmiertelnie poważnie, mój przyjacielu. A teraz, mówiłeś coś do <CHARNAME>?~
+@166 = ~Yyy, tak. Daj mi tylko chwilę, by odzyskać opanowanie. A więc...~
+
+// Madulf
+@170 = ~Pokój, przyjacielu ogrze. Ja też wiem, jak to jest być pogardzanym za swe dziedzictwo bez myśli o swej osobowości.~
+@171 = ~Hmm. Tyś drow, więc wieśniacy też cię nie lubią, tak?~
+@172 = ~To byłby jeden ze sposobów, by to ująć. Wystarczy powiedzieć, że moje ogólne przyjęcie w świecie powierzchni było nieco chłodniejsze, niż się spodziewałem.~
+@173 = ~Co chciałbyś, żebyśmy powiedzieli wieśniakom?~
+
+// Valygar
+@180 = ~Jakże fascynujące: latać między planami! Statki spelljammerów były powszechne w Ust Natha, ale nigdy nie miałem okazji użyć żadnego. Co jeszcze możesz nam powiedzieć o tej sferze?~
+
+// Shade Lord
+@190 = ~Co to? Wyczuwam pośród was kogoś niemal tak mrocznego jak ja. Wystąp naprzód, drowie, i pozwól mi się sobie przyjrzeć.~
+@191 = ~Nie będę z tobą negocjował, demonie. Nawet nocą księżyc świeci jasno, a blask mojej Pani Srebrnowłosej spali cię na popiół.~
+@192 = ~Nie musi tak być, przyjacielu... nie...~
+@193 = ~Nie jestem twoim przyjacielem, demonie!~
+@194 = ~Ale mógłbyś być. Widzę twą duszę, drowie... i widzę skazę. Skłonność do władzy. Żądzę potęgi. Byłeś gotów... jesteś gotów... będziesz gotów... przyjąć wolność nieumarłości w zamian za moc. Moja wizja jest niejasna... ale widzę licza tam, gdzie teraz stoi elf. Słuchaj:~
+@195 = 
+~Nosimy maskę, co się szczerzy i kłamie,
+Kryje nasze policzki i cieni oczy,--
+Ten dług płacimy ludzkiej przebiegłości;
+Z rozdartymi i krwawiącymi sercami się uśmiechamy,
+I usta nasze pełne są miriad subtelności.
+
+Czemu świat miałby być aż tak mądry,
+By zliczać wszystkie nasze łzy i westchnienia?
+Nie, niech nas tylko widzą, gdy
+  Nosiśmy maskę.~
+@196 = ~Co wiesz o maskach i ciemności, drowie? Czy powierzchniowcy cię polubili? Czy przyjęli cię swobodnie? Czy twoja czarna twarz jest piętnem społecznym najwyższego rzędu?~
+@197 = ~Nieumarłość nie dba o kroplę krwi koloru twej skóry, elfie. Dołącz do nas w naszym wiecznym braterstwie.~ 
+@198 = ~Przywołałeś do mnie wiersz i zaskoczyłeś mnie. Zawsze myślałem, że twój rodzaj nieumarłych nie ma duszy, nie ceni piękna.~
+@199 = ~Wcale nie, elfie. Muzyka nocy jest taka słodka.~
+@200 = 
+~A więc odpłacę ci tym samym:
+
+Znam się z nocą.
+Wychodziłem w deszczu--i wracałem w deszczu.
+Przechodziłem poza najdalsze światło miasta.
+
+Zaglądałem w najsmutniejszą uliczkę miasta.
+Mijałem stróża na jego obchodzie
+I spuszczałem oczy, nie chcąc wyjaśniać.~
+@201 = ~Znam noc, demonie. Wiem, że powierzchniowcy nie zawsze mnie zaakceptują. Ale nigdy się do ciebie nie przyłączę! Nigdy! Nigdy się do ciebie nie przyłączę ani nie wyrzeknę się Światła.~
+@202 = ~To może nie być twój wybór, drowie. Możesz się znaleźć po mojej stronie wbrew swemu lepszemu osądowi.~
+@203 = ~Eilistraee! Chroń mnie przed tą pokusą! Daj mi moc, bym powalił tego demona!~
+@204 = ~W tę grę może grać dwóch, głupcze. Lolth! Nigdy cię wcześniej nie wzywałem, ale wysłuchaj mej modlitwy. Ten drow stoi przede mną jako wróg zła. Pomóż mi go powalić!~
+
+// Knight of Solamnia
+@210 = ~Nigdy nie słyszałem o tym świecie, moja Pani. Czy byłabyś tak uprzejma i podzieliła się wierszem lub pieśnią z Ansalon, bym mógł go lepiej poznać?~
+@211 = ~Dziwna prośba, ale myśli o moim prawdziwym świecie wypełniają me serce, a ja łatwo się wzruszam. Posłuchaj więc, mroczna istoto, gdy mówię o domu:~
+@212 = ~Dom już nie domem dla mnie, dokąd mam wędrować?
+  Głód mym przewodnikiem, idę, gdzie muszę.
+Zimny wieje wiatr zimowy nad wzgórzem i wrzosowiskiem;
+  Gęsty spada deszcz, a mój dach jest w prochu.
+Kochany przez mędrców był cień mego domowego drzewa.
+  Prawdziwe słowo powitania wypowiedziano w drzwiach--
+Drogie dawne dni, z twarzami w blasku ognia,
+  Mili dawni ludzie, nie wracacie już nigdy więcej.~
+@213 = ~Dom był wtedy domem, moja droga, pełen życzliwych twarzy,
+  Dom był wtedy domem, moja droga, szczęśliwy dla dziecka.
+Ogień i jasne okna lśniły na wrzosowisku;
+  Pieśń, melodyjna pieśń, budowała pałac w dziczy.
+Teraz, gdy świt wschodzi na czole wrzosowiska,
+  Samotnie stoi dom, a kamień komina jest zimny.
+Samotnie niech stoi, skoro przyjaciele wszyscy odeszli,
+  Życzliwe serca, prawdziwe serca, co kochały to miejsce niegdyś.~
+@214 = ~Dziękuję, moja Pani. <CHARNAME>, jeśli to w ogóle możliwe, musimy znaleźć sposób, by zwrócić tych dobrych rycerzy ich światu Ansalon. Żaden rycerz z tak smutną duszą nie powinien być wyrwany ze swej ojczyzny.~
+@215 = ~Dziękuję za twe życzliwe myśli, dobry panie. Być może, gdy skończysz tu swe przygody, pomożesz nam znaleźć drogę do domu. Do tego czasu...~
+
+// Gaal
+// inside joke: Gaal and Sola have the same voice actor
+@220 = ~Masz najpiękniejszy głos, jaki słyszałem w świecie powierzchni, Gaalu.~
+@221 = ~Eee, tak, dziękuję.~
+@222 = ~Naprawdę chciałbym usłyszeć, jak go trochę więcej używasz. Mógłbyś opowiedzieć nam coś o tym twoim Niewidzącym Oku?~
+@223 = ~Oczywiście. Zaraz, co masz na myśli mówiąc 'świat powierzchni'?~
+@224 = ~Przyjrzyj mi się uważnie, Gaalu. Co widzisz?~
+@225 = ~Bluźnierstwo! Nic nie widzę! Moje kłamliwe oczy zostały wyrwane z mej głowy w służbie Jedynego Boga. Nie pytaj, co widzę, pytaj raczej, co wiem.~
+@226 = ~Bardzo dobrze. Co o mnie wiesz?~
+@227 = ~Wiem, że jesteś... znajomy. Pachniesz... kojąco... dla zmysłów, które dał mi Jedyny Bóg. Jak... znajomy gryzoń, który mieszka za ścianą. Bardzo mylące. Ale wyraźnie nie jesteś wrogiem.~
+@228 = ~Jesteś niezłym oryginałem, Gaalu. Ze wszystkich ludzi, których spotkałem, jesteś jedynym wykwalifikowanym do tego, by nie mieć wobec mnie uprzedzeń. Niestety, jesteś kompletnym wariatem. Musi to być zła karma, przypuszczam.~
+@229 = ~W każdym razie, proszę, powiedz nam więcej o Niewidzącym Oku.~
+
+// Raelis
+@230 = ~Zanim zaczniesz, Raelis, zastanawiałem się, czy mogłabyś poświęcić chwilę, by zaspokoić moją ciekawość.~
+@231 = ~Pragniemy wrócić do domu, ale skoro jesteś częścią grupy, która zwróciła nam Haer'Dalisa *i* przywróciła Gemmę Portalu, mogę być wyrozumiała. Czego sobie życzysz, mroczna istoto?~
+@232 = ~Jesteście zarówno podróżnikami planarnymi, jak i dramaturgami -- czy moglibyście dać mi przedsmak swej filozofii? Swej poezji?~
+@233 = ~Cóż za urocza prośba! Byłabym zaszczycona. Niefortunnie, mój drugi wzrok ukazuje okres intensywnych prób przed tobą.~
+@234 = ~Służymy chaosowi, do pewnego stopnia: "Gdy pomyślisz o długiej i ponurej historii człowieka, odkryjesz, że więcej ohydnych zbrodni popełniono w imię posłuszeństwa, niż kiedykolwiek popełniono w imię buntu."~
+@235 = ~Cóż za przygnębiająca myśl! Ale brzmi prawdziwie wobec moich doświadczeń w społeczeństwie drowów. Co zatem pozostaje ze szczęścia?~
+@236 = ~Pogoń za szczęściem to najbardziej niedorzeczne wyrażenie; jeśli gonisz szczęście, nigdy go nie znajdziesz.~
+@237 = ~Tu muszę się nie zgodzić. Z pewnością jeśli nie będziesz go gonić, również go nie znajdziesz.~
+@238 = ~Myślę, że oboje mamy rację, drowie. Fakty są faktami i nie znikną z powodu twych upodobań.~
+@239 = ~Ani z powodu twoich, zaprzeczaczu. Ale nie przerwałem ci, by się spierać, chciałem tylko poczuć twój sposób myślenia. Dziękuję. Mówiłaś coś o tych kanałach?~ 
+
+// Simyaz
+@240 = ~Czy mogę założyć, że jesteś przywódcą, drowie, a ci powierzchniowcy są twymi niewolnikami?~
+@241 = ~Nie, jestem wolnym poszukiwaczem przygód pod rozkazami <CHARNAME>, powierzchniowego <RACE>.~
+@242 = ~Jakże ciekawe! Jak żyjesz z dala od swego Domu i Królowej, drowie?~
+@243 = ~Nigdy nie była moją Królową, Githyanko. Eilistraee posiada me serce i wierność.~
+@244 = ~Nie wiem nic o waszych mrocznych bogach, ale zakładam, że cokolwiek byłoby rozsądniejsze od Lolth. Słuchaj, mam propozycję.~
+@245 = ~Mów dalej, Githyanko.~
+
+// slave leader
+@250 = ~<CHARNAME>, gdy Githyanki rozpraszają Illithidów, a dzięki tym obręczom kontrolnym możemy być może wymknąć się stąd. Możliwe, że uda się po prostu wyjść głównymi drzwiami w całym tym zamieszaniu.~
+@251 = ~Jednak moje doświadczenie z Pożeraczami każe mi myśleć, że zamknęli drzwi swymi mocami mentalnymi. Możemy musieć albo zabić ich mózg-mistrza, mistrza ula tej kolonii, albo wezwać twą przerażającą, boską moc, by się stąd wydostać.~ 
+@252 = ~Dopóki nie wiemy więcej, sugeruję, byśmy posuwali się powoli. Jak już widzieliśmy, Illithidzi mają dziwną skłonność do gromadzenia się w dużych grupach tuż za zamkniętymi drzwiami w skądinąd pustych pokojach. Możemy oczekiwać walki na końcu każdego korytarza.~
+
+// Drizzt
+@260 = ~Vendui, abbil. Phull dos Drizzt Do'Urden?~
+@261 = ~Dos telanth ilythiiri? Dos phuul ilythiiri. Nie spodziewałem się spotkać tu kogoś mówiącego prawdziwym językiem drowów, a cóż dopiero kogoś, kto twierdzi, że jest przyjacielem. Tak, abbil, jestem Drizzt. Kim jesteś?~
+@999262 = ~Jestem Solaufein, ostatnio z pogranicznego miasta Ust Natha.  <CHARNAME> i ja właśnie wróciliśmy po obaleniu rodu Despana i ich nikczemnych planów przyzwania demona poprzez złożenie w ofierze jaj srebrnego smoka.~
+// @262 = ~Jestem Solaufein, ostatnio z pogranicznego miasta Ust Natha.  <CHARNAME> i ja właśnie wróciliśmy po obaleniu rodu Ardulace i ich nikczemnych planów przyzwania demona poprzez złożenie w ofierze jaj srebrnego smoka.~
+@263 = ~Brzmi jak pełne popołudnie. Co robiłeś po kolacji?~
+@264 = ~Mrużyłem oczy dość mocno w jasnym świetle słońca i próbowałem patrzeć na mój nowy dom.~
+@265 = ~Ach, blask słońca może być dość dotkliwy dla takich jak my. To ból, który powinieneś cenić, przyjacielu. Dlaczego opuściłeś Ust Natha?~
+@266 = ~Lolth nie posiada mego serca -- jestem zaprzysiężony Eilistraee. Miałem nadzieję pozostać w Ust Natha i pomagać innym wątpiącym drowom, ale sprawy stały się zbyt niestabilne po przejściu <CHARNAME>.~
+@267 = ~A co zrobisz teraz, Solaufeinie-już-nie-z-Ust-Natha?~
+@268 = ~Będę podróżować z <CHARNAME> tak długo, jak <PRO_HESHE> mnie zechce, i torować sobie drogę w świecie powierzchni. Masz jakąś radę?~
+@269 = ~Sekret akceptacji wśród powierzchniowców? Sztuczka, która sprawi, że odłożą uprzedzenia i będą cię sądzić tylko po sercu i umyśle?~
+@270 = ~Nie ma czegoś takiego, obawiam się. Wyczołgałeś się z ciemności tylko po to, by odkryć, że rzeczy nie stają się łatwiejsze. Wymieniłeś jedno społeczne oczekiwanie, że czynisz złe uczynki, na inne.~
+@271 = ~Rzeczy są jednak inne. W Podziemiu musisz być podły albo cierpieć gniew innych drowów. Tu nie ma znaczenia, co robisz: możesz cierpieć gniew powierzchniowców. Ale nie będziesz zmuszany do zła: twa droga jest twoja.~
+@272 = ~Mało to pocieszające, ale przypuszczam, że to najlepsze, co dostanę.~
+@273 = ~Musisz sam znaleźć drogę, przyjacielu. Twoja Pani Srebrnowłosa poprowadzi cię, gdy będzie trzeba. Nie patrz na mnie ani na moje doświadczenia: znajdź własną prawdę.~
+@274 = ~Dziękuję, Drizzcie. Być może gdy skończę podróżować z <CHARNAME>, odwiedzę cię i porównamy notatki.~
+@275 = ~Nie mogę się doczekać. A teraz, gdzie byliśmy?~
+@276 = ~Byliśmy w drodze, by zabić Bodhi, złą wampirzycę, która ukradła Lanthorn, cenny artefakt elfów powierzchni.~
+@277 = ~Brzmi jak godne zadanie. Możemy wam jakoś pomóc w waszej wyprawie?~
+@278 = ~Miałem nadzieję, że to zaproponujesz. To silna przeciwniczka, a zaszczytem byłoby walczyć u twego boku. Oczywiście, jeśli <CHARNAME> pozwoli.~
+
+// Elf Kids
+@280 = ~I nie wszyscy nieznajomi są wrogami, niezależnie od tego, jak dziwnie mogą wyglądać. Co was trapi, dzieci?~
+
+// Demin
+@290 = ~Ale czekaj... czy to drow, którego widzę pośród was? Czy jesteście kolejnymi iluzjami zesłanymi, by mnie dręczyć?~
+@291 = ~Nie jesteśmy iluzjami, kapłanko. Jestem Solaufein, ostatnio z Ust Natha. Eilistraee posiada me serce; nie musisz się mnie bać.~
+@292 = ~To może być prawda, ale co tu robisz?~
+@293 = ~Podróżuję z <CHARNAME>, który odzyskał Lanthorn na polecenie Elhana i teraz przygotowuje się do przegnania Wygnania z twego pięknego miasta. Mam nadzieję odegrać małą rolę wspierającą w nadchodzącej bijatyce.~
+@294 = ~Irenicus zabrał duszę <CHARNAME>, jak również twe miasto. To naprawdę niefortunny stan rzeczy.~
+
+// Leaflord
+@300 = ~** A PROPOS, DROWIE:  EILISTRAEE JEST ZADOWOLONA, ŻE POMOŻESZ ELFOM POWIERZCHNI.  IDŹ Z JEJ BŁOGOSŁAWIEŃSTWEM. **~
+
+// Wraith Sarevok
+@310 = ~Nie poddawaj się nienawiści, <CHARNAME>. Obawiam się, że w tym małym zakątku Piekła twe motywy i czyny ukształtują twe ciało i duszę.~
+
+// Raamilat, anonymous donor
+@320 = ~Widzę, że nadal dzielisz swe energie między Sztukę a bat, Raamilacie.~
+@321 = ~Co? Solaufein! Mój chłopcze, cóż za przyjemność powitać znów starego ucznia! Zwłaszcza takiego, który przyjął obie moje lekcje z taką swobodą.~
+@322 = ~Tak. Wiele ci zawdzięczam.~
+@323 = ~I dziś spłacę twój dług, ale... jesteś tu w towarzystwie jawnych buntowników. Proszę, powiedz mi, że Matka Ardulace cierpiała przedłużone agonie przed twym odejściem; ona i ta jej diabla córka.~
+@324 = ~Ich odejście było szybkie, choć nie bez bólu. Nie ma to znaczenia. Jestem bardziej zainteresowany usłyszeniem, jak ty, drow o pozycji, nazywasz kundla wyrzutka "Mistrzem".~
+@325 = ~To tylko tytuł grzecznościowy... na razie. Jeśli mag powiedzie się w swym zamyśle, kto wie? Przewiduję większe możliwości dla tych z naszej płci poza paszczą Mrocznej Matki.~
+@326 = ~Jak i ja... dla wszystkich drowów. Ale wątpię, by boski Irenicus był poprawą.~
+@327 = ~Cóż, gdybym rozważał *wszystkie* drowy, byłbym skłonny się zgodzić. Ale tylko dla siebie samego? Ach, tak *przyjemnie* mi się z tobą rozmawiało, że niemal zapomniałem o przysłudze, którą zdecydowanie zawdzięczam memu "Mistrzowi". Żegnaj, drogi chłopcze.~

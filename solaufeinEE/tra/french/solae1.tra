@@ -1,0 +1,81 @@
+// Solaufein Eclipse Enemies
+
+// Radael, the Eclipse Kensai
+
+// Nrodlek, the Eclilpse Ant-Paladin
+
+// Radnuht, the Eclipse Barbarian
+
+// Reffus, the Eclipse Cleric
+
+// Ylekilnu, the Eclipse Druid
+
+// Citpeks, the Eclipse Sorcerer
+
+
+
+@1 = ~*Ahem*. (qu'est-ce que je dois dire déjà ?) Ah, voilà ce Solaufein et l'enfant de Bhaal. Je suis Redael, serviteur de l'Eclipse Maudite et de manière générale quelqu'un de plutôt impressionant.~
+@2 = ~S'il te plaît, un peu de sérieux. Est-tu en train de me menacer ?~
+@3 = ~(moquerie) Où est-ce que j'ai déjà entendu ça ?~
+@4 = ~Bonjour, Redael. Nous venons en paix.~
+@5 = ~(attaque pendant que Redael parle)~
+@6 =~Je sais, je sais. Ce genre de choses t'arrivent probablement tout le temps. Un groupe de rien d'autre que six puissants humanoïdes te téléporte quelque part et tente de te tuer pour quelque raison obscure. Et, chose ô combien surprenante, c'est toi qui les tues en fait. Ca nous arrive tout le temps aussi.~
+
+@99 = ~Remarques de quelle façon tu étais pétrifié de surprise par notre entrée fracassante tandis que nous prenions le temps de nous mettre en position. Ca ne te fais pas enrager ?~
+
+@7 = ~Oui. Malheuresement pour toi, nous nous sommes beacoup intéressés aux incroyables progrès de Solaufein. A cause de lui, la lune d'Eilistraee resplendit et apporte de l'espoir aux bons drows partout a travers le monde.~
+@8 = ~Paix ? Tu  rêves. Tout ceci va se terminer en violence.~
+@9 = ~En tant que serviteurs de l'Eclipse Maudite, nous ne pouvons permettre ceci. Nous allons te battre et clouer Solaufein au sol. Nous allons bloquer la lumière de la lune de son âme pour toujours.~
+@10 = ~Tu sais, ça a déja été tenté.~
+@11 = ~Nous défendrons Solaufein jusqu'à la fin! Préparez vous!~
+@12 = ~Oui, mais pas par nous ! As-tu remarqué nos supers uniformes assortis? Ne souhaites-tu pas que ton groupe puisse avoir un air aussi imposant ? (Reffus, peux-tu commencer a chantonner notre theme musical dramatique?)~
+@13 = ~He chef, ils n'en ont peut être pas l'air, mais ils ont une Lame Sainte. T'es sûr qu'on peut les battre ?~
+@14 = ~Nrodlek, tu n'en a peut être pas l'air non plus, mais TOI AUSSI, tu as une Lame Maléfique. Je suis sûr que tout se passera bien.~
+@15 = ~Ok, donc voila venu le moment des plaintes. Si je lis correctement mes notes, je devrais passer quelques instants a gonfler le torse et prendre un air fier.~
+@16 = ~He chef, ils ont la Furie Celeste. T'es sûr qu'on peut s'occuper de ça ?~
+@17 = ~Ho, qui est le chef ici ? On peut les écraser.~
+@18 = ~Et pendant que tu perds ton temps ici, toutes nos protections magiques si soigneusement préparées se dissipent. Je ne peux pas croire qu'ils t'aient choisi comme leader plutôt que moi.~
+@19 = ~He bien si, mago! Quand tu auras une Main, un Oeil et une Robe qui porteront ton nom, tu pourras peut être te permettre de contester mes décisions. Tu as sûrement remarqué que les sorts ne se dissipent jamais pendant les dialogues ?~
+@20 = ~En parlant de la Robe de Vecna, ils l'ont, et ce n'est pas mon cas. Ils vont lancer des sorts en un clin d'oeil. Sommes nous préparés à ça?~
+@21 = ~Oui, mon cynique ami. Nous sommes préparés à ça. Je suis sûr que tes sorts seront assez rapides.~
+@22 = ~Comme je le disais, nous servons l'Eclipse Maudite. Notre protecteur des ténèbres nous a donné la force de marcher à travers l'éternité et de te mettre à mal, te laissant sans défense.~
+@23 = ~He , tu es en train de leur révéler tous nos secrets. Est-ce que ca n'annule pas l'avantage de notre embuscade?~
+@24 = ~(soupir) Non, ça n'y change rien. Tout ira bien. De plus je parlais de façon énigmatique. Je suis sûr qu'ils ne comprennent pas vraiment ce qui va se passer.~
+@25 = ~He, je vois le Crom Faeyr là-bas: le marteau de Silverblade. Ces types doivent être plutôt forts. Je commence à m'inquiéter.~
+@26 = ~N'ai-je pas toujours eu raison dans le passé ? Pas de problèmes, on peut se charger de ces clowns.~
+@27 = ~Je savais qu'on aurait dû appliquer mon plan. Ils seraient déjà capturés!~
+@28 = ~Ylekilnu, ton plan était de creuser une fossse dans le sol et espérer qu'ils tombent dedans. Crois moi, ces gens ne sont pas du genre a se faire prendre à ce genre de truc.~
+@29 = ~Je suis curieux, <CHARNAME>. Tu as ce genre de dissensions dans tes rangs ?~
+@30 = ~Non, je commande avec une main de fer.~
+@31 = ~Non, notre respect mutuel et notre expérience commune nous unissent.~
+@32 = ~Oui, quelquefois. Mais tout finit pas marcher au final.~
+@33 = ~J'aurais dû m'en douter. (Ha, n'aimes-tu pas ces réponses bateau ? Ca m'économise le temps d'avoir à chercher quelque chose d'original à dire.)~
+@34 = ~Quoiqu'il en soit, un peu comme toi (mais nous sommes un peu plus directs), nous passons un certain temps à attaquer d'autres compagnies d'aventuriers pour leur dérober leurs trésors. Nous avons beaucoup appris des erreurs des autres et notre plan d'attaque est à peu près parfait.~
+@35 = ~Chef, ils ont combiné la Ravageuse et le Bâton Serpent. J'ai pas envie d'être décapité. On ne pourrait s'en aller maintenant?~
+@36 = ~Non, non, non! Tout se passera sans problème, ils n'arriveront jamais à te toucher. Et même si c'est le cas on te ressucitera plus tard. Bon ! Comme j'étais en train de le dire ...~
+@37 = ~Par exemple, nous avons lancé tout nos sorts de protection avant le combat. Je suppose qu'en temps normal tu aimes bien tirer sur les mages ennemis avant qu'ils aient pu utiliser Peau de Pierre ou Protection contre les armes magiques ?~
+@38 = ~He ! Je t'ai dit que je n'ais jamais été un accro de cette stratégie. Courtoisie professionnelle avant tout.~
+@39 = ~He chef, on dirait Sangplan à côté du Fourreau de Fflar. J'ai entendu dire de vilaines choses à propos de cette combinaison.~
+@40 = ~Crois moi, on peut quand même les battre. Ne me dis pas que tu as peur d'une Absorption mineure de Larloch?~
+@41 = ~En plus de ça, nous protégons notre Kensai (moi en l'occurence) avec une Armure Spirituelle pour pallier à son impossibilité de mettre une armure encombrante. Nous savons invoquer Brèche contre Peau de Pierre et Protection contre les armes magiques. Nous savons lancer le Sort d'assault contre les défenses magiques.~
+@42 = ~Ô que tu es intelligent.~
+@43 = ~Rien de cela ne va t'aider.~
+@44 = ~Et je vois que tu portes la Ceinture de l'Ego Démesuré également.~
+@45 = ~Attends que je finisse. Où en étais-je?~
+@46 = ~Peut être pas, mais ça ne fait pas de mal.~
+@47 = ~Pas mal! Laisse moi noter cette réplique. Au moins ce n'est pas la Ceinture de Supériorité Morale comme toi. Aucune fausse prétention de mon côté.~
+@48 = ~Nous faisons de notre mieux pour ignorer les monstres invoqués, nous nous en prenons d'abord aux membres les plus faibles du groupe, et nous utilisons de longs monologues pour révéler tout nos plans à l'avance. Nous savons que Hâte Améliorée bat Tornade de Fer, que les Epées de Mordenkainen sont géniales et que le Souffle de Dragon semble marcher sur à peu près tout.~
+@49 = ~Nous n'avons pas l'air de gens très sympas.~
+@50 = ~Nous ne sommes pas des gens gentils. Nous sommes des bandits intelligemment déguisés en prêtres. Où est-ce que c'est le contraire ? Les types bons envoient leurs forces contre vous en petits groupes faciles à laminer. Ils aiment aussi se réfugier dans des couloirs étroits pour que seuls leurs tanks soient en danger, pendant que le reste du groupe utilise ses armes à distance derrière.~
+@51 = ~Nous avons fait du chemin depuis nos humbles débuts. Je me souviens encore de l'époque où nous transportions des bagages et des paquets inutiles entre des gens vivant à des kilomètres d'écart. Ha, ma première épée enchantée. C'était le bon temps.~
+@52 = ~Bon, selon mes notes j'ai fini la partie de présentation et maintenant je vais accidentelement révéler nos faiblesses avant que le combat ne débute.~
+@53 = ~On ne pourrait pas sauter cette étape pour une fois ?~
+@54 = ~En effet. As-tu remarqué de quelle maniére les Vampires semblent toujours avoir des pieux et des armes de disruption qui traînent dans leurs antres? si j'étais le Maître Vampire d'une cité, je bannirais le bois sous toutes ses formes. Franchement pas besoin d'être un génie pour comprendre ça?~
+@55 = ~Ou remarque comment ces répères de dragons rouges sont toujours remplis d'objets et de potions donnant de la résistance au feu ? Ou comment les Golems Magiques sont toujours précédés d'une cache d'armes non magiques ? Ou encore de quelle façon tu peux toujours dormir juste devant la porte menant à ton pire ennemi sans te faire remarquer ?~
+@56 = ~Donc pas d'aide pour vous! Nous sommes ici pour ...~
+@57 = ~Les gars, on est là pour quoi déja ?~
+@58 = ~Solaufein! Et leurs trésors!~
+@59 = ~Nous sommes les serviteurs de l'Eclipse Maudite. Nous sommes là pour Solaufein. Nous ne perdrons même pas de temps à te demander de nous le livrer.~
+@60 = ~Allons y!~
+@61 = ~Eilistraee, protège moi!~
+@62 = ~He, Redael, réveille toi!~

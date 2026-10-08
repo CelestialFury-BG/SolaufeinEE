@@ -1,0 +1,116 @@
+// Solaufein Eclipse Enemies
+
+// Radeal, the Eclipse Kensai
+// Nrodlek, the Eclilpse Ant-Paladin
+// Radnuht, the Eclipse Barbarian
+// Reffus, the Eclipse Cleric
+// Ylekilnu, the Eclipse Druid
+// Citpeks, the Eclipse Sorcerer
+
+@1 = ~*Ehem*. (Wie war noch mal mein Text?) Ah, da sind ja Solaufein und das Bhaalskind. Ich bin Redael, Diener der Unheiligen Finsternis und in jeder Hinsicht ein beeindruckender Kerl.~
+  @2 = ~Bitte, bleibt ernsthaft. Wollt Ihr mich bedrohen?~
+  @3 = ~(gähn) Wo hab ich solches Zeug nur schon mal gehört?~
+  @4 = ~Hallo, Redael. Wir grüßen Euch in Frieden.~
+  @5 = ~(angreifen, während Redael spricht)~
+
+@6 =~Ich weiß, ich weiß. Wahrscheinlich passiert Euch so etwas öfters. Eine geheimnisvolle Gruppe von nie mehr als sechs mächtigen Humanoiden teleportiert sich herein und versucht, Euch wegen irgendwelcher unklarer Gründe zu töten. Unglaublicherweise und völlig überraschend tötet Ihr sie stattdessen. Das passiert uns auch immer.~
+
+@99 = ~Bemerkt Ihr, wie Ihr von Schrecken gelähmt seid durch die beeindruckende Art und Weise, mit der wir hier aufgetaucht sind? Und wie wir inzwischen die Zeit genutzt haben, um unsere Positionen einzunehmen? Geht Euch das nicht auf den Geist?~
+
+@7 = ~Ja. Zu Eurem Unglück interessieren wir uns sehr für Solaufeins beachtliche Fortschritte. Wegen ihm geht Eilistraees Mond auf, und für alle gutgesinnten Drow gibt es reichlich Grund zur Hoffnung.~
+
+@8 = ~Frieden? Das wollt Ihr vielleicht. Wird das hier in Gewalt enden?~
+
+@9 = ~Als Diener der Unheiligen Finsternis können wir nicht zulassen, dass das geschieht. Wir werden Euch töten und Solaufein niedermachen. Wir werden den Mond für immer von seinem Herzen fernhalten.~
+  @10 = ~Wisst Ihr, das hat man schon mal versucht.~
+  @11 = ~Wir werden Solaufein bis zum Letzten verteidigen! Macht Euch bereit!~
+
+@12 = ~Ja, aber nicht wir! Habt Ihr unsere farblich abgestimmten Uniformen gesehen? Wünscht Ihr nicht auch, dass Eure Gruppe so beeindruckend aussieht? (Reffus, würdet Ihr beginnen, unsere dramatische Erkennungsmelodie zu singen?)~
+
+  @13 = ~He, Chef, sie mögen nicht nach viel aussehen, aber sie haben einen Heiligen Rächer. Seid Ihr sicher, dass wir es mit ihnen aufnehmen können?~
+  @14 = ~Nrodlek, Ihr seht auch nicht nach viel aus, aber *Ihr habt auch einen*. Das heißt, einen Unheiligen Rächer. Ich bin sicher, es geht gut.~
+
+@15 = ~Das ist also der Teil der Begegnung mit dem beinahe-witzigen Geschwafel. Wenn ich meine Notizen richtig verstehe, sollte ich jetzt eine ganze Weile mit Wichtigtun und Angeberei verbringen.~
+
+  @16 = ~He, Chef, die haben die "Göttliche Rage". Seid Ihr sicher, dass wir das hinkriegen?~
+  @17 = ~He, wer ist hier der Anführer? Ich bin sicher, wir können es mit ihnen aufnehmen.~
+
+@18 = ~Und während Ihr hier Zeit vergeudet, gehen alle unsere sorgfältig aufgebauten Schutzzauber zu Ende. Ich kann es nicht glauben, dass sie Euch und nicht mich zum Anführer gemacht haben.~
+
+@19 = ~Oh doch, Magierbursche! Wenn mal eine Hand, ein Auge und eine Robe nach Euch benannt sind, dann könnt Ihr mich vielleicht umstimmen. Ihr habt doch sicherlich bemerkt, dass Zauber nie ablaufen, wenn man redet?~
+
+  @20 = ~Wo wir grade von Vecnas Robe reden - die haben sie, und wir nicht. Die werden schneller zaubern als Ihr blinzeln könnt. Sind wir dem gewachsen?~
+  @21 = ~Jawohl, mein zynischer Freund, wir sind dem gewachsen. Ich bin sicher, Eure Zauber sind schnell genug.~
+
+@22 = ~Wie ich schon sagte, wir dienen der Unheiligen Finsternis. Unser dunkler Schutzherr hat uns die Macht gegeben, durch die Bewegungslosigkeit zu gehen und Euch niederzuschlagen, während Ihr hilflos seid.~
+
+@23 = ~He, Ihr erzählt denen doch alle unsere Geheimnisse. Hebt das nicht den Vorteil unseres Überraschungsangriffs wieder auf?~
+
+@24 = ~(seufz) Nein, tut es nicht. Wir werden es schon schaffen. Außerdem war ich unheimlich rätselhaft. Ich bin sicher, die wissen nicht wirklich, was auf sie zukommt.~
+
+  @25 = ~He, ich sehe Crom Faeyr dort, den Hammer von Silberklinge. Diese Leute müssen ziemlich stark sein. Langsam mache ich mir Sorgen.~
+  @26 = ~Habe ich nicht immer recht gehabt? Keine Angst, mit den Spaßmachern werden wir fertig.~
+  
+@27 = ~Ich wusste, wir hätten stattdessen meinen Plan nehmen sollen. Dann wären sie jetzt schon gefangen!~
+
+@28 = ~Ylekilnu, Euer Plan war es, eine Grubenfalle zu graben und zu hoffen, dass sie da drauf reinfallen. Glaub mir, das ist nicht die Sorte Leute, die von so was beeindruckt ist.~
+
+@29 = ~Ich bin neugierig, <CHARNAME>. Habt Ihr auch so viel Widerspruch in Eurer Gruppe?~
+
+  @30 = ~Nein, ich führe mit eiserner Hand.~
+  @31 = ~Nein, unser Respekt voreinander und die gemeinsamen Erfahrungen binden uns zusammen.~
+  @32 = ~Ja, manchmal. Aber am Ende funktioniert es immer.~
+
+@33 = ~Ich hätte es wissen sollen. (Ha, ich liebe diese zweideutigen Antworten. Da brauche ich mir nichts Originelles einfallen zu lassen.)~
+
+@34 = ~Jedenfalls verbringen wir, genau wie Ihr (obwohl wir besser aussehen), eine Menge Zeit damit, andere Abenteurer anzugreifen und dann die Beute einzusammeln. Wir haben aus den Fehlern der anderen gelernt, und unser Plan ist praktisch perfekt.~
+
+  @35 = ~Chef, die haben den Wüter und den Schlangenschaft zusammengesetzt. Ich will aber nicht geköpft werden. Können wir uns nicht zurückziehen?~
+  @36 = ~Nein, nein, nein! Euch wird nichts passieren, sie werden nie Gelegenheit bekommen, Euch zu treffen. Und wenn doch, dann werden wir Euch eben später wiederbeleben. Schluss jetzt! Was ich gerade sagen wollte...~
+
+@37 = ~Zum Beispiel haben wir all unsere Zauber vor dem Kampf vorbereitet. Ihr habt es doch gern, wenn Ihr auf einen feindlichen Magier aus der Entfernung schießen könnt, bevor er Steinhaut oder Schutz vor Magischen Waffen oben hat, oder?~
+
+@38 = ~He! Ich hab Euch doch gesagt, dass ich nie etwas von dieser Strategie gehalten habe. Berufsmäßige Höflichkeit und so.~
+
+  @39 = ~He, Chef, das dort sieht mir stark nach Feindbann aus, und ganz in der Nähe von Fflars Scheide. Ich hab' unschöne Sachen über diese Kombination gehört.~
+  @40 = ~Vertraut mir, wir werden die schon schaffen. Oder wollt Ihr mir erzählen, Ihr hättet Angst vor Geringerem Lebenskraftentzug?~
+
+@41 = ~Außerdem schützen wir unseren Kensai (damit bin ich gemeint) mit Geisterrüstung, um seine Abneigung gegen hinderliche Rüstungen auszugleichen. Wir wissen, wie man gegen Steinhaut und Schutz vor Magischen Waffen Bresche zaubert. Und wir wissen, wie man Zauberschlag gegen Magieschutzzauber anwendet.~
+
+  @42 = ~Wirklich, Ihr besitzt einen schwindelerregenden Intellekt.~
+  @43 = ~Nichts davon wird Euch helfen.~
+  @44 = ~Und ich sehe, dass Ihr außerdem den Gürtel des Riesigen Selbstbewusstseins tragt.~
+
+@45 = ~Wartet nur, bis ich loslege. Wo war ich stehengeblieben?~
+@46 = ~Vielleicht nicht, aber es kann auch nicht schaden.~
+@47 = ~Nicht schlecht! Das muss ich mir aufschreiben. Zumindest ist es nicht der Gürtel der Moralischen Überlegenheit. Keine leere Prahlerei, dieses Mal.~
+
+@48 = ~Wir bemühen uns sehr, beschworene Monster zu ignorieren, wir suchen uns die schwächeren Gruppenmitglieder aus, und wir halten aufschneiderische Monologe, in denen wir alle unsere Pläne im Voraus verraten. Wir wissen, dass Verbesserte Hast besser ist als Wirbelwind, dass Mordenkainens Schwerter voll reinhauen und dass Drachenodem anscheinend alles trifft.~
+
+@49 = ~Wir hören uns nicht an wie nette Leute.~
+
+@50 = ~Wir sind keine netten Leute. Wir sind Banditen, die sich schlauerweise als Priester verkleidet haben. Oder war es anders herum? Nette Leute schicken alle ihre Kräfte in kleinen Grüppchen gegen Euch, mit denen Ihr fertig werden könnt. Sie lassen Euch auch enge Korridore, so dass nur Eure stärksten Haudraufs jemals in Gefahr geraten, während der Rest der Gruppe aus sicherer Entfernung Fernkampfwaffen benutzen kann.~
+
+@51 = ~Wir haben mal ganz klein angefangen. Ich kann mich noch daran erinnern, wie wir unsere Zeit damit verbracht haben, nutzlose Päckchen zwischen Leuten hin und her zu tragen, die nur einige Meter voneinander entfernt wohnten. Ah, mein erstes schwach verzaubertes Langschwert. Das waren noch Zeiten...~
+
+@52 = ~Egal, nach meinen Notizen habe ich den prahlerischen Teil jetzt hinter mir und muss jetzt nur noch rein zufällig unsere geheime Schwachstelle preisgeben, bevor der Kampf beginnt.~
+
+@53 = ~Könnten wir das nicht weglassen, nur dieses eine Mal?~
+
+@54 = ~Nun, eigentlich ja. Habt Ihr je bemerkt, dass Vampire anscheinend immer Pflöcke und Waffen der Zerschlagung in ihrem Lager herumliegen haben? Wenn ich der größte Vampir einer Stadt wäre, würde ich die Benutzung von Holz völlig verbieten. Dazu braucht man nun nicht besonders klug zu sein.~
+
+@55 = ~Oder habt Ihr bemerkt, wie diese Höhlen von Roten Drachen voll mit Gegenständen und Tränken sind, die Widerstand gegen Feuer gewähren? Dass sich vor Magiegolems immer ein seltsamer Haufen nichtmagischer Waffen befindet? Dass Ihr immer genau vor der Tür Eures härtesten Gegners schlafen könnt, ohne bemerkt zu werden?~
+
+@56 = ~Also, keine Geschenke für Euch! Wir sind hier wegen...~
+
+@57 = ~Jungs, warum waren wir doch gleich noch mal hier?~
+
+@58 = ~Solaufein! Und die Beute!~
+
+@59 = ~Richtig, wir sind Diener der Unheiligen Finsternis. Wir sind hinter Solaufein her. Wir verschwenden nicht mal unsere Zeit damit, Euch zu fragen, ob Ihr ihn ausliefern wollt.~
+
+@60 = ~Lasst uns tanzen!~
+
+@61 = ~Eilistraee, schütze mich!~
+
+@62 = ~He, Redael, wach auf!~
