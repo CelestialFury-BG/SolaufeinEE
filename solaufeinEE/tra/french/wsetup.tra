@@ -238,10 +238,10 @@ Qu'alors je refuserais d'échanger ma place avec des rois.~
 // d'installation.
 // -----------------------------------------------------------------
 
-@1000 = ~Solaufein : Personnage principal (Requis)~
-@1010 = ~Solaufein : Romance dans SoA~
-@1020 = ~Solaufein : Séquence de l'Éclipse~
-@1030 = ~Solaufein : Solaufein vampire + Purification~
-@1040 = ~Solaufein : Suite dans ToB~
-@1050 = ~Solaufein : Extras (KVFix, Multig, UHMER, Divers)~
-@1060 = ~Solaufein : Renforcement des cinématiques (Optionnel)~
+@1000 = ~Solaufein : PNJ principal + contenu SoA (requis)~
+@1010 = ~Solaufein : Solaufein vampire + Purification (branche scénaristique SoA facultative)~
+@1020 = ~Solaufein : Suite ToB (recommandé si vous jouez à ToB)~
+@1030 = ~Solaufein : Séquence Éclipse (combat défi ToB facultatif)~
+@1040 = ~Solaufein : Extras (correctifs Korgan/Viconia, multijoueur, correctifs de projectiles — facultatif)~
+@1070 = ~Ce mod nécessite Baldur's Gate II : Enhanced Edition (BG2EE) ou Enhanced Edition Trilogy (EET).~
+@1071 = ~Ce composant nécessite l'extension Throne of Bhaal.~
