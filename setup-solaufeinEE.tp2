@@ -36,11 +36,45 @@
  *
  *         Requires @200 and @201 in wsetup.tra — see inline note at
  *         the top of the Sola tier COPY block.
+ *
+ * v2.1.5  Bark playback fix. v2.1.4 wrote bark strrefs via raw
+ *         WRITE_LONG, which places the correct strref NUMBER into the
+ *         CRE but does not associate a sound file with the TLK entry.
+ *         BG2EE suppresses any bark whose TLK entry lacks an
+ *         associated sound file — the bark text never fires and the
+ *         character appears mute on click and in combat.
+ *
+ *         v2.1.5 replaces the WRITE_LONG bark writes with SAY
+ *         statements, which write the strref AND let the TLK entry
+ *         carry a sound association. The sound association itself
+ *         lives in the TRA file: each bark string is defined with
+ *         [blank] after the text, e.g.
+ *             @200 = ~This is not over! Another day!~ [blank]
+ *         The SAY command then resolves @200 and the engine sees a
+ *         TLK entry with an associated (silent) WAV.
+ *
+ *         The blank WAV is solaufeinEE/sounds/blank.wav, copied to
+ *         override/ at the top of Component 10. It is 1 second of
+ *         silence. No Solaufein voice set exists, so silent playback
+ *         is the correct behavior; the point is to satisfy the
+ *         engine's "must have audio" check so the floating text
+ *         displays.
+ *
+ *         The SAY statements are format-aware (Rule 14), so they sit
+ *         outside the v1.0 PATCH_IF guard. The guard remains for the
+ *         LPF cleanup and EE_SET_CRE_FIELDS calls, which use raw
+ *         offsets internally.
+ *
+ *         NOTE: WeiDU does NOT accept a bracketed sound directly
+ *         after a TRA reference (SAY MORALE @200 [blank] is a GLR
+ *         parse error). The [blank] must be part of the string
+ *         definition in the TRA file. This is why the bark strings
+ *         in every language's wsetup.tra carry [blank].
  *************************************************************************/
 
 BACKUP ~solaufeinEE/backup~
 AUTHOR ~weimer@cs.berkeley.edu~
-VERSION ~v2.1.4~
+VERSION ~v2.1.5~
 
 // Handle UTF-8 and non-English encodings natively across platforms
 HANDLE_CHARSETS
@@ -68,6 +102,12 @@ ALLOW_MISSING ~bsarev25.dlg~
 // Component display names and the REQUIRE_PREDICATE message live at
 // @1000-@1070 in wsetup.tra (Rule 11e). All non-English installs fall
 // back to English until translators add them.
+//
+// Bark strings @3-@8, @200, and @201 carry [blank] after the text in
+// every language file. The [blank] associates the silent placeholder
+// WAV with the TLK entry so BG2EE does not suppress the bark. See the
+// v2.1.5 version-history note above for why this lives in the TRA and
+// not in the SAY command.
 ///////////////////////////////////////////////////////////////////////
 
 LANGUAGE ~American English~
@@ -132,6 +172,26 @@ APPEND ~action.ids~ ~311 MyCustomAction(O:Object*)~ UNLESS ~MyCustomAction~
 APPEND ~trigger.ids~ ~0x40D6 MyCustomTrigger(O:Object*)~ UNLESS ~MyCustomTrigger~
 
 ///////////////////////////////////////////////////////////////////////
+// SUPPORT FILES
+//
+// Silent placeholder WAV used by the bark strings in wsetup.tra.
+//
+// Background: BG2EE suppresses any bark whose TLK entry has no
+// associated sound file. The engine treats "text-only strref" as
+// "no bark" and refuses to fire it, regardless of the strref value
+// stored in the CRE sound slot.
+//
+// Fix: the bark strings in wsetup.tra carry [blank] after the text,
+// which associates this WAV with the TLK entry. The engine then plays
+// the bark (silently) so the floating text appears.
+//
+// The COPY must precede the CRE COPY blocks so the file is present
+// in override/ before the SAY calls resolve the TRA strings.
+///////////////////////////////////////////////////////////////////////
+
+COPY ~solaufeinEE/sounds/blank.wav~ ~override/blank.wav~
+
+///////////////////////////////////////////////////////////////////////
 // CREATURE FILES (Precise Translation Sheet Mapping)
 ///////////////////////////////////////////////////////////////////////
 
@@ -158,10 +218,48 @@ WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
        ~solaufeinEE/creatures/sola17.cre~ ~override/sola17.cre~
     SAY NAME1 @1 SAY NAME2 @1 SAY BIO @2
 
-    // Rule 12/13: version guard on every binary write. The base Sola
-    // tiers ship as CRE v1.0. If any future release switches to v2.2,
-    // the field offsets shift and none of the writes below would land
-    // on the right fields — better to skip than corrupt.
+    // Restore Sola's bark dialogue into the CRE sound slots.
+    //
+    // The pristine sola5-17.cre files ship with WRONG barks — the
+    // original author built the NPC from a template and never
+    // cleaned the sound table. Slots that should contain Solaufein
+    // lines currently contain generic creature audio ("dwarven
+    // food", "servants of Alorgoth", "Taddaus", "Guards!
+    // GUARDS!", "For the honor of the Fighters' Guild!"). These
+    // SAY statements replace that audio with correct Solaufein lines
+    // sourced from wsetup.tra.
+    //
+    // Each SAY writes the strref into the correct CRE slot. The sound
+    // association comes from the [blank] tag on the TRA string
+    // definition, not from the SAY command. See the v2.1.5 note.
+    //
+    // Slots written below (12 total):
+    //   MORALE                @200
+    //   INITIAL_MEETING       @3
+    //   HAPPY                 @3
+    //   UNHAPPY_ANNOYED       @4
+    //   UNHAPPY_SERIOUS       @5
+    //   UNHAPPY_BREAKING_POINT @6
+    //   LEADER                @3
+    //   BORED                 @5
+    //   BATTLE_CRY1           @8
+    //   SELECT_COMMON1        @201
+    //   CRITICAL_HIT          @8
+    //   CRITICAL_MISS         @200
+    SAY MORALE                @200
+    SAY INITIAL_MEETING       @3
+    SAY HAPPY                 @3
+    SAY UNHAPPY_ANNOYED       @4
+    SAY UNHAPPY_SERIOUS       @5
+    SAY UNHAPPY_BREAKING_POINT @6
+    SAY LEADER                @3
+    SAY BORED                 @5
+    SAY BATTLE_CRY1           @8
+    SAY SELECT_COMMON1        @201
+    SAY CRITICAL_HIT          @8
+    SAY CRITICAL_MISS         @200
+
+    // Rule 12/13: version guard on the binary patch functions below.
     READ_ASCII 0x04 cre_ver (4)
     PATCH_IF (~%cre_ver%~ STRING_EQUAL ~V1.0~) BEGIN
 
@@ -171,69 +269,11 @@ WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
       LPF EE_CRE_CLEANUP END
 
       // Explicit field writes via the shared helper (Rule 61-63).
-      // Solaufein's script name and dialogue identifier are both
-      // "sola" — they match the deathvar used throughout the mod's
-      // scripts (InParty("sola"), Dead("sola"), ActionOverride)
-      // and the SOLA.DLG tree compiled in Component 20.
-      //
-      // Historical note: the previous code wrote
-      //   WRITE_ASCII 0x2C4 ~SOLA~ #8
-      // as if 0x2C4 were the Dialogue resref. NI shows Dialogue at
-      // 0x2CC on CRE v1.0; 0x2C4 is the effects offset pointer. The
-      // old write was silently zeroing Sola's effects count. The
-      // helper centralizes the offset map, so this class of error
-      // can only occur once, in one place.
       LPF EE_SET_CRE_FIELDS
         STR_VAR script_name     = sola
                 dialogue_resref = sola
       END
 
-      // Restore Sola's bark dialogue into the CRE sound slots.
-      //
-      // The pristine sola5-17.cre files ship with WRONG barks — the
-      // original author built the NPC from a template and never
-      // cleaned the sound table. Slots that should contain Solaufein
-      // lines currently contain generic creature audio ("dwarven
-      // food", "servants of Alorgoth", "Taddaus", "Guards!
-      // GUARDS!", "For the honor of the Fighters' Guild!"). These
-      // WRITE_LONGs replace that audio with correct Solaufein lines
-      // sourced from wsetup.tra.
-      //
-      // This is NOT what ValenEE does — Valen's source file already
-      // ships with correct barks, so her TP2 writes no sound slots.
-      // Solaufein's source file does not, so his TP2 must.
-      //
-      // Slots written below (12 total):
-      //   MORALE                @200  (template leftover: "This is not over!...")
-      //   INITIAL_MEETING       @3    (empty in source)
-      //   HAPPY                 @3    (wrong: "Y'll dwarven food...")
-      //   UNHAPPY_ANNOYED       @4    (wrong: "Did you enjoy the food...")
-      //   UNHAPPY_SERIOUS       @5    (wrong: "What the-? Intruders!...")
-      //   UNHAPPY_BREAKING_POINT @6   (wrong: "Eat quickly, filth...")
-      //   LEADER                @3    (empty in source)
-      //   BORED                 @5    (empty in source)
-      //   BATTLE_CRY1           @8    (wrong: "For the honor of the Fighters' Guild!")
-      //   SELECT_COMMON1        @201  (correct text, wrong localization)
-      //   CRITICAL_HIT          @8    (wrong: "Leave us to eat in peace, Taddaus...")
-      //   CRITICAL_MISS         @200  (same wrong source as MORALE)
-      //
-      // All offsets below are the standard BG2 CRE v1.0 sound slot
-      // table. CRITICAL_HIT at 0x01A8 was confirmed against sola5.cre
-      // in NI during the original port. MORALE at 0x00A8, SELECT_COMMON1
-      // at 0x010C, and CRITICAL_MISS at 0x01AC are their canonical
-      // positions — verify in NI before relying on them (Rule 18).
-      WRITE_LONG 0x00A8 (RESOLVE_STR_REF(@200))  // MORALE
-      WRITE_LONG 0x00A4 (RESOLVE_STR_REF(@3))    // INITIAL_MEETING
-      WRITE_LONG 0x00AC (RESOLVE_STR_REF(@3))    // HAPPY
-      WRITE_LONG 0x00B0 (RESOLVE_STR_REF(@4))    // UNHAPPY_ANNOYED
-      WRITE_LONG 0x00B4 (RESOLVE_STR_REF(@5))    // UNHAPPY_SERIOUS
-      WRITE_LONG 0x00B8 (RESOLVE_STR_REF(@6))    // UNHAPPY_BREAKING_POINT
-      WRITE_LONG 0x00BC (RESOLVE_STR_REF(@3))    // LEADER
-      WRITE_LONG 0x00C4 (RESOLVE_STR_REF(@5))    // BORED
-      WRITE_LONG 0x00C8 (RESOLVE_STR_REF(@8))    // BATTLE_CRY1
-      WRITE_LONG 0x010C (RESOLVE_STR_REF(@201))  // SELECT_COMMON1
-      WRITE_LONG 0x01A8 (RESOLVE_STR_REF(@8))    // CRITICAL_HIT
-      WRITE_LONG 0x01AC (RESOLVE_STR_REF(@200))  // CRITICAL_MISS
     END
 END
 
@@ -303,21 +343,34 @@ END
 // ~SOLA~ #8 for the dialogue resref, the same wrong offset used for
 // the Sola tiers. NI shows Dialogue at 0x2CC on CRE v1.0. Applied
 // the same refactor: v1.0 version guard, EE_SET_CRE_FIELDS for
-// script name and dialogue, direct WRITE_LONGs for the barks.
+// script name and dialogue.
 //
-// FIXED (v2.1.4): bark list now matches the Sola tier set exactly
-// (12 slots) — added MORALE, SELECT_COMMON1, CRITICAL_HIT, and
-// CRITICAL_MISS. v2.1.3 was missing these four on udsola; the
-// v2.1.4 version brings both blocks into lockstep.
+// FIXED (v2.1.4): bark list brought into lockstep with the Sola tier
+// set (12 slots).
 //
-// After running in NI, if the pristine udsola01.cre and udsola02.cre
-// already ship with script_name = sola and dialogue = SOLA.DLG, the
-// LPF EE_SET_CRE_FIELDS call can be removed — it would just rewrite
-// the same values.
+// FIXED (v2.1.5): bark playback. All 12 slots use SAY <slot> @<n>.
+// The sound association lives in the TRA file: @3-@8, @200, and @201
+// carry [blank] after their text so the TLK entries have an
+// associated silent WAV. The SAY statements are format-aware
+// (Rule 14) and sit outside the v1.0 PATCH_IF guard.
 WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
   COPY ~solaufeinEE/creatures/udsola01.cre~ ~override/udsola01.cre~
        ~solaufeinEE/creatures/udsola02.cre~ ~override/udsola02.cre~
     SAY NAME1 @1 SAY NAME2 @1
+
+    // Same 12-slot bark set as the Sola tier block above.
+    SAY MORALE                @200
+    SAY INITIAL_MEETING       @3
+    SAY HAPPY                 @3
+    SAY UNHAPPY_ANNOYED       @4
+    SAY UNHAPPY_SERIOUS       @5
+    SAY UNHAPPY_BREAKING_POINT @6
+    SAY LEADER                @3
+    SAY BORED                 @5
+    SAY BATTLE_CRY1           @8
+    SAY SELECT_COMMON1        @201
+    SAY CRITICAL_HIT          @8
+    SAY CRITICAL_MISS         @200
 
     READ_ASCII 0x04 cre_ver (4)
     PATCH_IF (~%cre_ver%~ STRING_EQUAL ~V1.0~) BEGIN
@@ -327,21 +380,6 @@ WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
         STR_VAR script_name     = sola
                 dialogue_resref = sola
       END
-
-      // Same 12-slot bark set as the Sola tier block above. Offsets
-      // are canonical BG2 CRE v1.0 positions; verify in NI per Rule 18.
-      WRITE_LONG 0x00A8 (RESOLVE_STR_REF(@200))  // MORALE
-      WRITE_LONG 0x00A4 (RESOLVE_STR_REF(@3))    // INITIAL_MEETING
-      WRITE_LONG 0x00AC (RESOLVE_STR_REF(@3))    // HAPPY
-      WRITE_LONG 0x00B0 (RESOLVE_STR_REF(@4))    // UNHAPPY_ANNOYED
-      WRITE_LONG 0x00B4 (RESOLVE_STR_REF(@5))    // UNHAPPY_SERIOUS
-      WRITE_LONG 0x00B8 (RESOLVE_STR_REF(@6))    // UNHAPPY_BREAKING_POINT
-      WRITE_LONG 0x00BC (RESOLVE_STR_REF(@3))    // LEADER
-      WRITE_LONG 0x00C4 (RESOLVE_STR_REF(@5))    // BORED
-      WRITE_LONG 0x00C8 (RESOLVE_STR_REF(@8))    // BATTLE_CRY1
-      WRITE_LONG 0x010C (RESOLVE_STR_REF(@201))  // SELECT_COMMON1
-      WRITE_LONG 0x01A8 (RESOLVE_STR_REF(@8))    // CRITICAL_HIT
-      WRITE_LONG 0x01AC (RESOLVE_STR_REF(@200))  // CRITICAL_MISS
     END
 END
 
@@ -401,14 +439,6 @@ WITH_TRA ~solaufeinEE/tra/%LANGUAGE%/wsetup.tra~ BEGIN
   COPY ~solaufeinEE/items/spidwr1.itm~  ~override/spidwr1.itm~
     SAY NAME1 @9 SAY NAME2 @9
 
-  // FIXED: Split solabook.itm and solabk2.itm into separate COPY blocks
-  // with distinct names/descriptions. The original mod shipped them as
-  // two separate items: solabook is Sola's own tattered tome (@50/@51),
-  // and solabk2 is a "Worn Leather Book" (@500/@501) whose acquisition
-  // triggers the Book of Poetry conversation in sola.baf via
-  // HasItem("solabk2"). Merging them into one COPY with a shared
-  // name/description lost that distinction and removed the trigger's
-  // flavor text.
   COPY ~solaufeinEE/items/solabook.itm~ ~override/solabook.itm~
     SAY NAME1 @50 SAY NAME2 @50 SAY UNIDENTIFIED_DESC @51 SAY IDENTIFIED_DESC @51
   COPY ~solaufeinEE/items/solabk2.itm~  ~override/solabk2.itm~
