@@ -1,0 +1,584 @@
+IF
+  ActionListEmpty()
+  CheckStatLT(Myself,1,STONESKINS)
+  HaveSpell(WIZARD_STONE_SKIN)
+  CheckStatLT(Myself,5,SPELLFAILUREMAGE)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_STONE_SKIN)
+END
+
+IF
+  ActionListEmpty()
+  CheckStatLT(Myself,1,STONESKINS)
+  HaveSpell(CLERIC_IRONSKIN)
+  CheckStatLT(Myself,5,SPELLFAILUREPRIEST)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_IRONSKIN)
+END
+
+IF
+  ActionListEmpty()
+  HasItem("POTN55",Myself)  // ~Potion of Superior Healing~
+  HPPercentLT(Myself,80)
+  !GlobalTimerNotExpired("Cast","LOCALS")
+THEN
+  RESPONSE #100
+    UseItem("POTN55",Myself)  // ~Potion of Superior Healing~
+    AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  HasItem("POTN52",Myself)  // ~Potion of Extra Healing~
+  HPPercentLT(Myself,80)
+THEN
+  RESPONSE #100
+    UseItem("POTN52",Myself)  // ~Potion of Extra Healing~
+    AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+  ActionListEmpty()
+  HasItem("POTN08",Myself)  // ~Potion of Healing~
+  HPPercentLT(Myself,80)
+THEN
+  RESPONSE #100
+    UseItem("POTN08",Myself)  // ~Potion of Healing~
+    AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+  CombatCounter(0)
+  ActionListEmpty()
+  CheckStatGT(Myself,80,TRAPS)
+  !ModalState(DETECTTRAPS)
+  !StateCheck(Myself,STATE_INVISIBLE)
+THEN
+  RESPONSE #100
+    FindTraps()
+END
+
+IF
+  ActionListEmpty()
+  CombatCounter(0)
+  !Detect([EVILCUTOFF])
+  !See(NearestEnemyOf(Myself))
+  !HotKey(S)
+  !HotKey(F)
+  !HotKey(N)
+  !HotKey(D)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  CombatCounter(0)
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    StartCombatCounter()
+    Continue()
+END
+
+IF
+  OR(4)
+    See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+    See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+    See(NearestEnemyOfType([0.0.0.DRUID_ALL]))
+    See(NearestEnemyOfType([0.0.0.BARD_ALL]))
+  OR(2)
+    ActionListEmpty()
+    ModalState(DETECTTRAPS)
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),30)
+END
+
+IF
+  See(NearestEnemyOf(Myself))
+  OR(2)
+    ActionListEmpty()
+    ModalState(DETECTTRAPS)
+THEN
+  RESPONSE #100
+    AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+  !See(NearestEnemyOf(Myself))
+  !CombatCounter(0)
+  ActionListEmpty()
+THEN
+  RESPONSE #100
+    MoveToObject(Myself)
+END
+
+IF
+  OR(3)
+    HotKey(S)
+    HotKey(F)
+    HotKey(D)
+THEN
+  RESPONSE #100
+    ForceSpellRES("WESALAC",Myself)  // ~Auto-Buff~
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_STRENGTH)
+  CheckStatLT(Myself,50,STREXTRA)
+  CheckStatLT(Myself,19,STR)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_STRENGTH)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_STRENGTH)
+  CheckStatLT(Myself,100,STREXTRA)
+  CheckStatLT(Myself,19,STR)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_STRENGTH)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_SHIELD)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_SHIELD)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_SHIELD)
+THEN
+  RESPONSE #100
+    Spell(Player1,WIZARD_SHIELD)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_SHIELD)
+THEN
+  RESPONSE #100
+    Spell(Player1,WIZARD_SHIELD)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_SHIELD)
+THEN
+  RESPONSE #100
+    Spell(Player1,WIZARD_SHIELD)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_SHIELD)
+THEN
+  RESPONSE #100
+    Spell(Player1,WIZARD_SHIELD)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_PROTECTION_FROM_FIRE)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_PROTECTION_FROM_FIRE)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_PROTECTION_FROM_ELECTRICITY)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_PROTECTION_FROM_ELECTRICITY)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_PROTECTION_FROM_ACID)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_PROTECTION_FROM_ACID)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_PROTECTION_FROM_COLD)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_PROTECTION_FROM_COLD)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_SPIRIT_ARMOR)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_SPIRIT_ARMOR)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(CLERIC_REMOVE_FEAR)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_REMOVE_FEAR)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_RESIST_FEAR)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_RESIST_FEAR)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(CLERIC_CHAOTIC_COMMANDS)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_CHAOTIC_COMMANDS)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(CLERIC_DEATH_WARD)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_DEATH_WARD)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(CLERIC_PROTECTION_FROM_EVIL_10_FOOT)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_PROTECTION_FROM_EVIL_10_FOOT)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_PROTECTION_FROM_MAGIC_ENERGY)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_PROTECTION_FROM_MAGIC_ENERGY)
+    Continue()
+END
+
+IF
+  HotKey(S)
+  HaveSpell(WIZARD_GHOST_ARMOR)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_GHOST_ARMOR)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(CLERIC_PROTECTION_FROM_LIGHTNING)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_PROTECTION_FROM_LIGHTNING)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(CLERIC_ARMOR_OF_FAITH)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_ARMOR_OF_FAITH)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(WIZARD_MINOR_SPELL_DEFLECTION)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_MINOR_SPELL_DEFLECTION)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(WIZARD_MINOR_SPELL_TURNING)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_MINOR_SPELL_TURNING)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(WIZARD_SPELL_DEFLECTION)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_SPELL_DEFLECTION)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(WIZARD_SPELL_TURNING)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_SPELL_TURNING)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(WIZARD_BLUR)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_BLUR)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  OR(2)
+    HaveSpell(WIZARD_PROTECTION_FROM_EVIL)
+    HaveSpell(CLERIC_PROTECT_FROM_EVIL)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_PROTECTION_FROM_EVIL)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(WIZARD_MIRROR_IMAGE)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_MIRROR_IMAGE)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(CLERIC_BARKSKIN)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_BARKSKIN)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(CLERIC_RESIST_FIRE)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_RESIST_FIRE)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(CLERIC_PROTECTION_FROM_FIRE)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_PROTECTION_FROM_FIRE)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(CLERIC_REGENERATE)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_REGENERATE)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(CLERIC_SHIELD_OF_THE_ARCHONS)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(WIZARD_IMPROVED_HASTE)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_IMPROVED_HASTE)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(WIZARD_FIRE_SHIELD_RED)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_FIRE_SHIELD_RED)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(WIZARD_FIRE_SHIELD_BLUE)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_FIRE_SHIELD_BLUE)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(WIZARD_SPELL_TRAP)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_SPELL_TRAP)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(CLERIC_PHYSICAL_MIRROR)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_PHYSICAL_MIRROR)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(CLERIC_BLADE_BARRIER)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_BLADE_BARRIER)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(3103)
+THEN
+  RESPONSE #100
+    Spell(Myself,3103)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(CLERIC_DRAW_UPON_HOLY_MIGHT)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(CLERIC_CHANT)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_CHANT)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(CLERIC_DEFENSIVE_HARMONY)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_DEFENSIVE_HARMONY)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(CLERIC_BLESS)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_BLESS)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(CLERIC_NEGATIVE_PLANE_PROTECTION)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_NEGATIVE_PLANE_PROTECTION)
+    Continue()
+END
+
+IF
+  HotKey(F)
+THEN
+  RESPONSE #100
+    Spell(Myself,4721)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(WIZARD_MASS_INVISIBILITY)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_MASS_INVISIBILITY)
+    Continue()
+END
+
+IF
+  HotKey(F)
+  HaveSpell(WIZARD_IMPROVED_INVISIBILITY)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_IMPROVED_INVISIBILITY)
+    Continue()
+END
+
+
+IF
+  HotKey(N)
+  HaveSpell(WIZARD_MELF_METEOR)
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_MELF_METEOR)
+END
+
+IF
+  HotKey(D)
+  HaveSpell(CLERIC_FREE_ACTION)
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_FREE_ACTION)
+    Continue()
+END
+

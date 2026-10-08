@@ -1,0 +1,79 @@
+// Give Solaufein a ToB Epilogue!
+
+// 0 = No Romance
+IF
+    Global("StartEndBios","AR6200",1)
+    Global("SolaTalk","GLOBAL",-1)
+    Global("SolaBio","GLOBAL",0)
+    InParty("Sola")
+THEN
+    RESPONSE #100
+        SetGlobal("SolaBio","GLOBAL",1)
+        TextScreen("SOLAEND0")
+        SmallWait(1)
+        Continue()
+END
+
+// 1 = Romance, Ascension, Pragmatic
+IF
+    Global("StartEndBios","AR6200",1)
+    !Global("SolaTalk","GLOBAL",-1)
+    Global("PlayerChoseEssence","GLOBAL",1)
+    !GlobalsGT("SolaRemorse","SolaPragma")  // sword reward
+    Global("SolaBio","GLOBAL",0)
+    InParty("Sola")
+THEN
+    RESPONSE #100
+        SetGlobal("SolaBio","GLOBAL",1)
+        TextScreen("SOLAEND1")
+        SmallWait(1)
+        Continue()
+END
+
+// 2 = Romance, Ascension, Compassion
+IF
+    Global("StartEndBios","AR6200",1)
+    !Global("SolaTalk","GLOBAL",-1)
+    Global("PlayerChoseEssence","GLOBAL",1)
+    GlobalsGT("SolaRemorse","SolaPragma")  // moon reward
+    Global("SolaBio","GLOBAL",0)
+    InParty("Sola")
+THEN
+    RESPONSE #100
+        SetGlobal("SolaBio","GLOBAL",1)
+        TextScreen("SOLAEND2")
+        SmallWait(1)
+        Continue()
+END
+
+// 3 = Romance, Mortal, Pragma
+IF
+    Global("StartEndBios","AR6200",1)
+    !Global("SolaTalk","GLOBAL",-1)
+    !Global("PlayerChoseEssence","GLOBAL",1)
+    !GlobalsGT("SolaRemorse","SolaPragma")  // sword reward
+    Global("SolaBio","GLOBAL",0)
+    InParty("Sola")
+THEN
+    RESPONSE #100
+        SetGlobal("SolaBio","GLOBAL",1)
+        TextScreen("SOLAEND3")
+        SmallWait(1)
+        Continue()
+END
+
+// 4 = Romance, Mortal, Compassion
+IF
+    Global("StartEndBios","AR6200",1)
+    !Global("SolaTalk","GLOBAL",-1)
+    !Global("PlayerChoseEssence","GLOBAL",1)
+    GlobalsGT("SolaRemorse","SolaPragma")  // moon reward
+    Global("SolaBio","GLOBAL",0)
+    InParty("Sola")
+THEN
+    RESPONSE #100
+        SetGlobal("SolaBio","GLOBAL",1)
+        TextScreen("SOLAEND4")
+        SmallWait(1)
+        Continue()
+END
