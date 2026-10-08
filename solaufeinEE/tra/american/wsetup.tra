@@ -167,10 +167,10 @@ That then I scorn to change my state with kings.~
 // installer menu.
 // -----------------------------------------------------------------
 
-@1000 = ~Solaufein: Core NPC (Required)~
-@1010 = ~Solaufein: SoA Romance~
-@1020 = ~Solaufein: Eclipse Sequence~
-@1030 = ~Solaufein: Vampiric Solaufein + Cleanse~
-@1040 = ~Solaufein: ToB Continuation~
-@1050 = ~Solaufein: Extras (KVFix, Multig, UHMER, Misc)~
-@1060 = ~Solaufein: Cutscene Hardening (Optional)~
+@1000 = ~Solaufein: Core NPC + SoA Content (required)~
+@1010 = ~Solaufein: Vampiric Solaufein + Cleanse (optional SoA story branch)~
+@1020 = ~Solaufein: ToB Continuation (recommended if you play ToB)~
+@1030 = ~Solaufein: Eclipse Sequence (optional ToB challenge fight)~
+@1040 = ~Solaufein: Extras (Korgan/Viconia fixes, multiplayer, projectile fixes — optional)~
+@1070 = ~This mod requires Baldur's Gate II: Enhanced Edition (BG2EE) or Enhanced Edition Trilogy (EET).~
+@1071 = ~This component requires the Throne of Bhaal expansion.~
