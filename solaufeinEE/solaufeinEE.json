@@ -2,13 +2,13 @@
   "id": "solaufeinEE",
   "name": "Solaufein Romance (Modern EE/EET Edition)",
   "author": "Weimer (Original), Modernization by /u/celestialfury",
-  "version": "2.1.5",
-  "description": "A fully modernized, modular, EE/EET-compatible version of the classic Solaufein Romance mod. This edition rebuilds the technical foundation for modern WeiDU, featuring per-dialogue TRA scoping, layered language TRAs with automatic English fallback, fully localized component names, explicit v1.0-guarded CRE field writes via EE_SET_CRE_FIELDS, full 12-slot Sola/udsola bark restoration with working bark playback via a silent placeholder WAV, auto-buff script registration, load-order-safe 2DA patches, and bulletproofed ToB epilogues.",
+  "version": "2.1.11",
+  "description": "A fully modernized, modular, EE/EET-compatible version of the classic Solaufein Romance mod. This edition rebuilds the technical foundation for modern WeiDU, featuring per-dialogue TRA scoping, layered language TRAs with automatic English fallback, fully localized component names, explicit v1.0-guarded CRE field writes via EE_SET_CRE_FIELDS, full 12-slot Sola/udsola bark restoration with working bark playback via a silent placeholder WAV, known-spells compaction for the 2010-era phantom entry, auto-buff script registration, load-order-safe 2DA patches, and bulletproofed ToB epilogues. Components are grouped by when their content fires: Core (SoA + ToB), Vampiric (SoA Chapter 6), ToB Continuation, Eclipse Sequence (ToB), and Extras.",
   "category": "NPCs",
   "tags": ["REC", "ADV", "COS", "QoL"],
   "supported_games": ["bg2ee", "eet"],
   "homepage": "https://github.com/CelestialFury-BG/SolaufeinEE",
-  "download": "https://github.com/CelestialFury-BG/SolaufeinEE/releases/tag/v2.1.5",
+  "download": "https://github.com/CelestialFury-BG/SolaufeinEE/releases/tag/v2.1.11",
   "readme": "solaufeinEE/readme-ee_updates.md",
   "languages": [
     { "index": 0, "name": "English", "dir": "american" },
@@ -23,45 +23,33 @@
   "components": [
     {
       "index": 10,
-      "name": "Solaufein: Core NPC (Required)",
+      "name": "Solaufein: Core NPC + SoA Content",
       "tags": ["REC"],
-      "description": "Installs Solaufein as a joinable party companion. This component includes critical modernizations: explicit script-name and dialogue-resref writes via EE_SET_CRE_FIELDS at NI-confirmed CRE v1.0 offsets, a v1.0 format guard around all binary writes, full 12-slot bark restoration for the Sola tiers and udsola01/02 with working bark playback (SAY-based slot writes plus a silent placeholder WAV associated with each bark string so the EE engine does not suppress them), Boo Two familiar AI compilation, auto-buff script registration in scrpdesc.2da, installation of the wesalac.spl helper spell, restored multilingual @n refs for all creature and spell names, and load-order-safe 2DA patches guarded by BUT_ONLY_IF_IT_CHANGES."
+      "description": "Required. Installs Solaufein as a joinable party companion, along with everything needed for him to appear in the world and function through both Shadows of Amn and Throne of Bhaal. Includes the Sola tier CREs (sola5 through sola17), the Underdark Sola copies (udsola01/02), the core dialogue file SOLA.DLG, the core AI script sola.bcs, the AR2500 and AR2100 spawn triggers, the ToB fate spirit summon (fatesp.d), and the SoA-side content that is not part of an optional story branch (Tree of Life gut-check, Archryssa encounter, cross-mod Valen interjections when ValenEE is installed first, and the Moonblade auto-return script on baldur.bcs). Also applies the v1.0-guarded CRE field writes via EE_SET_CRE_FIELDS, full 12-slot bark restoration with working bark playback via a silent placeholder WAV, known-spells compaction for the 2010-era phantom entry at index 0, Boo Two familiar AI compilation, auto-buff script registration in scrpdesc.2da, installation of the wesalac.spl helper spell, and the pdialog.2da SOLA row registration. Component 10 alone is a genuinely playable install."
     },
     {
       "index": 20,
-      "name": "Solaufein: SoA Romance",
+      "name": "Solaufein: Vampiric Solaufein + Cleanse",
       "tags": ["REC"],
-      "description": "Enables the comprehensive Shadows of Amn romantic narrative. This component fixes the original mod's string-reference collisions by scoping each dialogue file to its own TRA files, corrects the pdialog.2da row to the eight-column width the shipped BG2EE file actually uses, and applies PRETTY_PRINT_2DA plus BUT_ONLY_IF_IT_CHANGES for load-order safety. The optional Valen cross-mod interjections compile only if valenj.dlg is already present; install ValenEE before SolaufeinEE to include them."
+      "description": "Optional Shadows of Amn Chapter 6 story branch. Bodhi abducts Solaufein in the Graveyard District and turns him into a vampire; the player can restore him via the Temple Ruins ritual. Requires Component 10. This component's dialogue compiles with only its own TRA (solavamp.tra), preventing romance text from overwriting vampire-Sola lines."
     },
     {
       "index": 30,
-      "name": "Solaufein: Eclipse Sequence",
-      "tags": ["ADV"],
-      "description": "Adds the legendary high-difficulty custom Eclipse tactical encounter, its custom environmental area, and aggressive unique enemies. Now requires Component 20 (which itself requires Component 10), because the Eclipse intro dialogue tree is compiled by the romance component. The double-fired dialogue bug caused by a stray StartDialogueNoSet call in solae4.baf is fixed."
+      "name": "Solaufein: ToB Continuation",
+      "tags": ["REC"],
+      "description": "Recommended if you play Throne of Bhaal. Adds Solaufein's ToB interjections (Illasera, Sarevok, Melissan, Captain Samand, Kiser, Errard, Volo, Asmay, the final Throne conversation), the ToB epilogue 2DA overrides (five variants covering no-romance, romance+ascension, romance+mortal, each with pragmatic and compassionate paths), and the Moonblade auto-return script on baldur25.bcs. Requires Component 10 and the Throne of Bhaal expansion. Fixes the CHAIN3 SOLA.DLG abort that affected earlier builds when installed without Component 20."
     },
     {
       "index": 40,
-      "name": "Solaufein: Vampiric Solaufein + Cleanse",
-      "tags": ["REC"],
-      "description": "Integrates the Bodhi vampiric abduction transformation storyline. This component correctly scopes its dialogue to solavamp.tra, preventing romance text from overwriting vampire-Sola lines."
+      "name": "Solaufein: Eclipse Sequence",
+      "tags": ["ADV"],
+      "description": "Optional high-difficulty Throne of Bhaal challenge encounter that triggers after Sendai or Abazigal is defeated. Six custom foes (Radael the Kensai, Nrodlek the Anti-Paladin, Radnuht the Barbarian, Reffus the Cleric, Ylekilnu the Druid, Citpeks the Sorcerer) fight in a custom battleground area (sola0001.are) with scripted time-stop mechanics. This component is self-contained: it installs the area, the foes, their AI scripts, their dialogue, their weapons, and the transport cutscene. Requires Component 10 and the Throne of Bhaal expansion. Cutscene hardening (Wait(1) after StartCutSceneMode, CutSceneId casing normalization) is applied automatically as part of this component rather than offered as a separate option."
     },
     {
       "index": 50,
-      "name": "Solaufein: ToB Continuation",
-      "tags": ["REC"],
-      "description": "Extends the companion narrative into Throne of Bhaal. This component fixes ToB interjection text, adds the Moonblade auto-return script to baldur25.bcs, and bulletproofs the epilogue 2DA tables by replacing both data columns with the correct epilogue STRREF. All five solaend*.2da files are pretty-printed for column-aligned consistency."
-    },
-    {
-      "index": 60,
       "name": "Solaufein: Extras (KVFix, Multig, UHMER, Misc)",
       "tags": ["COS"],
-      "description": "Bundles miscellaneous script adjustments, including the Korgan PC-interaction loop fix and Viconia LOVETALK 46 fix, using safe file-bounding offsets and BUT_ONLY_IF_IT_CHANGES guards on the store patch."
-    },
-    {
-      "index": 70,
-      "name": "Solaufein: Cutscene Hardening (Optional)",
-      "tags": ["QoL"],
-      "description": "Applies a script-level structural engine block layer to prevent timing freezes or thread stutter traps during major scene transitions in the Eclipse sequence."
+      "description": "Optional. Independent patches that do not require Component 10 and can be installed on their own. Includes the Korgan PC-interaction loop fix, the Viconia LOVETALK 46 fix (both use REPLACE on BKORGAN.dlg and BVICONI.dlg; skip this component if another mod edits those files), a multiplayer-friendly party kick-out script, an extension to the UHMER01 merchant's dialogue so Sola can purchase poetry books once the romance progresses far enough, and vanilla Meteor Swarm / Ice Storm projectile fixes."
     }
   ],
   "relations": {
