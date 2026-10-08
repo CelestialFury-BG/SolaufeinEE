@@ -2,13 +2,13 @@
   "id": "solaufeinEE",
   "name": "Solaufein Romance (Modern EE/EET Edition)",
   "author": "Weimer (Original), Modernization by /u/celestialfury",
-  "version": "2.1.4",
-  "description": "A fully modernized, modular, EE/EET-compatible version of the classic Solaufein Romance mod. This edition rebuilds the technical foundation for modern WeiDU, featuring per-dialogue TRA scoping, layered language TRAs with automatic English fallback, fully localized component names, explicit v1.0-guarded CRE field writes via EE_SET_CRE_FIELDS, full 12-slot Sola/udsola bark restoration, auto-buff script registration, load-order-safe 2DA patches, and bulletproofed ToB epilogues.",
+  "version": "2.1.5",
+  "description": "A fully modernized, modular, EE/EET-compatible version of the classic Solaufein Romance mod. This edition rebuilds the technical foundation for modern WeiDU, featuring per-dialogue TRA scoping, layered language TRAs with automatic English fallback, fully localized component names, explicit v1.0-guarded CRE field writes via EE_SET_CRE_FIELDS, full 12-slot Sola/udsola bark restoration with working bark playback via a silent placeholder WAV, auto-buff script registration, load-order-safe 2DA patches, and bulletproofed ToB epilogues.",
   "category": "NPCs",
   "tags": ["REC", "ADV", "COS", "QoL"],
   "supported_games": ["bg2ee", "eet"],
   "homepage": "https://github.com/CelestialFury-BG/SolaufeinEE",
-  "download": "https://github.com/CelestialFury-BG/SolaufeinEE/releases/tag/v2.1.4",
+  "download": "https://github.com/CelestialFury-BG/SolaufeinEE/releases/tag/v2.1.5",
   "readme": "solaufeinEE/readme-ee_updates.md",
   "languages": [
     { "index": 0, "name": "English", "dir": "american" },
@@ -25,7 +25,7 @@
       "index": 10,
       "name": "Solaufein: Core NPC (Required)",
       "tags": ["REC"],
-      "description": "Installs Solaufein as a joinable party companion. This component includes critical modernizations: explicit script-name and dialogue-resref writes via EE_SET_CRE_FIELDS at NI-confirmed CRE v1.0 offsets, a v1.0 format guard around all binary writes, full 12-slot bark restoration for the Sola tiers and udsola01/02, Boo Two familiar AI compilation, auto-buff script registration in scrpdesc.2da, installation of the wesalac.spl helper spell, restored multilingual @n refs for all creature and spell names, and load-order-safe 2DA patches guarded by BUT_ONLY_IF_IT_CHANGES."
+      "description": "Installs Solaufein as a joinable party companion. This component includes critical modernizations: explicit script-name and dialogue-resref writes via EE_SET_CRE_FIELDS at NI-confirmed CRE v1.0 offsets, a v1.0 format guard around all binary writes, full 12-slot bark restoration for the Sola tiers and udsola01/02 with working bark playback (SAY-based slot writes plus a silent placeholder WAV associated with each bark string so the EE engine does not suppress them), Boo Two familiar AI compilation, auto-buff script registration in scrpdesc.2da, installation of the wesalac.spl helper spell, restored multilingual @n refs for all creature and spell names, and load-order-safe 2DA patches guarded by BUT_ONLY_IF_IT_CHANGES."
     },
     {
       "index": 20,
