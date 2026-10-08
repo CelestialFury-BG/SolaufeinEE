@@ -141,10 +141,10 @@ Utilizzabile da:  Solaufein~
 // d'installazione.
 // -----------------------------------------------------------------
 
-@1000 = ~Solaufein: PNG Principale (Richiesto)~
-@1010 = ~Solaufein: Romance in SoA~
-@1020 = ~Solaufein: Sequenza dell'Eclisse~
-@1030 = ~Solaufein: Solaufein Vampiro + Purificazione~
-@1040 = ~Solaufein: Continuazione in ToB~
-@1050 = ~Solaufein: Extra (KVFix, Multig, UHMER, Vari)~
-@1060 = ~Solaufein: Rafforzamento delle Sequenze (Opzionale)~
+@1000 = ~Solaufein: PNG principale + contenuti SoA (richiesto)~
+@1010 = ~Solaufein: Solaufein vampiro + Purificazione (ramo narrativo SoA opzionale)~
+@1020 = ~Solaufein: Continuazione ToB (consigliato se giochi ToB)~
+@1030 = ~Solaufein: Sequenza Eclissi (combattimento ToB opzionale)~
+@1040 = ~Solaufein: Extra (correzioni Korgan/Viconia, multigiocatore, correzioni proiettili — opzionale)~
+@1070 = ~Questa mod richiede Baldur's Gate II: Enhanced Edition (BG2EE) o Enhanced Edition Trilogy (EET).~
+@1071 = ~Questo componente richiede l'espansione Throne of Bhaal.~
