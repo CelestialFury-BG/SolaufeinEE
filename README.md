@@ -30,14 +30,14 @@ Key features:
 
 For a detailed technical comparison of how this edition differs from legacy
 builds of the same mod — including install safety, cross-platform behavior,
-and load-order compatibility — see [`readme-ee_updates.md`](solaufeinEE/readme-ee_updates.md).
+and load-order compatibility — see [`COMPATIBILITY.md`](COMPATIBILITY.md).
 
-The **2.x modernization** fixes a long list of legacy issues that plagued the original mod on EE installs. Highlights as of **v2.1.4**:
+The **2.x modernization** fixes a long list of legacy issues that plagued the original mod on EE installs. Highlights as of **v2.1.5**:
 
 - **Per-dialogue TRA scoping** — eliminates string-reference collisions that silently corrupted dialogue text across `sola.d`, `solaint.d`, `solavamp.d`, and `solatob.d`
 - **Layered language fallback** — new strings appear in every language automatically, without translator updates
 - **8 supported languages** — English, Italian, German, French, Portuguese, Polish, Russian, Spanish
-- **Full 12-slot bark restoration** — Solaufein's morale, mood, battle cry, selection, critical hit, and critical miss barks all fire correctly. The original templates shipped with generic BioWare creature audio ("dwarven food", "Guards! GUARDS!") in these slots; every one is now replaced with a proper Solaufein line
+- **Full 12-slot bark restoration with working playback** — Solaufein's morale, mood, battle cry, selection, critical hit, and critical miss barks all fire correctly in-game. The original templates shipped with generic BioWare creature audio ("dwarven food", "Guards! GUARDS!") in these slots; every one is now replaced with a proper Solaufein line. Bark audio is silent — no Solaufein voice set has ever existed — but the floating bark text now displays as intended
 - **Explicit CRE field writes via `EE_SET_CRE_FIELDS`** — script name and dialogue resref are written at the correct NI-confirmed offsets for CRE v1.0, replacing the old `WRITE_ASCII 0x2C4` pattern that silently zeroed Sola's effects count on v1.0 files
 - **CRE v1.0 format guard** on every binary write, so a future Beamdog format change skips rather than corrupts
 - **Load-order-safe 2DA patches** — `BUT_ONLY_IF_IT_CHANGES` on every shared table so we don't clobber other mods
@@ -118,6 +118,8 @@ Supported languages: **American English · Italiano · Deutsch · Français · P
 
 New strings added in a patch (`@1060`, `@200`, `@201`) are currently English-only; non-English installs fall back to the English base automatically. Translators can add them at their own pace without breaking anyone's install.
 
+**Translator note:** Solaufein's bark strings (`@3`–`@8`, `@200`, `@201`) carry a `[blank]` tag after the text. That tag associates the mod's silent placeholder WAV with each bark's TLK entry, which is what allows the bark to fire in-game at all — BG2EE suppresses any bark whose TLK entry has no associated sound file. If you localize one of these strings, keep the `[blank]` suffix on the line.
+
 ---
 
 ## How It Works
@@ -128,6 +130,7 @@ Under the hood, this edition uses proper WeiDU `DEFINE_PATCH_FUNCTION` routines 
 - **`ee_cre_fields.tpa`** — the reusable `EE_SET_CRE_FIELDS` writer. One `STR_VAR` parameter per field, never a delimited list. Used to bind joinable-NPC script name, dialogue resref, and known-spells table at NI-confirmed CRE v1.0 offsets. Any future joinable-NPC conversion can adopt it.
 - **`ee_spell_cleanup.tpa`** — cleans up corrupt spell school values and out-of-bounds projectile fields inside extended spell headers.
 - **`ee_cutscene_cleanup.tpa`** — hardens `StartCutSceneMode()` transitions against timing-based engine freezes.
+- **Bark playback** — BG2EE suppresses any bark whose TLK entry has no associated sound file. The mod ships a 1-second silent WAV (`solaufeinEE/sounds/blank.wav`) and tags each bark string in `wsetup.tra` with `[blank]`, associating that silent WAV with the TLK entry so the bark fires and the floating text displays. Silent audio is intentional — no Solaufein voice set exists.
 
 All 2DA modifications use `PRETTY_PRINT_2DA` for column-aligned output and `BUT_ONLY_IF_IT_CHANGES` for load-order safety. No file is written to `override/` unless it was actually modified.
 
