@@ -1,0 +1,176 @@
+// Solaufein Romance, Spanish
+// Traducido y repasado por equip de trad del Almas Torturadas, Clan REO, SirLancelot
+
+@1 =  ~Solaufein~
+@2 =  ~Cuando se le pregunta por su pasado, SOLAUFEIN no cuenta más de lo que tú ya sabes. Como uno de los escasos drows de buen corazón, siempre será rechazado por su gente. Solaufein prefiere no hablar de su vieja vida en Ust Natha. Recordar el tiempo que compartió con Phaere antes de que ella se volviera en su contra es demasiado conmovedor y cruel. No obstante, Solaufein todavía admitiría ser el líder del Gremio de Luchadores de Ust Natha. Además de guerrero, es un mago de gran talento. Cuando Phaere fué alejada de él, comenzó a ser un ferviente seguidor secreto de Eilistraee, la Doncella de Plata, y a veces puede verse arrastrado a la melancolía.~
+
+// Orders reaction, reputation reaction, and so on
+@3 =  ~Estoy contento con nuestros progresos.~ [blank]
+@4 =  ~Las cosas no van como deberían.~ [blank]
+@5 =  ~No me gusta el giro que están tomando las cosas.~ [blank]
+@6 =  ~No pienso continuar con este tipo de grupo ni un minuto más.~ [blank]
+@7 =  ~~
+@8 =  ~¡Por la luz de Eilistraee!~ [blank]
+
+@9 =  ~Vengadora Arácnida~
+@10 =  ~Archryssa~
+@11 =  ~Rayo Lunar~
+@12 =  ~Memorización de Hechizo Lunar~
+@13 =  ~Puerta Dimensional~
+@14 =  ~Tsuki no Ken +4~
+@15 =  ~Tsuki no Ken: Espada Lunar +4
+De acuerdo con la leyenda, esta antigua espada fué originalmente forjada en Kara-Tur por un herrero Tengu con un extraño sentido del humor. Los recuerdos de su pasado estuvieron perdidos en la antigüedad hasta que volvió a estar al cuidado de un sumo sacerdote de Eilistraee. Desde entonces ha sido usada por seguidores de la Señora Peloplateado para proteger a los débiles y destruir a los malvados. Fué entregada personalmete a Solaufein por la propia Diosa. La hoja brilla con luz plateada y emite un sonido, como si estuviera creciendo moho en un bosque oscuro.
+
+CARACTERÍSTICAS:
+
+Habilidades Equipada: Acción Libre, Suerte, bonificador +2 a la clase de armadura, +1 ataque por asalto.
+Habilidades de Combate: Cada golpe tiene un 25% de posibilidades de cegar a la víctima con resplandor lunar e inflingir 12 puntos más de daño ígneo sobre el objetivo durante 3 segundos.
+GAC0: +4 
+Daño:  1D8 +4
+Tipo de daño: cortante
+Peso:  3
+Factor de velocidad:  0
+Talento marcial: Espada Larga
+Tipo: a una mano
+Sólo permitida a:
+ Solaufein~
+@16 =  ~Romance de Solaufein para Baldur's Gate II (SoA & ToB)~
+@22 =  ~Bubú Dos~
+@23 =  ~Regresar al grupo~
+@24 =  ~Soltar a Bubú Dos~
+@30 =  ~Redael, Kensai del Eclipse~
+@31 =  ~Nrodlek, Anti-Paladin del Eclipse~
+@32 =  ~Radnuht, Bárbaro del Eclipse~
+@33 =  ~Reffus, Clérigo del Eclipse~
+@34 =  ~Ylekilnu, Druida del Eclipse~
+@35 =  ~Citpeks, Hechicero del Eclipse~
+@36 =  ~Eclipse Total~
+@37 =  ~Bendición de Eilistraee~
+@38 =  ~Espada del Eclipse +4~
+@39 =  ~Espada del Eclipse +4
+Esta malvada hoja parece absorber la luz del área que la rodea. Su tacto es frío, como el metal al que no da el sol desde hace mucho tiempo. Este arma fué usada por sirvientes del Eclipse Impío en un combate contra <CHARNAME> y Solaufein. Su origen es un completo misterio.
+
+CARACTERÍSTICAS:
+
+Aptitudes Portada: Inmunidad a Ceguera, Inmunidad a Proyectiles, Regeneración.
+Habilidades por Impacto: La víctima debe hacer una tirada de salvación contra conjuros con  -4 o será cegado durante 80 segundos (las criaturas cegadas sufren un -10 al GAC0)
+GACO: Bonificador de +4
+Daño:  1D8 +4
+Tipo de daño: Cortante
+Peso:  3
+Factor de velocidad:  0
+Talento marcial: Espada Larga
+Tipo: una mano
+Sólo permitido a:
+ alineamientos malvados~
+@40 =  ~Vengador del Eclipse +4~
+@41 =  ~Vengador del Eclipse +4
+Esta malvada hoja parece absorver la luz del área que la rodea. Su tacto es frío, como el metal al que no da el sol desde hace mucho tiempo. Esta en particular parece ser un Vengador Impío. Este arma fué usada por sirvientes del Eclipse Impío en un combate contra <CHARNAME> y Solaufein. Su origen es un completo misterio.
+
+CARACTERÍSTICAS:
+
+Habilidades Portador: Inmunidad a Ceguera, Inmunidad a Proyectiles, Regeneración.
+Habilidades Impacto: Disipar magia con cada golpe. La víctima debe hacer una tirada de salvación contra conjuros con un -4 o será cegado durante 80 segundos. (las criaturas cegadas sufren un -10 al GAC0)
+GACO: Bonificador de +4
+Daño:  1D10 +4
+Tipo de daño: Cortante
+Peso:  11
+Factor de Velocidad:  6
+Talento marcial: Mandoble
+Tipo: a dos manos
+Sólo permitido a:
+ personajes malvados~
+@42 =  ~Clava del Eclipse +4~
+@43 =  ~Clava del Eclipse +4
+Esta malvada clava parece absorver la luz del área que la rodea. Su tacto es frío, como la madera a la que no da el sol desde hace mucho tiempo. Esta en particular parece ser un Vengador Impío. Este arma fué usada por sirvientes del Eclipse Impío en un combate contra <CHARNAME> y Solaufein. Su origen es un completo misterio.
+
+CARACTERÍSTICAS:
+
+Habilidades Portada: Inmunidad a Ceguera y Proyectiles, Regeneración.
+Habilidades Impacto: La víctima debe hacer una tirada de salvación contra conjuros con un -4 o será cegado durante 80 segundos. (las criaturas cegadas sufren un -10 al GAC0)
+GACO: +4
+Daño:  1D6 +4
+Tipo de daño: Contundente
+Peso:  1
+Factor de Velocidad:  0
+Talento marcial: Clava
+Tipo de arma: a una mano
+Sólo permitido a:
+ personajes malvados~
+@44 =  ~Defensa Sombría del Eclipse~
+
+@50 =  ~Poesía y Filosofía de la Superficie~
+@51 =  ~Esta es la colección de Solaufein de literatura de la superficie, conseguida a base de esfuerzo e investigación. A grandes rasgos, es una colección de antiguos pergaminos roídos y páginas repletas de versos. Los libros parecen contener una extensa variedad de autores tan reconocidos como Auden, David, Moore, Rimbaud, Tickell y Wordsworth. Desafortunadamente, los fragmentos más populares están desvirtuados por traducciones previas Svirfneblin y Duergar, prestándose así a una interpretación perversa. En todo caso, el tomo es un símbolo de la dedicación de Solaufein al arte, y al poseer semejante objeto, el drow cometió un crimen fatal entre sus semejantes.~
+
+@80 =  ~Venganza de la Reina Araña~
+@81 =  ~Tsuki no Ken +5~
+@9982 =  ~Tsuki no Ken: Espada Lunar +5
+De acuerdo con la leyenda, esta antigua espada fué originalmente forjada en Kara-Tur por un herrero Tengu con un extraño sentido del humor. Los recuerdos de su pasado estuvieron perdidos en la antigüedad hasta que volvió a estar al cuidado de un sumo sacerdote de Eilistraee. Desde entonces ha sido usada por seguidores de la Señora Peloplateado para proteger a los débiles y destruir a los malvados. Fué entregada personalmete a Solaufein por la propia Diosa. La hoja brilla con luz plateada y emite un sonido, como si estuviera creciendo moho en un bosque oscuro.
+Encargada de llevar al triunfo a Solaufein, y afrontar nuevos retos grandiosos al lado de <CHARNAME>, la hoja fué bendecida de nuevo por Eilistraee con el poder de la Luna Llena. Brilla con un fuertísimo resplandor lunar y proporciona protecciones divinas a Solaufein.
+
+CARACTERÍSTICAS:
+
+Habilidades Portador: Acción Libre, Suerte, bonificador +2 AC, +1 ataque por asalto.
+Habilidades Adicionales Portador: Armadura de la Fé, Invocación al Poder Sagrado, Guarda de la Muerte, Órdenes Caóticas.
+Habilidades Impacto: Cada golpe tiene un 25% de posibilidades de cegar a la víctima con resplandor lunar e inflingir 12 puntos de daño ígneo sobre el objetivo durante 3 segundos.
+GAC0: bonificador +5 
+Daño:  1D8 +5
+Tipo de Daño: cortante
+Peso: 3
+Factor de Velocidad:  0
+Talento marcial: Espada Larga
+Tipo: una mano
+Sólo permitida a:
+ Solaufein~
+
+@90 =  ~Cuerpo de Solaufein~
+@91 =  ~Este es el cuerpo de Solaufein. Solaufein fue abrazado por Bodhi y convertido en vampiro. El terrible desenlace de los acontecimientos te obligó a matarle para acabar con su esclavitud en la no-vida.~
+@92 =  ~Solaufein no-muerto~
+
+@130 =  ~Eilistraee ha traído de vuelta la Espada Lunar. La hizo sólo para Solaufein.~
+
+// Scripts
+@300 =  ~PROTECCIÓN AUTOMÁTICA PERSONAL:~
+@301 =  ~Este script esta diseñado para permitir a los lanzadores de conjuros echarse protecciones mágicas sobre ellos mismos a gran velocidad y automáticamente. Presiona "S" para prot de larga duración, (ideales para ejecutarse nada más descansar o con tiempo por delante), "F" para prot de corta duración (duran 20 asaltos como mucho, úsalas sólo inmediatamente antes de entrar en combates fraticidas), "D" para Acción Libre (que dura poco y bloquea Celeridad), y "N" para Meteoritos de Melf. El script también bebe pociones curativas, detecta trampas, y ataca enemigos, todo automáticamente. Cuando ataca, primero toma como objetivo a los arcanos y después al resto.~
+@302 =  ~PROTECCIÓN AUTOMÁTICA COLECTIVA:~
+@303 =  ~Este script esta diseñado para permitir a los lanzadores de conjuros lanzar protecciones mágicas sobre el grupo a gran velocidad y automáticamente. El vástago de Bhaal siempre es el primer receptor. Presiona "S" para prot de larga duración, (ideales para ejecutarse nada más descansar o con tiempo por delante), "F" para prot de corta duración (duran 20 asaltos como mucho, úsalas sólo inmediatamente antes de entrar en combates fraticidas), "D" para Acción Libre (que dura poco y bloquea Celeridad), y "N" para Meteoritos de Melf. El script también bebe pociones curativas, detecta trampas, y ataca enemigos, todo automáticamente. Cuando ataca, primero toma como objetivo a los arcanos y después al resto.~
+@304 =  ~Protección-Automatizada~
+
+@500 =  ~Libro de cuero gastado~
+@501 =  ~La cubierta de cuero de este delgado volúmen de poesía ha pasado por muchas manos a lo largo de los años. Cuando lo cojes, se abre por esta página:
+
+Cuando caí en desgracia a la fortuna y a los ojos de los hombres
+Llorando en solitario por mi estado de paria,
+Y el cielo hacía oidos sordos a mis gritos desgarrados,
+Y me mire a mi mismo maldiciendo mi destino,
+Deseándome con esperanza ser como alguien de mayor riqueza,
+Deseando ser como él, como él y sus inseparables amigos,
+Deseando el arte de este hombre, y las metas de ese hombre,
+Yo me conformaría con mucho menos de eso;
+Incluso con esos pensamientos desdeñándome a mi mismo,
+Afortunadamente aun puedo pensar en vos, y luego en mi destino,
+Como la alondra que se presenta en el despertar del amanecer
+de la tierra oscura y sombría, cantando himnos a las puertas del cielo;
+Por el recuerdo de tu dulce amor que me trae tanta esperanza
+Desprecio cambiar mi destino por el de los reyes.~
+
+// -----------------------------------------------------------------
+// Nombres de visualización de los componentes
+//
+// Estas referencias son utilizadas por las instrucciones BEGIN @n en
+// solaufeinEE.tp2 para que los nombres de los componentes aparezcan en
+// el idioma elegido por el usuario durante la instalación. Los
+// bloques LANGUAGE no ingleses cargan american/wsetup.tra como base
+// primero, de modo que cualquier idioma que no defina estas
+// referencias usará automáticamente las cadenas inglesas. Traduzcan
+// estas entradas en la wsetup.tra de cada idioma de destino para
+// localizar el menú de instalación.
+// -----------------------------------------------------------------
+
+@1000 = ~Solaufein: PNJ Principal (Requerido)~
+@1010 = ~Solaufein: Romance en SoA~
+@1020 = ~Solaufein: Secuencia del Eclipse~
+@1030 = ~Solaufein: Solaufein Vampírico + Purificación~
+@1040 = ~Solaufein: Continuación en ToB~
+@1050 = ~Solaufein: Extras (KVFix, Multig, UHMER, Varios)~
+@1060 = ~Solaufein: Refuerzo de Escenas (Opcional)~

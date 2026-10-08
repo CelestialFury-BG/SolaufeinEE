@@ -1,0 +1,247 @@
+// Solaufein Romance, French
+@1 = ~Solaufein~
+@2 = ~Quand on le questionne à propos de son passé, SOLAUFEIN ne dis guère plus que ce que vous saviez déja. Etant l'un des rares drows bons, il s'est toujours senti comme un paria. Solaufein préfère ne pas parler de son ancienne vie à Ust Natha. Les souvenirs du temps qu'il a partagé avec Phaere avant qu'elle soit amenée à s'en prendre à lui sont trop poignants et la mémoire de la haine qu'elle lui a porté et de sa mort sont trop cruels. Pourtant, Solaufein admet être le leader de la guilde des guerriers mâles à Ust Natha. C'est aussi un magicien d'un certain talent. Quand Phaere lui fût enlevée il devint un fervent (mais secret) suivant d'Eilistraee Cheveux d'argent. Il est parfois sujet à la mélancolie.~
+@3= ~Je suis ravi de notre progression.~ [blank]
+@4 = ~Les choses ne progressent pas comme elles le devraient.~ [blank]
+@5 = ~Je n'aime pas la façon dont ce groupe se comporte.~ [blank]
+@6 = ~Je ne peux rester plus longtemps dans un tel groupe.~ [blank]
+@7 = ~~
+@8 = ~Par la lumière d'Eilistraee !~ [blank]
+@9 = ~Araignée Vengeresse~
+@10 = ~Archryssa~
+@11 = ~Rayon Lunaire~
+@12 = ~Mémorisation de sorts lunaire~ 
+@13 = ~Porte dimensionnelle~ 
+
+
+///////////////////
+//Tsuki no Ken +4//
+///////////////////
+@14 = ~Tsuki no Ken +4~
+@15 = ~Tsuki no Ken : Lame lunaire +4
+Selon la légende, cette ancienne lame fut forgée à Kara-Tur par un forgeron Tengu avec un étrange sens de l'humour. Les traces de son passé furent perdues dans l'antiquité jusqu'à ce qu'elle tombe en la possession d'une haute prêtresse d'Eilistraee.
+Depuis lors elle a été utilisée par les serviteurs de la dame aux cheveux d'argent pour protéger les faibles et contrecarrer le mal. Elle a été donnée à Solaufein par la Déesse en personne.
+La lame luit d'un éclat argenté sombre et fait un son semblable à un bruissement de feuilles dans une forêt obscure lorsqu'elle fend l'air.
+
+PARAMETRES :
+
+Capacités d'équipement : Action libre, Chance, Bonus de +2 à la classe d'armure, +1 attaque par round
+
+Capacités de combat : Chaque coup a 25% de chances d'aveugler la victime avec un rayonnement lunaire et d'infliger 12 point de dégâts de feu pendant 3 secondes.
+
+TAC0 : +4
+Dégâts : 1D8 +4
+Type de Dégâts : tranchant
+Poids : 3
+Facteur de Vitesse : 0
+Compétence : épée Longue
+Type d'arme : arme à 1 main
+Utilisable par :
+ Solaufein~ 
+@16 = ~Romance de Solaufein pour Baldur s Gate II (SoA & ToB)~
+@17 = ~Cour Gardee Amelioree (recommande, optionnel)~
+@18 = ~Dragons de SoA plus intelligents (recommande, optionnel)~
+@19 = ~Twisted Rune Amelioree (recommande, optionnel)~
+@20 = ~Spectateurs plus intelligents (ecrit par Xyx, recommande, optionnel)~
+@21 = ~Vampires plus intelligents (ecrit par Kensai Ryu, recommande, optionnel)~
+@22 = ~Bouh Deux~
+@23 = ~Rejoins le groupe~
+@24 = ~Relâche Bouh Deux~
+@25 = ~Mages plus intelligents (optionnel, quelques bugs reportes)~
+@26 = ~Rencontres Tactiques Supplementaires (optionel, plusieurs auteurs)~
+
+@30 = ~Redael, Kensai de l'Eclipse~
+@31 = ~Nrodlek, Anti-Paladin de l'Eclipse~
+@32 = ~Radnuht, Barbare de l'Eclipse~
+@33 = ~Reffus, Clerc de l'Eclipse~
+@34 = ~Ylekilnu, Druide de l'Eclipse~
+@35 = ~Citpeks, Sorcier de l'Eclipse~
+@36 = ~Eclipse Totale~
+@37 = ~Bénédiction d'Eilistraee~
+
+
+///////////////////////
+// Armes de l'Eclipse//
+///////////////////////
+
+@38 = ~Lame de l'Eclipse +4~
+@39 = ~Lame de l'Eclipse +4
+Cette lame maléfique semble absorber la lumière qui l'entoure. Elle est glaciale au contact, comme du métal qui a été trop longtemps hors du toucher du soleil. Cette arme a été utilisée par les serviteurs de l'Eclipse Maudite dans un combat contre <CHARNAME> et Solaufein. Sa provenance avant cela est un mystère total. 
+
+PARAMETRES :
+
+Capacités d'équipement : Immunité a l'aveuglement, Immunité aux projectiles,Regeneration
+
+Capacités de combat : La victime doit effectuer un jet de sauvegarde contre les sorts avec une pénalité de -4 ou être aveuglée pour 80 secondes. (Tous les personnages aveuglés souffrent d'une pénalité de -10 à leur TAC0.)
+
+TAC0 : +4
+Dégâts : 1D8 +4
+Type de Dégâts : tranchant
+Poids : 3
+Facteur de Vitesse : 0
+Compétence : épée Longue
+Type d'arme : arme à 1 main
+Utilisable par :
+ Personnages d'alignement mauvais uniquement~
+@40 = ~Eclipse Vengeresse +4~
+@41 = ~Eclipse Vengeresse +4
+Cette lame maléfique semble absorber la lumière qui l'entoure. Elle est glaciale au contact, comme du métal qui a été trop longtemps hors du toucher du soleil. Cette arme a été utilisée par les serviteurs de l'Eclipse Maudite dans un combat contre <CHARNAME> et Solaufein. Sa provenance avant cela est un mystère total.
+
+PARAMETRES :
+
+Capacités d'équipement : Immunité a l'aveuglement, Immunité aux projectiles,Regeneration
+
+Capacités de combat : Dissipation de la magie a chaque coup porté. La victime doit effectuer un jet de sauvegarde contre les sorts avec une pénalité de -4 ou être aveuglée pour 80 secondes. (Tous les personnages aveuglés souffrent d'une pénalité de -10 à leur TAC0.).
+
+TAC0 : +4
+Dégâts : 1D10 +4
+Type de Dégâts : tranchant
+Poids : 11
+Facteur de Vitesse : 6
+Compétence : épée a 2 mains
+Type d'arme : arme à 2 mains
+Utilisable par :
+ Personnages d'alignement mauvais uniquement~
+@42 = ~Gourdin de l'Eclipse +4~
+@43 = ~Gourdin de l'Eclipse +4
+Ce gourdin maléfique semble absorber la lumière qui l'entoure. Il est glacial au toucher, comme du bois qui a été trop longtemps hors du toucher du soleil. Cette arme a été utilisée par les serviteurs de l'Eclipse Maudite dans un combat contre <CHARNAME> et Solaufein. Sa provenance avant cela est un mystère total. 
+
+PARAMETRES :
+
+Capacités d'équipement : Immunité a l'aveuglement, Immunité aux projectiles,Regeneration
+
+Capacités de combat : La victime doit effectuer un jet de sauvegarde contre les sorts avec une pénalité de -4 ou être aveuglée pour 80 secondes. (Tous les personnages aveuglés souffrent d'une pénalité de -10 à leur TAC0.). 
+
+TAC0 : +4
+Dégâts : 1D6 +4
+Type de Dégâts : contondant
+Poids : 1
+Facteur de Vitesse : 0
+Compétence : gourdin
+Type d'arme : arme à 1 main
+Utilisable par :
+ Personnages d'alignement mauvais uniquement~ 
+@44 = ~Bouclier d'Ombre de l'Eclipse~
+
+/////////////////////////
+
+@50 = ~Poésie et Philosophie de la surface~
+@51 = ~C'est la collection de poésies et de proses durement réunies par Solaufein. C'est plus ou moins un livre fait main de plusieurs parchemins divers et des pages abimées. Ce livre contient une grande collection d'auteurs tels que Auden, David, Moore, Rimbaud, Tickell et autres écrivains de renommée. Malheuresement la plupart des essais les plus populaires semblent être arrivés a Solaufein à travers les traductions en Svirfneblin et Duergar , les rendant un peu plus morbides et étrangement interprétées. Cependant ce livre est une preuve de sa détermination et de son interêt pour les arts de la surface: posséder un tel objet était sûrement un crime fatal à Ust Natha.~
+
+///////////////////
+// Red Badge Foes//
+///////////////////
+
+///////////////
+
+@80 = ~Revanche de la Reine Araignée~
+@81 = ~Tsuki no Ken +5~
+@82 = ~Tsuki no Ken : Lame lunaire +5
+Selon la légende, cette ancienne lame fut forgée à Kara-Tur par un forgeron Tengu avec un étrange sens de l'humour. Les traces de son passé furent perdues dans l'antiquité jusqu'à ce qu'elle tombe en la possession d'une haute prêtresse d'Eilistraee.
+Depuis lors elle a été utilisée par les serviteurs de la dame aux cheveux d'argent pour protéger les faibles et contrecarrer le mal. Elle a été donnée à Solaufein par la Déesse en personne.
+La lame luit d'un éclat argenté sombre et fait un son semblable à un bruissement de feuilles dans une forêt obscure lorsqu'elle fend l'air.
+
+Dans le but d'aider Solaufein à triompher des nouveaux défis auxquels il doit faire face aux cotés de <CHARNAME>, la lame a de nouveau été bénie par Eilistraee avec le pouvoir de la Pleine Lune. Elle luit d'un éclat lunaire amplifié et octroie des protections cléricales a Solaufein. 
+
+PARAMETRES :
+
+Capacités d'équipement : Action Libre, Chance, Bonus de +2 a la classe d'armure, +1 attaque par round
+
+Capacités d'équipement supplémentaires : Armure de la foi, Puiser dans la puissance divine, Protection contre la mort, Protection contre le plan négatif, Commandes Chaotiques
+
+Capacités de combat : Chaque coup a 50% de chances d'aveugler la victime avec un rayonnement lunaire et d'infliger 18 point de dégâts de feu pendant 3 secondes. 
+
+TAC0 : +5
+Dégâts : 1D8 +5
+Type de Dégâts : tranchant
+Poids : 3
+Facteur de Vitesse : 0
+Compétence : épée Longue
+Type d'arme : arme à 1 main
+Utilisable par :
+ Solaufein~
+
+@85 = ~Flagelleurs Mentaux Ameliores v1 (ecrit par Gebhard Blucher, recommande, optionnel)~
+@86 = ~Votre réputation héroïque a attiré l'attention d'un pouvoir hostile.~
+
+@90 = ~Corps de Solaufein~
+@91 = ~C'est le corps de Solaufein. Solaufein a été capturé par Bodhi et transformé en vampire. Sa non-vie était assez gênante et vous avez été contraint de le tuer. Que faites-vous a rester regarder le corps ? Partez et cherchez un moyen pour le ramener à la vie!~
+@92 = ~Solaufein Mort-vivant~
+
+@100 = ~Bodhi Amelioree (recommende, optionnel)~
+
+
+////////////////
+//Kit d'archer//
+////////////////
+
+
+@113 = ~Kit d'Archer pour les guerriers (optionnel)~
+
+@130 = ~Eilistraee a repris la Lame Lunaire. Elle était uniquement pour Solaufein.~
+
+@9982 = ~Tsuki no Ken: Epée Lunaire +5
+Selon la légende, cette ancienne lame a été forgée à l'origine à Kara-Tur par un forgeron Tengu doté d'un étrange sens de l'humour. Les chroniques de ses transmissions se perdent dans l'Antiquité jusqu'à ce qu'elle tombe entre les mains d'une grande prêtresse d'Eilistraee. Depuis lors elle a été uitilisée par les serviteurs de la Dame aux Cheveux d'Argent pour protéger les faibles et abattre le mal. Elle a été  remise en mains propres à Solaufein par la Déesse elle-même. La lame luit d'un éclat d'argent sombre et elle produit un son qui évoque le bruissement des feuilles dans une forêt sombre lorsqu'elle fend l'air. 
+
+Pour aider Solaufein à triompher des nouvelles et plus dures épreuves qu'il doit affronter aux côtés de <CHARNAME>, l'épée a été bénie de nouveau par Eilistraee avec le pouvoir de la Pleine Lune. Elle brille d'un éclat lunaire plus fort et procure des protections religieuses à Solaufein. 
+
+PARAMETRES :
+
+Capacités d'équipement : Action Libre, Chance, bonus de +2 à la classe d'armure, +1 attaque par round
+Capacités d'équipement supplémentaires : Armure de la Foi, Puiser Dans la Puissance Divine, Protection Contre la Mort, Ordres Chaotiques
+Capacités de combats : Chaque coup a 25% de chance d'aveugler la victime avec un rayonnement lunaire et d'infliger 12 points de dégâts de feu pendant 3 secondes. 
+TACO : +5
+Dégâts : 1D8 +5
+Types de dégâts : tranchant
+Poids : 3
+Vitesse : 0
+Compétence : épée Longue
+Type d'arme : arme à 1 main
+Utilisable par :
+ Solaufein~ 
+
+// Scripts
+@300 = ~LANCEMENT AUTOMATIQUE DES SORTS D'AMELIORATION DES CARACTERISTIQUES SOLO : ~
+@301 = ~Ce script permet à n'importe quel lanceur de sorts de lancer rapidement des sorts d'amélioration des caractéristiques lorsqu'il n'y a aucun ennemi à proximité. Pressez la touche "S" pour Lent, sorts de longue-durée (essentiellement les sorts qui durent un long moment et qui doivent être lancés à chaque fois que vous vous réveillez), "F" pour Vite, sorts de combat (essentiellement les sorts qui ne durent que quelques rounds, à utiliser avant les grandes batailles), "D" pour Action-Libre (pour ceux qui durent peu de temps et entravent la hâte) et "N" pour Météores Acides de Melf. Ce script fait également boire automatiquement les potions de soin, détécter les pièges et attaquer les ennemis (lanceurs de sorts, puis ennemis normaux).~
+@302 = ~LANCEMENT AUTOMATIQUE DES SORTS D'AMELIORATION DES CARACTERISTIQUES DE GROUPE : ~
+@303 = ~Ce script permet à n'importe quel lanceur de sorts de lancer rapidement des sorts d'amélioration des caractéristuques l'ensemble du groupe lorsqu'il n'y a aucun ennemi à proximité. Pressez "S" pour Lent, sorts de longue-durée (essentiellement les sorts qui durent un long moment et qui doivent être lancés à chaque fois que vous vous réveillez), "F" pour Vite, sorts de combat (essentiellement les sorts qui ne durent que quelques rounds, à utiliser avant les grandes batailles), "D" pour Action-Libre (pour ceux qui durent peu de temps et entravent la hâte ) and "N" pour Météores Acides de Melf. Buffs sera d'abord lancé sur le PJ et après sur tous les autres membres du groupe. Mémorisez six exemplaires de chaque sort que vous désirez affecter à tous. Ce script fait également boire automatiquement les potions de soin, détécter les pièges et attaquer les ennemis (lanceurs de sorts, puis ennemis normaux).~
+@304 = ~Lancement automatique des sorts d'amélioration des caractéristiques~
+
+@500 = ~Livre de Cuir Usé~
+@501 = ~La couverture en cuir de ce mince volume de poésie a été patinée par le passage des ans et de nombreuses mains. Comme vous le prenez, il tombe ouvert sur cette page:
+ 
+Lorsque, en disgrâce avec la Fortune et les regards des Hommes,
+Je déplore, solitaire, mon statut de paria,
+Et que je trouble un ciel sourd de mes plaintes sans repos,
+Et que je me regarde, et que je maudis mon sort,
+Souhaitant être pareil à celui qui est plus riche en espoir,
+Etre reconnu comme lui, comme lui avoir de nombreux amis,
+Désirant la maîtrise de cet homme, l'envergure de cet homme,
+Je me contenterais avec joie de la plus petite chose;
+Alors que dans ces pensées j'en viens presque à me mépriser,
+Par bonheur je pense à toi, et alors ma condition
+Devient semblable à l'alouette qui au point du jour quand le soleil s'élève
+De la terre morne, chante des hymnes aux portes du Paradis;
+Car me souvenir de toi mon doux amour m'apporte un tel bien-être
+Qu'alors je refuserais d'échanger ma place avec des rois.~
+
+// -----------------------------------------------------------------
+// Noms d'affichage des composants
+//
+// Ces références sont utilisées par les instructions BEGIN @n du
+// fichier solaufeinEE.tp2 afin que les noms des composants s'affichent
+// dans la langue choisie par l'utilisateur pendant l'installation.
+// Les blocs LANGUAGE non-anglais chargent american/wsetup.tra comme
+// base, donc toute langue qui ne définit pas ces références utilisera
+// automatiquement les chaînes anglaises. Traduisez ces entrées dans
+// le wsetup.tra de chaque langue cible pour localiser le menu
+// d'installation.
+// -----------------------------------------------------------------
+
+@1000 = ~Solaufein : Personnage principal (Requis)~
+@1010 = ~Solaufein : Romance dans SoA~
+@1020 = ~Solaufein : Séquence de l'Éclipse~
+@1030 = ~Solaufein : Solaufein vampire + Purification~
+@1040 = ~Solaufein : Suite dans ToB~
+@1050 = ~Solaufein : Extras (KVFix, Multig, UHMER, Divers)~
+@1060 = ~Solaufein : Renforcement des cinématiques (Optionnel)~

@@ -1,0 +1,165 @@
+// non-dialogue German strings
+@1 = ~Solaufein~
+@2 = ~Als Ihr ihn nach seiner Vergangenheit fragt, hat SOLAUFEIN dem, was Ihr schon wisst, wenig hinzuzufügen. Als einer der wenigen guten Drow wird er immer ein Ausgestoßener sein. Solaufein zieht es vor, nicht über sein altes Leben in Ust Natha zu sprechen. Die Erinnerungen an die Zeit, die er mit Phaere verbrachte, bevor sie gegen ihn gewendet wurde, sind zu schmerzlich, und die Erinnerungen an ihren Hass und Tod zu grausam. Dennoch lässt Solaufein erkennen, dass er der Führer der Gesellschaft der Männlichen Kämpfer in Ust Natha war. Er ist zudem ein Magier von einigem Talent. Als Phaere von ihm genommen wurde, wurde er ein glühender (aber heimlicher) Verehrer von Eilistraee mit dem Silberhaar. Er kann manchmal in brütende Melancholie verfallen.~
+@3 = ~Ich bin mit unserem Fortschritt zufrieden.~ [blank]
+@4 = ~Die Dinge verlaufen nicht so, wie sie sollten.~ [blank]
+@5 = ~Ich mag die Art nicht, wie sich diese Gruppe verhält.~ [blank]
+@6 = ~Ich kann nicht länger in einer Gruppe wie dieser verweilen.~ [blank]
+@7 = ~~
+@8 = ~Beim Licht der Eilistraee!~ [blank]
+@9 = ~Rächerspinne~
+@10 = ~Archryssa~
+@11 = ~Mondstrahl~
+@12 = ~Mondzaubergedächtnis~
+@13 = ~Dimensionstor~
+@14 = ~Tsuki no Ken +4~
+@15 = ~Tsuki no Ken: Mondklinge +4
+Der Legende zufolge wurde diese uralte Klinge ursprünglich in Kara-Tur von einem Tengu-Waffenschmied mit einem etwas seltsamen Humor hergestellt. Die Aufzeichnungen über ihr Schicksal gingen aufgrund ihres Alters zugrunde, bis die Klinge in der Obhut einer Hohepriesterin der Eilistraee auftauchte. Seitdem wurde sie von Anhängern der Göttin mit dem Silberhaar benutzt, um die Schwachen zu beschützen und die Verdorbenen zu vernichten. Sie wurde Solaufein von der Göttin persönlich anvertraut. Die Klinge schimmert in einem dunkel silbernen Licht, und sie klingt wie raschelnde Blätter in einem dunklen Wald.
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Besondere Fähigkeiten:  Gewährt Glück, Träger ist gegen Festhalten immun, +2 auf Rüstungsklasse, +1 Angriff pro Runde
+Jeder Treffer hat eine Chance von 25%, das Opfer mit den Strahlen des Mondes zu blenden und 12 Schadenspunkte durch Feuer im Verlauf von 3 Sekunden anzurichten.
+ETW0: +4
+Schaden: 1W8 +4 (Klingenwaffe)
+Gewicht: 3
+Initiativefaktor: 0
+Waffenfertigkeit: Langschwert
+Waffentyp: Einhändig
+Kann nur verwendet werden von: Solaufein~
+@16 = ~Solaufein Romanze für Baldurs Gate II (SvA und TdB)~
+@22 = ~Boo Zwo~
+@23 = ~Zur Gruppe zurückkehren~
+@24 = ~Boo Zwo freilassen~
+@30 = ~Redael, Kensai der Finsternis~
+@31 = ~Nrodlek, Anti-Paladin der Finsternis~
+@32 = ~Radnuht, Barbarian der Finsternis~
+@33 = ~Reffus, Kleriker der Finsternis~
+@34 = ~Ylekilnu, Druide der Finsternis~
+@35 = ~Citpeks, Hexenmeister der Finsternis~
+@36 = ~Völlige Finsternis~
+@37 = ~Eilistraees Segen~
+@38 = ~Klinge der Finsternis +4~
+@39 = ~Klinge der Finsternis +4
+Diese bösartige Klinge scheint das Licht der Umgebung zu verschlucken. Sie ist kalt, wenn man sie berührt, wie Metall, das zu lange nicht dem Licht der Sonne ausgesetzt war. Diese Waffe wurde von Dienern der Unheiligen Finsternis in einer Schlacht gegen <CHARNAME> und Solaufein benutzt. Ihre Herkunft vor diesem Ereignis ist völlig unbekannt.
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Besondere Fähigkeiten: Gewährt Regeneration, Träger ist immun gegen Blindheit und Geschosse Bei einem Treffer muss das Ziel einen Rettungswurf -4 gegen Zauber bestehen, oder es wird für 80 Sekunden geblendet (und erhält dadurch -10 auf ETW0).
+ETW0: +4
+Schaden: 1W8 +4 (Klingenwaffe)
+Gewicht: 3
+Initiativefaktor: 0
+Waffenfertigkeit: Langschwert
+Waffentyp: Einhändig
+Kann nur verwendet werden von: Charakteren mit böser Gesinnung~
+
+@40 = ~Rächer der Finsternis +4~
+@41 = ~Rächer der Finsternis +4
+Diese bösartige Klinge scheint das Licht der Umgebung zu verschlucken. Sie ist kalt, wenn man sie berührt, wie Metall, das zu lange nicht dem Licht der Sonne ausgesetzt war. Dieser spezielle Gegenstand scheint ein schwacher Unheiliger Rächer zu sein.  Diese Waffe wurde von Dienern der Unheiligen Finsternis in einer Schlacht gegen <CHARNAME> und Solaufein benutzt. Ihre Herkunft vor diesem Ereignis ist völlig unbekannt.
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Besondere Fähigkeiten: Gewährt Regeneration, Träger ist immun gegen Blindheit und Geschosse Bei einem Treffer muss das Ziel einen Rettungswurf -4 gegen Zauber bestehen, oder es wird für 80 Sekunden geblendet (und erhält dadurch -10 auf ETW0).
+ETW0: +4
+Schaden: 1W10 +4 (Klingenwaffe)
+Gewicht: 11
+Initiativefaktor: 6
+Waffenfertigkeit: Zweihänder
+Waffentyp: Zweihändig
+Kann nur verwendet werden von: Charakteren mit böser Gesinnung~
+
+@42 = ~Keule der Finsternis +4~
+@43 = ~Keule der Finsternis +4
+Diese bösartige Keule scheint das Licht der Umgebung zu verschlucken. Sie ist kalt, wenn man sie berührt, wie Metall, das zu lange nicht dem Licht der Sonne ausgesetzt war. Diese Waffe wurde von Dienern der Unheiligen Finsternis in einer Schlacht gegen <CHARNAME> und Solaufein benutzt. Ihre Herkunft vor diesem Ereignis ist völlig unbekannt.
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Besondere Fähigkeiten: Gewährt Regeneration, Träger ist immun gegen Blindheit und Geschosse Bei einem Treffer muss das Ziel einen Rettungswurf -4 gegen Zauber bestehen, oder es wird für 80 Sekunden geblendet (und erhält dadurch -10 auf ETW0).
+ETW0: +4
+Schaden: 1W6 +4 (Wuchtwaffe)
+Gewicht: 1
+Initiativefaktor: 0
+Waffenfertigkeit: Keule
+Waffentyp: Einhändig
+Kann nur verwendet werden von: Charakteren mit böser Gesinnung~
+
+@44 = ~Schattenverteidigung der Finsternis~
+
+@50 = ~Gedichte und Philosophie der Oberfläche~
+@51 = ~Das ist Solaufeins schwer erkämpfte Sammlung von Gedichten und Prosa der Oberflächenbewohner. Es ist eine mehr oder weniger selbstgebundene Sammlung von eingerissenen Seiten und zerknitterten Seiten. Das Buch scheint eine ausgiebige Sammlung von Autoren wie Auden, David, Moore, Rimbaud, Tickell und Wordsworth zu enthalten. Unglücklicherweise sind wohl viele der bekannteren Auszüge auf dem Weg einer Übersetzung durch Svirfneblin und Duergar zu Solaufein gekommen, wodurch sie eine etwas makabre und verzerrte Deutung erfuhren. Dennoch ist der Band ein Zeichen für Solaufeins Hingabe: solch einen Gegenstand zu besitzen, war in Ust Natha sicherlich ein schweres Verbrechen.~
+
+@80 = ~Rache der Spinnenkönigin~
+
+@81 = ~Tsuki no Ken +5~
+@9982 = ~Tsuki no Ken: Mondklinge +5
+Der Legende zufolge wurde diese uralte Klinge ursprünglich in Kara-Tur von einem Tengu-Waffenschmied mit einem etwas seltsamen Humor hergestellt. Die Aufzeichnungen über ihr Schicksal gingen aufgrund ihres Alters zugrunde, bis die Klinge in der Obhut einer Hohepriesterin der Eilistraee auftauchte. Seitdem wurde sie von Anhängern der Göttin mit dem Silberhaar benutzt, um die Schwachen zu beschützen und die Verdorbenen zu vernichten. Sie wurde Solaufein von der Göttin persönlich anvertraut. Die Klinge schimmert in einem dunkel silbernen Licht, und sie klingt wie raschelnde Blätter in einem dunklen Wald.
+
+Um Solaufein dabei zu helfen, über die neuen, größeren Herausforderungen zu triumphieren, die er an der Seite s zu bestehen hat, wurde die Klinge von Eilistraee mit der Kraft des Vollmondes neu gesegnet. Sie glüht in stärkerem Mondlicht und gewährt Solaufein den Schutz von Klerikerzaubern.
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Besondere Fähigkeiten: Gewährt Glück, Träger ist gegen Festhalten immun, +2 auf Rüstungsklasse, +1 Angriff pro Runde.
+Zusätzliche Fähigkeiten: Auf dem Träger liegen Rüstung des Glaubens, Göttliche Macht, Todesschutz und Chaotische Befehle.
+Jeder Treffer hat eine Chance von 25%, das Opfer mit den Strahlen des Mondes zu blenden und 12 Schadenspunkte durch Feuer im Verlauf von 3 Sekunden anzurichten.
+ETW0: +5
+Schaden: 1W8 +5 (Klingenwaffe)
+Gewicht: 3
+Initiativefaktor: 0
+Waffenfertigkeit: Langschwert
+Waffentyp: Einhändig
+Kann nur verwendet werden von: Solaufein~
+
+@90 = ~Solaufeins Körper~
+@91 = ~Das ist der Körper Solaufeins. Solaufein wurde von Bodhi entführt und mit Vampirismus infiziert. Sein Unleben war ziemlich unangenehm, und Ihr wart gezwungen, ihn zu töten. Was starrt Ihr den Körper so an? Los, findet einen Weg, ihn wiederzuerwecken!"~
+@92 = ~Untoter Solaufein~
+
+@130 = ~Eilistraee hat sich die Mondklinge zurückgenommen. Sie war nur für Solaufein gedacht.~
+
+// Scripts
+@300 = ~SOLO AUTO-BUFF: ~
+@301 = ~Mit diesem Skript kann ein Zauberkundiger sehr schnell stärkende und Schutzzauber anwenden, wenn keine Feinde in der Nähe sind. Drückt die "S"-Taste für zeitaufwendige, dauerhafte Zauber (normalerweise solche, die eine sehr lange Wirkungsdauer besitzen und die man sofort nach dem Aufwachen sprechen sollte); "F" für schnelle, kampfbetonte Zauber (die oft nur wenige Runden andauern und vor wichtigen Kämpfen eingesetzt werden), "D" für Handlungsfreiheit (wirkt nur eine kurze Zeit und negiert Hast) und "N" für Melfs Magische Meteoriten. Dieses Skript bewirkt auch, daß der Charakter automatisch Heiltränke trinkt, Fallen sucht und Feinde angreift (zuerst zauberkundige, dann andere).~
+
+@302 = ~PARTY AUTO-BUFF: ~
+@303 = ~Mit diesem Skript kann ein Zauberkundiger sehr schnell stärkende und Schutzzauber auf die gesamte Party anwenden, wenn keine Feinde in der Nähe sind. Drückt die "S"-Taste für zeitaufwendige, dauerhafte Zauber (normalerweise solche, die eine sehr lange Wirkungsdauer besitzen und die man sofort nach dem Aufwachen sprechen sollte); "F" für schnelle, kampfbetonte Zauber (die oft nur wenige Runden andauern und vor wichtigen Kämpfen eingesetzt werden), "D" für Handlungsfreiheit (wirkt nur eine kurze Zeit und negiert Hast) und "N" für Melfs Magische Meteoriten. Die Zauber werden zuerst auf den Hauptcharakter gewirkt, dann auf die anderen Gruppenmitglieder. Wenn Ihr wollt, dass alle Gruppenmitglieder von einem Zauber profitieren, müsst Ihr Euch diesen Zauber sechs Mal einprägen. Dieses Skript bewirkt auch, daß der Charakter automatisch Heiltränke trinkt, Fallen sucht und Feinde angreift (zuerst zauberkundige, dann andere).~
+
+@304 = ~Auto-Buff~
+
+@500 = ~Abgenutztes ledernes Buch~
+@501 = ~Der Ledereinband dieses dünnen Gedichtbandes wurde über die Jahre von vielen Händen blank poliert. Als Ihr es in die Hand nehmt und öffnet, schlagt Ihr zufällig diese Seite auf:
+ 
+Wenn ich, zerfallen mit Geschick und Welt,
+Als Ausgestoßner weinend mich beklage,
+Umsonst mein Flehn zum tauben Himmel gellt,
+Und ich verzweifelt fluche meinem Tage, -
+Dann wär' ich gern wie andre hoffnungsreich,
+So schön wie sie, bei Freunden so beliebt,
+An Kunst und hohem Ziele manchem gleich,
+Freudlos mit dem, was mir das Schicksal gibt.
+Veracht' ich mich beinah in den Gedanken,
+So denk' ich dein, dann steigt mein Geist empor
+Der Lerche gleich von trüber Erde Schranken
+Und jauchzt im Frührot an des Himmels Tor.
+In deiner Liebe fühl' ich mich so reich,
+Dass ich nicht tausche um ein Königreich!~
+
+// -----------------------------------------------------------------
+// Anzeigenamen der Komponenten
+//
+// Diese Referenzen werden von den BEGIN @n-Anweisungen in solaufeinEE.tp2
+// verwendet, damit die Komponentennamen während der Installation in
+// der vom Benutzer gewählten Sprache angezeigt werden. Die
+// nicht-englischen LANGUAGE-Blöcke laden american/wsetup.tra zuerst
+// als Basis, sodass jede Sprache, die diese Referenzen nicht
+// definiert, automatisch auf die englischen Zeichenketten
+// zurückgreift. Übersetzt diese Einträge in der wsetup.tra jeder
+// Zielsprache, um das Installationsmenü zu lokalisieren.
+// -----------------------------------------------------------------
+
+@1000 = ~Solaufein: Haupt-NSC (Erforderlich)~
+@1010 = ~Solaufein: SoA-Romanze~
+@1020 = ~Solaufein: Finsternis-Sequenz~
+@1030 = ~Solaufein: Vampirischer Solaufein + Läuterung~
+@1040 = ~Solaufein: TdB-Fortsetzung~
+@1050 = ~Solaufein: Extras (KVFix, Multig, UHMER, Sonstiges)~
+@1060 = ~Solaufein: Zwischensequenz-Absicherung (Optional)~

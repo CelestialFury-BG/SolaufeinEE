@@ -1,0 +1,69 @@
+// Sola in ToB
+// Illasera
+@1 = ~Wartet! Das muss nicht in Gewalt enden. Können wir nicht darüber sprechen?~
+@2 = ~Ein Drow? Was wollt Ihr hier? Sendai versprach mir, dass dies mein Kampf sein solle. Weshalb sandte sie Euch hierher? Ihr solltet die Enklave bei Amkethran nie verlassen haben!~
+@3 = ~Ich versichere Euch, meine Dame, dass ich Eure "Sendai" nicht kenne.~
+@4 = ~Dann seid Ihr für mich völlig unwichtig. Zeit zu sterben, <CHARNAME>!~
+
+// Sarevok 
+@10 = ~Die Idee mit dem Eid ist bedenkenswert, <CHARNAME>. Wenn man die praktische Seite sieht, hat Sarevok uns viel anzubieten. Wenn er durch solch einen Eid gebunden ist, könnt Ihr seine Kräfte bedenkenlos einsetzen, ohne Verrat befürchten zu müssen. Ich empfehle, dass Ihr den Vorschlag annehmt.~
+@11 = ~Die Idee mit dem Eid ist bedenkenswert, aber sie riecht nach Herrschaft und Sklaverei. Ist es wirklich unser Wunsch, einen Gefährten bei uns zu haben, dem wir nur vertrauen können, wenn er mit Magie dazu gezwungen wird? Weshalb geben wir Sarevok nicht die Möglichkeit, aus freiem Willen zu beweisen, dass er auf Eurer Seite steht?~
+@12 = ~Interessant. Der Drow spricht für mich. Was sagt Ihr, <CHARNAME>?~
+
+// Mel
+@20 = ~Das ist immer ein guter Rat, aber etwas sagt mir, dass diese Frau einen vorbereiteten Text abliest und nicht mit ihrem Herzen spricht.~
+@21 = ~<CHARNAME>, wir sollten etwas unternehmen, um den Menschen in dieser Stadt zu helfen. Dieses elende Flüchtlingslager könnte von unserem Eingreifen profitieren.~
+
+// Captain Samand
+@30 = ~<CHARNAME>, ich bin der Ansicht, wir sollten die Angelegenheit selbst untersuchen. Ich fühle mich mit denen besonders verbunden, die fälschlicherweise angeklagt werden. Könnt Ihr Euch vorstellen, wie es ist, wenn Euch grundlos die Freiheit genommen wird?~
+@31 = ~Mag das Tor auch noch so eng,
+  die Schrift auch voller Strafen sein,
+mein Schicksal, das bestimm ich selbst:
+  meiner Seele Herr bin ich allein.~
+@32 = ~Lasst uns nachforschen, was wir über Kiser und Mateo in Erfahrung bringen können.~
+
+// Kiser
+@40 = ~Was auch immer Kiser vorschlägt, ich denke, dass wir mit diesem Errard sprechen und eine zweite Meinung in dieser Sache sollten. Hier steckt mehr dahinter, als es auf den ersten Blick scheint.~
+
+// Errard
+@50 = ~Vergebt mir, mein Freund, aber hättet Ihr etwas dagegen, mir zu erklären, wie genau diese magische Weissagung wirkt?~
+@51 = ~Ja, ich hätte etwas dagegen. Ich bin ein hervorragend asgebildeter Magier mit dem Auftrag, eine Stadt zu verteidigen, kein Lehrer oder gar eine wandelnde Bibliothek. Lernt Eure eigenen Zauber, Dunkler!~
+
+// Saradush Tavern Il-Khan Soldier
+@60 = ~Ich glaube nicht, dass diese Frau Eure Aufmerksamkeit wünscht.~
+@61 = ~Was geht dich das an, Drow? Mit welchem Recht platzt du hier herein und willst ehrbaren Söldnern erzählen, wie wir unsere Zeit verbringen sollen? Wir flirten nur ein wenig. Das ist verdammt viel besser als alles, was ihr so treibt - Babies töten, Spinnen anbeten, andere ausrauben, einander umbringen.~
+@62 = ~Ich ... ~
+@63 = ~Ja, was ist?~
+@64 = ~Ihr habt Recht. Was Ihr tut, ist nicht so schlecht wie das meiste, wass mein Volk tut. Aber das macht das, was Ihr tut, noch nicht rechtmäßig. Wie könnte man Euch dazu bewegen, dass Ihr aufhört, diese Frau zu bedrängen?~
+
+// Volo 
+@70 = ~Erzählt mir etwas über Solaufein.~
+@71 = ~Mit prüfendem Geist und scharfer Klinge war Solaufein ein treuer Gehilfe <CHARNAME>s seit ihrem ersten Treffen im Unterreich. Obwohl er weder so berühmt noch so beliebt wie Drizzt ist, wird der preisgekrönte Dichter des Unterreichs doch von vielen geachtet.~
+@72 = ~Von Solaufein ist wenig bekannt außer seiner Verehrung Eilistraees und dem, was er <CHARNAME> privat anvertraut hat. Jedoch sagt man, er wandle eher nüchtern auf den Pfaden der Welt.~
+@73 = ~Von Solaufein ist wenig bekannt außer seiner Verehrung Eilistraees und dem, was er <CHARNAME> privat anvertraut hat. Jedoch sagt man, er wandle eher reumütig auf den Pfaden der Welt.~
+@74 = ~ich gebe zu, dass ich meine Privatsphäre schätze, Barde. Meine Gedanken sind tief wie stille Wasser. Dennoch bin ich froh über alles, was Ihr dazu beitragen könnt, die Oberflächenbewohner zu überzeugen, dass nicht alle Drow hassenswert sind.~
+
+// Asmay
+@80 = ~<CHARNAME>, unsere Aufgabe scheint klar: wir müssen Gromnirs Terrorherrschaft beenden. Diese Art "zufälliger" Hinrichtung erinnert mich zu sehr an die politischen Auseinandersetzungen, von denen die verfeindeten Häuser Ust Nathas geplagt wurden.~
+@81 = ~Die Mütter Oberinnen spielten die geringeren Häuser gegeneinander aus und veranlassten, dass sie gegeneinander kämpften, um an Gunst zu gewinnen. Die einfachen Leute kämpfen und sterben; für die Herrschenden sind sie nur Figuren auf dem Spielfeld.~
+@82 = ~Dieses "Ust Natha", von dem Ihr erzählt, klingt ziemlich wie Saradush, Drow. Wir kämpfen gegen die Feuerriesen, während Gromnir feiert und die Leute des Verrats verdächtigt.~
+
+// End!
+// Somewhat written by Pamm!
+@1000 = ~Gemeinsam sind wir also ans Ende gekommen. Unter den vielen Gedichten, die ich kenne, gibt es keins, das Euch überzeugen könnte, bei mir zu bleiben; und keins, das mich trösten könnte, solltet Ihr den Aufstieg zur Gottheit wählen.~
+@1001 = ~Ihr habt mich ans Licht gebracht, <CHARNAME>, und ich werde Euch für immer dafür lieben. Ob Ihr nun geht oder bleibt, meine Gefühle ändern sich nicht. Aber wenn Ihr geht, wird das Licht für mich schwächer - ohne Euch.~
+@1002 = ~Ich werde nicht versuchen, Euch von einer Alternative zu überzeugen. Aber ich bitte Euch: folgt Eurem Verstand *und* folgt Eurem Herzen. In einer Entscheidung wie dieser sollte beides im Einklang sein. Mit diesen Worten möchte ich Euch verlassen, falls ich Euch nie wieder mit sterblichen Augen erblicken kann:~
+// poem by Robert Service
+@1003 = ~Ich kenn einen Garten, wo Lilien blühn
+Und eine verweilt dort im Sonnenschein
+Viel mehr als die Lilien so ist sie rein
+Verträumt ihre Augen den Himmel sehn.~
+@1004 = ~Ich kenn eine Kammer so dunkel und kalt
+Und einer mit rastloser Feder sich plagt
+So lang bis sein dunkelndes Auge versagt
+Er blickt nach den Sternen und findet kein'n Halt.~
+@1005 = ~Und ah, es ist seltsam; denn, dunkel und trüb,
+Wogt zwischen beiden des Ozeans Weite;
+Doch ist er im Garten an ihrer Seite
+Und sie in der Kammer zusammen mit ihm.~
+@1006 = ~Ussta xukoth, ich werde Euch immer lieben, gleich welche Wahl Ihr trefft.~

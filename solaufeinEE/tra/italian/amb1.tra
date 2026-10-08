@@ -1,0 +1,45 @@
+// Solaufein Romance, Italiano
+// Scarlet's Ambition dialogue -- after Sola has been vamped and restored.
+
+@6000 = ~<CHARNAME>, ho ripensato al momento in cui Bodhi mi catturò.~
+@6041 = ~Devo ammettere che il tempo trascorso fra le sue grinfie e sotto la sua soggezione pesa gravemente sulla mia mente.~
+@6001 = ~Hmm, non posso dire di ricordare quel preciso episodio, in mezzo a tutto il caos che ti segue ovunque.~ 
+@6002 = ~Sì, me lo ricordo piuttosto bene.~
+@6003 = ~Vederti cambiare così drasticamente è stato uno shock, all'inizio. Ma non sono certo io a poter parlare, visto che ho la fastidiosa abitudine di trasformarmi in un avatar di Bhaal ogni tanto.~
+@6004 = ~Sì, ero piuttosto tentato di lasciarti lì a marcire.~
+@6005 = ~Mi dispiace di averti causato dolore, o timore per la tua o la mia incolumità. A quel tempo non ci conoscevamo bene, e non potrò mai ringraziarti abbastanza per aver avuto fiducia in me al punto da restituirmi la vita.~
+@6006 = ~Facevi parte del mio gruppo. Ti sei affidato a me come tua guida, e se non ti avessi mai condotto ad affrontare Bodhi, non saresti diventato la sua vittima. Ti dovevo la restaurazione, se potevo dartela.~
+@6007 = ~Bodhi era una vampira incredibilmente potente, Solaufein, soprattutto con la contaminazione di Bhaal che possedeva grazie all'anima di Imoen. Non sono sicuro che qualcuno avrebbe potuto resisterle.~
+@6008 = ~Non mi hai mai dato motivo di pentirmene, Solaufein.~
+@6039 = ~Avevo i miei dubbi sul fatto di restituirti la vita.~
+@6009 = ~Da quando sono giunto in superficie, avevo quasi dimenticato le profondità più oscure della mia anima. Non sono più tentato ogni giorno di agire come fanno gli altri drow. Bodhi ha trovato tutte le mie ombre e le ha arruolate per perseguire i suoi scopi. Faccio ancora sogni ... anzi, incubi ... su come ho scatenato i miei nuovi poteri contro di te e gli altri nostri compagni. Provo solo orrore quando realizzo che una parte di me ne ha effettivamente goduto.~
+@6010 = ~Ho ombre anche sulla mia anima, Solaufein. Credo di capire in parte ciò che devi provare.~ 
+@6011 = ~Entrambi abbiamo dovuto affrontare l'oscurità e i demoni nei nostri cuori. È parte di ciò che mi attrae verso di te. Sebbene tu non sia un drow, stai padroneggiando la tua personale lotta contro il commettere atti malvagi.~
+@6012 = ~Bodhi mi ha ricordato quanto sia corruttibile l'anima mortale, una lezione che pensavo di aver imparato tempo fa. Ma questa è una conversazione per un'altra volta. Ora volgiamo lo sguardo a cose più liete e alla strada che ci attende.~
+@6013 = ~Ca ... capisco. Sì, posso comprenderlo. Ci conoscevamo appena, e sarebbe sembrato che ti stessi tradendo a favore di uno dei tuoi grandi nemici. Posso solo scusarmi per il dolore che ho causato --~
+@6014 = ~Diamine, sì che sembrava un tradimento.~ 
+@6015 = ~Sembrava che mi stessi abbandonando per il vincitore più probabile. Non è stato un grande incoraggiamento alla fiducia.~
+@6038 = ~Va tutto bene, Solaufein. Credo di capire.~
+@6040 = ~Grazie per aver compreso il mio punto di vista, <CHARNAME>. E grazie per aver avuto abbastanza fiducia in me da restituirmi la vita.~
+@6016 = ~Le apparenze sono davvero tutto ciò che conta per te? Sembri dimenticare che sono stato catturato e trattenuto contro la mia volontà.~
+@6017 = ~Beh, sembrava che ne godessi un po' troppo perché fosse del tutto vero. Faccio fatica a credere che non avessi assolutamente alcuna scelta al riguardo.~
+@6018 = ~Di certo ormai mi conosci meglio di così. Stavo cercando di --~
+@6019 = ~Lo so con la ragione ... ma non sembri capire come mi ha fatto sentire.~
+@6020 = ~So di averti causato dolore. Non posso dirti quanto me ne dispiaccia. Ora ci conosciamo molto meglio ... non capisci quanto me ne penta --~
+@6021 = ~Forse ora sì ... ma a quel tempo di certo no. Dopotutto, hai passato tutta la vita nel Sottosuolo. Bodhi ti offriva il tipo di potere per il quale la maggior parte dei drow ucciderebbe. E che uccide davvero.~
+@6022 = ~Questo è ingiusto, <CHARNAME>. Mi credi davvero come gli altri drow? Perché ti rifiuti di capire? La mia volontà era sommersa sotto quella di Bodhi.~
+@6023 = ~Oh, andiamo, Solaufein, non ricordi quel piccolo discorso che mi facesti poco prima di balzarmi alla gola? Non sembrava proprio che stessi lottando tanto contro il suo incantesimo.~
+@6024 = ~<CHARNAME> ... Bodhi mi ha *costretto* a diventare un vampiro. Quello non era l'uomo che conosci e che, spero, ami. Perché ti rifiuti di capire?~
+@6025 = ~Quindi mi stai dicendo che nemmeno una piccola parte di te ne ha goduto? Sembra che quel luccichio nei tuoi occhi --~
+@6026 = ~E sei del tutto indifferente al potere che il sangue del tuo sire ti dona? Pensa bene prima di accusare altri di brama di potere. Davvero, proprio tu dovresti capire cosa significa lottare contro il male a cui il tuo sangue ti chiama.~
+@6027 = ~Non intendo dire che tutti i drow nascano malvagi; non lo credo. Ma conosco me stesso abbastanza bene da dire che le profondità della mia anima hanno molte ombre. E Bodhi le ha trovate tutte, e le ha sfruttate per i suoi scopi. Guardami, guardami negli occhi, <CHARNAME> -- non riesci a leggere i miei veri sentimenti?~
+@6028 = ~Scusa, Solaufein, ma non è affatto convincente.~ 
+@6029 = ~È ... è strano che abbiamo vissuto così tanto insieme eppure conosciamo così poco i veri pensieri l'uno dell'altro. Io ... non sapevo quanto profondamente questa ferita fosse ancora aperta. Ti offro di nuovo le mie scuse per il dolore che ho causato -- e che sembro ancora causare -- e non ti disturberò oltre.~ 
+@6030 = ~È questa la migliore spiegazione che sai darmi? Ho chiuso con te. Sono stato uno sciocco a pensare che una storia d'amore con un drow potesse mai funzionare.~
+@6031 = ~Non più sciocco di quanto lo fossi io a pensare che un abitante della superficie potesse mai davvero capirmi.~ 
+@6032 = ~Hai ragione, ho anch'io le mie ombre con cui fare i conti. Io ... credo di capire almeno un po', Solaufein.~ 
+@6033 = ~Entrambi abbiamo dovuto affrontare l'oscurità e i demoni nei nostri cuori. È parte di ciò che mi attrae verso di te.~
+@6034 = ~Bodhi mi ha ricordato quanto sia corruttibile l'anima mortale, una lezione che pensavo di aver imparato tempo fa. Ma questa è una conversazione per un'altra volta.~
+@6035 = ~Sono contento che abbiamo chiarito la questione.~
+@6036 = ~Devo ancora rifletterci su un po', ma io ... sono contento che stiamo insieme.~
+@6037 = ~Lo sono anch'io, <CHARNAME>.~

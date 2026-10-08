@@ -1,0 +1,150 @@
+// From: Luciana Boscaratto 
+// Solaufein Romance, ITALIAN
+
+@1 = ~Solaufein~
+@2 = ~Quando interrogato sul suo passato, SOLAUFEIN  aggiunge ben poco a ciò che tu già sai.  Come uno dei pochissimi Elfi Scuri dal cuore puro, egli sarà sempre un emarginato. Solaufein preferisce non parlare della sua vecchia vita in Ust Natha. La memoria del tempo passato con Phaere prima che ella fosse spinta contro di lui è un dolore troppo cocente e il pensiero del suo odio e della sua morte sono troppo crudeli.  Comunque, Solaufein ammette di essere il leader della Gilda dei Maschi Guerrieri in Ust Natha, ed Ë anche un mago di non poco talento. Quando Phaere gli venne allontanata, divenne un fervente (ma segreto) seguace di Eilistraee Silverhair, La Signora dai Capelli d' Argento.  Solaufein tende spesso ad abbandonarsi a malinconiche meditazioni.~ 
+@3= ~Sono soddisfatto dei nostri progressi.~ [blank]
+@4 = ~Le cose non stanno andando come dovrebbero.~ [blank]
+@5 = ~Non mi piace il modo in questo gruppo si sta comportando.~ [blank]
+@6 = ~Non ho piÝ intenzione di rimanere in un gruppo di questo genere!~ [blank]
+@7 = ~~
+@8 = ~Con la luce di Eilistraee!~ [blank]
+@9 = ~Ragno Vendicatore~
+@10 = ~Archryssa~
+@11 = ~Raggio di Luna~
+@12 = ~Memorizzazione Incantesimo Lunare~ 
+@13 = ~Porta dimensionale~ 
+@14 = ~Tsuki no Ken +4~
+@15 = ~Tsuki no Ken: La Lama Lunare +4
+Secondo la leggenda, questa antica spada fu forgiata in Kara-Tur da un fabbricante d'armi di Tengu con un certo senso dell'umorismo. Ogni traccia della sua esistenza si perse nell'antichit^Ç, fino a quando la spada fu ritrovata sotto la custodia di una somma sacerdotessa di Eilistraee. Da allora, essa fu utilizzata esclusivamente dai seguaci della Signora dai Capelli d'Argento, Lady Silverhair, per proteggere i deboli e combattere i malvagi. La spada fu concessa a Solaufein dalla Dea in persona. Essa riluce di un bagliore d'argento brunito e, quando brandita, emette un basso suono come di foglie mosse dal vento in una oscura foresta. 
+STATISTICHE:
+
+Abilità:  Libertà d'azione, Fortuna, +2 AC Bonus, +1 attacco per round
+Combattimento:  Ogni colpo ha il 25% di possibilità di accecare la vittima con i raggi lunari e di infliggere 12 punti di danni da fuoco nel giro di 3 secondi. THACO:  +4 bonus
+Danno:  1D8 +4
+Tipo di danno:  da taglio
+Peso:  3
+Fattore velocità:  0
+Capacità:  spada Lunga
+Tipo:  a una mano
+Utilizzabile da:  Solaufein~ 
+@16 = ~Solaufein Romance per Baldur's Gate II (SoA & ToB)~
+@17 = ~Complesso Sorvegliato implementato (raccomandato, opzionale)~
+@18 = ~Draghi di Shadows of Amn implementati (raccomandato, opzionale)~
+@19 = ~Twisted Rune implementato (raccomandato, opzionale)~
+@20 = ~Beholders implementati (by Xyx, raccomandato, opzionale)~
+@21 = ~Vampiri implementati (by Kensai Ryu, raccomandato, opzionale)~
+
+@22 = ~Boo II~
+@23 = ~Ritorna nello zaino~
+@24 = ~Rilascia Boo II~
+@25 = ~Maghi leggermente migliorati (opzionali, qualcuno ha riscontrato problemi)~
+@26 = ~Pacchetto di incontri/battaglie strategiche (opzionali)~
+
+@30 = ~Redael, Kensai dell'Eclisse Sconsacrata~
+@31 = ~Nrodlek, Paladino Decaduto dell'Eclisse Sconsacrata~
+@32 = ~Radnuht, Barbaro dell'Eclisse Sconsacrata~
+@33 = ~Reffus, Chierico dell'Eclisse Sconsacrata~
+@34 = ~Ylekilnu, Druido dell'Eclisse Sconsacrata~
+@35 = ~Citpeks, Stregone dell'Eclisse Sconsacrata~
+@36 = ~Eclisse Totale~
+@37 = ~Benedizione di Eilistraee~
+@38 = ~Lama dell'Eclisse +4~
+@39 = ~Lama dell'Eclisse +4
+Questa lama malvagia risucchia la luce dall'ambiente circostante. E' gelida al tocco, come metallo rimasto per troppo tempo lontano dai raggi del Sole. Quest'arma è stata utilizzata dai Servi dell'Eclisse Sconsacrata in  battaglia contro <CHARNAME> e Solaufein. La sua provenienza, prima di quella occasione, è un totale mistero.
+
+STATISTICHE:
+
+Abilità:  Immunità alla cecità, Immunità ai Proiettili, Rigenerazione
+Combattimento:  La vittima deve fare un tiro salvezza contro incantesimi a -4 o rimanere accecata per 80 secondi. (Ogni personaggio accecato soffre di una penalità di -10 al THACO.)
+THACO:  +4 bonus
+Danno:  1D8 +4
+Tipo di danno:  da taglio
+Peso:  3
+Fattore velocità:  0
+Capacità:  spada lunga
+Tipo:  a una mano
+Utilizzabile da:  Personaggi con allineamento malvagio~ 
+@40 = ~Redentore Sconsacrato dell'Eclisse +4~
+@41 = ~Redentore Sconsacrato dell'Eclisse +4
+Questa lama malvagia risucchia la luce dall'ambiente circostante. E' gelida al tocco, come metallo rimasto per troppo tempo lontano dai raggi del Sole. Questa in particolare  sembra essere una versione sconsacrata di ciò che una volta doveva essere un potente Redentore Santificato. Quest'arma è stata utilizzata dai Servi dell'Eclisse Sconsacrata in  battaglia contro <CHARNAME> e Solaufein. La sua provenienza, prima di quella occasione, è un totale mistero.
+
+STATISTICHE:
+
+Abilità:  Immunità alla cecità, Immunità ai Proiettili, Rigenerazione
+Combattimento:  Dissolvi magie per ogni colpo andato a segno. La vittima deve fare un tiro salvezza contro incantesimi a -4 o rimanere accecata per 80 secondi. (Ogni personaggio accecato soffre di una penalità di -10 al THACO.)
+THACO:  +4 bonus
+Danno:  1D10 +4
+Tipo di danno:  da taglio
+Peso:  11
+Fattore Velocità:  6
+Capacità:  spada a due mani
+Tipo:  a due mani
+Utilizzabile da:  Personaggi con allineamento malvagio~
+
+
+@42 = ~Randello dell'Eclisse +4~
+@43 = ~Randello dell'Eclisse +4
+Questa clava maledetta risucchia la luce dall'ambiente circostante. E' gelida al tocco, come fosse fatta di un tipo di legno rimasto per troppo tempo lontano dai raggi del Sole. Quest'arma è stata utilizzata dai Servi dell'Eclisse Sconsacrata in  battaglia contro <CHARNAME> e Solaufein. La sua provenienza, prima di quella occasione, è un totale mistero.
+
+STATISTICHE:
+
+Abilità:  Immunità alla cecità, Immunità ai Proiettili, Rigenerazione
+Combattimento:  La vittima deve fare un tiro salvezza contro incantesimi a -4 o rimanere accecata per 80 secondi. (Ogni personaggio accecato soffre di una penalità di -10 al THACO.)
+THACO:  +4 bonus
+Danno:  1D6 +4
+Tipo di danno:  contundente
+Peso:  1
+Fattore velocità:  0
+Capacità:  clava
+Tipo:  a una mano
+Utilizzabile da:  Personaggi con allineamento malvagio~
+@44 = ~Difesa dell'Eclisse Oscura~
+
+
+@50 = ~Poesia e Filosofia dei Popoli di Superficie~
+@51 = ~Questo è un libro di poesie e prose della Superficie che Solaufein ha ottenuto con grandi rischi e difficoltà. E' più o meno una serie pergamene rattrappite e pagine macchiate messe insieme alla bell'e meglio.  Il libro sembrerebbe contenere una nutrita collezione di materiale di autori come Auden, David, Moore, Rimbaud, Tickell and Wordsworth. Purtroppo, molti degli estratti delle poesie più popolari sembrano essere arrivate a Solaufein attraverso la traduzione dalle lingue Svirfneblin e Duergar, che talvolta conferiscono alle poesie  una certa interpretazione morbosa ed equivoca. Nonostante ciò, il libro è un monumento alla dedizione di Solaufein: possedere un simile oggetto è senz'altro un crimine fatale in Ust Natha.~
+
+
+
+@80 = ~La Vendetta della Regina dei Ragni~
+
+@81 = ~Tsuki no Ken +5~
+@82 = ~Tsuki no Ken: La Lama Lunare +5
+Secondo la leggenda, questa antica spada fu forgiata in Kara-Tur da un fabbricante d'armi di Tengu con un certo senso dell'umorismo. Ogni traccia della sua esistenza si perse nell'antichit^Ç, fino a quando la spada fu ritrovata sotto la custodia di una somma sacerdotessa di Eilistraee. Da allora, essa fu utilizzata esclusivamente dai seguaci della Signora dai Capelli d'Argento, Lady Silverhair, per proteggere i deboli e combattere i malvagi. La spada fu concessa a Solaufein dalla Dea in persona. Essa riluce di un bagliore d'argento brunito e, quando brandita, emette un basso suono come di foglie mosse dal vento in una oscura foresta. 
+
+In order to help Solaufein triumph over the new, stronger challenges he faces alonside <CHARNAME>, the blade has been re-blessed by Eilistraee with the power of the Full Moon. It glows with a stronger lunar radiance and provides clerical protections to Solaufein. 
+
+STATISTICHE:
+
+Abilità:  Libertà d'azione, Fortuna, +2 AC Bonus, +1 attacco per round
+Additional Equipped Abilities:  Armor of Faith, Draw Upon Holy Might, Death Ward, Negative Plane Protection, Chaotic Commands
+Combattimento:  Ogni colpo ha il 50% di possibilità di accecare la vittima con i raggi lunari e di infliggere 18 punti di danni da fuoco nel giro di 3 secondi. THACO:  +5 bonus
+Danno:  1D8 +5
+Tipo di danno:  da taglio
+Peso:  3
+Fattore velocità:  0
+Capacità:  spada Lunga
+Tipo:  a una mano
+Utilizzabile da:  Solaufein~
+
+// -----------------------------------------------------------------
+// Nomi visualizzati dei componenti
+//
+// Questi riferimenti sono utilizzati dalle istruzioni BEGIN @n in
+// solaufeinEE.tp2, in modo che i nomi dei componenti vengano mostrati
+// nella lingua scelta dall'utente durante l'installazione. I blocchi
+// LANGUAGE non inglesi caricano american/wsetup.tra come base, quindi
+// ogni lingua che non definisce questi riferimenti userà
+// automaticamente le stringhe inglesi. Traducete queste voci nel
+// wsetup.tra della lingua di destinazione per localizzare il menu
+// d'installazione.
+// -----------------------------------------------------------------
+
+@1000 = ~Solaufein: PNG Principale (Richiesto)~
+@1010 = ~Solaufein: Romance in SoA~
+@1020 = ~Solaufein: Sequenza dell'Eclisse~
+@1030 = ~Solaufein: Solaufein Vampiro + Purificazione~
+@1040 = ~Solaufein: Continuazione in ToB~
+@1050 = ~Solaufein: Extra (KVFix, Multig, UHMER, Vari)~
+@1060 = ~Solaufein: Rafforzamento delle Sequenze (Opzionale)~
