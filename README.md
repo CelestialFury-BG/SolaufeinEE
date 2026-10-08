@@ -145,6 +145,7 @@ All 2DA modifications use `PRETTY_PRINT_2DA` for column-aligned output and `BUT_
 
 ## Links
 
+- [Compatibility](COMPATIBILITY.md)
 - [Full changelog](solaufeinEE/readme-ee_updates.md)
 - [Eclipse readme](solaufeinEE/readme-eclipse.txt)
 - [Original Solaufein readme](solaufeinEE/readme-solaromance.txt)
