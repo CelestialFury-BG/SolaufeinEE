@@ -165,10 +165,10 @@ Bo wspomnienie twej słodkiej miłości takie bogactwo niesie,
 // każdego języka docelowego, aby zlokalizować menu instalacji.
 // -----------------------------------------------------------------
 
-@1000 = ~Solaufein: Główny BN (Wymagany)~
-@1010 = ~Solaufein: Romans w SoA~
-@1020 = ~Solaufein: Sekwencja Zaćmienia~
-@1030 = ~Solaufein: Wampiryczny Solaufein + Oczyszczenie~
-@1040 = ~Solaufein: Kontynuacja w ToB~
-@1050 = ~Solaufein: Dodatki (KVFix, Multig, UHMER, Różne)~
-@1060 = ~Solaufein: Wzmocnienie Przerywników (Opcjonalne)~
+@1000 = ~Solaufein: Główny BN + zawartość SoA (wymagane)~
+@1010 = ~Solaufein: Wampirzy Solaufein + Oczyszczenie (opcjonalny wątek fabularny SoA)~
+@1020 = ~Solaufein: Kontynuacja ToB (zalecane, jeśli grasz w ToB)~
+@1030 = ~Solaufein: Sekwencja Zaćmienia (opcjonalna walka wyzwania ToB)~
+@1040 = ~Solaufein: Dodatki (poprawki Korgana/Viconii, tryb wieloosobowy, poprawki pocisków — opcjonalne)~
+@1070 = ~Ten mod wymaga Baldur's Gate II: Enhanced Edition (BG2EE) lub Enhanced Edition Trilogy (EET).~
+@1071 = ~Ten komponent wymaga dodatku Throne of Bhaal.~
