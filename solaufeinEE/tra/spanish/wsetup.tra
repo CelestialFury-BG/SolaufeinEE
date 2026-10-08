@@ -167,10 +167,10 @@ Desprecio cambiar mi destino por el de los reyes.~
 // localizar el menú de instalación.
 // -----------------------------------------------------------------
 
-@1000 = ~Solaufein: PNJ Principal (Requerido)~
-@1010 = ~Solaufein: Romance en SoA~
-@1020 = ~Solaufein: Secuencia del Eclipse~
-@1030 = ~Solaufein: Solaufein Vampírico + Purificación~
-@1040 = ~Solaufein: Continuación en ToB~
-@1050 = ~Solaufein: Extras (KVFix, Multig, UHMER, Varios)~
-@1060 = ~Solaufein: Refuerzo de Escenas (Opcional)~
+@1000 = ~Solaufein: PNJ principal + contenido de SoA (obligatorio)~
+@1010 = ~Solaufein: Solaufein vampiro + Purificación (rama argumental de SoA opcional)~
+@1020 = ~Solaufein: Continuación de ToB (recomendado si juegas ToB)~
+@1030 = ~Solaufein: Secuencia Eclipse (combate-desafío de ToB opcional)~
+@1040 = ~Solaufein: Extras (correcciones de Korgan/Viconia, multijugador, correcciones de proyectiles — opcional)~
+@1070 = ~Este mod requiere Baldur's Gate II: Enhanced Edition (BG2EE) o Enhanced Edition Trilogy (EET).~
+@1071 = ~Este componente requiere la expansión Throne of Bhaal.~
