@@ -15,7 +15,7 @@ This project is a ground-up modernization of the original Solaufein Romance mod 
 
 This edition introduces:
 
-* A clean, modular component structure with DESIGNATED indexing
+* A content-aligned component layout grouped by when each component's content actually fires in the campaign
 * Inline EE/EET-safe CRE, SPL, and cutscene modernization via patch functions
 * Automated runtime UTF-8 conversion via HANDLE_CHARSETS
 * Layered language TRAs (English base + overlay) with automatic fallback
@@ -23,7 +23,8 @@ This edition introduces:
 * Dynamic Throne of Bhaal epilogue String Reference resolution
 * Strict component ordering and numbering for Project Infinity metadata alignment
 * A fully sanitized, cross-platform lowercase file naming system
-* Explicit script-name and dialogue-resref writes on joinable CREs via `EE_SET_CRE_FIELDS`, guarded by a CRE v1.0 format check
+* Explicit script-name and dialogue-resref writes on joinable and support CREs via `EE_SET_CRE_FIELDS`, guarded by a CRE v1.0 format check
+* Known-spells compaction (`EE_COMPACT_KNOWN_SPELLS`) for the 2010-era phantom entry at index 0
 * Correct per-dialogue TRA scoping to eliminate string-reference collisions
 * Full 12-slot CRE sound-slot restoration for Solaufein's barks (morale, mood, battle cry, selection, critical hit, critical miss) with **working in-game bark playback**, using a silent placeholder WAV associated with each bark string so the BG2EE engine does not suppress the text
 * Load-order-safe `BUT_ONLY_IF_IT_CHANGES` guards on every 2DA and store patch
@@ -66,15 +67,26 @@ This structure is:
 
 ## Components
 
-The mod is divided into seven clean, modular components with explicit DESIGNATED indexing matching the metadata layer. Every component name is delivered through the TRA system, so the installer menu displays each name in the user's selected language.
+The mod is divided into five components, grouped by **when their content actually fires** in the campaign. Every component name is delivered through the TRA system, so the installer menu displays each name in the user's selected language.
 
-### Component 10: Solaufein — Core NPC (Required)
+Recommended install: answer **`[I]nstall them`** at WeiDU's top-level prompt to install every component. This matches the original mod's full experience and is the configuration the mod was tested against.
 
-Installs Solaufein as a joinable NPC with core items, spells, dialogues, and inline execution of the `EE_CRE_CLEANUP` and `EE_SPELL_CLEANUP` modernization functions immediately upon copying.
+Expert install: answer **`[A]sk about each one`** to select components individually. Every component (except Core) declares a `REQUIRE_COMPONENT` or `REQUIRE_PREDICATE` guard that refuses to install on an incompatible game state, so no combination you can select will produce a broken install.
+
+### Component 10: Solaufein — Core NPC + SoA Content (Required)
+
+This is the base component and the only one required. It installs Solaufein as a joinable NPC, along with everything needed for him to appear in the world and function through both Shadows of Amn and Throne of Bhaal.
 
 Specific work performed at install time:
 
-* **Explicit script and dialogue field writes.** All Solaufein tier CREs (`sola5`–`sola17`, `udsola01/02`) use `EE_SET_CRE_FIELDS` from `ee_cre_fields.tpa` to write the script name and dialogue resref at the NI-confirmed CRE v1.0 offsets. This replaces the older `WRITE_ASCII 0x2C4 ~SOLA~ #8` pattern. On CRE v1.0, `0x2C4` is the effects offset pointer; the Dialogue resref is at `0x2CC`. The old write silently zeroed Sola's effects count.
+* **Explicit script and dialogue field writes.** All Solaufein tier CREs (`sola5`–`sola17`, `udsola01/02`) use `EE_SET_CRE_FIELDS` from `ee_cre_fields.tpa` to write the script name and dialogue resref at the NI-confirmed CRE v1.0 offsets. On CRE v1.0, `0x2C4` is the effects offset pointer; the Dialogue resref is at `0x2CC`. The old `WRITE_ASCII 0x2C4 ~SOLA~ #8` pattern silently zeroed Sola's effects count.
+* **Support-CRE field writes (v2.1.10).** The 2010-era original mod shipped four support CREs with broken or empty fields that the modernized TP2 had not previously addressed:
+  * `solafoe.cre` (Archryssa) — Dialogue field was `SOLAN.DLG` (non-resolving). Archryssa's intro dialogue never fired even though Sola's script called `StartDialogueNoSet` on her. Fixed: `script_name = solafoe`, `dialogue_resref = solafoe`.
+  * `solaboo.cre` (Boo Two) — Dialogue field was non-resolving. Boo Two's introduction block never fired. Fixed: `script_name = solaboo`, `dialogue_resref = solaboo`.
+  * `solavamp.cre` (Undead Solaufein) — Dialogue field was non-resolving. Direct interaction with vampire Sola silently did nothing (the scripted encounter via `EXTERN SOLAVAMP` still worked). Fixed: `script_name = solavamp`, `dialogue_resref = solavamp`.
+  * `solaspi.cre` (Revenge Spider) — Script name was empty. The creature had no death variable. Fixed: `script_name = solaspi`.
+  * `solaspy1.cre` / `solaspy2.cre` (Eclipse spies) — Script names were empty. Fixed: `script_name` and `default_script` set individually, via two separate COPY blocks so each CRE gets its own value.
+* **Known-spells compaction (v2.1.11).** The 2010-era mod tree CREs `sola5`–`sola17` and `solafoe.cre` ship with a phantom entry at known-spells index 0: the resref is empty, but the level and type fields are set, so Near Infinity renders it as `Spell: 0.SPL` with a level and a type. The engine ignores such entries when granting spells, but they inflate the count and shift every subsequent entry's index. The new `EE_COMPACT_KNOWN_SPELLS` patch function removes the phantom entry and decrements the count. It is idempotent (running it twice produces no second-pass changes) and only writes the count field when at least one entry was actually removed or shifted.
 * **CRE v1.0 format guard.** Every binary patch function call in the Sola tier and udsola blocks is wrapped in `READ_ASCII 0x04 cre_ver (4)` + `PATCH_IF (~%cre_ver%~ STRING_EQUAL ~V1.0~)`. If a future release changes the CRE format, the LPFs are skipped rather than corrupting the file. The bark `SAY` statements sit outside the guard because `SAY` is format-aware (WeiDU reads the version byte and computes the correct slot offset).
 * **Full 12-slot bark restoration with working playback.** Sola's barks are restored into the correct BG2 CRE v1.0 sound slots. Both the Sola tier block and the `udsola01/02` block write the same 12 slots:
   * MORALE → `@200`
@@ -94,50 +106,29 @@ Specific work performed at install time:
 
   **Maintainer note:** the `[blank]` tags in every language's `wsetup.tra` are load-bearing. Removing them silently mutes every bark in the mod. The only reason the tags are not obvious is that WeiDU does not accept a bracketed sound directly after a TRA reference in a `SAY` command (`SAY MORALE @200 [blank]` is a GLR parse error), so the association has to live in the string definition itself.
 * **Required TRA refs.** The bark restoration requires `@3`–`@8`, `@200`, and `@201` in `wsetup.tra`, each with the `[blank]` suffix. They are currently present in `american/wsetup.tra`; non-English installs fall back to English through the layered `LANGUAGE` blocks.
+* **Core SoA content bundled here.** The following files are grouped into Component 10 rather than a separate component because they are the NPC's entry points and SoA-side content, not optional story branches:
+  * `sola.d` — the core NPC dialogue file, which compiles `SOLA.DLG`. Contains join/leave, all NPC banter blocks, AR2401 teleport handling, blade upgrades, and the runtime-gated romance branches. Required by Components 20, 30, and 40; compiling it in Core guarantees it exists whenever the NPC is installed.
+  * `solasoa.d` — Tree of Life gut-check dialogue.
+  * `solafoe.d` — Archryssa encounter dialogue.
+  * `solaint.d` — cross-mod Valen interjections, compiled only if `valenj.dlg` is present.
+  * `fatesp.d` — ToB fate spirit summon. Without this, a player who takes Sola through SoA cannot re-recruit him in ToB.
+  * `sola2500.baf` / `sola2100.baf` — AR2500 and AR2100 spawn triggers. These are how Solaufein appears in the game world; without them, he never spawns.
+  * `solablad.baf` extended onto `baldur.bcs` — Moonblade auto-return script for SoA.
+  * The `pdialog.2da` SOLA row registration. Enables the engine's ToB party-dialogue handling (25POST, 25JOIN, 25DREAM, 250VERRIDE).
 * **Familiar AI compilation.** `solaboo.baf` is compiled, activating Boo Two's hide-in-shadows, trap-detection, and auto-return-on-death behavior.
 * **Auto-buff script registration.** `WW-BUFF` and `WW-BUFF1` are appended to `scrpdesc.2da` and their help text resolved via `RESOLVE_STR_REF`, so they appear in the character-sheet script picker.
 * **Auto-buff helper spell.** `wesalac.spl` ("Auto-Buff") is copied and named, providing the engine spell invoked by the script hotkeys.
-* **Projectile fix.** GB meteor swarm, ice storm, and fire storm projectile values normalized.
-* **Underdark Solaufein names.** `udsola01.cre` and `udsola02.cre` are named from `wsetup.tra @1` (*"Solaufein"*) instead of `sola.tra @1`, which previously wrote a dialogue line into the creature's name field.
 * **Localization.** All hardcoded English strings in Component 10 have been restored to their original `@n` TRA refs:
   * `solaspi.cre` name → `wsetup.tra @9` (*"Revenge Spider"*, previously mislabeled as "Knight of Solamnia")
   * `solaboo.cre` name → `wsetup.tra @22` (*"Boo Two"*)
   * `solafoe.cre` name → `wsetup.tra @10` (*"Archryssa"*)
   * `spcl995.spl` name → `wsetup.tra @36` (*"Total Eclipse"*)
   * `spcl996.spl` name → `wsetup.tra @37` (*"Eilistraee's Blessing"*)
-* **2DA load-order safety.** `scrpdesc.2da` is patched with `PRETTY_PRINT_2DA` and `BUT_ONLY_IF_IT_CHANGES`, and the `UHMER01.sto` store copy also uses `BUT_ONLY_IF_IT_CHANGES`, so neither file is written to `override/` unless it actually changed.
+* **2DA load-order safety.** `scrpdesc.2da` and `pdialog.2da` are patched with `PRETTY_PRINT_2DA` and `BUT_ONLY_IF_IT_CHANGES`, so neither file is written to `override/` unless it actually changed.
 
-### Component 20: Solaufein — SoA Romance
+### Component 20: Solaufein — Vampiric Solaufein + Cleanse
 
-Adds the Shadows of Amn romance progression scripts, dreams, interjections, and the core dialogue tree.
-
-Specific work performed at install time:
-
-* **Per-dialogue TRA scoping.** Each `.d` file is compiled with only its own TRA files. This eliminates the `@n` string-reference collisions that affected the original build when multiple TRAs with overlapping number ranges were loaded in the same COMPILE block.
-  * `sola.d` → `sola.tra`, `amb1.tra`
-  * `solasoa.d` → `solasoa.tra`
-  * `solafoe.d` → `solafoe.tra`
-  * `fatesp.d` → `fatesp.tra`
-  * `solae1.d` → `solae1.tra`
-  * `solaint.d` → `solaint.tra` (Valen mod, conditional)
-* **Duplicate state label fix.** The `SOLABOO` dialogue no longer contains two states sharing the `boo_s` label; the fallback state is renamed `boo_s_fallback`.
-* **Correct-width `pdialog.2da` row.** Sola is registered with the eight-column row width the shipped BG2EE/EET `pdialog.2da` actually uses (identifier + seven data columns). An earlier build had a ten-column row that the engine tolerated silently but which broke pretty-print normalization.
-* **`pdialog.2da` load-order safety.** The row append is followed by `PRETTY_PRINT_2DA` and `BUT_ONLY_IF_IT_CHANGES`, so the file is not written to `override/` unless a change was applied.
-* **Cross-mod safety.** `solaint.d` is only compiled if `valenj.dlg` is present; otherwise the mod safely skips without aborting. This check is install-order dependent: installing ValenEE first compiles the cross-mod interjections; installing SolaufeinEE first silently skips them. Both installs are valid. Install ValenEE before SolaufeinEE if you want the interjections.
-
-### Component 30: Solaufein — Eclipse Sequence
-
-Adds the high-difficulty Eclipse battle, customized environmental area (`sola0001.are`), and custom enemy scripting (`sola0001.bcs`, `sola0002.bcs`, `solavcut.bcs`).
-
-Specific work performed at install time:
-
-* **Component dependency correction.** Component 30 now requires Component 20, not just Component 10. The Eclipse intro dialogue tree (`SOLAE1.DLG`) is compiled in Component 20, and the runtime `SetDialog("SOLAE1")` call in `sola0001.baf` has no valid target if a user installs Components 10 + 30 while skipping 20. The REQUIRE change prevents a silently broken Eclipse encounter.
-* **Dialogue double-fire fix.** `solae4.baf` (Reffus the Eclipse Cleric) previously called `StartDialogueNoSet(Player1)` in his battle-prep block, which opened a second copy of the intro dialogue tree on top of the trigger-block dialogue. The stray call has been removed; the external trigger block now owns the Eclipse intro.
-* **Allegiance, dialog binding, and dialogue trigger unified.** The trigger block calls `SetDialog()`, `Enemy()`, and `StartDialogueNoSet()` in a single response block so all three resolve in one action queue.
-
-### Component 40: Solaufein — Vampiric Solaufein + Cleanse
-
-Integrates the Bodhi vampiric abduction transformation storyline and Suldanessellar cleansing routines.
+SoA Chapter 6 story branch. Bodhi abducts Sola in the Graveyard District; the player can restore him via the Temple Ruins ritual.
 
 Specific work performed at install time:
 
@@ -145,29 +136,56 @@ Specific work performed at install time:
 * **No duplicate item copy.** `solabody.itm` and `solarepu.spl` are only copied once (in Component 10); the previous build re-copied them without translation strings.
 * **Correct spell name.** `solarepu.spl` is now named *"Repulse Undead"* with a proper description, rather than inheriting a dialogue line as its label.
 
-### Component 50: Solaufein — ToB Continuation
+Requires Component 10. Can be installed standalone with 10, or alongside any of 30, 40, 50.
 
-Adds the Throne of Bhaal expansion continuation. Epilogues are resolved via dynamic `RESOLVE_STR_REF` allocations rather than static legacy string pointers, for un-garbled text on all language installs.
+### Component 30: Solaufein — ToB Continuation
+
+Recommended if you plan to play Throne of Bhaal with Solaufein in the party.
 
 Specific work performed at install time:
 
 * **Per-dialogue TRA scoping.** `solatob.d` compiles with only `solatob.tra`; the previous build loaded `sola.tra` alongside it, which silently overrode every ToB interjection with romance text.
+* **CHAIN3 SOLA.DLG abort fix (v2.1.6).** `solatob.d` contains `== "SOLA"` interjection lines and a `CHAIN3 SARVOLO sola` block that all reference `SOLA.DLG`. In an earlier build, `SOLA.DLG` was compiled only in the "SoA Romance" component, so users who installed Core + ToB Continuation without the SoA component hit `ERROR: Failure("resource [SOLA.DLG] not found for 'CHAIN3'")`. Moving the `SOLA.DLG` compilation and the `pdialog.2da` SOLA row into Component 10 resolved this.
 * **Bulletproof epilogues.** Each `solaend0.2da`–`solaend4.2da` variant has **both** data columns of its DEFAULT row replaced with the same resolved epilogue STRREF, so it doesn't matter which column the ToB epilogue screen reads.
 * **Pretty-print normalization.** All five `solaend*.2da` files are patched with `PRETTY_PRINT_2DA` so the output matches the standard 2DA column-aligned format BioWare uses.
-* **ToB Moonblade return script.** `baldur25.bcs` is extended with `solablad.baf`, matching the SoA behavior set up in Component 20 via `baldur.bcs`.
+* **ToB Moonblade return script.** `baldur25.bcs` is extended with `solablad.baf`, matching the SoA behavior set up in Component 10 via `baldur.bcs`.
 * **Epilogue string resolution.** `epilogue.tra` is loaded inside the ToB action block so `@999000`–`@999004` resolve to the language-appropriate text.
 
-### Component 60: Solaufein — Extras (KVFix, Multig, UHMER, Misc)
+Requires Component 10 and the Throne of Bhaal expansion. The ToB check is expressed via `REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1071`.
 
-Optional engine tweaks and legacy visual adjustments using safe file-size bounding evaluations before performing projectile writes.
+### Component 40: Solaufein — Eclipse Sequence
 
-* Applies Korgan PC-interaction loop fix and Viconia LOVETALK 46 fix.
-* Installs improved multi-player NPC kick-out dialogue.
-* Patches UHMER01 store.
+ToB challenge fight that triggers after Sendai or Abazigal dies. Archryssa's counterpart for Throne of Bhaal: six Eclipse foes in a custom battleground area.
 
-### Component 70: Solaufein — Cutscene Hardening (Optional)
+This component contains everything the Eclipse encounter needs. It is entirely self-contained — a user who wants the Eclipse fight but not the SoA side content or the Vampiric branch can install 10 + 40 and get a fully functional encounter.
 
-Applies an overlay macro providing state tracking, capitalization overrides, and protective safety frames to prevent cutscene loop stutter traps on `sola0001.bcs` and `sola0002.bcs`.
+* `sola0001.are` — the battleground area
+* `sola0001.baf` — spawn and intro cutscene for the six foes
+* `sola0002.baf` — post-victory cleanup and exit trigger
+* `solaspy1.cre` / `solaspy1.baf` — transport spy (called by Sola's own AI)
+* `solaspy2.cre` / `solaspy2.baf` — time-stop spy and time-stop handler
+* `solacut1.baf` — transport cutscene into the battleground
+* `solae1.cre` through `solae6.cre` — the six Eclipse foes
+* `solae1.baf`, `solae4.baf`, `solae5.baf`, `solae6.baf` — foe AI scripts (kensai, cleric, druid, sorcerer)
+* `solae1.d` — Eclipse foes' dialogue
+* `solae1.itm` through `solae3.itm` — Eclipse weapons
+* `spcl995.spl` (Total Eclipse), `spcl996.spl` (Eilistraee's Blessing) — signature spells
+
+Also applies `EE_CUTSCENE_CLEANUP` to `sola0001.bcs` and `sola0002.bcs` after compiling them. This is a fix, not an option; it is folded in so the user cannot accidentally install a broken cutscene. The cleanup adds `Wait(1)` after `StartCutSceneMode()` and normalizes `CutSceneId(Player1)` casing.
+
+Requires Component 10 and the Throne of Bhaal expansion.
+
+**Note on the Eclipse casters.** The six Eclipse foes have empty memorized-spell tables in their CRE files, but their AI scripts do not use the memorization system. Each caster script (`solae4.baf`, `solae5.baf`, `solae6.baf`) has a "Prep" block that uses `LOCALS` globals as a substitute spell economy, and casts with `SpellNoDec()` / `ReallyForceSpell()`, which bypass memorization. This is deliberate and documented in each script's header. The empty memorized tables have zero gameplay impact. Radael the Kensai uses `KENSAI_KIA` (a kit-granted ability, not a memorized spell) and Radnuht the Barbarian uses `BARBARIAN_RAGE` (also kit-granted).
+
+### Component 50: Solaufein — Extras
+
+Independent quality-of-life patches and cross-mod compatibility. These do not require Component 10 and can be installed on their own. Every one of them is optional; skipping the whole component has no effect on Sola's core functionality.
+
+* **`kvfix.d`** — Fixes a loop in Korgan's player-interaction dialogue and repairs a dead branch in Viconia's LOVETALK 46. Uses `REPLACE` on `BKORGAN.dlg` and `BVICONI.dlg`. Skip this component if you have another mod that edits those files.
+* **`multig.d`** — Multiplayer-friendly party kick-out script.
+* **`uhmer01.d`** — Extends the UHMER01 merchant's dialogue to offer Sola's poetry books once the romance progresses far enough. The corresponding `uhmer01.sto` store patch is installed here.
+* **`metswarm.pro`** — Vanilla Meteor Swarm projectile fix.
+* **`icestorm.pro`** — Vanilla Ice Storm projectile fix.
 
 ------------------------------
 
@@ -175,7 +193,7 @@ Applies an overlay macro providing state tracking, capitalization overrides, and
 
 Every user-facing string in the mod is delivered through the TRA system. This includes not just dialogue and item descriptions, but also:
 
-* **Component names** in the WeiDU installer menu (`@1000`–`@1060` in each `wsetup.tra`)
+* **Component names** in the WeiDU installer menu (`@1000`–`@1040` in each `wsetup.tra`)
 * **Creature names** for Sola, Boo Two, Archryssa, and the Eclipse enemies
 * **Spell names** for Total Eclipse, Eilistraee's Blessing, Auto-Buff, and Repulse Undead
 * **Item names and descriptions** for every custom weapon, book, and body item
@@ -183,13 +201,13 @@ Every user-facing string in the mod is delivered through the TRA system. This in
 
 ### Language Fallback
 
-The `LANGUAGE` blocks in `solaufeinEE.tp2` are structured as **layered TRAs**: each non-English block loads `american/wsetup.tra` first as a base, then the target language's file on top. This means:
+The `LANGUAGE` blocks in `setup-solaufeinEE.tp2` are structured as **layered TRAs**: each non-English block loads `american/wsetup.tra` first as a base, then the target language's file on top. This means:
 
 * Any `@n` ref defined in the English file but missing from a language overlay automatically falls back to English.
 * New refs added in a future update will appear in every language immediately, without requiring translation updates.
 * Translators can add translations at their own pace, knowing the installer will never fail on a missing ref.
 
-`@1060`, `@200`, and `@201` are currently defined in `american/wsetup.tra`. Non-English installs will fall back to the English strings until translators add localized versions. This is expected and does not break the install.
+Component display names live at `@1000`–`@1040`. The `GAME_IS` failure message is `@1070`; the `GAME_INCLUDES ~tob~` failure message is `@1071`. Non-English installs will fall back to the English strings until translators add localized versions.
 
 **Translator note:** if you localize a bark string, keep the `[blank]` suffix on the line. It associates the silent placeholder WAV with the TLK entry for that string. Removing it silences the bark in-game, because BG2EE suppresses any bark whose TLK entry has no associated sound file.
 
@@ -203,10 +221,10 @@ The modernization engines operate via proper `DEFINE_PATCH_FUNCTION` routines:
 
 ### CRE Cleanup (`ee_cre_cleanup.tpa`)
 
-* Remaps legacy BG2 animation indices to modern EE formats via safe pattern checks
 * Sweeps and purges deprecated/removed visual engine effect opcodes (142, 215, 248, 267)
 * Normalizes death variables and engine script slots to lowercase for cross-platform safety
 * Bounds faulty legacy saving throw allocations to proper EE 0–20 parameter brackets
+* Clamps negative XP to 0 (using the correct `0x14` offset on CRE v1.0; earlier revisions used `0x2CC` by mistake, which is the Dialogue resref)
 * Preserves sound slots for later explicit restoration (does not write beyond slot range)
 
 ### CRE Fields (`ee_cre_fields.tpa`)
@@ -216,10 +234,17 @@ The modernization engines operate via proper `DEFINE_PATCH_FUNCTION` routines:
 * Takes one `STR_VAR` parameter per value; never accepts delimited lists
 * Does not clean up, recover, or infer values. The caller supplies every value explicitly.
 
+### Known-Spells Compaction (`ee_cre_cleanup.tpa`)
+
+* Provides `EE_COMPACT_KNOWN_SPELLS`, which removes known-spells entries whose resref is not a real resref and shifts the remaining entries left
+* Detection uses the first byte of the resref: a valid resref starts with printable ASCII (`0x21`–`0x7E`); a phantom entry starts with a control byte
+* Decrements the count at `0x2A4` only when at least one entry was removed or shifted
+* Idempotent: running twice produces no second-pass changes
+
 ### SPL Cleanup (`ee_spell_cleanup.tpa`)
 
-* Remaps spell school root arrays and eliminates out-of-bounds corruption
-* Iterates accurately through individual V1.0 extended headers to scrub faulty projectile indicators without corrupting core timeline effect rules
+* Sanitizes spell schools and secondary types in the root header
+* Fixes projectiles in individual spell extended headers without corrupting core timeline effect rules
 
 ### Cutscene Cleanup (`ee_cutscene_cleanup.tpa`)
 
@@ -263,24 +288,26 @@ Then run one of:
 
 After installation, the following can be verified in Near Infinity:
 
-* **`override/sola5.cre`** — Dialog field reads `SOLA.DLG`, Script name reads `sola`. Sound slots `MORALE`/`INITIAL_MEETING`/`HAPPY`/`UNHAPPY_*`/`LEADER`/`BORED`/`BATTLE_CRY1`/`SELECT_COMMON1`/`CRITICAL_HIT`/`CRITICAL_MISS` all contain the correct STRREFs; every other slot should read *"No such index"*.
+* **`override/sola5.cre`** — Dialog field reads `SOLA.DLG`, Script name reads `sola`. Known spell 0 is a real resref (the phantom `0.SPL` entry has been compacted away). Sound slots `MORALE`/`INITIAL_MEETING`/`HAPPY`/`UNHAPPY_*`/`LEADER`/`BORED`/`BATTLE_CRY1`/`SELECT_COMMON1`/`CRITICAL_HIT`/`CRITICAL_MISS` all contain the correct STRREFs; every other slot should read *"No such index"*.
 * **`override/udsola01.cre`** and **`udsola02.cre`** — Name reads *"Solaufein"* (not a dialogue line). Script name reads `sola`; dialogue reads `SOLA.DLG`; the same 12-slot bark set is present.
+* **`override/solafoe.cre`** — Name reads *"Archryssa"*. Script name reads `solafoe`; dialogue reads `SOLAFOE.DLG`. Known spell 0 is a real resref (the phantom entry has been compacted away).
+* **`override/solaboo.cre`** — Name reads *"Boo Two"*. Script name reads `solaboo`; dialogue reads `SOLABOO.DLG`.
+* **`override/solavamp.cre`** — Name reads *"Undead Solaufein"*. Script name reads `solavamp`; dialogue reads `SOLAVAMP.DLG`.
+* **`override/solaspi.cre`** — Name reads *"Revenge Spider"*. Script name reads `solaspi`.
+* **`override/solaspy1.cre`** and **`solaspy2.cre`** — (Only if Component 40 is installed.) Script name reads `solaspy1` / `solaspy2` respectively; default script is `SOLASPY1.BCS` / `SOLASPY2.BCS`.
 * **`override/blank.wav`** — Present. The silent placeholder WAV that gives the bark TLK entries an associated audio file so BG2EE will fire the barks.
-* **`override/solaspi.cre`** — Name reads *"Revenge Spider"* (not "Knight of Solamnia").
-* **`override/solaboo.cre`** — Name reads *"Boo Two"*.
-* **`override/solafoe.cre`** — Name reads *"Archryssa"*.
-* **`override/spcl995.spl`** — Name reads *"Total Eclipse"*.
-* **`override/spcl996.spl`** — Name reads *"Eilistraee's Blessing"*.
-* **`override/SOLA.DLG`** — Contains ~530 states including the interjection state `Sola_TOB0` (*"Wait, this need not end in violence…"*) and the SoA romance states (`7`, `24`, `77`, etc.).
-* **`override/SOLAE1.DLG`** — Contains the Eclipse gang's opening lines.
-* **`override/SOLAVAMP.DLG`** — Contains the vampire-Sola lines (*"Hello again, `<CHARNAME>`. It's amazing what Unlife does for my perspective…"*).
+* **`override/spcl995.spl`** — Name reads *"Total Eclipse"* (if Component 40 is installed).
+* **`override/spcl996.spl`** — Name reads *"Eilistraee's Blessing"* (if Component 40 is installed).
+* **`override/SOLA.DLG`** — Contains the interjection state `Sola_TOB0` (*"Wait, this need not end in violence…"*) and the SoA romance states (`7`, `24`, `77`, etc.). If Component 30 is not installed, `SOLA.DLG` will exist but will not contain the ToB interjections.
+* **`override/SOLAE1.DLG`** — (Only if Component 40 is installed.) Contains the Eclipse gang's opening lines.
+* **`override/SOLAVAMP.DLG`** — (Only if Component 20 is installed.) Contains the vampire-Sola lines (*"Hello again, `<CHARNAME>`. It's amazing what Unlife does for my perspective…"*).
 * **`override/scrpdesc.2da`** — Contains `WW-BUFF1` and `WW-BUFF` rows with valid numeric STRREFs in both columns, formatted with proper column alignment.
 * **`override/pdialog.2da`** — Contains a `SOLA` row with exactly eight columns (identifier + seven data values), formatted with proper column alignment.
 * **`override/wesalac.spl`** — Name reads *"Auto-Buff"*.
 * **`override/solarepu.spl`** — Name reads *"Repulse Undead"*.
-* **`override/baldur25.bcs`** — Contains `HasItemEquiped("solablad", …)` and `HasItemEquiped("solabla2", …)` blocks.
-* **`override/solaend0.2da`–`solaend4.2da`** — DEFAULT row has a resolved epilogue STRREF in both columns, formatted with proper column alignment.
-* **WeiDU installer menu** — Component names display in the selected language (falls back to English for any ref not yet translated in that language's `wsetup.tra`, including `@1060`).
+* **`override/baldur25.bcs`** — (Only if Component 30 is installed.) Contains `HasItemEquiped("solablad", …)` and `HasItemEquiped("solabla2", …)` blocks.
+* **`override/solaend0.2da`–`solaend4.2da`** — (Only if Component 30 is installed.) DEFAULT row has a resolved epilogue STRREF in both columns, formatted with proper column alignment.
+* **WeiDU installer menu** — Component names display in the selected language (falls back to English for any ref not yet translated in that language's `wsetup.tra`).
 
 **In-game bark test.** Load a save made after this install (not one from a previous install), recruit Solaufein, then:
 
@@ -320,6 +347,54 @@ rights holder.
 ------------------------------
 
 ## Changelog
+
+### 2.1.11 — Known-spells compaction
+
+**The phantom entry**
+
+* The 2010-era mod tree CREs `sola5` through `sola17` and `solafoe.cre` ship with a blank entry at known-spells index 0. The resref is empty, but the level and type fields are set, so Near Infinity renders it as `Spell: 0.SPL` with a level and a type. The engine ignores such entries when granting spells, but they inflate the count and shift every subsequent entry's index.
+* This was never caused by any TP2 change. The earlier Dialogue/Script fixes in v2.1.3 and v2.1.10 only touched those specific fields, and the current TP2 never passes `ks1..ks8` to `EE_SET_CRE_FIELDS`, so the known-spells block in that function never runs. The blank entry has been in the shipped CRE files since the original 2010 release.
+
+**The fix**
+
+* Added `EE_COMPACT_KNOWN_SPELLS` to `ee_cre_cleanup.tpa`. The function removes entries whose resref is not a real resref and shifts the remaining entries left, decrementing the count at `0x2A4`.
+* Detection uses the first byte of the resref: a valid resref starts with printable ASCII (`0x21`–`0x7E`); a phantom entry starts with a control byte. An earlier draft compared the full 8-byte resref against `~~`, which failed because WeiDU's `READ_ASCII` reads exactly 8 bytes including nulls and control characters, so a phantom entry like `\x14\x00\x00\x00\x00\x00\x00\x00` reads back as a non-empty string.
+* Added `LPF EE_COMPACT_KNOWN_SPELLS END` to the four affected COPY blocks in Component 10: the Sola tier, `solavamp`, `solafoe`, and `udsola01/02`.
+
+**Also fixed in `ee_cre_cleanup.tpa` (v1.0.7 of the file)**
+
+* The XP clamp in Section 4 was reading and writing offset `0x2CC`, which on CRE v1.0 is the Dialogue resref, not XP. The write was harmless in practice (dialogue ASCII parses as a positive signed long, so `xp < 0` was never true) but the offset was wrong. Correct location is `0x14`, per IESDP.
+
+### 2.1.10 — Support CRE field fix
+
+* Added `EE_SET_CRE_FIELDS` calls to the support CRE COPY blocks: `solaboo.cre`, `solafoe.cre`, `solavamp.cre`, `solaspi.cre`, `solaspy1.cre`, `solaspy2.cre`.
+* The 2010-era original mod shipped these CREs with broken or empty Dialogue resrefs and empty Script name fields. The modernized TP2 had only fixed the Sola tier and the Underdark Sola copies.
+* `solafoe.cre` in particular had a Dialogue field of `SOLAN.DLG` (non-resolving), so Archryssa's intro dialogue never fired.
+* `solaspy1.cre` and `solaspy2.cre` are split into separate COPY blocks so each gets its own `script_name` (a single multi-target COPY would have written the same value into both).
+
+### 2.1.9 — Top-level PRINT parse error fix
+
+* The installation guide was originally placed at the top level of the TP2, between the `LANGUAGE` definitions and Component 10. `PRINT` is an action, not a top-level directive, so WeiDU aborted with `GLR parse error / Near Text: PRINT` before the component menu could appear.
+* Moved the guide inside Component 10, immediately after the `REQUIRE_PREDICATE`, where the action is valid and `%LANGUAGE%` is already resolved.
+
+### 2.1.8 — Content-aligned component layout
+
+* Renumbered components to `10 / 20 / 30 / 40 / 50` and grouped them by when their content actually fires.
+* `solae1.d` and the Eclipse enemy CREs (`solae1`–`solae6.cre`) and AI scripts (`solae1/4/5/6.baf`) moved from Core to Component 40. They are only referenced by `sola0001.baf` (Eclipse), and making Eclipse self-contained removes the previous `REQUIRE_COMPONENT 20` chain.
+* Cutscene hardening (`EE_CUTSCENE_CLEANUP` on `sola0001.bcs` and `sola0002.bcs`) folded into Component 40. It was a fix masquerading as an option; the only files it patches are created by Component 40.
+* `uhmer01.sto` COPY moved from Core to Component 50 so the store lives with the dialogue patch that references it.
+* Component 30 (ToB Continuation) and Component 40 (Eclipse Sequence) both now use `REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1071`.
+* ToB Continuation moved before Eclipse in file order so the install menu reads SoA → ToB → ToB-challenge.
+
+### 2.1.7 — Core NPC completeness pass
+
+* Moved `fatesp.d`, `sola2500.baf`, and `sola2100.baf` from Component 20 to Component 10 so a Core-only install actually spawns Solaufein in the world and lets him be re-recruited via the ToB fate spirit.
+* Moved `solacut1.baf`, `solaspy1.baf`, `solaspy2.baf` and the `solaspy` CREs from Components 20/10 to what became Component 40 (Eclipse).
+
+### 2.1.6 — Component dependency fix (CHAIN3 SOLA.DLG abort)
+
+* Component 50 (now Component 30, ToB Continuation) aborted with `ERROR: Failure("resource [SOLA.DLG] not found for 'CHAIN3'")` when installed without the SoA Romance component. The `solatob.d` dialogue file contains `== "SOLA"` interjection lines and a `CHAIN3 SARVOLO sola` block that all reference `SOLA.DLG`.
+* Fix: moved the `COMPILE` of `sola.d` and the `pdialog.2da` SOLA row registration from the SoA component to Core, so `SOLA.DLG` always exists whenever the NPC is installed. This matches the original mod's monolithic install, where `sola.d` was always compiled.
 
 ### 2.1.5 — Bark playback fix
 
@@ -377,8 +452,8 @@ rights holder.
 **Localization**
 
 * Added layered `LANGUAGE` blocks: each non-English language loads `american/wsetup.tra` as a base, then its own overlay on top. Missing refs automatically fall back to English.
-* Converted all seven component names from hardcoded English strings in `BEGIN` statements to `@n` TRA refs (`@1000`–`@1060`), so the WeiDU installer menu displays component names in the user's selected language.
-* Added component-name refs `@1000`–`@1050` to all eight `wsetup.tra` language files (American, French, German, Italian, Portuguese, Polish, Russian, Spanish). `@1060` was later added to the American base; non-English installs fall back to English until translated.
+* Converted all component names from hardcoded English strings in `BEGIN` statements to `@n` TRA refs, so the WeiDU installer menu displays component names in the user's selected language.
+* Added component-name refs to all eight `wsetup.tra` language files (American, French, German, Italian, Portuguese, Polish, Russian, Spanish).
 * Restored four hardcoded English strings to their original `@n` refs so they display in the user's language:
   * `solaspi.cre` name (was *"Knight of Solamnia"*, now `@9` *"Revenge Spider"*)
   * `solaboo.cre` name (`@22`)
@@ -388,7 +463,7 @@ rights holder.
 **Dialogue and dependency fixes**
 
 * Fixed `udsola01.cre` / `udsola02.cre` names: previously used `sola.tra @1` (a dialogue line) instead of `wsetup.tra @1` (*"Solaufein"*). Consolidated the two separate patch blocks into one and folded the sound-slot restoration into the original COPY.
-* Corrected Component 30's `REQUIRE_COMPONENT` from `~10~` to `~20~`. Without Component 20, the Eclipse intro dialogue has no valid target for `SetDialog("SOLAE1")`.
+* Corrected the SoA component's `REQUIRE_COMPONENT` for the Eclipse component from `~10~` to `~20~`. Without Component 20, the Eclipse intro dialogue has no valid target for `SetDialog("SOLAE1")`.
 * Removed a stray `StartDialogueNoSet(Player1)` call in `solae4.baf` (Reffus the Eclipse Cleric's battle-prep block) that produced a duplicate Eclipse intro dialogue.
 
 **2DA correctness and load-order safety**
@@ -406,7 +481,7 @@ rights holder.
 
 **Dialogue tree**
 
-* Fixed duplicate `boo_s` state label in `sola.d` (`SOLABOO` dialogue), which prevented Component 20 from compiling in strict WeiDU builds.
+* Fixed duplicate `boo_s` state label in `sola.d` (`SOLABOO` dialogue), which prevented the SoA component from compiling in strict WeiDU builds.
 * Fixed string-reference collisions across `sola.d` / `solaint.d` / `solavamp.d` / `solatob.d` by scoping each COMPILE to its own TRA files. Previously `sola.tra` silently overrode every low-numbered ref in the other three dialogues, causing romance text to appear where Eclipse, vampire, and ToB content should have been.
 * Renamed the ToB interjection state matching to reflect `solatob.tra` scoping correctly.
 
@@ -434,10 +509,10 @@ rights holder.
 
 **Housekeeping**
 
-* Removed duplicate `COPY` of `solabody.itm` and `solarepu.spl` from Component 40 (they are translated once in Component 10).
+* Removed duplicate `COPY` of `solabody.itm` and `solarepu.spl` from the vampire component (they are translated once in Component 10).
 * Removed the invalid standalone `LPF EE_SPELL_CLEANUP` call.
 * Moved the `REPLACE_TEXTUALLY` epilogue patch inside its `COPY` block.
-* Fixed argument indentation in Components 30, 40, 50, 60, 70 for readability.
+* Fixed argument indentation in the components for readability.
 
 ### 2.1.0 — Modern EE/EET Edition
 
