@@ -156,10 +156,10 @@ Dass ich nicht tausche um ein Königreich!~
 // Zielsprache, um das Installationsmenü zu lokalisieren.
 // -----------------------------------------------------------------
 
-@1000 = ~Solaufein: Haupt-NSC (Erforderlich)~
-@1010 = ~Solaufein: SoA-Romanze~
-@1020 = ~Solaufein: Finsternis-Sequenz~
-@1030 = ~Solaufein: Vampirischer Solaufein + Läuterung~
-@1040 = ~Solaufein: TdB-Fortsetzung~
-@1050 = ~Solaufein: Extras (KVFix, Multig, UHMER, Sonstiges)~
-@1060 = ~Solaufein: Zwischensequenz-Absicherung (Optional)~
+@1000 = ~Solaufein: Haupt-NSC + SoA-Inhalt (erforderlich)~
+@1010 = ~Solaufein: Vampir-Solaufein + Reinigung (optionaler SoA-Handlungsstrang)~
+@1020 = ~Solaufein: ToB-Fortsetzung (empfohlen, wenn du ToB spielst)~
+@1030 = ~Solaufein: Eclipse-Sequenz (optionaler ToB-Herausforderungskampf)~
+@1040 = ~Solaufein: Extras (Korgan/Viconia-Korrekturen, Mehrspieler, Projektil-Korrekturen — optional)~
+@1070 = ~Diese Mod erfordert Baldur's Gate II: Enhanced Edition (BG2EE) oder Enhanced Edition Trilogy (EET).~
+@1071 = ~Diese Komponente erfordert die Erweiterung Throne of Bhaal.~
