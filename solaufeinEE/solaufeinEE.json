@@ -1,65 +1,125 @@
 {
-  "id": "solaufeinEE",
-  "name": "Solaufein Romance (Modern EE/EET Edition)",
-  "author": "Weimer (Original), Modernization by /u/celestialfury",
-  "version": "2.1.11",
-  "description": "A fully modernized, modular, EE/EET-compatible version of the classic Solaufein Romance mod. This edition rebuilds the technical foundation for modern WeiDU, featuring per-dialogue TRA scoping, layered language TRAs with automatic English fallback, fully localized component names, explicit v1.0-guarded CRE field writes via EE_SET_CRE_FIELDS, full 12-slot Sola/udsola bark restoration with working bark playback via a silent placeholder WAV, known-spells compaction for the 2010-era phantom entry, auto-buff script registration, load-order-safe 2DA patches, and bulletproofed ToB epilogues. Components are grouped by when their content fires: Core (SoA + ToB), Vampiric (SoA Chapter 6), ToB Continuation, Eclipse Sequence (ToB), and Extras.",
-  "category": "NPCs",
-  "tags": ["REC", "ADV", "COS", "QoL"],
-  "supported_games": ["bg2ee", "eet"],
-  "homepage": "https://github.com/CelestialFury-BG/SolaufeinEE",
-  "download": "https://github.com/CelestialFury-BG/SolaufeinEE/releases/tag/v2.1.11",
-  "readme": "solaufeinEE/readme-ee_updates.md",
-  "languages": [
-    { "index": 0, "name": "English", "dir": "american" },
-    { "index": 1, "name": "Italian", "dir": "italian" },
-    { "index": 2, "name": "German", "dir": "german" },
-    { "index": 3, "name": "French", "dir": "french" },
-    { "index": 4, "name": "Portuguese", "dir": "portuguese" },
-    { "index": 5, "name": "Polish", "dir": "polish" },
-    { "index": 6, "name": "Russian", "dir": "russian" },
-    { "index": 7, "name": "Spanish", "dir": "spanish" }
-  ],
-  "components": [
+  "i": 949,
+  "sv": 1,
+  "t": "solaufeinEE",
+  "n": "Solaufein Romance",
+  "c": "NEW NPC MODS",
+  "u": "https://github.com/CelestialFury-BG/SolaufeinEE",
+  "a": "Weimer, celestialfury",
+  "v": "2.1.11",
+  "sum": "A fully modernized, modular, EE/EET-compatible rebuild of Weimer's classic Solaufein Romance mod, with a content-aligned 5-component layout and working bark playback.",
+  "tags": ["npc"],
+  "ph": ["SoA", "ToB"],
+  "no": "Install after ValenEE for the cross-mod interjections in Component 10. Must be installed before eet_end, cdtweaks, and stratagems.",
+  "ord": 860,
+  "ic": "Hard conflict with legacy (non-EE) Solaufein Romance mods. Install after ValenEE for cross-mod interjections.",
+  "co": [
     {
-      "index": 10,
-      "name": "Solaufein: Core NPC + SoA Content",
-      "tags": ["REC"],
-      "description": "Required. Installs Solaufein as a joinable party companion, along with everything needed for him to appear in the world and function through both Shadows of Amn and Throne of Bhaal. Includes the Sola tier CREs (sola5 through sola17), the Underdark Sola copies (udsola01/02), the core dialogue file SOLA.DLG, the core AI script sola.bcs, the AR2500 and AR2100 spawn triggers, the ToB fate spirit summon (fatesp.d), and the SoA-side content that is not part of an optional story branch (Tree of Life gut-check, Archryssa encounter, cross-mod Valen interjections when ValenEE is installed first, and the Moonblade auto-return script on baldur.bcs). Also applies the v1.0-guarded CRE field writes via EE_SET_CRE_FIELDS, full 12-slot bark restoration with working bark playback via a silent placeholder WAV, known-spells compaction for the 2010-era phantom entry at index 0, Boo Two familiar AI compilation, auto-buff script registration in scrpdesc.2da, installation of the wesalac.spl helper spell, and the pdialog.2da SOLA row registration. Component 10 alone is a genuinely playable install."
+      "n": "Solaufein: Core NPC + SoA Content",
+      "tp2n": "Solaufein: Core NPC + SoA Content",
+      "cn": 10,
+      "wf": "solaufeinEE",
+      "wp": "solaufeinEE\\setup-solaufeinEE.tp2",
+      "wc": 10,
+      "wq": "exact",
+      "tg": ["rec"],
+      "no": "Required. Joinable NPC plus spawn triggers, ToB fate spirit summon, core dialogue, and SoA-side content. Includes explicit CRE field writes, full 12-slot bark restoration with working playback, known-spells compaction, and the pdialog.2da registration."
     },
     {
-      "index": 20,
-      "name": "Solaufein: Vampiric Solaufein + Cleanse",
-      "tags": ["REC"],
-      "description": "Optional Shadows of Amn Chapter 6 story branch. Bodhi abducts Solaufein in the Graveyard District and turns him into a vampire; the player can restore him via the Temple Ruins ritual. Requires Component 10. This component's dialogue compiles with only its own TRA (solavamp.tra), preventing romance text from overwriting vampire-Sola lines."
+      "n": "Solaufein: Vampiric Solaufein + Cleanse",
+      "tp2n": "Solaufein: Vampiric Solaufein + Cleanse",
+      "cn": 20,
+      "wf": "solaufeinEE",
+      "wp": "solaufeinEE\\setup-solaufeinEE.tp2",
+      "wc": 20,
+      "wq": "exact",
+      "tg": ["rec"],
+      "no": "SoA Chapter 6 story branch. Bodhi abducts Solaufein and the player can restore him via the Temple Ruins ritual. Requires Component 10."
     },
     {
-      "index": 30,
-      "name": "Solaufein: ToB Continuation",
-      "tags": ["REC"],
-      "description": "Recommended if you play Throne of Bhaal. Adds Solaufein's ToB interjections (Illasera, Sarevok, Melissan, Captain Samand, Kiser, Errard, Volo, Asmay, the final Throne conversation), the ToB epilogue 2DA overrides (five variants covering no-romance, romance+ascension, romance+mortal, each with pragmatic and compassionate paths), and the Moonblade auto-return script on baldur25.bcs. Requires Component 10 and the Throne of Bhaal expansion. Fixes the CHAIN3 SOLA.DLG abort that affected earlier builds when installed without Component 20."
+      "n": "Solaufein: ToB Continuation",
+      "tp2n": "Solaufein: ToB Continuation",
+      "cn": 30,
+      "wf": "solaufeinEE",
+      "wp": "solaufeinEE\\setup-solaufeinEE.tp2",
+      "wc": 30,
+      "wq": "exact",
+      "tg": ["rec"],
+      "no": "Recommended if you play ToB. Interjections, epilogue variants, and the Moonblade auto-return script. Requires Component 10 and the Throne of Bhaal expansion."
     },
     {
-      "index": 40,
-      "name": "Solaufein: Eclipse Sequence",
-      "tags": ["ADV"],
-      "description": "Optional high-difficulty Throne of Bhaal challenge encounter that triggers after Sendai or Abazigal is defeated. Six custom foes (Radael the Kensai, Nrodlek the Anti-Paladin, Radnuht the Barbarian, Reffus the Cleric, Ylekilnu the Druid, Citpeks the Sorcerer) fight in a custom battleground area (sola0001.are) with scripted time-stop mechanics. This component is self-contained: it installs the area, the foes, their AI scripts, their dialogue, their weapons, and the transport cutscene. Requires Component 10 and the Throne of Bhaal expansion. Cutscene hardening (Wait(1) after StartCutSceneMode, CutSceneId casing normalization) is applied automatically as part of this component rather than offered as a separate option."
+      "n": "Solaufein: Eclipse Sequence",
+      "tp2n": "Solaufein: Eclipse Sequence",
+      "cn": 40,
+      "wf": "solaufeinEE",
+      "wp": "solaufeinEE\\setup-solaufeinEE.tp2",
+      "wc": 40,
+      "wq": "exact",
+      "tg": ["adv"],
+      "no": "Optional high-difficulty ToB challenge encounter with six custom foes. Self-contained. Requires Component 10 and ToB."
     },
     {
-      "index": 50,
-      "name": "Solaufein: Extras (KVFix, Multig, UHMER, Misc)",
-      "tags": ["COS"],
-      "description": "Optional. Independent patches that do not require Component 10 and can be installed on their own. Includes the Korgan PC-interaction loop fix, the Viconia LOVETALK 46 fix (both use REPLACE on BKORGAN.dlg and BVICONI.dlg; skip this component if another mod edits those files), a multiplayer-friendly party kick-out script, an extension to the UHMER01 merchant's dialogue so Sola can purchase poetry books once the romance progresses far enough, and vanilla Meteor Swarm / Ice Storm projectile fixes."
+      "n": "Solaufein: Extras (KVFix, Multig, UHMER, Misc)",
+      "tp2n": "Solaufein: Extras (KVFix, Multig, UHMER, Misc)",
+      "cn": 50,
+      "wf": "solaufeinEE",
+      "wp": "solaufeinEE\\setup-solaufeinEE.tp2",
+      "wc": 50,
+      "wq": "exact",
+      "tg": ["qol"],
+      "no": "Optional. Independent patches (Korgan loop fix, Viconia LOVETALK 46 fix, multiplayer kick-out script, UHMER store, projectile fixes). Does not require Component 10."
     }
   ],
-  "relations": {
-    "before": ["eet_end", "tweaks", "cdtweaks", "scs"],
-    "after": ["valenEE"],
-    "conflicts": [
-      {
-        "mod": "solarom_classic",
-        "description": "Cannot coexist with older legacy non-EE versions of the Solaufein Romance package."
-      }
-    ]
-  }
+  "conflicts": [
+    {
+      "with": "solarom_classic",
+      "withId": null,
+      "severity": "hard",
+      "reason": "Cannot coexist with older legacy non-EE versions of the Solaufein Romance package.",
+      "myComps": "#10 Solaufein: Core NPC + SoA Content",
+      "theirComps": "#0 Legacy Solaufein Romance (classic)",
+      "source": "legacy incompatibility",
+      "evidenceLevel": "speculative"
+    }
+  ],
+  "advisories": [
+    {
+      "with": "valenEE",
+      "withId": 950,
+      "severity": "soft",
+      "reason": "Solaufein's Component 10 conditionally compiles cross-mod interjections if valenj.dlg is present at install time. Install Valen before Solaufein so the interjections are included.",
+      "myComps": "#10 Solaufein: Core NPC + SoA Content",
+      "theirComps": "#10 Valen: Core NPC",
+      "orderOnly": true,
+      "evidenceLevel": "mechanism-verified"
+    }
+  ],
+  "dependencies": [],
+  "langs": {
+    "en": 0,
+    "it": 1,
+    "de": 2,
+    "fr": 3,
+    "pt": 4,
+    "pl": 5,
+    "ru": 6,
+    "es": 7
+  },
+  "gh": {
+    "o": "CelestialFury-BG",
+    "r": "SolaufeinEE"
+  },
+  "au": "https://github.com/CelestialFury-BG",
+  "dl": "https://github.com/CelestialFury-BG/SolaufeinEE/releases",
+  "rq": "BG2EE or EET",
+  "rec": {
+    "goes_with": ["valenEE"],
+    "tip": "Install after Valen for the cross-mod interjections in Component 10."
+  },
+  "cl": [
+    {
+      "d": "2026-10-08",
+      "m": "Added to catalog as modernized EE/EET rebuild; 5-component layout with content-aligned ordering."
+    }
+  ]
 }
