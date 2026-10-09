@@ -325,7 +325,11 @@ All barks display text only; audio is silent. That is expected — no Solaufein 
 
 ### Original Author
 
-* Weimer
+* Westley Weimer
+
+### Contributing (original)
+
+* Jason Compton
 
 ### Modern EE/EET Edition
 
