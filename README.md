@@ -145,7 +145,7 @@ All 2DA modifications use `PRETTY_PRINT_2DA` for column-aligned output and `BUT_
 ## Credits
 
 - **Original Mod Author:** Westley Weimer
-- **Contributing:** Jason Compton
+- **Contributing:** Jason Compton — Korgan PC-interaction loop fix, Viconia LOVETALK 46 branch fix, and the multi-player party kick-out script (kvfix.dand multig.d, compiled in the Extras component). His original authorship is documented in the file header at the top of kvfix.d.
 - **Modern EE/EET Edition:** /u/celestialfury
 - **Italian translation (2.1.2):** Luciana Stella Boscaratto
 - **Polish TRAs (2.1.2):** completed for this release
