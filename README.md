@@ -7,8 +7,6 @@
 
 > A fully modernized, modular rebuild of Weimer's classic Solaufein mod, restored for Baldur's Gate II: Enhanced Edition and EET.
 
-> A fully modernized, modular rebuild of Weimer's classic Solaufein mod, restored for Baldur's Gate II: Enhanced Edition and EET.
-
 ---
 
 ## What Is This?
