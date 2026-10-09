@@ -329,7 +329,7 @@ All barks display text only; audio is silent. That is expected — no Solaufein 
 
 ### Contributing (original)
 
-* Jason Compton
+* Jason Compton — Korgan PC-interaction loop fix, Viconia LOVETALK 46 branch fix, and the multi-player party kick-out script (kvfix.dand multig.d, compiled in the Extras component). His original authorship is documented in the file header at the top of kvfix.d.
 
 ### Modern EE/EET Edition
 
