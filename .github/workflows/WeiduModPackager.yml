@@ -23,4 +23,4 @@ jobs:
       architecture: amd64
       suffix: version
       naming: tp2
-      tp2_name: 'setup-solaufeinEE.tp2'
+      tp2_name: 'solaufeinEE/setup-solaufeinEE.tp2'
