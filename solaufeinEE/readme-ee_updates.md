@@ -329,24 +329,89 @@ All barks display text only; audio is silent. That is expected — no Solaufein 
 
 ### Contributing (original)
 
-* Jason Compton — Korgan PC-interaction loop fix, Viconia LOVETALK 46 branch fix, and the multi-player party kick-out script (kvfix.dand multig.d, compiled in the Extras component). His original authorship is documented in the file header at the top of kvfix.d.
+* **Jason Compton** — `kvfix.d` (Korgan PC-interaction loop fix,
+  Viconia LOVETALK 46 branch fix) and `multig.d` (multi-player
+  party kick-out script) in Component 50; also credited as a banter
+  beta tester and for dialogue advice and ideas in the original
+  readme.
+* **David Gaider** — permission to use the Dimension Door spell
+  and the Ascension Mod framework.
+* **Rob Scott** — Solaufein's ToB epilogue ideas.
+* **Al Bowers, Scarlet Tang, Lisa Jonte, Sphira, and Afi** —
+  additional Solaufein conversations (post-romance dialogues,
+  Sphira's chat, and the Afi poem lovetalk).
+* **Gwion** — tactical fixes and strategy notes for the Eclipse
+  encounter, and the analysis of the six Eclipse foes.
+* **Kish** — Eclipse encounter feedback, ToB epilogue editing,
+  and the Vampire Hunters tactical walkthrough.
+* **Kiki** — inspiration for the Worn Leather Book dialogue.
+
+### Beta Testers
+
+* Mike Clark, Joe Mulei, Nancy Wallace
+* Laura Uerling (special thanks for the Guarded Compound tactics)
+
+### Banter Beta Testers
+
+* Jason Compton, Shayla Dormyr, Falk Swoboda, Kreese Rasvar,
+  Katherine F.
+
+### Translations
+
+* **German** — Falk Swoboda
+  * German poetry translation — Elanor, Gala, Dyara, Knuddel,
+    Medinilla, Rote Zora, Siegmund, Veldan, Malakai
+* **Italian** — Luciana Boscaratto
+* **French** — Ly Meng, Archange de la Redemption, Cocobard,
+  Laurent Duvernet, Artemidore, Banshee
+  * French name "Eclipse Vengeresse" suggested by VDH
+* **Portuguese** — Allyonora
+* **Polish** — Damian Staniszewski
+* **Russian** — Serdrick & Aerie.ru
+* **Spanish** — Clan REO, with files from Ancalgon
+
+### Poets Whose Work Is Excerpted
+
+Solaufein's poetry quotes or adapts the following writers. If you
+enjoy the verse in his dialogues, read them in full:
+
+* W. H. Auden
+* Thomas O. Davis
+* Thomas Moore
+* Arthur Rimbaud
+* Thomas Tickell
+* William Wordsworth
+* Percy Shelley
+* Robert Frost
+
+His party banters also adapt famous quotations from Martin Luther
+King Jr., Ralph Waldo Emerson, and Kahlil Gibran, among others.
 
 ### Modern EE/EET Edition
 
-* /u/celestialfury (structural refactoring, Project Infinity support, WeiDU logic stabilization)
+* /u/celestialfury — structural refactoring, Project Infinity
+  support, WeiDU 25100 modernization, content-aligned component
+  layout, CRE field repair, known-spells compaction, bark
+  restoration and playback, and load-order-safe 2DA patches.
 
 ### Tools
 
 * WeiDU
 * Near Infinity
+* Infinity Engine Editor Pro
+* Infinity Explorer
 * Project Infinity
 
 ### Solaufein Portrait
 
-* Portrait: Original artwork by Jeff Easley, published by TSR/Wizards of the Coast.
-Used without license in a non-commercial fan modification. All rights reserved
-by the copyright holder. This portrait will be removed upon request by the
-rights holder.
+* Original artwork by Jeff Easley, published by TSR/Wizards of
+  the Coast. Used without license in a non-commercial fan
+  modification. All rights reserved by the copyright holder.
+  This portrait will be removed upon request by the rights holder.
+
+*Additional bug reporters, typo-fixers, and feature suggesters
+are credited in the original readme's "Section V. Thanks" and in
+the individual changelog entries above.*
 
 ------------------------------
 
