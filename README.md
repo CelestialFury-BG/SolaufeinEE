@@ -144,7 +144,8 @@ All 2DA modifications use `PRETTY_PRINT_2DA` for column-aligned output and `BUT_
 
 ## Credits
 
-- **Original Mod Author:** Weimer
+- **Original Mod Author:** Westley Weimer
+- **Contributing:** Jason Compton
 - **Modern EE/EET Edition:** /u/celestialfury
 - **Italian translation (2.1.2):** Luciana Stella Boscaratto
 - **Polish TRAs (2.1.2):** completed for this release
